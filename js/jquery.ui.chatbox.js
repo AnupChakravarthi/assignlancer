@@ -198,7 +198,8 @@ var HTML_CODE='<div>';
                         if (msg.length > 0) {
                             self.options.messageSent(self.options.id, self.options.user, msg);
                         }
-                        $(this).val('');
+                        $(this).val(' ');
+						console.log("Test: "+$(this).val(' '));
                         return false;
                     }
                 })

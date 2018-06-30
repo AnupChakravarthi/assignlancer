@@ -40,3 +40,117 @@ Saturday 30th June 2018 08:27:04 PM [INFO] ::: [app.database.php]  Query(Status-
 Saturday 30th June 2018 08:27:28 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Saturday 30th June 2018 08:27:29 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Saturday 30th June 2018 08:27:29 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id) SELECT * FROM (SELECT 'U75981315133201' As queue_Id, '127.0.0.1' As IPAddress, 'vuruuvk5vj2k5ubu34n2o0gkd6' As SessionId, '' As toAgent, '2018-06-30 20:27:28' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='vuruuvk5vj2k5ubu34n2o0gkd6'))=0;  
+Saturday 30th June 2018 08:48:15 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 08:48:16 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 08:48:16 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id) SELECT * FROM (SELECT 'U72236070162296' As queue_Id, '127.0.0.1' As IPAddress, 'vuruuvk5vj2k5ubu34n2o0gkd6' As SessionId, '' As toAgent, '2018-06-30 20:48:15' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='vuruuvk5vj2k5ubu34n2o0gkd6'))=0;  
+Saturday 30th June 2018 08:48:24 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 08:48:25 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 08:48:25 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id) SELECT * FROM (SELECT 'U43736031483124' As queue_Id, '127.0.0.1' As IPAddress, 'vuruuvk5vj2k5ubu34n2o0gkd6' As SessionId, '' As toAgent, '2018-06-30 20:48:24' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='vuruuvk5vj2k5ubu34n2o0gkd6'))=0;  
+Saturday 30th June 2018 08:52:37 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 08:52:38 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 08:52:39 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id) SELECT * FROM (SELECT 'U60537971534463' As queue_Id, 'ONLINE' As queueStatus, '127.0.0.1' As IPAddress,  'vuruuvk5vj2k5ubu34n2o0gkd6' As SessionId,  '' As toAgent, '2018-06-30 20:52:37' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='vuruuvk5vj2k5ubu34n2o0gkd6'))=0;  
+Saturday 30th June 2018 08:59:18 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 08:59:19 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 08:59:19 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id) SELECT * FROM (SELECT 'U79741495627868' As queue_Id, 'ONLINE' As queueStatus, '127.0.0.1' As IPAddress,  'vuruuvk5vj2k5ubu34n2o0gkd6' As SessionId,  '' As toAgent, '2018-06-30 20:59:18' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='vuruuvk5vj2k5ubu34n2o0gkd6'))=0;  
+Saturday 30th June 2018 08:59:20 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 08:59:21 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 08:59:21 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id) SELECT * FROM (SELECT 'U90859171562669' As queue_Id, 'ONLINE' As queueStatus, '127.0.0.1' As IPAddress,  'vuruuvk5vj2k5ubu34n2o0gkd6' As SessionId,  '' As toAgent, '2018-06-30 20:59:20' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='vuruuvk5vj2k5ubu34n2o0gkd6'))=0;  
+Saturday 30th June 2018 09:00:47 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 09:00:48 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 09:00:48 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id) SELECT * FROM (SELECT 'U81384147691430' As queue_Id, 'ONLINE' As queueStatus, '127.0.0.1' As IPAddress,  'vuruuvk5vj2k5ubu34n2o0gkd6' As SessionId,  '' As toAgent, '2018-06-30 21:00:47' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='vuruuvk5vj2k5ubu34n2o0gkd6'))=0;  
+Saturday 30th June 2018 09:00:50 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 09:00:51 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 09:00:51 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id) SELECT * FROM (SELECT 'U34032210628004' As queue_Id, 'ONLINE' As queueStatus, '127.0.0.1' As IPAddress,  'vuruuvk5vj2k5ubu34n2o0gkd6' As SessionId,  '' As toAgent, '2018-06-30 21:00:50' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='vuruuvk5vj2k5ubu34n2o0gkd6'))=0;  
+Saturday 30th June 2018 09:04:14 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 09:04:15 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 09:04:15 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id) SELECT * FROM (SELECT 'U47687091160742' As queue_Id, 'ONLINE' As queueStatus, '127.0.0.1' As IPAddress,  'vuruuvk5vj2k5ubu34n2o0gkd6' As SessionId,  '' As toAgent, '2018-06-30 21:04:14' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='vuruuvk5vj2k5ubu34n2o0gkd6'))=0;  
+Saturday 30th June 2018 09:04:17 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 09:04:18 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 09:04:18 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id) SELECT * FROM (SELECT 'U02945158225336' As queue_Id, 'ONLINE' As queueStatus, '127.0.0.1' As IPAddress,  'vuruuvk5vj2k5ubu34n2o0gkd6' As SessionId,  '' As toAgent, '2018-06-30 21:04:17' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='vuruuvk5vj2k5ubu34n2o0gkd6'))=0;  
+Saturday 30th June 2018 09:17:21 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 09:17:22 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 09:17:22 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id) SELECT * FROM (SELECT 'U71658031729902' As queue_Id, 'ONLINE' As queueStatus, '127.0.0.1' As IPAddress,  'vuruuvk5vj2k5ubu34n2o0gkd6' As SessionId,  '' As toAgent, '2018-06-30 21:17:21' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='vuruuvk5vj2k5ubu34n2o0gkd6'))=0;  
+Saturday 30th June 2018 09:20:07 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 09:20:08 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 09:20:08 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id) SELECT * FROM (SELECT 'U15642192926601' As queue_Id, 'ONLINE' As queueStatus, '127.0.0.1' As IPAddress,  'vuruuvk5vj2k5ubu34n2o0gkd6' As SessionId,  '' As toAgent, '2018-06-30 21:20:07' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='vuruuvk5vj2k5ubu34n2o0gkd6'))=0;  
+Saturday 30th June 2018 09:39:09 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 09:39:09 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET queueStatus='ONLINE', toAgent='', agentPicked='',  chatFinished='', order_Id='', account_Id=''  WHERE IPAddress='127.0.0.1' AND SessionId='vuruuvk5vj2k5ubu34n2o0gkd6'; 
+Saturday 30th June 2018 10:17:44 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 10:18:21 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 10:18:50 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 10:19:36 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 10:19:57 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 10:20:05 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 10:50:06 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 10:54:56 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 10:54:56 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE' WHERE IPAddress='127.0.0.1' AND SessionId='vuruuvk5vj2k5ubu34n2o0gkd6'; 
+Saturday 30th June 2018 10:56:03 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 10:56:03 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='vuruuvk5vj2k5ubu34n2o0gkd6'; 
+Saturday 30th June 2018 10:57:19 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 10:59:04 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 10:59:05 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 10:59:05 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id,finished) SELECT * FROM (SELECT 'U82848185309619' As queue_Id, 'ONLINE' As queueStatus, '127.0.0.1' As IPAddress,  'rjgsq622poquupvps2gha0g051' As SessionId,  '' As toAgent, '2018-06-30 22:59:04' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id,  'N' As finished) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='rjgsq622poquupvps2gha0g051'))=0;  
+Saturday 30th June 2018 10:59:10 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 10:59:10 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='rjgsq622poquupvps2gha0g051'; 
+Saturday 30th June 2018 11:07:50 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:09:15 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:09:44 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:09:58 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:10:16 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:10:48 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:11:14 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:12:23 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:13:21 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:13:34 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:14:04 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:14:25 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:15:08 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:15:30 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:15:48 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:16:34 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:19:28 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:19:29 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:19:29 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id,finished) SELECT * FROM (SELECT 'U24696423569636' As queue_Id, 'ONLINE' As queueStatus, '192.168.1.7' As IPAddress,  '2f4tp7ro7pf5iapeskk8jcugd5' As SessionId,  '' As toAgent, '2018-06-30 23:19:28' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id,  'N' As finished) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='192.168.1.7') AND (SessionId='2f4tp7ro7pf5iapeskk8jcugd5'))=0;  
+Saturday 30th June 2018 11:19:37 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:19:37 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='192.168.1.7' AND SessionId='2f4tp7ro7pf5iapeskk8jcugd5'; 
+Saturday 30th June 2018 11:19:41 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:19:41 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='192.168.1.7' AND SessionId='2f4tp7ro7pf5iapeskk8jcugd5'; 
+Saturday 30th June 2018 11:19:47 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:19:47 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='192.168.1.7' AND SessionId='2f4tp7ro7pf5iapeskk8jcugd5'; 
+Saturday 30th June 2018 11:19:48 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:19:48 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='192.168.1.7' AND SessionId='2f4tp7ro7pf5iapeskk8jcugd5'; 
+Saturday 30th June 2018 11:19:51 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:19:51 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='192.168.1.7' AND SessionId='2f4tp7ro7pf5iapeskk8jcugd5'; 
+Saturday 30th June 2018 11:20:19 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:20:19 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='192.168.1.7' AND SessionId='2f4tp7ro7pf5iapeskk8jcugd5'; 
+Saturday 30th June 2018 11:23:23 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:26:03 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:26:59 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:30:40 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:32:34 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:32:48 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:32:58 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:33:14 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:33:55 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:34:42 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:34:49 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:35:56 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:38:47 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:39:28 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:42:13 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:42:31 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:44:11 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:45:25 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:48:30 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:49:37 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:50:07 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:51:29 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:53:17 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:53:24 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:53:52 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:55:01 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 30th June 2018 11:55:02 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 1st July 2018 12:01:43 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 1st July 2018 12:02:52 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 1st July 2018 12:03:24 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 1st July 2018 12:06:24 AM [INFO] ::: [app.database.php]  Database connected Successfully 

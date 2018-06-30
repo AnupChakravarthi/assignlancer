@@ -26,38 +26,16 @@ function selectAppInitHeader(id){
 
 var chatData=JSON.parse(getCookie("LiveSupportChat"));
 function chatBoxInitilaizer(){
-  /*var chatTimer=setInterval(function(){
-    /* Get Data from Database 
-	js_ajax("GET",PROJECT_URL+'',{ action:''},function(response){
-	
-	});
-    var id='title';
-	var msg='Message';
-    $("#chat_div").chatbox("option", "boxManager").addMsg(id,msg);
-	chatData.push({"title":id,"msg":msg});
-	setCookie("LiveSupportChat", JSON.stringify(chatData), 1);
-	console.log("chatData: "+JSON.stringify(chatData));
-  },1000); */
   var box = null;
-        //  $("input[type='button']").click(function(event, ui) {
-              if(box) {
-                  box.chatbox("option", "boxManager").toggleBox();
-              }
-              else {
-                  box = $("#chat_div").chatbox({id:"You", 
-                                                user:{key : "value"},
-                                                title : '<i class="fa fa-comments" aria-hidden="true"></i> Live Chat Support',
-                                                messageSent : function(id, user, msg) {
-                                                   // $("#log").append(id + " said: " + msg + "<br/>");
-                                                    $("#chat_div").chatbox("option", "boxManager").addMsg(id, msg);
-													chatData.push({"title":id,"msg":msg});
-													setCookie("LiveSupportChat", JSON.stringify(chatData), 1);
-													console.log("chatData: "+JSON.stringify(chatData));
-                                                }});
-              }
-	
-	console.log("chatData: "+JSON.stringify(chatData));
-	for(var index=0;index<chatData.length;index++){
+  if(box) { box.chatbox("option", "boxManager").toggleBox(); }
+  else {
+    box = $("#chat_div").chatbox({id:"You", user:{key : "value"},
+            title : '<i class="fa fa-comments" aria-hidden="true"></i> Live Chat Support',
+            messageSent : function(id, user, msg) {
+                $("#chat_div").chatbox("option", "boxManager").addMsg(id, msg);
+            }});
+  }
+  for(var index=0;index<chatData.length;index++){
        $("#chat_div").chatbox("option", "boxManager").addMsg(chatData[index].title, chatData[index].msg);
     }
 		//  });
