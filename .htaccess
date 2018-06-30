@@ -1,0 +1,22 @@
+#
+RewriteEngine on
+# RewriteCond %{REQUEST_URI} !(\.css|\.js|\.png|\.jpg|\.gif|robots\.txt)$ [NC]
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+
+#ErrorDocument 404 http://localhost/mylocalhook/
+
+DirectoryIndex default.php
+
+RewriteRule ([^/]+)/styles/([^/]+)$ styles/$2 [NC,L]
+RewriteRule ([^/]+)/styles/([^/]+)/([^/]+)$ styles/$2/$3 [NC,L]
+RewriteRule ([^/]+)/js/([^/]+)$ js/$2 [NC,L]
+RewriteRule ([^/]+)/js/([^/]+)/([^/]+)$ js/$2/$3 [NC,L]
+RewriteRule ([^/]+)/js/([^/]+)/([^/]+)/([^/]+)$ js/$2/$3/$4 [NC,L]
+RewriteRule ([^/]+)/admin/([^/]+)$ admin/$2 [NC,L]
+RewriteRule ([^/]+)/admin/([^/]+)/([^/]+)$ admin/$2/$3 [NC,L]
+RewriteRule ([^/]+)/admin/([^/]+)/([^/]+)/([^/]+)$ admin/$2/$3/$4 [NC,L]
+RewriteRule ([^/]+)/images/([^/]+)$ images/$2 [NC,L]
+RewriteRule ([^/]+)/images/([^/]+)/([^/]+)$ images/$2/$3 [NC,L]
+RewriteRule ([^/]+)/fonts/([^/]+)$ fonts/$2 [NC,L]
+
