@@ -13,6 +13,8 @@ RewriteRule app/howItWorks init_howItWorks.php [NC,L]
 RewriteRule app/authentication init_auth.php [NC,L]
 RewriteRule app/contactUs init_contactUs.php [NC,L]
 
+RewriteRule app/liveSupport/dashboard backend/users_livesupport/index.php [NC,L]
+
 RewriteRule ([^/]+)/styles/([^/]+)$ styles/$2 [NC,L]
 RewriteRule ([^/]+)/styles/([^/]+)/([^/]+)$ styles/$2/$3 [NC,L]
 RewriteRule ([^/]+)/js/([^/]+)$ js/$2 [NC,L]
