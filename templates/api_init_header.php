@@ -23,8 +23,21 @@ function selectAppInitHeader(id){
    }
  }
 }
+
 var chatData=JSON.parse(getCookie("LiveSupportChat"));
 function chatBoxInitilaizer(){
+  /*var chatTimer=setInterval(function(){
+    /* Get Data from Database 
+	js_ajax("GET",PROJECT_URL+'',{ action:''},function(response){
+	
+	});
+    var id='title';
+	var msg='Message';
+    $("#chat_div").chatbox("option", "boxManager").addMsg(id,msg);
+	chatData.push({"title":id,"msg":msg});
+	setCookie("LiveSupportChat", JSON.stringify(chatData), 1);
+	console.log("chatData: "+JSON.stringify(chatData));
+  },1000); */
   var box = null;
         //  $("input[type='button']").click(function(event, ui) {
               if(box) {
@@ -49,6 +62,16 @@ function chatBoxInitilaizer(){
     }
 		//  });
 }
+</script>
+<script type="text/javascript">
+function js_ajax(method,url,data,fn_output){
+ $.ajax({type: method, url: url,data:data,success: function(response) { fn_output(response); } }); 
+}
+$(document).ready(function(){
+ js_ajax("GET",PROJECT_URL+'backend/php/dac/controller.livechat.php',{ action: 'ADD_USER_QUEUE'}, function(response){
+    console.log(response);
+ });
+});
 </script>
 <div class="container-fluid" style="height:52px;">
  <nav class="navbar navbar-custom navbar-fixed-top" style="background-color:#fff;">

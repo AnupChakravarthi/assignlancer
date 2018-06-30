@@ -1,7 +1,4 @@
-<?php
-session_start();
-if(!isset($_SESSION["PROJECT_URL"])){ $_SESSION["PROJECT_URL"]="http://".$_SERVER["HTTP_HOST"]."/assignlancer/"; }
-?>
+<?php include_once 'templates/api_params.php'; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -31,7 +28,6 @@ function homesliderTab(id){
 function homeSlider() {
  $('#myCarousel').carousel({ interval:1000 });
  $('#myCarousel').on('slid.bs.carousel', function(e) {
-       console.log("Slider");
 	   homesliderTab(HOMESLIDERID);
 	   HOMESLIDERID++;
 	   if(HOMESLIDERID===4){ HOMESLIDERID=0; }
@@ -52,8 +48,10 @@ function homeSlider() {
 $(document).ready(function(){
   selectAppInitHeader('appInitHeader-home');
   homeSlider();
-  var chatData=[{"title":"AssignmentHelp","msg":"Hi, Do you need assignment help?"}];
-  setCookie("LiveSupportChat", JSON.stringify(chatData), 1);
+  if(getCookie("LiveSupportChat")===''){
+   var chatData=[{"title":"AssignmentHelp","msg":"Hi, Do you need assignment help?"}];
+   setCookie("LiveSupportChat", JSON.stringify(chatData), 1);
+  }
   chatBoxInitilaizer();
 });
 </script>
