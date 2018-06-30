@@ -49,17 +49,10 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge">26</div>
-                                    <div>New Comments!</div>
+                                    <div><b>Users Chat Queue</b></div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -381,7 +374,7 @@
                 <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bell fa-fw"></i>&nbsp;<b>New Customers</b>
+                            <i class="fa fa-bell fa-fw"></i>&nbsp;<b>New Customers visiting to your Website</b>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -561,14 +554,18 @@ $(document).ready(function(){
 	  var IPAddress=response[index].IPAddress;
 	  var SessionId=response[index].SessionId;
 	  var queueOn=response[index].queueOn;
+	  var title=IPAddress+'<b>@</b>'+SessionId;
 	      content+='<a href="#" class="list-group-item">';
 		  content+='<div class="container-fluid">';
 		  content+='<div class="row">';
-          content+='<i class="fa fa-comment fa-fw"></i> '+IPAddress+'<b>@</b>'+SessionId;
+          content+='<i class="fa fa-comment fa-fw"></i> '+title;
           content+='<span class="pull-right text-muted">'+queueOn+'</span>';
 		  content+='</div>';
 		  content+='<div class="row">';
-		  content+='<button class="btn btn-default pull-right" style="margin-top:10px;" onclick="javascript:chatBoxInitializer(\'chat_div'+index+'\');"><b>Chat with Customer</b></button>';
+		  content+='<div class="btn-group pull-right" style="margin-top:10px;">';
+		  content+='<button class="btn btn-default"><b>Manage Details</b></button>';
+		  content+='<button class="btn btn-default" onclick="javascript:chatBoxInitializer(\'chat_div'+index+'\',\''+IPAddress+'\',\''+SessionId+'\');"><b>Chat with Customer</b></button>';
+		  content+='</div>';
 		  content+='</div>';
 		  content+='</div>';
           content+='</a>'; 

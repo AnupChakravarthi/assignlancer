@@ -6,23 +6,41 @@
 function js_ajax(method,url,data,fn_output){
  $.ajax({type: method, url: url,data:data,success: function(response) { fn_output(response); } }); 
 }
+/* COLLECTIONS */
 var CHATOFFSET=0;
+var chatFormDivisions=[];
+var chatFormOffsets=[];
 var chatData=[];
-function chatBoxInitializer(div_Id){ 
+function chatBoxInitializer(div_Id,ipaddress,sessionId){ 
+var setDivisionOffset=true; 
+var showOffset=0;
+for(var index=0;index<chatFormDivisions.length;index++){
+  if(chatFormDivisions[index]==div_Id){ setDivisionOffset=false; showOffset=chatFormOffsets[index];break; }
+}
+if(setDivisionOffset){
+  chatFormDivisions[chatFormDivisions.length]=div_Id;
+  chatFormOffsets[chatFormOffsets.length]=CHATOFFSET;
+  showOffset=CHATOFFSET;
+  CHATOFFSET+=350;
+}
 // Only 3 Chats are allowed
-var box = null;
-if(box) {  box.chatbox("option", "boxManager").toggleBox();  }
-else {  box = $("#"+div_Id).chatbox({id:"You", user:{key : "value"},
-        title : '<i class="fa fa-comments" aria-hidden="true"></i> Live Chat Support',
-		offset: CHATOFFSET,
-		messageSent : function(id, user, msg) {
-        $("#"+div_Id).chatbox("option", "boxManager").addMsg(id, msg);
-		chatData.push({"title":id,"msg":msg});
-		setCookie("LiveSupportChat", JSON.stringify(chatData), 1);
-		console.log("chatData: "+JSON.stringify(chatData));
-        }});
-	CHATOFFSET+=350;       
+if(chatFormDivisions.length<=3){
+  var box = null;
+  if(box) {  box.chatbox("option", "boxManager").toggleBox();  }
+  else {  box = $("#"+div_Id).chatbox({id:"You", user:{key : "value"},
+             title : '<i class="fa fa-comments" aria-hidden="true"></i> '+ipaddress+'@'+sessionId.substring(0,10)+'...',
+		     offset: showOffset,
+		     messageSent : function(id, user, msg) {
+             $("#"+div_Id).chatbox("option", "boxManager").addMsg(id, msg);
+		     chatData.push({"title":id,"msg":msg});
+		     setCookie("LiveSupportChat", JSON.stringify(chatData), 1);
+		     console.log("chatData: "+JSON.stringify(chatData));
+        }});     
     }
+ }
+ else {
+    alert("Only 3 Chats are allowed Currently..");
+ }
 }
 </script>
 <div id="chat_div0"></div>
