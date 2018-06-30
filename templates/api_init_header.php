@@ -1,3 +1,13 @@
+<style>
+a,a:hover,a:focus { background-color:#fff;color:#000; }
+.navbar-nav>li>a:hover,.navbar-nav>li>a:focus { background-color:#fff; }
+.navbar-custom { border-bottom:2px solid #000; }
+.navbar-brand-span { font-family:logoTitle;font-size:32px;color:#000; }
+@font-face { font-family:logoTitle;src:url('fonts/LitchisIsland.ttf'); }
+@font-face { font-family:specialHeading01;src:url('fonts/Boogaloo-Regular.otf'); }
+.header-active { color:#000;padding:5px;border:2px solid #000; }
+.header-inactive { color:#000; }
+</style>
 <script type="text/javascript">
 function selectAppInitHeader(id){
  var arry_Id=["appInitHeader-home","appInitHeader-aboutUs","appInitHeader-services","appInitHeader-howItWorks",
@@ -43,12 +53,12 @@ function chatBoxInitilaizer(){
     </div>
 	<div class="collapse navbar-collapse" id="myNavbar">
 	  <ul class="nav navbar-nav pull-right">
-		<li><a href="#"><span id="appInitHeader-home"><b>Home</b></span></a></li>
-		<li><a href="#"><span id="appInitHeader-aboutUs"><b>About Us</b></span></a></li>
-		<li><a href="#"><span id="appInitHeader-services"><b>Services</b></span></a></li>
-		<li><a href="#"><span id="appInitHeader-howItWorks"><b>How it Works?</b></span></a></li>
-		<li><a href="#"><span id="appInitHeader-auth"><b>Login/Register</b></span></a></li>
-		<li><a href="#"><span id="appInitHeader-contactUs"><b>Contact Us</b></span></a></li>
+		<li><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>"><span id="appInitHeader-home"><b>Home</b></span></a></li>
+		<li><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/aboutUs"><span id="appInitHeader-aboutUs"><b>About Us</b></span></a></li>
+		<li><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/services"><span id="appInitHeader-services"><b>Services</b></span></a></li>
+		<li><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/howItWorks"><span id="appInitHeader-howItWorks"><b>How it Works?</b></span></a></li>
+		<li><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/authentication"><span id="appInitHeader-auth"><b>Login/Register</b></span></a></li>
+		<li><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/contactUs"><span id="appInitHeader-contactUs"><b>Contact Us</b></span></a></li>
     </ul>
 	</div>
   </div>

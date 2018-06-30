@@ -1,18 +1,22 @@
+<?php
+session_start();
+if(!isset($_SESSION["PROJECT_URL"])){ $_SESSION["PROJECT_URL"]="http://".$_SERVER["HTTP_HOST"]."/assignlancer/"; }
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <title>Assignlancer</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/jquery-ui.js"></script>
-  <script type="text/javascript" src="js/jquery.ui.chatbox.js"></script>
-  <link type="text/css" href="styles/jquery.ui.chatbox.css" rel="stylesheet" />
-  <link rel="stylesheet" href="styles/jquery-ui.css">
-  <link rel="stylesheet" href="styles/core-skeleton.css">
-  <link rel="stylesheet" href="styles/bootstrap.min.css">
-  <link rel="stylesheet" href="styles/font-awesome.min.css">
+  <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/jquery.min.js"></script>
+  <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/jquery-ui.js"></script>
+  <script type="text/javascript" src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/jquery.ui.chatbox.js"></script>
+  <link type="text/css" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/jquery.ui.chatbox.css" rel="stylesheet" />
+  <link rel="stylesheet" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/jquery-ui.css">
+  <link rel="stylesheet" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/core-skeleton.css">
+  <link rel="stylesheet" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/font-awesome.min.css">
 <script type="text/javascript">
 var HOMESLIDERID=1;
 function homesliderTab(id){
@@ -53,7 +57,6 @@ function homeSlider() {
 }
 </script>
 <style>
-a,a:hover,a:focus { background-color:#fff;color:#000; }
 #myCarousel .nav a small { display: block; }
 #myCarousel .nav { background: #eee; }
 .nav-justified > li > a { border-radius: 0px; }
@@ -70,15 +73,6 @@ $(document).ready(function(){
   chatBoxInitilaizer();
 });
 </script>
-<style>
-.navbar-nav>li>a:hover,.navbar-nav>li>a:focus { background-color:#fff; }
-.navbar-custom { border-bottom:2px solid #000; }
-.navbar-brand-span { font-family:logoTitle;font-size:32px;color:#000; }
-@font-face { font-family:logoTitle;src:url('fonts/LitchisIsland.ttf'); }
-@font-face { font-family:specialHeading01;src:url('fonts/Boogaloo-Regular.otf'); }
-.header-active { color:#000;padding:5px;border:2px solid #000; }
-.header-inactive { color:#000; }
-</style>
 </head>
 <body>
 <div id="chat_div"></div>
