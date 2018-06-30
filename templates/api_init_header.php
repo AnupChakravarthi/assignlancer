@@ -23,6 +23,7 @@ function selectAppInitHeader(id){
    }
  }
 }
+var chatData=JSON.parse(getCookie("LiveSupportChat"));
 function chatBoxInitilaizer(){
   var box = null;
         //  $("input[type='button']").click(function(event, ui) {
@@ -36,10 +37,17 @@ function chatBoxInitilaizer(){
                                                 messageSent : function(id, user, msg) {
                                                    // $("#log").append(id + " said: " + msg + "<br/>");
                                                     $("#chat_div").chatbox("option", "boxManager").addMsg(id, msg);
+													chatData.push({"title":id,"msg":msg});
+													setCookie("LiveSupportChat", JSON.stringify(chatData), 1);
+													console.log("chatData: "+JSON.stringify(chatData));
                                                 }});
               }
-			   $("#chat_div").chatbox("option", "boxManager").addMsg('Assignment Help', 'Hi, Do you need assignment help?');
-        //  });
+	
+	console.log("chatData: "+JSON.stringify(chatData));
+	for(var index=0;index<chatData.length;index++){
+       $("#chat_div").chatbox("option", "boxManager").addMsg(chatData[index].title, chatData[index].msg);
+    }
+		//  });
 }
 </script>
 <div class="container-fluid" style="height:52px;">

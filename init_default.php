@@ -12,6 +12,7 @@ if(!isset($_SESSION["PROJECT_URL"])){ $_SESSION["PROJECT_URL"]="http://".$_SERVE
   <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/bootstrap.min.js"></script>
   <script type="text/javascript" src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/jquery-ui.js"></script>
   <script type="text/javascript" src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/jquery.ui.chatbox.js"></script>
+  <script type="text/javascript" src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/cookies.js"></script>
   <link type="text/css" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/jquery.ui.chatbox.css" rel="stylesheet" />
   <link rel="stylesheet" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/jquery-ui.css">
   <link rel="stylesheet" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/core-skeleton.css">
@@ -29,30 +30,11 @@ function homesliderTab(id){
 }
 function homeSlider() {
  $('#myCarousel').carousel({ interval:1000 });
-/* $('#myCarousel').on('click', '.nav a', function() {
-        console.log($(this));
-			clickEvent = true;
-			$('.nav li').removeClass('active');
-			$(this).parent().addClass('active');		
- });
- */
  $('#myCarousel').on('slid.bs.carousel', function(e) {
        console.log("Slider");
 	   homesliderTab(HOMESLIDERID);
 	   HOMESLIDERID++;
 	   if(HOMESLIDERID===4){ HOMESLIDERID=0; }
-		//if(!clickEvent) {
-			// var count = $('.nav').children().length -1;
-		//	var count =2;
-		//	var current = $('.nav li.active');
-		//	current.removeClass('active').next().addClass('active');
-		//	var id = parseInt(current.data('slide-to'));
-		
-		//	if(count == id) {
-		//		$('.nav li').first().addClass('active');	
-		//	}
-	//	}
-		//clickEvent = false;
 	});
 }
 </script>
@@ -70,6 +52,8 @@ function homeSlider() {
 $(document).ready(function(){
   selectAppInitHeader('appInitHeader-home');
   homeSlider();
+  var chatData=[{"title":"AssignmentHelp","msg":"Hi, Do you need assignment help?"}];
+  setCookie("LiveSupportChat", JSON.stringify(chatData), 1);
   chatBoxInitilaizer();
 });
 </script>

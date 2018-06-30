@@ -12,7 +12,6 @@
  */
 
 var HTML_CODE='<div>';
-	HTML_CODE+='<textarea class="ui-widget-content ui-chatbox-input-box ui-corner-all" style="width:282px;"></textarea>';
 	HTML_CODE+='<div align="right" style="color:#757474;width:282px;margin-top:10px;margin-bottom:10px;">';
 	HTML_CODE+='<span style="padding:5px;border:1px solid #757474;" onclick="document.getElementById(\'f\').click();">';
 	HTML_CODE+='<i class="fa fa-file-text-o"></i>&nbsp;Upload Assignment File';
@@ -188,8 +187,10 @@ var HTML_CODE='<div>';
                     // anything?
                 })
                 .appendTo(uiChatboxContent),
-				
-            uiChatboxInputBox = (self.uiChatboxInputBox = $(HTML_CODE))
+		    uifileInputBox  = (self.uiChatboxInputBox = $(HTML_CODE))
+			.appendTo(uiChatboxContent),
+            uiChatboxInputBox = (self.uiChatboxInputBox = $('<textarea></textarea>'))
+			     .addClass('ui-widget-content ' + 'ui-chatbox-input-box' + 'ui-corner-all')
                 .appendTo(uiChatboxInput)
                 .keydown(function(event) {
                     if (event.keyCode && event.keyCode == $.ui.keyCode.ENTER) {
