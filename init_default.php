@@ -18,11 +18,17 @@
 <script type="text/javascript">
 var HOMESLIDERID=1;
 function homesliderTab(id){
- var arr_Id=["myCarousel_uploadAssignment","myCarousel_makePayment","myCarousel_recieveAssignment",
- "myCarousel_serviceAvailable"];
+ var arr_Id=["myCarousel_uploadAssignment","myCarousel_makePayment","myCarousel_recieveAssignment","myCarousel_serviceAvailable"];
+ var arr_Id_content=["myCarousel_uploadAssignment_content","myCarousel_makePayment_content",
+					 "myCarousel_recieveAssignment_content","myCarousel_serviceAvailable_content"];
  for(var index=0;index<arr_Id.length;index++){
-   if(arr_Id[index]==arr_Id[id]){ HOMESLIDERID=index;$('#'+arr_Id[index]).addClass('active'); }
-   else { $('#'+arr_Id[index]).removeClass('active'); }
+   if(arr_Id[index]==arr_Id[id]){ 
+     HOMESLIDERID=index;$('#'+arr_Id[index]).addClass('active'); 
+	 if(!$('#'+arr_Id_content[index]).hasClass('active')){ $('#'+arr_Id_content[index]).addClass('active'); }
+   }
+   else { $('#'+arr_Id[index]).removeClass('active'); 
+     if($('#'+arr_Id_content[index]).hasClass('active')){ $('#'+arr_Id_content[index]).removeClass('active'); }
+   }
  }
 }
 function homeSlider() {
@@ -46,7 +52,7 @@ function homeSlider() {
 
 <script type="text/javascript">
 $(document).ready(function(){
-  selectAppInitHeader('appInitHeader-home');
+//  selectAppInitHeader('appInitHeader-home');
   homeSlider();
   if(getCookie("LiveSupportChat")===''){
    var chatData=[{"title":"AssignmentHelp","msg":"Hi, Do you need assignment help?"}];
@@ -55,29 +61,71 @@ $(document).ready(function(){
   chatBoxInitilaizer();
 });
 </script>
+<style>
+a.a-black,a.a-black:hover { color:#000; }
+</style>
 </head>
 <body>
 <div id="chat_div"></div>
 <?php include_once 'templates/api_init_header.php'; ?>
 
+<div> 
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:100%;max-height:500px;">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="https://www.w3schools.com/bootstrap/la.jpg" alt="Los Angeles" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="https://www.w3schools.com/bootstrap/chicago.jpg" alt="Chicago" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="https://www.w3schools.com/bootstrap/ny.jpg" alt="New york" style="width:100%;">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
 <div>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<ul class="nav nav-pills nav-justified">
+      <li id="myCarousel_uploadAssignment" data-target="#myCarousel" data-slide-to="0" class="active" onclick="javascript:homesliderTab(0);">
+		<a class="a-black" href="#"><b>UPLOAD ASSIGNMENT AND GET QUOTATION</b></a>
+	  </li>
+      <li id="myCarousel_makePayment" data-target="#myCarousel" data-slide-to="1" onclick="javascript:homesliderTab(1);">
+	    <a class="a-black" href="#"><b>MAKE PAYMENT</b></a>
+	  </li>
+      <li id="myCarousel_recieveAssignment" data-target="#myCarousel" data-slide-to="2" onclick="javascript:homesliderTab(2);">
+		<a class="a-black" href="#"><b>RECIEVE ASSIGNMENT SOLUTION</b></a>
+	  </li>
+      <li id="myCarousel_serviceAvailable" data-target="#myCarousel" data-slide-to="3" onclick="javascript:homesliderTab(3);">
+		<a class="a-black" href="#"><b>SERVICES AVAILABLE</b></a>
+	  </li>
+    </ul>
 	
-		<ul class="nav nav-pills nav-justified">
-            <li id="myCarousel_uploadAssignment" data-target="#myCarousel" data-slide-to="0" class="active" onclick="javascript:homesliderTab(0);">
-			  <a href="#"><b>UPLOAD ASSIGNMENT AND GET QUOTATION</b></a>
-			</li>
-            <li id="myCarousel_makePayment" data-target="#myCarousel" data-slide-to="1" onclick="javascript:homesliderTab(1);">
-			  <a href="#"><b>MAKE PAYMENT</b></a></li>
-            <li id="myCarousel_recieveAssignment" data-target="#myCarousel" data-slide-to="2" onclick="javascript:homesliderTab(2);">
-			  <a href="#"><b>RECIEVE ASSIGNMENT SOLUTION</b></a></li>
-            <li id="myCarousel_serviceAvailable" data-target="#myCarousel" data-slide-to="3" onclick="javascript:homesliderTab(3);">
-			<a href="#"><b>SERVICES AVAILABLE</b></a></li>
-        </ul>
-		
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-            <div class="item active">
+            <div id="myCarousel_uploadAssignment_content" class="item active">
                 <img src="images/1.png" style="width:100%;">
 				
                 <div class="carousel-caption">
@@ -98,7 +146,7 @@ $(document).ready(function(){
                 </div>
             </div>
             <!-- End Item -->
-            <div class="item">
+            <div id="myCarousel_makePayment_content" class="item">
                 <img src="images/2.png" style="width:100%;">
                 <div class="carousel-caption">
 				    <i class="fa fa-5x fa-euro" aria-hidden="true"></i>
@@ -120,7 +168,7 @@ $(document).ready(function(){
                 </div>
             </div>
             <!-- End Item -->
-            <div class="item">
+            <div id="myCarousel_recieveAssignment_content" class="item">
                 <img src="images/3.png" style="width:100%;">
                 <div class="carousel-caption">
                     <i class="fa fa-5x fa-cloud-download" aria-hidden="true"></i><br/>
@@ -139,7 +187,7 @@ $(document).ready(function(){
                 </div>
             </div>
             <!-- End Item -->
-            <div class="item">
+            <div id="myCarousel_serviceAvailable_content" class="item">
                 <img src="images/4.png" style="width:100%;">
                 <div class="carousel-caption">
                     <i class="fa fa-5x fa-cloud-download" aria-hidden="true"></i><br/>

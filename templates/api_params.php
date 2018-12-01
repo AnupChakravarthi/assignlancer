@@ -1,6 +1,12 @@
 <?php
-session_start();
-if(!isset($_SESSION["PROJECT_URL"])){ $_SESSION["PROJECT_URL"]="http://".$_SERVER["HTTP_HOST"]."/assignlancer/"; }
+$_SESSION["PROJECT_MODE"]='DEBUG'; // DEBUG / PROD
+if($_SESSION["PROJECT_MODE"]=='DEBUG'){
+$_SESSION["PROJECT_VERSION_NUMBER"]='1.0';
+$_SESSION["PROJECT_URL"]="http://".$_SERVER["HTTP_HOST"]."/assignlancer/";
+} else {
+$_SESSION["PROJECT_VERSION_NUMBER"]='1.0';
+// $_SESSION["PROJECT_URL"]="http://.com/".$_SESSION["PROJECT_VERSION_NUMBER"]."/";
+}
 ?>
 <script type="text/javascript">
 var PROJECT_URL='<?php if(isset($_SESSION["PROJECT_URL"])) { echo $_SESSION["PROJECT_URL"]; } ?>';
