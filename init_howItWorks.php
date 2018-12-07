@@ -21,9 +21,68 @@ $(document).ready(function(){
   chatBoxInitilaizer();
 });
 </script>
+<style>
+body { background-color:#337ab7; }
+</style>
 </head>
 <body>
 <div id="chat_div"></div>
 <?php include_once 'templates/api_init_header.php'; ?>
+<div class="container-fluid" style="margin-top:10px;">
+<div class="row">
+
+<div class="col-xs-12 col-md-3">
+<!-- -->
+<div class="list-group">
+<div class="list-group-item">
+<h4><span class="label label-primary">1</span> <span style="color:#337ab7;"><b>Place your Order</b></span></h4>
+</div>
+</div>
+<!-- -->
+</div>
+
+<div class="col-xs-12 col-md-3">
+<!-- -->
+<div class="list-group">
+<div class="list-group-item">
+<h4><span class="label label-primary">2</span> <span style="color:#337ab7;"><b>Complete Secure Payment</b></span></h4>
+</div>
+</div>
+<!-- -->
+</div>
+
+<div class="col-xs-12 col-md-6">
+<!-- -->
+<div class="list-group">
+<div class="list-group-item">
+<h4><span class="label label-primary">3</span> <span style="color:#337ab7;"><b>Download your Drafts from your Dashboard</b></span></h4>
+</div>
+</div>
+<!-- -->
+</div>
+
+<div class="col-xs-12 col-md-3">
+<!-- -->
+<div class="list-group">
+<div class="list-group-item">
+<h4><span class="label label-primary">4</span> <span style="color:#337ab7;"><b>Provide your Comments</b></span></h4>
+</div>
+</div>
+<!-- -->
+</div>
+
+
+<div class="col-xs-12 col-md-3">
+<!-- -->
+<div class="list-group">
+<div class="list-group-item">
+<h4><span class="label label-primary">5</span> <span style="color:#337ab7;"><b>Download Final Paper</b></span></h4>
+</div>
+</div>
+<!-- -->
+</div>
+
+</div>
+</div>
 </body>
 </html>

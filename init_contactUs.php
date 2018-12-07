@@ -23,7 +23,60 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+<style>
+body { background-color:#4caf50; }
+</style>
 <div id="chat_div"></div>
 <?php include_once 'templates/api_init_header.php'; ?>
+<div class="container-fluid" style="margin-top:5%;">
+<div class="row">
+ <div class="col-md-4">
+ 
+ </div>
+ <div class="col-md-4">
+  <!-- -->
+  <div class="list-group">
+   <div class="list-group-item">
+   
+     <div class="container-fluid">
+	 <div class="row">
+     <div align="center" class="col-xs-12">
+      <h4 style="letter-spacing:2px;"><b>Submit your Query</b></h4>
+     </div>
+	 <div class="col-xs-12">
+	  <!-- -->
+	  <div class="form-group">
+	    <label>Name</label>
+		<input type="text" class="form-control" placeholder="Enter your Name"/>
+	  </div>
+	  <div class="form-group">
+	    <label>Email</label>
+		<input type="text" class="form-control" placeholder="Enter your Email"/>
+	  </div>
+	  <div class="form-group">
+	    <label>Subject</label>
+		<input type="text" class="form-control" placeholder="Enter your Subject"/>
+	  </div>
+	  <div class="form-group">
+	    <label>Message</label>
+		<textarea type="text" class="form-control" placeholder="Enter your Message"></textarea>
+	  </div>
+	  <div class="form-group">
+	   <button class="btn btn-primary form-control"><b>Send</b></button>
+	  </div>
+ 	  <!-- -->
+	 </div>
+	 </div>
+	 </div>
+	 
+   </div>
+  </div>
+  <!-- -->
+ </div>
+ <div class="col-md-4">
+ 
+ </div>
+</div>
+</div>
 </body>
 </html>

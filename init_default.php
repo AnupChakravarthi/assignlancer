@@ -132,7 +132,7 @@ a.a-black,a.a-black:hover { color:#000; }
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
 body { font-family:'Open Sans','sans-serif'; }
 .item-1,.item-2,.item-3{ position:absolute;display:block;top:2em;width:60%;font-size:2em;animation-duration: 20s;
-	animation-timing-function: ease-in-out;animation-iteration-count: infinite;color:#fff; }
+	animation-timing-function: ease-in-out;animation-iteration-count: infinite;color:#000; }
 .item-1{ animation-name: anim-1; }
 .item-2{ animation-name: anim-2; }
 .item-3{ animation-name: anim-3; }
@@ -170,16 +170,25 @@ body { font-family:'Open Sans','sans-serif'; }
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="images/1.png" alt="Los Angeles" style="width:100%;">
+        <img src="images/slider/1.jpg" alt="Los Angeles" style="width:100%;">
       </div>
 
       <div class="item">
-        <img src="images/2.png" alt="Chicago" style="width:100%;">
+        <img src="images/slider/2.jpg" alt="Chicago" style="width:100%;">
       </div>
     
       <div class="item">
-        <img src="images/3.png" alt="New york" style="width:100%;">
+        <img src="images/slider/3.jpg" alt="New york" style="width:100%;">
       </div>
+	  
+	  <div class="item">
+        <img src="images/slider/4.jpg" alt="New york" style="width:100%;">
+      </div>
+	  
+	  <div class="item">
+        <img src="images/slider/5.jpg" alt="New york" style="width:100%;">
+      </div>
+	  
     </div>
 
     <!-- Left and right controls -->
@@ -528,11 +537,7 @@ best and I would like to give all my assignment to him/her next time.
 </div>
 </div>
 
-<div class="container-fluid">
- <div align="center" class="col-xs-12">
-   <img src="images/anups-logo.jpg" style="width:250px;height:auto;margin-top:25px;margin-bottom:25px;"/>
- </div>
-</div>
+<?php include_once 'templates/api_init_bottom.php'; ?>
 
 </body>
 </html>

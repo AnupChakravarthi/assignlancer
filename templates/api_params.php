@@ -17,4 +17,7 @@ console.log("PROJECT_URL: "+PROJECT_URL);
 console.log("SESSION_ID: "+SESSION_ID);
 console.log("CLIENT_IPADDRESS: "+CLIENT_IPADDRESS);
 console.log("QUEUE_ADDEDON: "+QUEUE_ADDEDON);
+
+var ACCOUNT_TYPE='<?php if(isset($_SESSION["ACCOUNT_TYPE"])) { echo $_SESSION["ACCOUNT_TYPE"]; } ?>';
+console.log("ACCOUNT_TYPE: "+ACCOUNT_TYPE);
 </script>

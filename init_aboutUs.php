@@ -21,9 +21,89 @@ $(document).ready(function(){
   chatBoxInitilaizer();
 });
 </script>
+<style>
+
+</style>
 </head>
 <body>
 <div id="chat_div"></div>
 <?php include_once 'templates/api_init_header.php'; ?>
+<div class="container-fluid"  style="background-color:#2196f3;">
+
+<div class="row">
+<div align="center" class="col-xs-12 col-md-12">
+<h3 style="color:#fff;"><b>WHY US?</b></h3>
+</div>
+</div>
+
+<div class="row">
+
+<div align="center" class="col-xs-12 col-md-4">
+<!-- Confidentiality ::: Start -->
+<div class="list-group">
+<div class="list-group-item">
+<div align="center">
+<i class="fa fa-3x fa-lock" style="color:#e91e63;" aria-hidden="true"></i>
+</div>
+
+<div align="center">
+<h4 style="color:#e91e63;"><b>CONFIDENTIALITY</b></h4>
+</div>
+
+<div align="center">
+We keep all the information about your order totally secure.
+</div>
+
+</div>
+</div>
+<!-- Confidentiality ::: End -->
+</div>
+
+<div align="center" class="col-xs-12 col-md-4">
+<!-- Originality ::: Start -->
+<div class="list-group">
+<div class="list-group-item">
+<div align="center">
+<i style="color:#f99f1b;" class="fa fa-3x fa-check" aria-hidden="true"></i>
+</div>
+
+<div align="center">
+<h4 style="color:#f99f1b;"><b>ORIGINALITY</b></h4>
+</div>
+
+<div align="center">
+We guarentee you, you will get 100% Original Content.
+</div>
+
+</div>
+</div>
+<!-- Originality ::: End -->
+</div>
+
+<div align="center" class="col-xs-12 col-md-4">
+<!-- Timeliness ::: Start -->
+<div class="list-group">
+<div class="list-group-item">
+
+<div align="center">
+<i style="color:#0f9614;" class="fa fa-3x fa-clock-o" aria-hidden="true"></i>
+</div>
+
+<div align="center">
+<h4 style="color:#0f9614;"><b>TIMELINESS</b></h4>
+</div>
+
+<div align="center">
+We will complete your assignment within a tight timeframe.
+</div>
+
+</div>
+</div>
+<!-- Timeliness ::: End -->
+</div>
+
+</div>
+
+</div>
 </body>
 </html>

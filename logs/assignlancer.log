@@ -544,3 +544,257 @@ Sunday 2nd December 2018 11:28:18 PM [INFO] ::: [app.database.php]  Database con
 Sunday 2nd December 2018 11:28:18 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='e0lm5i5td1t2l6303msk81r6k3'; 
 Sunday 2nd December 2018 11:29:12 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Sunday 2nd December 2018 11:29:12 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='e0lm5i5td1t2l6303msk81r6k3'; 
+Friday 7th December 2018 03:55:41 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 03:55:42 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 03:55:43 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id,finished) SELECT * FROM (SELECT 'U67829257701624' As queue_Id, 'ONLINE' As queueStatus, '127.0.0.1' As IPAddress,  '2mqmi3u5qigq0gdj3t1ft58fe2' As SessionId,  '' As toAgent, '2018-12-07 15:55:41' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id,  'N' As finished) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'))=0;  
+Friday 7th December 2018 03:55:53 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 03:55:53 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 03:55:55 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 03:55:55 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:01:55 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:01:55 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:02:04 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:02:04 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:02:23 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:02:23 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:02:30 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:02:30 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:05:18 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:05:18 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:05:45 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:05:45 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:06:00 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:06:00 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:07:00 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:07:00 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:11:29 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:11:29 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:12:01 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:12:01 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:12:02 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:12:02 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:12:45 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:12:45 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:13:06 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:13:06 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:13:21 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:13:21 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:14:14 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:14:14 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:15:10 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:15:10 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:15:57 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:15:57 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:16:53 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:16:53 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:17:37 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:17:37 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:17:45 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:17:45 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:17:46 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:17:46 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:17:47 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:17:47 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:17:48 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:17:48 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:18:16 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:18:16 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:18:17 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:18:17 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:18:20 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:18:20 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:19:00 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:19:00 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:19:31 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:19:31 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:19:48 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:19:48 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:20:08 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:20:08 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:20:54 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:20:54 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:21:12 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:21:12 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:21:32 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:21:32 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 04:21:40 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 04:21:40 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 07:51:25 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 07:51:25 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 07:52:52 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 07:52:52 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 07:53:30 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 07:53:30 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 08:07:48 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 08:07:48 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 08:08:06 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 08:08:06 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 08:08:16 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 08:08:16 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 08:08:36 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 08:08:36 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 08:09:04 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 08:09:04 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 08:09:17 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 08:09:17 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 08:14:21 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 08:14:21 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 08:39:44 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 08:39:44 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 09:56:04 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 09:56:05 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 09:56:05 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id,finished) SELECT * FROM (SELECT 'U37649921525321' As queue_Id, 'ONLINE' As queueStatus, '192.168.1.6' As IPAddress,  'bb1gkbmli4ud7saetomjh0utm1' As SessionId,  '' As toAgent, '2018-12-07 21:56:04' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id,  'N' As finished) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='192.168.1.6') AND (SessionId='bb1gkbmli4ud7saetomjh0utm1'))=0;  
+Friday 7th December 2018 09:56:06 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 09:56:07 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 09:56:07 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id,finished) SELECT * FROM (SELECT 'U79171173580579' As queue_Id, 'ONLINE' As queueStatus, '192.168.1.6' As IPAddress,  'r6knqgmm2qnlut3vs8hva3qrb2' As SessionId,  '' As toAgent, '2018-12-07 21:56:06' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id,  'N' As finished) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='192.168.1.6') AND (SessionId='r6knqgmm2qnlut3vs8hva3qrb2'))=0;  
+Friday 7th December 2018 09:56:07 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 09:56:08 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 09:56:09 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id,finished) SELECT * FROM (SELECT 'U15573526969898' As queue_Id, 'ONLINE' As queueStatus, '192.168.1.6' As IPAddress,  'dnrvcj0pihnfn9jtb51es13eh6' As SessionId,  '' As toAgent, '2018-12-07 21:56:07' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id,  'N' As finished) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='192.168.1.6') AND (SessionId='dnrvcj0pihnfn9jtb51es13eh6'))=0;  
+Friday 7th December 2018 10:20:48 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:20:48 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='192.168.1.6' AND SessionId='dnrvcj0pihnfn9jtb51es13eh6'; 
+Friday 7th December 2018 10:29:08 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:29:08 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='192.168.1.6' AND SessionId='dnrvcj0pihnfn9jtb51es13eh6'; 
+Friday 7th December 2018 10:29:54 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:29:54 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='192.168.1.6' AND SessionId='dnrvcj0pihnfn9jtb51es13eh6'; 
+Friday 7th December 2018 10:32:44 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:32:44 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='192.168.1.6' AND SessionId='dnrvcj0pihnfn9jtb51es13eh6'; 
+Friday 7th December 2018 10:32:46 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:32:46 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='192.168.1.6' AND SessionId='dnrvcj0pihnfn9jtb51es13eh6'; 
+Friday 7th December 2018 10:34:14 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:34:14 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:43:21 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:43:21 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:44:08 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:44:08 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='192.168.1.6' AND SessionId='dnrvcj0pihnfn9jtb51es13eh6'; 
+Friday 7th December 2018 10:45:08 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:45:08 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:46:07 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:46:07 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='192.168.1.6' AND SessionId='dnrvcj0pihnfn9jtb51es13eh6'; 
+Friday 7th December 2018 10:46:12 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:46:12 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='192.168.1.6' AND SessionId='dnrvcj0pihnfn9jtb51es13eh6'; 
+Friday 7th December 2018 10:46:14 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:46:14 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='192.168.1.6' AND SessionId='dnrvcj0pihnfn9jtb51es13eh6'; 
+Friday 7th December 2018 10:46:20 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:46:20 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:46:38 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:46:38 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='192.168.1.6' AND SessionId='dnrvcj0pihnfn9jtb51es13eh6'; 
+Friday 7th December 2018 10:46:46 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:46:46 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:47:40 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:47:40 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:49:35 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:49:35 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:49:58 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:49:58 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:50:08 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:50:08 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:50:18 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:50:18 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:50:33 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:50:33 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:51:48 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:51:48 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:52:20 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:52:20 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='192.168.1.6' AND SessionId='dnrvcj0pihnfn9jtb51es13eh6'; 
+Friday 7th December 2018 10:53:17 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:53:17 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:55:06 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:55:06 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:55:26 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:55:26 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:56:25 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:56:25 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:57:06 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:57:06 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:58:17 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:58:17 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:59:45 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:59:45 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 10:59:54 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 10:59:54 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:01:10 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:01:10 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:04:28 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:04:28 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:04:35 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:04:35 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:12:06 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:12:06 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:15:32 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:15:32 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:16:59 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:16:59 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:18:03 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:18:03 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:19:00 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:19:00 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:20:56 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:20:56 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:21:22 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:21:22 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:22:17 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:22:17 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:23:14 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:23:14 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:24:04 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:24:04 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:24:58 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:24:58 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:25:28 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:25:28 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:25:57 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:25:57 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:26:39 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:26:39 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:28:01 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:28:01 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:29:09 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:29:09 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:29:10 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:29:10 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:29:12 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:29:12 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:29:14 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:29:14 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:29:15 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:29:15 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:29:18 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:29:18 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:29:24 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:29:24 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:29:48 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:29:48 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:29:51 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:29:51 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:36:19 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:36:19 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:37:00 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:37:00 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:37:13 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:37:13 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:37:34 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:37:34 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:37:46 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:37:46 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:38:20 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:38:20 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:38:32 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:38:32 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:41:07 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:41:07 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:41:24 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:41:24 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:42:57 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:42:57 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:46:32 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:46:32 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:46:33 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:46:33 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:47:03 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:47:03 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:48:33 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:48:33 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:49:01 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:49:01 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
+Friday 7th December 2018 11:49:14 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 7th December 2018 11:49:14 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='2mqmi3u5qigq0gdj3t1ft58fe2'; 
