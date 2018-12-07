@@ -273,14 +273,18 @@ body::-webkit-scrollbar-thumb { background-color: #000000; }
 		<li id="appInitHeader-auth" data-toggle="modal" data-target="#customerLoginRegisterModal"><a href="#"><span><b>Login/Register</b></span></a></li>
 		<li id="appInitHeader-contactUs"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/contactUs"><span><b>Contact Us</b></span></a></li>
        <?php } else if($_SESSION["ACCOUNT_TYPE"]=='CUSTOMER_LIVESUPPORT'){ ?>
-	    <li id="appInitHeader-livesupport-dashboard"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/livesupport/dashboard"><span><b>Dashboard</b></span></a></li>
+	    <li id="appInitHeader-livesupport-dashboard"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/livesupport/dashboard"><span><b>My Dashboard</b></span></a></li>
 		<li id="appInitHeader-livesupport-logout"><a href="#"><span><b>logout</b></span></a></li>
 	   <?php } else if($_SESSION["ACCOUNT_TYPE"]=='CUSTOMERS'){ ?>
-		<li id="appInitHeader-customer-dashboard"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/customer/dashboard"><span><b>Dashboard</b></span></a></li>
-	    <li id="appInitHeader-livesupport-logout"><a href="#"><span><b>logout</b></span></a></li>
+		<li id="appInitHeader-customer-dashboard"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/customer/dashboard"><span><b>My Dashboard</b></span></a></li>
+	    <li id="appInitHeader-customer-logout"><a href="#"><span><b>logout</b></span></a></li>
 	   <?php } else if($_SESSION["ACCOUNT_TYPE"]=='ADMINISTRATOR'){ ?>
-	    <li id="appInitHeader-admin-dashboard"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/administrator/dashboard"><span><b>Dashboard</b></span></a></li>
-	    <li id="appInitHeader-livesupport-logout"><a href="#"><span><b>logout</b></span></a></li>
+	    <li id="appInitHeader-admin-dashboard"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/administrator/dashboard"><span><b>My Dashboard</b></span></a></li>
+	    <li id="appInitHeader-admin-myprofile"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/administrator/dashboard"><span><b>My Profile</b></span></a></li>
+		<li id="appInitHeader-admin-livesupportManage"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/administrator/dashboard"><span><b>Live Support Management</b></span></a></li>
+		<li id="appInitHeader-admin-payManage"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/administrator/dashboard"><span><b>Revenue Management</b></span></a></li>
+		
+		<li id="appInitHeader-admin-logout"><a href="#"><span><b>logout</b></span></a></li>
 	  <?php } ?>
    </ul>
 	</div>
