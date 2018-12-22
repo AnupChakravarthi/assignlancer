@@ -1142,3 +1142,12 @@ Saturday 22nd December 2018 10:18:33 PM [INFO] ::: [app.database.php]  Database 
 Saturday 22nd December 2018 10:18:33 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE accounts SET  email_val='Y' WHERE account_Id='U01866653935797'; 
 Saturday 22nd December 2018 10:18:34 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Saturday 22nd December 2018 10:18:34 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='36ednv4o745nbnhvjkr1vnpup0'; 
+Saturday 22nd December 2018 11:47:50 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 22nd December 2018 11:47:51 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 22nd December 2018 11:47:51 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id,finished) SELECT * FROM (SELECT 'UQ96048580' As queue_Id, 'ONLINE' As queueStatus, '127.0.0.1' As IPAddress,  '9pf6trbttnqsl3k05i55sejj02' As SessionId,  '' As toAgent, '2018-12-22 23:47:50' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id,  'N' As finished) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='9pf6trbttnqsl3k05i55sejj02'))=0;  
+Saturday 22nd December 2018 11:47:52 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 22nd December 2018 11:47:52 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='9pf6trbttnqsl3k05i55sejj02'; 
+Saturday 22nd December 2018 11:48:09 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 22nd December 2018 11:48:10 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 22nd December 2018 11:48:19 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 22nd December 2018 11:58:25 PM [INFO] ::: [app.database.php]  Database connected Successfully 

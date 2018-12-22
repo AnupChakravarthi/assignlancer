@@ -2,6 +2,7 @@
 session_start();
 include_once 'templates/api_params.php';
 include_once 'templates/api_js.php';
+if(!isset($_SESSION["ACCOUNT_TYPE"])){
  ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -551,3 +552,8 @@ best and I would like to give all my assignment to him/her next time.
 
 </body>
 </html>
+<?php } else { 
+      if($_SESSION["ACCOUNT_TYPE"]=='CUSTOMERS') { header("Location:".$_SESSION["PROJECT_URL"].'app/customer/dashboard'); } 
+ else if($_SESSION["ACCOUNT_TYPE"]=='CUSTOMER_LIVESUPPORT') { header("Location:".$_SESSION["PROJECT_URL"].'app/liveSupport/dashboard'); } 
+ else if($_SESSION["ACCOUNT_TYPE"]=='ADMINISTRATOR') { header("Location:".$_SESSION["PROJECT_URL"].'app/admin/dashboard'); } 
+} ?>
