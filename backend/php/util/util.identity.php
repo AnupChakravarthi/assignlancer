@@ -62,13 +62,13 @@
      $genId=new GenerateIdentity();
 	 $idQuery=new IdentityQuery();
 	 $idObj=new Identity();
-	 $id=$genId->get_account_Id();
+	 $id=$genId->get_order_Id();
 	 $query=$idQuery->query_check_order_Id($id);
      $dbObj=new Database();
 	 $jsonData=$dbObj->getJSONData($query);
 	 $dejsonData=json_decode($jsonData);
 	 if($dejsonData[0]->{'count(*)'}!='0'){
-	    $id=$idObj->get_account_Id();
+	    $id=$idObj->get_order_Id();
 	 }
 	 return $id;
    }
@@ -77,13 +77,13 @@
      $genId=new GenerateIdentity();
 	 $idQuery=new IdentityQuery();
 	 $idObj=new Identity();
-	 $id=$genId->get_account_Id();
+	 $id=$genId->get_queue_Id();
 	 $query=$idQuery->query_check_queue_Id($id);
      $dbObj=new Database();
 	 $jsonData=$dbObj->getJSONData($query);
 	 $dejsonData=json_decode($jsonData);
 	 if($dejsonData[0]->{'count(*)'}!='0'){
-	    $id=$idObj->get_account_Id();
+	    $id=$idObj->get_queue_Id();
 	 }
 	 return $id;
    }
@@ -92,13 +92,13 @@
     $genId=new GenerateIdentity();
 	 $idQuery=new IdentityQuery();
 	 $idObj=new Identity();
-	 $id=$genId->get_account_Id();
+	 $id=$genId->get_chat_Id();
 	 $query=$idQuery->query_check_chat_Id($id);
      $dbObj=new Database();
 	 $jsonData=$dbObj->getJSONData($query);
 	 $dejsonData=json_decode($jsonData);
 	 if($dejsonData[0]->{'count(*)'}!='0'){
-	    $id=$idObj->get_account_Id();
+	    $id=$idObj->get_chat_Id();
 	 }
 	 return $id;
    }

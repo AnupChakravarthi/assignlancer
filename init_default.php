@@ -1,6 +1,8 @@
 <?php 
 session_start();
-include_once 'templates/api_params.php'; ?>
+include_once 'templates/api_params.php';
+include_once 'templates/api_js.php';
+ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -18,6 +20,7 @@ include_once 'templates/api_params.php'; ?>
   <link rel="stylesheet" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/font-awesome.min.css">
 <script type="text/javascript">
+var param = '<?php if(isset($_GET["param"])){ echo $_GET["param"]; } ?>';
 var HOMESLIDERID=1;
 function homesliderTab(id){
  var arr_Id=["myCarousel_uploadAssignment","myCarousel_makePayment","myCarousel_recieveAssignment","myCarousel_serviceAvailable"];
@@ -55,6 +58,11 @@ body { overflow-y:scroll; }
 
 <script type="text/javascript">
 $(document).ready(function(){
+ if(param==='login'){
+   $('#customerLoginModal').modal();
+   div_display_success('signin_customer_warnings','S001');
+   $('#signin_customer_warnings_row').css('height','80px');
+ }
  selectAppInitHeader('appInitHeader-home');
  $("#sliderCarousel").carousel({interval: 4000});
   homeSlider();

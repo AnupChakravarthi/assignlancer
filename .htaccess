@@ -7,12 +7,18 @@ RewriteEngine on
 #ErrorDocument 404 http://localhost/mylocalhook/
 
 DirectoryIndex init_default.php
+RewriteRule login init_default.php?param=login [NC,L]
+
 RewriteRule app/aboutUs init_aboutUs.php [NC,L]
 RewriteRule app/services init_services.php [NC,L]
 RewriteRule app/howItWorks init_howItWorks.php [NC,L]
 RewriteRule app/authentication init_auth.php [NC,L]
 RewriteRule app/contactUs init_contactUs.php [NC,L]
 
+RewriteRule validate/([^/]+)$ backend/php/dac/controller.authentication.php?action=UPDATE_EMAIL_VALIDATED&account_Id=$1 [NC,L]
+
+RewriteRule app/admin/dashboard backend/users_admin/index.php [NC,L]
+RewriteRule app/customer/dashboard backend/users_customer/index.php [NC,L]
 RewriteRule app/liveSupport/dashboard backend/users_livesupport/index.php [NC,L]
 
 RewriteRule ([^/]+)/styles/([^/]+)$ styles/$2 [NC,L]
