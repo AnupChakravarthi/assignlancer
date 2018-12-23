@@ -553,7 +553,7 @@ best and I would like to give all my assignment to him/her next time.
 </body>
 </html>
 <?php } else { 
-      if($_SESSION["ACCOUNT_TYPE"]=='CUSTOMERS') { header("Location:".$_SESSION["PROJECT_URL"].'app/customer/dashboard'); } 
+      if($_SESSION["ACCOUNT_TYPE"]=='CUSTOMERS') { header("Location:".$_SESSION["PROJECT_URL"].'app/students/dashboard'); } 
  else if($_SESSION["ACCOUNT_TYPE"]=='CUSTOMER_LIVESUPPORT') { header("Location:".$_SESSION["PROJECT_URL"].'app/liveSupport/dashboard'); } 
  else if($_SESSION["ACCOUNT_TYPE"]=='ADMINISTRATOR') { header("Location:".$_SESSION["PROJECT_URL"].'app/admin/dashboard'); } 
 } ?>

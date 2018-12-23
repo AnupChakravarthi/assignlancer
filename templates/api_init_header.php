@@ -168,6 +168,7 @@ var pwd = document.getElementById("signin_customer_pwd").value;
 		  js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.php',
 		  { action:'LOGIN_AUTHENTICATION', email:email, acc_pwd:pwd },function(response){
 		    console.log(response);
+			window.location.href=PROJECT_URL+'app/students/dashboard';
 		  });
 		  
 		} else { div_display_warning('signin_customer_warnings','W003'); }
