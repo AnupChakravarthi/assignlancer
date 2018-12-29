@@ -21,6 +21,8 @@ RewriteRule app/admin/dashboard backend/users_admin/index.php [NC,L]
 
 RewriteRule app/students/dashboard backend/users_students/index.php [NC,L]
 RewriteRule app/students/manageOrders backend/users_students/manageOrders.php [NC,L]
+RewriteRule app/students/profile backend/users_students/user_profile.php [NC,L]
+
 
 RewriteRule app/liveSupport/dashboard backend/users_livesupport/index.php [NC,L]
 

@@ -1,7 +1,3 @@
-<style>
-.hide-block { display:none; }
-.red { color:red; }
-</style>
 <script type="text/javascript">
 function createNewOrder_addDoc(){
  document.getElementById("createNewOrder_fileBtn").click();

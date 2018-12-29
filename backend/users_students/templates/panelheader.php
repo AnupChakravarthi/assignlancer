@@ -4,6 +4,8 @@ body { font-size:12px; }
 .mtop15p { margin-top:15px; }
 .navbar-brand-span { font-family:logoTitle;font-size:32px;color:#000; }
 @font-face { font-family:logoTitle;src:url('fonts/LitchisIsland.ttf'); }
+.hide-block { display:none; }
+.red { color:red; }
 </style>
 <script type="text/javascript">
 function js_ajax(method,url,data,fn_output){
@@ -254,7 +256,10 @@ if(chatFormDivisions.length<=3){
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li>
+						  <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/students/profile">
+						   <i class="fa fa-user fa-fw"></i> My Profile
+						  </a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>

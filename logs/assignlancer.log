@@ -1238,3 +1238,16 @@ Saturday 29th December 2018 12:06:41 PM [INFO] ::: [app.database.php]  Database 
 Saturday 29th December 2018 12:06:45 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Saturday 29th December 2018 01:23:37 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Saturday 29th December 2018 01:26:27 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 30th December 2018 12:03:16 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 30th December 2018 12:03:17 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 30th December 2018 12:03:19 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 30th December 2018 12:21:25 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 30th December 2018 12:26:17 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 30th December 2018 12:26:18 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 30th December 2018 12:26:18 AM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id,finished) SELECT * FROM (SELECT 'UQ73775733' As queue_Id, 'ONLINE' As queueStatus, '127.0.0.1' As IPAddress,  'smdid51g4v7berap0n6gbe7e93' As SessionId,  '' As toAgent, '2018-12-30 00:26:17' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id,  'N' As finished) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='smdid51g4v7berap0n6gbe7e93'))=0;  
+Sunday 30th December 2018 12:30:19 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 30th December 2018 12:30:20 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 30th December 2018 12:30:22 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 30th December 2018 12:44:42 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 30th December 2018 12:45:43 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 30th December 2018 12:48:25 AM [INFO] ::: [app.database.php]  Database connected Successfully 
