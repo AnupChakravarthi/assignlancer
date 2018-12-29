@@ -1,4 +1,7 @@
 <style>
+body { font-size:12px; }
+.label { font-size:11px; }
+.mtop15p { margin-top:15px; }
 .navbar-brand-span { font-family:logoTitle;font-size:32px;color:#000; }
 @font-face { font-family:logoTitle;src:url('fonts/LitchisIsland.ttf'); }
 </style>
@@ -288,10 +291,7 @@ if(chatFormDivisions.length<=3){
                             <a href="#"><i class="fa fa-shopping-cart fa-fw"></i> <b>My Orders</b><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                              <li>
-                               <a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/students/createNewOrder"><i class="fa fa-list fa-fw"></i> Create New Order</a>
-                             </li>
-							 <li>
-                               <a href="flot.html"><i class="fa fa-table fa-fw"></i> View My Orders</a>
+                               <a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/students/manageOrders"><i class="fa fa-list fa-fw"></i> <b>Manage Orders</b></a>
                              </li>
                             </ul>
                             <!-- /.nav-second-level -->

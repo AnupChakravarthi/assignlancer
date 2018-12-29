@@ -34,45 +34,44 @@ th { font-size:14px; }
 </style>
 </head>
 <body>
+    <!-- jQuery -->
+    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- DataTables JavaScript -->
+    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/datatables-responsive/dataTables.responsive.js"></script>
+   
+    <!-- Morris Charts JavaScript -->
+    <!--script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/raphael/raphael.min.js"></script>
+    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/morrisjs/morris.min.js"></script>
+    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/data/morris-data.js"></script-->
+	
+	<script type="text/javascript" src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/jquery-ui.js"></script>
+    <script type="text/javascript" src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/jquery.ui.chatbox.js"></script>
+    <script type="text/javascript" src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/cookies.js"></script>
+  
+    <link type="text/css" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/jquery.ui.chatbox.css" rel="stylesheet" />
+    <link rel="stylesheet" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/jquery-ui.css">
+   <!-- Custom Theme JavaScript -->
+    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/dist/sb-admin-2.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+ sel_tab_createNewOrder('createNewOrder_tab_howItWorks');
+});
+</script>
 <div id="wrapper">
- <?php include_once 'panelheader.php'; ?>
+ <?php include_once 'templates/panelheader.php'; ?>
  <div id="page-wrapper">
     <div class="row">
 	
       <div class="col-lg-6">
-	  <div class="panel panel-default"  style="margin-top:15px;">
-	    <div class="panel-heading">
-	      <i class="fa fa-table fa-fw"></i> <b>Create New Order</b>
-	    </div>
-		<div class="panel-body">
-		  <!-- -->
-	      <div class="form-group">
-	        <label>Topic</label>
-		    <input type="text" class="form-control" placeholder="Enter Topic Name"/>
-		  </div>
-		
-		  <div class="form-group">
-		    <label>Topic Description</label>
-		    <textarea class="form-control" placeholder="Enter Topic Description"></textarea>
-		  </div>
-		
-		  <div class="form-group">
-<script type="text/javascript">
-function createNewOrder_addDoc(){
- document.getElementById("createNewOrder_fileBtn").click();
-}
-</script>
-		   <button class="btn btn-default pull-right" onclick="javascript:createNewOrder_addDoc();"><b>Add Supporting Documents</b></button>
-		   <input name="filesToUpload[]" id="createNewOrder_fileBtn" type="file" style="visibility:hidden;" multiple="true"/>
-		  </div>
-		
-		  <div class="form-group">
-		    <button class="btn btn-primary form-control"  style="margin-top:10px;"><b>Place your Order</b></button>
-		  </div>
-		 <!-- -->
-	    </div>
-	  </div>
-	  
+	    <?php include_once 'templates/createNewOrder.php'; ?>
 	  </div>
 	  
 	  <div class="col-lg-6">
@@ -126,32 +125,6 @@ function createNewOrder_addDoc(){
 </div>
 <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/metisMenu/metisMenu.min.js"></script>
-    <!-- DataTables JavaScript -->
-    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/datatables-responsive/dataTables.responsive.js"></script>
-   
-    <!-- Morris Charts JavaScript -->
-    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/raphael/raphael.min.js"></script>
-    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/morrisjs/morris.min.js"></script>
-    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/data/morris-data.js"></script>
-	
-	<script type="text/javascript" src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/jquery-ui.js"></script>
-    <script type="text/javascript" src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/jquery.ui.chatbox.js"></script>
-    <script type="text/javascript" src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/cookies.js"></script>
-  
-    <link type="text/css" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/jquery.ui.chatbox.css" rel="stylesheet" />
-    <link rel="stylesheet" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/jquery-ui.css">
-   <!-- Custom Theme JavaScript -->
-    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/dist/sb-admin-2.js"></script>
 
 </body>
 
