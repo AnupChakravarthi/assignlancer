@@ -8,6 +8,10 @@ body { font-size:12px; }
 .red { color:red; }
 </style>
 <script type="text/javascript">
+function user_logout(){
+ js_ajax("POST",PROJECT_URL+'backend/php/api/app.session.php',{ action:'DestroySession' },
+ function(response){ console.log(response);window.location.href=PROJECT_URL; });
+}
 function js_ajax(method,url,data,fn_output){
  $.ajax({type: method, url: url,data:data,success: function(response) { fn_output(response); } }); 
 }
@@ -264,7 +268,7 @@ if(chatFormDivisions.length<=3){
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="#" onclick="javascript:user_logout();"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->

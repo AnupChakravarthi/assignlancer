@@ -223,6 +223,7 @@ var modalDivision = document.createElement("div");
 }
 function div_display_success(div_Id,success_Id){
 js_ajax("GET",PROJECT_URL+'backend/config/success_messages.json',{},function(response){
+console.log(response);
 var content='<div class="alert alert-success alert-dismissible" style="margin-bottom:0px;">';
     content+='<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
     content+=response[success_Id][USR_LANG];

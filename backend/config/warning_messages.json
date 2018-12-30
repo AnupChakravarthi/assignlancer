@@ -5,6 +5,12 @@
   "W004": { "english":"Warning! Missing Confirm Password." },
   "W005": { "english":"Warning! Password and Confirm Password not matched." },
   "W006": { "english":"Warning! Email Address already registered." },
-  "W007": { "english":"Your Email Address is validated. Please login to your Account." },
-  "W008": { "english":"Please Register your Email Account to login." }
+  "W007": { "english":"Warning! Your Email Address is validated. Please login to your Account." },
+  "W008": { "english":"Warning! Please Register your Email Account to login." },
+  "W009": { "english":"Warning! Please Select your Country." },
+  "W010": { "english":"Warning! Missing Current Password." },
+  "W011": { "english":"Warning! Missing New Password." },
+  "W012": { "english":"Warning! Missing Confirm New Password." },
+  "W013": { "english":"Warning! New Password and Confirm New Password not matched." },
+  "W014": { "english":"Warning! You have entered Invalid <b>Current Password</b> for your Account. Please Check it." }
 }

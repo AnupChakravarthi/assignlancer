@@ -72,6 +72,7 @@ var name = document.getElementById("signup_customer_name").value;
 var email = document.getElementById("signup_customer_email").value;
 var pwd = document.getElementById("signup_customer_pwd").value;
 var confirmpwd = document.getElementById("signup_customer_confirmpwd").value;
+var country = document.getElementById("signup_customer_country").value;
 if(name.length>0){
  if(validateEmailAddress(email)==='Valid'){
   /* Check Email Address Already registered or not */
@@ -82,12 +83,14 @@ if(name.length>0){
     if(pwd.length>0){
      if(confirmpwd.length>0){
       if(pwd===confirmpwd){
-	   document.getElementById("signup_customer_warnings").innerHTML='';
-	   js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.php',
-	   { action:'CREATE_ACCOUNT_BY_CUSTOMER', accountType:'CUSTOMERS', availStatus:'ONLINE', name:name, email:email,
-	     acc_pwd:pwd },function(response){ console.log("response: "+response);
-		    div_display_success('signup_customer_warnings','S002');
-		 });
+	    if(country.length>0){
+	      document.getElementById("signup_customer_warnings").innerHTML='';
+	      js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.php',
+	      { action:'CREATE_ACCOUNT_BY_CUSTOMER', accountType:'CUSTOMERS', availStatus:'ONLINE', name:name, email:email,
+	        acc_pwd:pwd, country: country },function(response){ console.log("response: "+response);
+		      div_display_success('signup_customer_warnings','S002');
+		    });
+		} else { div_display_warning('signup_customer_warnings','W009'); }
       } else { div_display_warning('signup_customer_warnings','W005'); }
      } else  { div_display_warning('signup_customer_warnings','W004'); }
     } else  { div_display_warning('signup_customer_warnings','W003'); }
@@ -130,6 +133,16 @@ if(name.length>0){
 			  <div class="form-group">
 			    <label>Confirm Password</label>
 				<input id="signup_customer_confirmpwd" type="password" class="form-control" placeholder="Re-Enter your Password"/>
+			  </div>
+			  <div class="form-group">
+			    <label>Country</label>
+				<select id="signup_customer_country" class="form-control">
+				  <option value="">Select your Country</option>
+				  <option value="India">India</option>
+				  <option value="Australia">Australia</option>
+				  <option value="United Kingdom">United Kingdom</option>
+				  <option value="United States of America">United States of America</option>
+				</select>
 			  </div>
 			  <div class="form-group">
 			    <button class="btn btn-primary form-control" onclick="javascript:signup_customer();"><b>Signup</b></button>

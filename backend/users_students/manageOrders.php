@@ -66,6 +66,7 @@ $(document).ready(function(){
 });
 </script>
 <div id="wrapper">
+ <?php include_once '..\..\templates\api_js.php'; ?>
  <?php include_once 'templates/panelheader.php'; ?>
  <div id="page-wrapper">
     <div class="row">
