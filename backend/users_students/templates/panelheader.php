@@ -6,6 +6,10 @@ body { font-size:12px; }
 @font-face { font-family:logoTitle;src:url('fonts/LitchisIsland.ttf'); }
 .hide-block { display:none; }
 .red { color:red; }
+.mtop15p { margin-top:15px; }
+th { font-size:14px; }
+td { font-size:12px; }
+.pad0 { padding:0px; }
 </style>
 <script type="text/javascript">
 function user_logout(){
@@ -62,7 +66,7 @@ if(chatFormDivisions.length<=3){
        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
     </button>
     <a class="navbar-brand" href="#">
-	 <span class="navbar-brand-span">Assignlancer</span>&nbsp;&nbsp;<span style="font-size:12px;"><b>STUDENTS</b></span>
+	 <span class="navbar-brand-span">Assignlancer</span>&nbsp;&nbsp;<span style="font-size:12px;"><b>CUSTOMERS</b></span>
 	</a>
    </div>
    <!-- /.navbar-header -->
@@ -114,85 +118,6 @@ if(chatFormDivisions.length<=3){
                         </li>
                     </ul>
                     <!-- /.dropdown-messages -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-tasks">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 1</strong>
-                                        <span class="pull-right text-muted">40% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                            <span class="sr-only">40% Complete (success)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 2</strong>
-                                        <span class="pull-right text-muted">20% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                            <span class="sr-only">20% Complete</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 3</strong>
-                                        <span class="pull-right text-muted">60% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                            <span class="sr-only">60% Complete (warning)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <p>
-                                        <strong>Task 4</strong>
-                                        <span class="pull-right text-muted">80% Complete</span>
-                                    </p>
-                                    <div class="progress progress-striped active">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                            <span class="sr-only">80% Complete (danger)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Tasks</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-tasks -->
                 </li>
                 <!-- /.dropdown -->
                 <li class="dropdown">
@@ -265,8 +190,6 @@ if(chatFormDivisions.length<=3){
 						   <i class="fa fa-user fa-fw"></i> My Profile
 						  </a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
                         <li class="divider"></li>
                         <li><a href="#" onclick="javascript:user_logout();"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
@@ -296,15 +219,47 @@ if(chatFormDivisions.length<=3){
 							  <i class="fa fa-dashboard fa-fw"></i> <b>Dashboard</b>
 							</a>
                         </li>
+						<li>
+                            <a href="<?php echo $_SESSION["PROJECT_URL"]; ?>">
+							  <i class="fa fa-bell fa-fw"></i> <b>My Notifications</b>
+							</a>
+                        </li>
+						<li>
+                            <a href="<?php echo $_SESSION["PROJECT_URL"]; ?>">
+							  <i class="fa fa-envelope fa-fw"></i> <b>My Messages</b>
+							</a>
+                        </li>
                         <li>
                             <a href="#"><i class="fa fa-shopping-cart fa-fw"></i> <b>My Orders</b><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                              <li>
+                               <a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/students/createNewOrder"><i class="fa fa-list fa-fw"></i> <b>Create New Order</b></a>
+                             </li>
+							 <li>
                                <a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/students/manageOrders"><i class="fa fa-list fa-fw"></i> <b>Manage Orders</b></a>
                              </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+						<li style="background-color:#fff;">
+						  <div class="container-fluid" style="padding-top:15px;padding-bottom:15px;">
+						    <div class="row">
+							  <div align="center" class="col-xs-12">
+							    <h5><b>We also available on</b></h5> 
+								<i class="fa fa-mobile" style="font-size:3.3em;" aria-hidden="true"></i>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<i class="fa fa-3x fa-whatsapp" aria-hidden="true"></i>
+							    <h4><b>+91-9666052424</b></h4>
+								<h5><b>for your 24/7 Assistance.</b></h5> 
+							  </div>
+							</div>
+						  </div>
+                        </li>
+						<li>
+						<div align="center" style="padding-top:20px;">
+						  <img src="https://www.solvejob.com/images/hero-header/chat-animation.gif" style="width:100px;height:auto;"/>
+						</div>
+						</li>
 					</ul>
                 </div>
                 <!-- /.sidebar-collapse -->

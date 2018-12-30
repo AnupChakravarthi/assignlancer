@@ -1,6 +1,16 @@
 <style>
 .navbar-brand-span { font-family:logoTitle;font-size:32px;color:#000; }
 @font-face { font-family:logoTitle;src:url('fonts/LitchisIsland.ttf'); }
+body { font-size:12px; }
+.label { font-size:11px; }
+.mtop15p { margin-top:15px; }
+.navbar-brand-span { font-family:logoTitle;font-size:32px;color:#000; }
+@font-face { font-family:logoTitle;src:url('fonts/LitchisIsland.ttf'); }
+.hide-block { display:none; }
+.red { color:red; }
+.mtop15p { margin-top:15px; }
+th { font-size:14px; }
+td { font-size:12px; }
 </style>
 <script type="text/javascript">
 function js_ajax(method,url,data,fn_output){
@@ -56,7 +66,40 @@ if(chatFormDivisions.length<=3){
 	 <span class="navbar-brand-span">Assignlancer</span>&nbsp;&nbsp;<span style="font-size:12px;"><b>LIVE SUPPORT</b></span>
 	</a>
    </div>
-   <!-- /.navbar-header -->
+<style>
+.agentState-green { color:#02af09; }
+.agentState-red { color:#e40e07; }
+</style>
+<script type="text/javascript">
+function set_agentStatus_available(){
+ if(!$('#livesupport_agent_state').hasClass('agentState-green')){ 
+   $('#livesupport_agent_state').addClass('agentState-green'); 
+ }
+ if($('#livesupport_agent_state').hasClass('agentState-red')){ 
+   $('#livesupport_agent_state').removeClass('agentState-red'); 
+ }
+ var beepOnline = document.getElementById("livesupport_agent_stateOnline").play(); 
+}
+function set_agentStatus_unAvailable(){
+ if($('#livesupport_agent_state').hasClass('agentState-green')){ 
+   $('#livesupport_agent_state').removeClass('agentState-green'); 
+ }
+ if(!$('#livesupport_agent_state').hasClass('agentState-red')){ 
+   $('#livesupport_agent_state').addClass('agentState-red'); 
+ }
+ var beepOffline = document.getElementById("livesupport_agent_stateOffline").play(); 
+}
+</script>
+
+<div>
+<audio id="livesupport_agent_stateOnline">
+  <source src="<?php echo $_SESSION["PROJECT_URL"]?>audio/online.mp3" type="audio/mpeg">
+</audio>
+<audio id="livesupport_agent_stateOffline">
+  <source src="<?php echo $_SESSION["PROJECT_URL"]?>audio/offline.mp3" type="audio/mpeg">
+</audio>
+</div>
+
    <ul class="nav navbar-top-links navbar-right">
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -106,7 +149,27 @@ if(chatFormDivisions.length<=3){
                     </ul>
                     <!-- /.dropdown-messages -->
                 </li>
-                <!-- /.dropdown -->
+      
+	  <!-- Status -->
+	  <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <i id="livesupport_agent_state" class="fa fa-circle fa-fw agentState-red"></i> <i class="fa fa-headphones fa-fw"></i> 
+		  <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu" style="min-width:120px;">
+          <li>
+		    <a href="#" onclick="javascript:set_agentStatus_available();">
+			 <div><i class="fa fa-circle fa-fw agentState-green"></i> <strong>ONLINE</strong></div>
+			</a>
+		  </li>
+          <li class="divider"></li>
+		  <li><a href="#" onclick="javascript:set_agentStatus_unAvailable();">
+		    <div><i class="fa fa-circle fa-fw agentState-red"></i> <strong>OFFLINE</strong></div></a>
+		  </li>
+        </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+       <!-- Status --> 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -280,93 +343,36 @@ if(chatFormDivisions.length<=3){
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="<?php echo $_SESSION["PROJECT_URL"]?>app/liveSupport/dashboard"><i class="fa fa-dashboard fa-fw"></i> <b>Dashboard</b></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> <b>Manage Orders</b><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Flot Charts</a>
-                                </li>
-                                <li>
-                                    <a href="morris.html">Morris.js Charts</a>
-                                </li>
+								  <a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/liveSupport/mo_assignments">
+								    <b>Assignments Overview</b>
+								  </a>
+								</li>
+                                <li><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/liveSupport/mo_payments">
+								      <i class="fa fa-search" aria-hidden="true"></i> <b>Order Search</b>
+								    </a>
+								</li>
+								<li><a href="#"><b>Statistics</b></a></li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-                        </li>
-                        <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+						<li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> <b>Customers</b><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
-                                </li>
-                                <li>
-                                    <a href="buttons.html">Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="notifications.html">Notifications</a>
-                                </li>
-                                <li>
-                                    <a href="typography.html">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="icons.html"> Icons</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grid</a>
-                                </li>
+								  <a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/liveSupport/chats">
+								    <b>Live Chat</b>
+								  </a>
+								</li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="login.html">Login Page</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                    </ul>
+                  </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>

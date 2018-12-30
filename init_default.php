@@ -68,7 +68,9 @@ $(document).ready(function(){
  $("#sliderCarousel").carousel({interval: 4000});
   homeSlider();
   if(getCookie("LiveSupportChat")===''){
-   var chatData=[{"title":"AssignmentHelp","msg":"Hi, Do you need assignment help?"}];
+   var chatData=[{"title":"","msg":"Welcome to HereWeGet.com."},
+				 {"title":"","msg":"Greetings for the Day...!!!"},
+				 {"title":"AssignmentHelp","msg":"Hi, Do you need assignment help?"}];
    setCookie("LiveSupportChat", JSON.stringify(chatData), 1);
   }
   chatBoxInitilaizer();
