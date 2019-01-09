@@ -51,7 +51,7 @@ function chatBoxInitilaizer(){
 </script>
 <script type="text/javascript">
 $(document).ready(function(){
- js_ajax("GET",PROJECT_URL+'backend/php/dac/controller.livechat.php',{ action: 'ADD_USER_QUEUE'}, function(response){
+ js_ajax("GET",PROJECT_URL+'backend/php/dac/controller.livechat.php',{ action: 'ADD_USER_QUEUE' }, function(response){
     console.log(response);
  });
 });

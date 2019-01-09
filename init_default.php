@@ -78,6 +78,7 @@ $(document).ready(function(){
 </script>
 <style>
 a.a-black,a.a-black:hover { color:#000; }
+.ui-chatbox { z-index:5000; }
 </style>
 </head>
 <body>

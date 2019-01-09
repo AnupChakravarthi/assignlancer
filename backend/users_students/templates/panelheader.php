@@ -56,6 +56,24 @@ if(chatFormDivisions.length<=3){
  }
 }
 </script>
+<style>
+.liveChatIcon { position:absolute;padding-top:20px;z-index:1000;bottom:0px;right:20px; }
+.footer { position:fixed;left:0;bottom:0;width:100%;background-color:#eee;color:#777;text-align:center;
+		  padding-top:15px;padding-bottom:15px; }
+</style>
+
+<div class="liveChatIcon" align="center">
+  <img src="https://www.solvejob.com/images/hero-header/chat-animation.gif" style="width:80px;height:auto;"/>
+</div>
+
+<div class="footer">
+  <div align="center">
+    <span style="font-size:12px;"><b>We also available on</b></span>
+	&nbsp;<i class="fa fa-whatsapp" aria-hidden="true"></i>
+	<span style="font-size:12px;"><b>+91-9666052424 for your 24/7 Assistance.</b></span>
+  </div>
+</div>
+						  
 <div id="chat_div0"></div>
 <div id="chat_div1"></div>
 <!-- Navigation -->
@@ -242,23 +260,10 @@ if(chatFormDivisions.length<=3){
                             <!-- /.nav-second-level -->
                         </li>
 						<li style="background-color:#fff;">
-						  <div class="container-fluid" style="padding-top:15px;padding-bottom:15px;">
-						    <div class="row">
-							  <div align="center" class="col-xs-12">
-							    <h5><b>We also available on</b></h5> 
-								<i class="fa fa-mobile" style="font-size:3.3em;" aria-hidden="true"></i>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<i class="fa fa-3x fa-whatsapp" aria-hidden="true"></i>
-							    <h4><b>+91-9666052424</b></h4>
-								<h5><b>for your 24/7 Assistance.</b></h5> 
-							  </div>
-							</div>
-						  </div>
+						  
                         </li>
 						<li>
-						<div align="center" style="padding-top:20px;">
-						  <img src="https://www.solvejob.com/images/hero-header/chat-animation.gif" style="width:100px;height:auto;"/>
-						</div>
+						
 						</li>
 					</ul>
                 </div>
