@@ -12,5 +12,7 @@
   "W011": { "english":"Warning! Missing New Password." },
   "W012": { "english":"Warning! Missing Confirm New Password." },
   "W013": { "english":"Warning! New Password and Confirm New Password not matched." },
-  "W014": { "english":"Warning! You have entered Invalid <b>Current Password</b> for your Account. Please Check it." }
+  "W014": { "english":"Warning! You have entered Invalid <b>Current Password</b> for your Account. Please Check it." },
+  "W015": { "english":"Warning! Please Select Timezone." },
+  "W016": { "english":"Warning! Please Select Shift Timings." }
 }

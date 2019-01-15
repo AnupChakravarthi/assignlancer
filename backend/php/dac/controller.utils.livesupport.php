@@ -3,10 +3,10 @@ session_start();
 
 require_once '../api/app.initiator.php';
 require_once '../api/app.database.php';
-require_once '../dal/data.utils.php';
+require_once '../dal/data.utils.livesupport.php';
 require_once '../util/util.identity.php';
 
-$logger=Logger::getLogger("controller.utils.php");
+$logger=Logger::getLogger("controller.utils.livesupport.php");
 
 if(isset($_GET["action"])){
  if($_GET["action"]=='GET_LIVESUPPORT_TIMINGS'){

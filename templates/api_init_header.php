@@ -76,7 +76,7 @@ var country = document.getElementById("signup_customer_country").value;
 if(name.length>0){
  if(validateEmailAddress(email)==='Valid'){
   /* Check Email Address Already registered or not */
-  js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.php',
+  js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.customers.php',
 	{ action:'VALIDATE_EMAIL_REGORNOT', email:email },function(response){
   console.log(response);	
   if(response==='UNREGISTERED'){
@@ -85,7 +85,7 @@ if(name.length>0){
       if(pwd===confirmpwd){
 	    if(country.length>0){
 	      document.getElementById("signup_customer_warnings").innerHTML='';
-	      js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.php',
+	      js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.customers.php',
 	      { action:'CREATE_ACCOUNT_BY_CUSTOMER', accountType:'CUSTOMERS', availStatus:'ONLINE', name:name, email:email,
 	        acc_pwd:pwd, country: country },function(response){ console.log("response: "+response);
 		      div_display_success('signup_customer_warnings','S002');
@@ -167,7 +167,7 @@ function signIn_customer(){
 var email = document.getElementById("signin_customer_email").value;
 var pwd = document.getElementById("signin_customer_pwd").value;
  if(validateEmailAddress(email)==='Valid'){
-   js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.php',
+   js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.customers.php',
 	{ action:'VALIDATE_EMAIL_REGORNOT', email:email },function(response){
 	  console.log(response);	
       if(response==='UNREGISTERED'){ 
@@ -178,7 +178,7 @@ var pwd = document.getElementById("signin_customer_pwd").value;
 		if(pwd.length>0){
 		  $('#signin_customer_warnings_row').css('height','0px');
 		  document.getElementById("signin_customer_warnings").innerHTML='';
-		  js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.php',
+		  js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.customers.php',
 		  { action:'LOGIN_AUTHENTICATION', email:email, acc_pwd:pwd },function(response){
 		    console.log(response);
 			window.location.href=PROJECT_URL+'app/students/dashboard';

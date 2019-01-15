@@ -1,6 +1,8 @@
 <?php 
 session_start();
-include_once '../../templates/api_params.php'; ?>
+include_once '../../templates/api_params.php';
+include_once '../../templates/api_js.php';
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -29,6 +31,14 @@ include_once '../../templates/api_params.php'; ?>
 .mtop15p { margin-top:15px; }
 .agentState-green { color: #02af09; }
 .agentState-red { color: #e40e07; }
+.font-grey { color:#777; }
+.hide-block { display:none; }
+.livesupportlist-item:hover { background-color:#fff4d4;cursor:pointer; }
+.livesupportAccountslistview { max-height:450px;overflow-y:scroll; }
+.livesupportAccountslistview::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+background-color: #F5F5F5; }         
+.livesupportAccountslistview::-webkit-scrollbar { width: 4px;background-color: #F5F5F5; }         
+.livesupportAccountslistview::-webkit-scrollbar-thumb { background-color: #e7e7e7; }
 </style>
 </head>
 <body>
@@ -44,7 +54,7 @@ include_once '../../templates/api_params.php'; ?>
             </div>
 			<div class="row">
               <div align="right" class="col-lg-12">
-                <button class="btn btn-primary">
+                <button id="liveSupportAccount-createBtn" class="btn btn-primary hide-block">
 				  <b><i class="fa fa-plus-circle"></i>&nbsp;&nbsp;Create New Live Support Account</b>
 				</button>  
               </div>
@@ -56,23 +66,55 @@ include_once '../../templates/api_params.php'; ?>
 					<div class="panel-heading">
 					  <i class="fa fa-users"></i>&nbsp;&nbsp;&nbsp;<b>Live Support Accounts</b>
 					</div>
-					<div class="panel-body pad0">
-					 <div class="list-group mbot0">
+					
+					<div class="panel-body livesupportAccountslistview pad0">
+					 <div id="view-livesupportaccounts-list0" class="list-group mbot0">
 					 
-					  <div class="list-group-item">
+					  <div class="list-group-item livesupportlist-item">
 					    <div>
 						   <h5><i class="fa fa-circle fa-fw agentState-green"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
 						</div>
 						<div><i>Morning - 09:00 AM to 05:00 PM</i></div>
 					  </div>
 					  
-					  <div class="list-group-item">
+					  
+					  
+					   <div class="list-group-item livesupportlist-item">
 					    <div>
 						  <h5><i class="fa fa-circle fa-fw agentState-red"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
 						</div>
 						<div><i>Morning - 09:00 AM to 05:00 PM</i></div>
 					  </div>
-					  
+					   <div class="list-group-item livesupportlist-item">
+					    <div>
+						  <h5><i class="fa fa-circle fa-fw agentState-red"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
+						</div>
+						<div><i>Morning - 09:00 AM to 05:00 PM</i></div>
+					  </div>
+					   <div class="list-group-item livesupportlist-item">
+					    <div>
+						  <h5><i class="fa fa-circle fa-fw agentState-red"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
+						</div>
+						<div><i>Morning - 09:00 AM to 05:00 PM</i></div>
+					  </div>
+					   <div class="list-group-item livesupportlist-item">
+					    <div>
+						  <h5><i class="fa fa-circle fa-fw agentState-red"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
+						</div>
+						<div><i>Morning - 09:00 AM to 05:00 PM</i></div>
+					  </div>
+					   <div class="list-group-item livesupportlist-item">
+					    <div>
+						  <h5><i class="fa fa-circle fa-fw agentState-red"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
+						</div>
+						<div><i>Morning - 09:00 AM to 05:00 PM</i></div>
+					  </div>
+					   <div class="list-group-item livesupportlist-item">
+					    <div>
+						  <h5><i class="fa fa-circle fa-fw agentState-red"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
+						</div>
+						<div><i>Morning - 09:00 AM to 05:00 PM</i></div>
+					  </div>
 					 </div>
 					</div>
 				  </div>
@@ -81,156 +123,10 @@ include_once '../../templates/api_params.php'; ?>
 			  <!-- -->
 			    <div class="col-lg-8">
 				  <!-- live Support Account - create ::: Start -->
-                  <div id="liveSupportAccount-create" class="panel panel-default">
-					<div class="panel-heading">
-					   <i class="fa fa-users"></i>&nbsp;&nbsp;&nbsp;<b>Create Live Support Accounts</b>
-					</div>
-					<div class="panel-body">
-					  <!-- live Support Account - create form ::: Start -->
-					  <div class="container-fluid">
-					    <div class="row">
-						  <div class="col-md-6">
-						    
-							<div class="form-group">
-							  <label>Account Type</label>
-							  <input id="liveSupportAccount-create-accountType" type="text" class="form-control" value="CUSTOMER_LIVESUPPORT"
-							   placeholder="Enter your Account Type" disabled/>
-							</div>
-<script type="text/javascript">
-
-function liveSupportAccount_createForm(){
- var accountType = document.getElementById("liveSupportAccount-create-accountType").value;
- var name = document.getElementById("liveSupportAccount-create-name").value;
- var email = document.getElementById("liveSupportAccount-create-email").value;
- var accountPwd = document.getElementById("liveSupportAccount-create-accountPwd").value;
- var confirmAccountPwd = document.getElementById("liveSupportAccount-create-confirmAccountPwd").value;
- var country = document.getElementById("liveSupportAccount-create-country").value;
- var timezone = document.getElementById("liveSupportAccount-create-timezone").value;
- var shiftTimings = document.getElementById("liveSupportAccount-create-shiftTimings").value;
- 
- // 
-}
-function get_liveSupportAccount_shiftTimings(){
-
-}
-function view_liveSupportAccount_shiftTimings(){
- var timezone = document.getElementById("liveSupportAccount-create-timezone").value;
- var shiftTimings = document.getElementById("liveSupportAccount-create-shiftTimings").value;
- js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.utils.php',
- { action:'GET_LIVESUPPORT_TIMINGS', reqTimezone:timezone, time_Id:shiftTimings },function(response){
-  console.log(response); 
-  response = JSON.parse(response);
-  shift = response.shift;
-  startTime = response.startTime;
-  endTime = response.endTime;
-  timezone = response.timezone;
-  var content='<div>';
-      content+='<div>Sunday to Saturday - '+startTime+' to '+endTime+'</div>';
-	  content+='<div>';
-  document.getElementById("liveSupportAccount-create-24X7Support").innerHTML=content;
- });
-}
-   
-    
-	
-</script>
-							<div class="form-group">
-							  <label>Name</label>
-							  <input id="liveSupportAccount-create-name" type="text" class="form-control" placeholder="Enter your Name"/>
-							</div>
-							
-							<div class="form-group">
-							  <label>Email</label>
-							  <input id="liveSupportAccount-create-email" type="text" class="form-control" placeholder="Enter your Email"/>
-							</div>
-							
-							<div class="form-group">
-							  <label>Account Password</label>
-							  <input id="liveSupportAccount-create-accountPwd" type="password" class="form-control" placeholder="Enter your Account Password"/>
-							</div>
-							
-							<div class="form-group">
-							  <label>Confirm Account Password</label>
-							  <input id="liveSupportAccount-create-confirmAccountPwd" type="password" class="form-control" placeholder="Enter your Confirm Password"/>
-							</div>
-							
-							<div class="form-group">
-							  <label>Country</label>
-							  <select id="liveSupportAccount-create-country" class="form-control">
-							    <option value="">Select your Country</option>
-								<option value="India">India</option>
-								<option value="Australia">Australia</option>
-							  </select>
-							</div>
-							
-						  </div>
-						  <div class="col-md-6">
-						    
-							<div class="form-group">
-							  <label>Timezone</label>
-							  <select id="liveSupportAccount-create-timezone" class="form-control">
-							    <option value="">Select your Timezone</option>
-								<option value="Asia/Kolkata">Asia/Kolkata</option>
-								<option value="Australia/ACT">Australia/ACT</option>
-								<option value="Australia/Adelaide">Australia/Adelaide</option>
-								<option value="Australia/Brisbane">Australia/Brisbane</option>
-								<option value="Australia/Broken_Hill">Australia/Broken_Hill</option>
-								<option value="Australia/Canberra">Australia/Canberra</option>
-								<option value="Australia/Currie">Australia/Currie</option>
-								<option value="Australia/Darwin">Australia/Darwin</option>
-								<option value="Australia/Eucla">Australia/Eucla</option>
-								<option value="Australia/Hobart">Australia/Hobart</option>
-								<option value="Australia/LHI">Australia/LHI</option>
-								<option value="Australia/Lindeman">Australia/Lindeman</option>
-								<option value="Australia/Lord_Howe">Australia/Lord_Howe</option>
-								<option value="Australia/Melbourne">Australia/Melbourne</option>
-								<option value="Australia/North">Australia/North</option>
-								<option value="Australia/NSW">Australia/NSW</option>
-								<option value="Australia/Perth">Australia/Perth</option>
-								<option value="Australia/Queensland">Australia/Queensland</option>
-								<option value="Australia/South">Australia/South</option>
-								<option value="Australia/Sydney">Australia/Sydney</option>
-								<option value="Australia/Tasmania">Australia/Tasmania</option>
-								<option value="Australia/Victoria">Australia/Victoria</option>
-								<option value="Australia/West">Australia/West</option>
-								<option value="Australia/Yancowinna">Australia/Yancowinna</option>
-							  </select>
-							</div>
-							
-						    <div class="form-group">
-							  <label>Shift Timings</label>
-							  <select id="liveSupportAccount-create-shiftTimings" class="form-control" 
-							  onchange="javascript:view_liveSupportAccount_shiftTimings();">
-							    <option value="">Select Shift Timings</option>
-								<option value="1">Early Morning</option>
-								<option value="2">Morning</option>
-								<option value="3">Evening</option>
-							  </select>
-							</div>
-							
-							<div align="right" class="form-group">
-							  <label>24 X 7 Support</label>
-							  <div id="liveSupportAccount-create-24X7Support"></div>
-							</div>
-							
-						  </div>
-						</div>
-					  </div>
-					  <!-- live Support Account - create form ::: End -->
-					</div>
-				  </div>
-				  <!-- live Support Account - create ::: End -->
+				  <?php include_once 'templates/livesupport-createAccountForm.php'; ?>
+                  <!-- live Support Account - create ::: End -->
 				  <!-- live Support Account - update ::: Start -->
-				  <div id="liveSupportAccount-update" class="panel panel-default">
-					<div class="panel-heading">
-					   <i class="fa fa-users"></i>&nbsp;&nbsp;&nbsp;<b>Update Live Support Accounts</b>
-					</div>
-					<div class="panel-body">
-					  
-					  
-					  
-					</div>
-				  </div>
+				  <?php include_once 'templates/livesupport-updateAccountForm.php'; ?>
 				  <!-- live Support Account - update ::: End -->
                 </div>
 			  <!-- -->
@@ -251,17 +147,99 @@ function view_liveSupportAccount_shiftTimings(){
     <!-- Metis Menu Plugin JavaScript -->
     <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/metisMenu/metisMenu.min.js"></script>
 
+	<script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/dist/load-data-on-scroll.js"></script>
+	
     <script type="text/javascript" src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/jquery-ui.js"></script>
     <script type="text/javascript" src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/jquery.ui.chatbox.js"></script>
-  <script type="text/javascript" src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/cookies.js"></script>
-  <link type="text/css" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/jquery.ui.chatbox.css" rel="stylesheet" />
-  <link rel="stylesheet" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/jquery-ui.css">
+    <script type="text/javascript" src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/cookies.js"></script>
+    <link type="text/css" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/jquery.ui.chatbox.css" rel="stylesheet" />
+    <link rel="stylesheet" href="<?php echo $_SESSION["PROJECT_URL"]; ?>styles/jquery-ui.css">
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/dist/sb-admin-2.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-
-});  
+  getListOfLiveSupportAccountsList()
+  display_createLiveSupportAccountsForm();
+});
+/* Display Logic ::: Start */
+function display_createLiveSupportAccountsForm(){
+  if(!$('#liveSupportAccount-createBtn').hasClass('hide-block')){ 
+     $('#liveSupportAccount-createBtn').addClass('hide-block'); 
+  }
+  if($('#liveSupportAccount-createForm-div').hasClass('hide-block')){ 
+     $('#liveSupportAccount-createForm-div').removeClass('hide-block'); 
+  }
+  if(!$('#liveSupportAccount-updateForm-div').hasClass('hide-block')){ 
+     $('#liveSupportAccount-updateForm-div').addClass('hide-block'); 
+  }
+}
+function display_updateLiveSupportAccountsForm(){
+ if($('#liveSupportAccount-createBtn').hasClass('hide-block')){ 
+     $('#liveSupportAccount-createBtn').removeClass('hide-block'); 
+  }
+  if(!$('#liveSupportAccount-createForm-div').hasClass('hide-block')){ 
+     $('#liveSupportAccount-createForm-div').addClass('hide-block'); 
+  }
+  if($('#liveSupportAccount-updateForm-div').hasClass('hide-block')){ 
+     $('#liveSupportAccount-updateForm-div').removeClass('hide-block'); 
+  }
+}
+function getListOfLiveSupportAccountsList(){
+ // view-livesupportaccounts-list0
+ js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.livesupport.php',
+ { action:'GET_COUNT_LIVESUPPORTACCOUNTS' },function(total_data){
+   scroll_loadInitializer('view-livesupportaccounts-list',10,getListOfLiveSupportAccountsListData,total_data);
+ });
+ 
+}
+function getListOfLiveSupportAccountsListData(div_view, appendContent,limit_start,limit_end){
+ js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.livesupport.php',
+ { action:'GET_DATA_LIVESUPPORTACCOUNTS', limit_start:limit_start, limit_end:limit_end },function(response){
+  console.log(response);
+  response = JSON.parse(response);
+  var content='';
+  for(var index=0;index<response.length;index++){
+   var account_Id = response[index].account_Id;
+   var accountType = response[index].accountType;
+   var availStatus = response[index].availStatus;
+   var name = response[index].name;
+   var email = response[index].email;
+   var country = response[index].country;
+   var shift = response[index].shift;
+   var time_Id = response[index].time_Id;
+   var startTime = response[index].startTime;
+   var endTime = response[index].endTime;
+   var timezone = response[index].timezone;
+   content+='<div class="list-group-item livesupportlist-item" ';
+   content+='onclick="javascript:view_livesupportUpdateForm(\''+account_Id+'\',\''+accountType+'\',';
+   content+='\''+name+'\',\''+email+'\',\''+country+'\',\''+shift+'\',\''+startTime+'\',\''+endTime;
+   content+='\',\''+timezone+'\',\''+time_Id+'\');">';
+   content+='<h5>';
+   if(availStatus==='ONLINE'){ content+='<i class="fa fa-circle fa-fw agentState-green"></i>';
+   } else { content+='<i class="fa fa-circle fa-fw agentState-red"></i>'; }
+   content+='&nbsp;&nbsp;<b>'+name+'</b>';
+   content+='</h5>';
+   content+='<div class="font-grey"><i><b>'+shift+'</b> ('+timezone+')';
+   content+=' - '+startTime+' to '+endTime+'</i></div>';
+   content+='</div>';
+  }				  
+  content+=appendContent;
+  document.getElementById(div_view).innerHTML=content;
+ });
+}
+function view_livesupportUpdateForm(account_Id,accountType,name,email,country,shift,startTime,endTime,timezone,time_Id){
+ display_updateLiveSupportAccountsForm();
+ document.getElementById("liveSupportAccount-update-accountType").value = accountType;
+ document.getElementById("liveSupportAccount-update-name").value = name;
+ document.getElementById("liveSupportAccount-update-email").value = email;
+ document.getElementById("liveSupportAccount-update-accountPwd").value = '';
+ document.getElementById("liveSupportAccount-update-confirmAccountPwd").value = '';
+ document.getElementById("liveSupportAccount-update-country").value = country;
+ document.getElementById("liveSupportAccount-update-timezone").value = timezone;
+ document.getElementById("liveSupportAccount-update-shiftTimings").value = time_Id;
+ document.getElementById("liveSupportAccount-update-24X7Support").innerHTMl ='';
+}
+/* Display Logic ::: End */
 </script>
 </body>
 

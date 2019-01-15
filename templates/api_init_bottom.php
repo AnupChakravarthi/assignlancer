@@ -7,7 +7,7 @@ function signIn_livesupport(){
  var pwd = document.getElementById("signin_livesupport_pwd").value;
  if(email.length>0){
  if(pwd.length>0){
-  js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.php',
+  js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.livesupport.php',
   { action:'LOGIN_AUTHENTICATION', email:email, acc_pwd:pwd },function(response){
     console.log(response);
 	if(response==='CUSTOMER_UNAUTHENTICATED'){
