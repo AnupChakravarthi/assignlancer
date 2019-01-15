@@ -1,4 +1,6 @@
-<?php include_once '../../templates/api_params.php'; ?>
+<?php 
+session_start();
+include_once '../../templates/api_params.php'; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -30,7 +32,7 @@
 
     <div id="wrapper">
 
-        <?php include_once 'panelheader.php'; ?>
+        <?php include_once 'templates/panelheader.php'; ?>
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">

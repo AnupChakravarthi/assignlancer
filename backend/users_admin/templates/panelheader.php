@@ -1,6 +1,9 @@
 <style>
 .navbar-brand-span { font-family:logoTitle;font-size:32px;color:#000; }
 @font-face { font-family:logoTitle;src:url('fonts/LitchisIsland.ttf'); }
+.pad0 { padding:0px; }
+.mbot0 { margin-bottom:0px; }
+.list-group>.list-group-item { border-radius:0px; }
 </style>
 <script type="text/javascript">
 function js_ajax(method,url,data,fn_output){
@@ -280,13 +283,15 @@ if(chatFormDivisions.length<=3){
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> <b>Dashboard</b></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> <b>Live Support</b><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Flot Charts</a>
+                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/livesupport-accounts">
+									  <b>Manage Accounts</b>
+									</a>
                                 </li>
                                 <li>
                                     <a href="morris.html">Morris.js Charts</a>

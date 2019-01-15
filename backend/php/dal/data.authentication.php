@@ -17,10 +17,10 @@ class Authentication {
    return $sql;
   }
   
-  function query_addAccount($account_Id,$accountType,$availStatus,$name,$email,$acc_pwd,$createdOn,$country){
-    $sql="INSERT INTO accounts(account_Id, accountType, availStatus, name, email, acc_pwd,	createdOn, email_val, country)";
-	$sql.="VALUES ('".$account_Id."','".$accountType."','".$availStatus."','".$name."','".$email."','".$acc_pwd."','";
-	$sql.=$createdOn."','N','".$country."');";
+  function query_addAccount($account_Id,$accountType,$availStatus,$name,$email,$acc_pwd,$createdOn,$country,$time_Id){
+    $sql="INSERT INTO accounts(account_Id, accountType, availStatus, name, email, acc_pwd,	createdOn, email_val, country,";
+	$sql.="time_Id) VALUES ('".$account_Id."','".$accountType."','".$availStatus."','".$name."','".$email."','".$acc_pwd."','";
+	$sql.=$createdOn."','N','".$country."','".$time_Id."');";
     return $sql; 
   }
   

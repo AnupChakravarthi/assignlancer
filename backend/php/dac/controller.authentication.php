@@ -46,8 +46,10 @@ if(isset($_GET["action"])){
   $acc_pwd = md5($_GET["acc_pwd"]);
   $createdOn = date('Y-m-d H:i:s');
   $country = $_GET["country"];
+  $time_Id = '';
   $authentication = new Authentication();
-  $query = $authentication->query_addAccount($account_Id,$accountType,$availStatus,$name,$email,$acc_pwd,$createdOn,$country);
+  $query = $authentication->query_addAccount($account_Id,$accountType,$availStatus,$name,$email,
+				$acc_pwd,$createdOn,$country,$time_Id);
   $database = new Database();
   echo $database->addupdateData($query);
   
@@ -65,8 +67,10 @@ if(isset($_GET["action"])){
   $email = $_GET["email"];
   $acc_pwd = md5($_GET["acc_pwd"]);
   $createdOn = date('Y-m-d H:i:s');
+  $time_Id = $_GET["time_Id"];
   $authentication = new Authentication();
-  $query = $authentication->query_addAccount($account_Id,$accountType,$availStatus,$name,$email,$acc_pwd,$createdOn);
+  $query = $authentication->query_addAccount($account_Id,$accountType,$availStatus,$name,$email,
+				$acc_pwd,$createdOn,$country,$time_Id);
   $database = new Database();
   echo $database->addupdateData($query);
  }
@@ -109,8 +113,8 @@ if(isset($_GET["action"])){
       echo 'INVALID_PASSWORD';
    }
  }
- else if($_GET["action"]=='LOGIN_AUTHENTICATION'){
-   $email = $_GET["email"];
+ else if($_GET["action"]=='LOGIN_AUTHENTICATION'){ 
+   $email = $_GET["email"]; 
    $acc_pwd = $_GET["acc_pwd"];
    $authentication = new Authentication();
    $query = $authentication->query_validate_UserAuthentication($email,$acc_pwd);
@@ -132,7 +136,6 @@ if(isset($_GET["action"])){
      echo 'CUSTOMER_UNAUTHENTICATED';
    }
  }
-
 }
 else { echo 'MISSING_ACTION'; }
 ?>

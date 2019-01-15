@@ -13,9 +13,6 @@ th { font-size:14px; }
 td { font-size:12px; }
 </style>
 <script type="text/javascript">
-function js_ajax(method,url,data,fn_output){
- $.ajax({type: method, url: url,data:data,success: function(response) { fn_output(response); } }); 
-}
 /* COLLECTIONS */
 var CHATOFFSET=0;
 var chatFormDivisions=[];
@@ -69,25 +66,49 @@ if(chatFormDivisions.length<=3){
 <style>
 .agentState-green { color:#02af09; }
 .agentState-red { color:#e40e07; }
+.nav>li.hide-block { display:none; }
 </style>
 <script type="text/javascript">
-function set_agentStatus_available(){
+function load_current_agentStatus(){
+ if(ACCOUNT_AVAILSTATUS==='ONLINE'){
+   set_agentStatus_available(false);
+ } else {
+   set_agentStatus_unAvailable(false);
+ }
+}
+function set_agentStatus_available(beep){
  if(!$('#livesupport_agent_state').hasClass('agentState-green')){ 
    $('#livesupport_agent_state').addClass('agentState-green'); 
  }
  if($('#livesupport_agent_state').hasClass('agentState-red')){ 
    $('#livesupport_agent_state').removeClass('agentState-red'); 
  }
+ if($('#app-menu-livechat').hasClass('hide-block')){
+  $('#app-menu-livechat').removeClass('hide-block');
+ }
+ if(beep===true){
  var beepOnline = document.getElementById("livesupport_agent_stateOnline").play(); 
+ }
+ var sessionJSON='{ "session_set" : [{ "key" : "ACCOUNT_AVAILSTATUS" , "value" : "ONLINE" }],';
+	 sessionJSON+='"session_get" : [ "ACCOUNT_AVAILSTATUS"]}';
+ js_session(sessionJSON,function(response){ console.log(response); });
 }
-function set_agentStatus_unAvailable(){
+function set_agentStatus_unAvailable(beep){
  if($('#livesupport_agent_state').hasClass('agentState-green')){ 
    $('#livesupport_agent_state').removeClass('agentState-green'); 
  }
  if(!$('#livesupport_agent_state').hasClass('agentState-red')){ 
    $('#livesupport_agent_state').addClass('agentState-red'); 
  }
- var beepOffline = document.getElementById("livesupport_agent_stateOffline").play(); 
+ if(!$('#app-menu-livechat').hasClass('hide-block')){
+  $('#app-menu-livechat').addClass('hide-block');
+ }
+ if(beep===true){
+ var beepOffline = document.getElementById("livesupport_agent_stateOffline").play();
+ } 
+ var sessionJSON='{ "session_set" : [{ "key" : "ACCOUNT_AVAILSTATUS" , "value" : "OFFLINE" }],';
+	 sessionJSON+='"session_get" : [ "ACCOUNT_AVAILSTATUS"]}';
+ js_session(sessionJSON,function(response){ console.log(response); });
 }
 </script>
 
@@ -152,18 +173,23 @@ function set_agentStatus_unAvailable(){
       
 	  <!-- Status -->
 	  <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-          <i id="livesupport_agent_state" class="fa fa-circle fa-fw agentState-red"></i> <i class="fa fa-headphones fa-fw"></i> 
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> 
+		  <?php if(isset($_SESSION["ACCOUNT_AVAILSTATUS"]) && $_SESSION["ACCOUNT_AVAILSTATUS"]=='ONLINE'){ ?>
+          <i id="livesupport_agent_state" class="fa fa-circle fa-fw agentState-green"></i> 
+		  <?php } else { ?>
+		  <i id="livesupport_agent_state" class="fa fa-circle fa-fw agentState-red"></i> 
+		  <?php } ?>
+		  <i class="fa fa-headphones fa-fw"></i> 
 		  <i class="fa fa-caret-down"></i>
         </a>
         <ul class="dropdown-menu" style="min-width:120px;">
           <li>
-		    <a href="#" onclick="javascript:set_agentStatus_available();">
+		    <a href="#" onclick="javascript:set_agentStatus_available(true);">
 			 <div><i class="fa fa-circle fa-fw agentState-green"></i> <strong>ONLINE</strong></div>
 			</a>
 		  </li>
           <li class="divider"></li>
-		  <li><a href="#" onclick="javascript:set_agentStatus_unAvailable();">
+		  <li><a href="#" onclick="javascript:set_agentStatus_unAvailable(true);">
 		    <div><i class="fa fa-circle fa-fw agentState-red"></i> <strong>OFFLINE</strong></div></a>
 		  </li>
         </ul>
@@ -314,7 +340,9 @@ function set_agentStatus_unAvailable(){
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li>
+						   <a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/livesupport/profile">
+						   <i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
@@ -361,15 +389,16 @@ function set_agentStatus_unAvailable(){
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+						<li id="app-menu-livechat" class="hide-block">
+						   <a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/liveSupport/chats">
+						     <i class="fa fa-envelope" aria-hidden="true"></i> <b>Live Chat</b>
+						   </a>
+						</li>
 						<li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> <b>Customers</b><span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-								  <a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/liveSupport/chats">
-								    <b>Live Chat</b>
-								  </a>
-								</li>
-                            </ul>
+                            <!--ul class="nav nav-second-level">
+                                
+                            </ul-->
                             <!-- /.nav-second-level -->
                         </li>
                   </ul>

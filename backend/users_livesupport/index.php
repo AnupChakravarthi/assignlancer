@@ -1,4 +1,9 @@
-<?php include_once '../../templates/api_params.php'; ?>
+<?php 
+session_start();
+if(isset($_SESSION["ACCOUNT_TYPE"]) && $_SESSION["ACCOUNT_TYPE"]=='CUSTOMER_LIVESUPPORT'){
+include_once '../../templates/api_params.php';
+include_once '../../templates/api_js.php';
+ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -7,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Admin - Dashboard</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- MetisMenu CSS -->
@@ -29,8 +34,7 @@
 <body>
 
     <div id="wrapper">
-
-        <?php include_once 'templates/panelheader.php'; ?>
+		<?php include_once 'templates/panelheader.php'; ?>
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -128,9 +132,11 @@
     <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/dist/sb-admin-2.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+ load_current_agentStatus();
  sel_tab_customerAuthenticationSupport('customerAuthenticationSupport_tab_newRegister');
-});  
+});
 </script>
 </body>
 
 </html>
+<?php } else { header("Location:".$_SESSION["PROJECT_URL"]); } ?>

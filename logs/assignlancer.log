@@ -1533,3 +1533,67 @@ Monday 31st December 2018 01:22:47 PM [INFO] ::: [app.database.php]  Database co
 Monday 31st December 2018 01:23:04 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Monday 31st December 2018 01:23:08 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Monday 31st December 2018 01:25:32 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 07:22:58 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 07:22:59 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 07:23:00 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id,finished) SELECT * FROM (SELECT 'UQ82705695' As queue_Id, 'ONLINE' As queueStatus, '127.0.0.1' As IPAddress,  'cofajsgcga772piuuk706qjnr6' As SessionId,  '' As toAgent, '2019-01-14 19:22:58' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id,  'N' As finished) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='cofajsgcga772piuuk706qjnr6'))=0;  
+Monday 14th January 2019 07:24:06 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 07:24:06 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='cofajsgcga772piuuk706qjnr6'; 
+Monday 14th January 2019 07:31:44 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 07:31:44 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='cofajsgcga772piuuk706qjnr6'; 
+Monday 14th January 2019 07:32:32 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 07:32:32 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='cofajsgcga772piuuk706qjnr6'; 
+Monday 14th January 2019 07:32:44 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 07:32:44 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='cofajsgcga772piuuk706qjnr6'; 
+Monday 14th January 2019 07:33:14 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 07:33:14 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='cofajsgcga772piuuk706qjnr6'; 
+Monday 14th January 2019 07:33:39 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 07:33:39 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='cofajsgcga772piuuk706qjnr6'; 
+Monday 14th January 2019 07:34:04 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 07:34:04 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='cofajsgcga772piuuk706qjnr6'; 
+Monday 14th January 2019 07:38:40 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 07:38:40 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='cofajsgcga772piuuk706qjnr6'; 
+Monday 14th January 2019 08:08:01 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 08:08:01 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='cofajsgcga772piuuk706qjnr6'; 
+Monday 14th January 2019 08:08:30 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 08:08:30 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='cofajsgcga772piuuk706qjnr6'; 
+Monday 14th January 2019 08:08:36 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 08:12:44 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 08:12:44 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='cofajsgcga772piuuk706qjnr6'; 
+Monday 14th January 2019 08:13:06 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 08:13:06 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='cofajsgcga772piuuk706qjnr6'; 
+Monday 14th January 2019 08:28:52 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 08:28:52 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='cofajsgcga772piuuk706qjnr6'; 
+Monday 14th January 2019 08:29:12 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 09:45:40 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 10:49:23 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 10:51:26 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 10:51:40 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 10:55:19 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 14th January 2019 10:56:37 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 03:57:00 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 03:57:01 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 03:57:01 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, toAgent, queueOn, agentPicked, chatFinished, order_Id, account_Id,finished) SELECT * FROM (SELECT 'UQ30272786' As queue_Id, 'ONLINE' As queueStatus, '127.0.0.1' As IPAddress,  'd751t3sh42jahgk8iuid49ih82' As SessionId,  '' As toAgent, '2019-01-15 15:57:00' As queueOn, '' As agentPicked,  '' As chatFinished, '' As order_Id, '' As account_Id,  'N' As finished) As tmp WHERE (SELECT count(*) FROM queue WHERE (IPAddress='127.0.0.1') AND (SessionId='d751t3sh42jahgk8iuid49ih82'))=0;  
+Tuesday 15th January 2019 04:00:04 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 04:00:04 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE queue SET  queueStatus='ONLINE',  finished='N' WHERE IPAddress='127.0.0.1' AND SessionId='d751t3sh42jahgk8iuid49ih82'; 
+Tuesday 15th January 2019 04:00:43 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 04:00:50 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 04:01:17 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 05:02:04 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 05:53:25 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 06:03:54 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 06:04:35 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 06:05:01 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 06:05:36 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 06:05:39 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 06:06:01 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 06:07:48 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 06:15:41 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 06:36:53 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 06:39:20 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 06:39:45 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 06:40:11 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 06:40:23 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 06:41:13 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 06:41:28 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 06:41:34 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Tuesday 15th January 2019 06:42:45 PM [INFO] ::: [app.database.php]  Database connected Successfully 

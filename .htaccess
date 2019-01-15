@@ -18,16 +18,16 @@ RewriteRule app/contactUs init_contactUs.php [NC,L]
 RewriteRule validate/([^/]+)$ backend/php/dac/controller.authentication.php?action=UPDATE_EMAIL_VALIDATED&account_Id=$1 [NC,L]
 
 RewriteRule app/admin/dashboard backend/users_admin/index.php [NC,L]
-
+RewriteRule app/admin/livesupport-accounts backend/users_admin/livesupport-manageAccounts.php [NC,L]
 RewriteRule app/students/dashboard backend/users_students/index.php [NC,L]
 RewriteRule app/students/createNewOrder backend/users_students/createNewOrder.php [NC,L]
 RewriteRule app/students/profile backend/users_students/user_profile.php [NC,L]
 
 
-RewriteRule app/liveSupport/dashboard backend/users_livesupport/index.php [NC,L]
-RewriteRule app/liveSupport/mo_assignments backend/users_livesupport/manageOrders_assignments.php [NC,L]
-RewriteRule app/liveSupport/mo_payments backend/users_livesupport/manageOrders_payments.php [NC,L]
-
+RewriteRule app/livesupport/dashboard backend/users_livesupport/index.php [NC,L]
+RewriteRule app/livesupport/mo_assignments backend/users_livesupport/manageOrders_assignments.php [NC,L]
+RewriteRule app/livesupport/mo_payments backend/users_livesupport/manageOrders_payments.php [NC,L]
+RewriteRule app/livesupport/profile backend/users_livesupport/user_profile.php [NC,L]
 RewriteRule app/liveSupport/chats backend/users_livesupport/chat_customers.php [NC,L]
 
 RewriteRule ([^/]+)/styles/([^/]+)$ styles/$2 [NC,L]
