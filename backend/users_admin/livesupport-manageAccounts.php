@@ -54,7 +54,8 @@ background-color: #F5F5F5; }
             </div>
 			<div class="row">
               <div align="right" class="col-lg-12">
-                <button id="liveSupportAccount-createBtn" class="btn btn-primary hide-block">
+                <button id="liveSupportAccount-createBtn" class="btn btn-primary hide-block" 
+				onclick="javascript:display_createLiveSupportAccountsForm();">
 				  <b><i class="fa fa-plus-circle"></i>&nbsp;&nbsp;Create New Live Support Account</b>
 				</button>  
               </div>
@@ -70,50 +71,8 @@ background-color: #F5F5F5; }
 					<div class="panel-body livesupportAccountslistview pad0">
 					 <div id="view-livesupportaccounts-list0" class="list-group mbot0">
 					 
-					  <div class="list-group-item livesupportlist-item">
-					    <div>
-						   <h5><i class="fa fa-circle fa-fw agentState-green"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
-						</div>
-						<div><i>Morning - 09:00 AM to 05:00 PM</i></div>
-					  </div>
-					  
-					  
-					  
-					   <div class="list-group-item livesupportlist-item">
-					    <div>
-						  <h5><i class="fa fa-circle fa-fw agentState-red"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
-						</div>
-						<div><i>Morning - 09:00 AM to 05:00 PM</i></div>
-					  </div>
-					   <div class="list-group-item livesupportlist-item">
-					    <div>
-						  <h5><i class="fa fa-circle fa-fw agentState-red"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
-						</div>
-						<div><i>Morning - 09:00 AM to 05:00 PM</i></div>
-					  </div>
-					   <div class="list-group-item livesupportlist-item">
-					    <div>
-						  <h5><i class="fa fa-circle fa-fw agentState-red"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
-						</div>
-						<div><i>Morning - 09:00 AM to 05:00 PM</i></div>
-					  </div>
-					   <div class="list-group-item livesupportlist-item">
-					    <div>
-						  <h5><i class="fa fa-circle fa-fw agentState-red"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
-						</div>
-						<div><i>Morning - 09:00 AM to 05:00 PM</i></div>
-					  </div>
-					   <div class="list-group-item livesupportlist-item">
-					    <div>
-						  <h5><i class="fa fa-circle fa-fw agentState-red"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
-						</div>
-						<div><i>Morning - 09:00 AM to 05:00 PM</i></div>
-					  </div>
-					   <div class="list-group-item livesupportlist-item">
-					    <div>
-						  <h5><i class="fa fa-circle fa-fw agentState-red"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
-						</div>
-						<div><i>Morning - 09:00 AM to 05:00 PM</i></div>
+					  <div align="center" class="list-group-item livesupportlist-item">
+					    <div class="font-grey"><i> Loading... </i></div>
 					  </div>
 					 </div>
 					</div>
@@ -183,6 +142,7 @@ function display_updateLiveSupportAccountsForm(){
   if($('#liveSupportAccount-updateForm-div').hasClass('hide-block')){ 
      $('#liveSupportAccount-updateForm-div').removeClass('hide-block'); 
   }
+  tabMenu_updatelivesupportAccount('updatelivesupportAccount-tabMenu-generalInfo');
 }
 function getListOfLiveSupportAccountsList(){
  // view-livesupportaccounts-list0
@@ -215,6 +175,7 @@ function getListOfLiveSupportAccountsListData(div_view, appendContent,limit_star
    content+='\''+name+'\',\''+email+'\',\''+country+'\',\''+shift+'\',\''+startTime+'\',\''+endTime;
    content+='\',\''+timezone+'\',\''+time_Id+'\');">';
    content+='<h5>';
+   content+='<i class="fa fa-times-circle fa-fw pull-right"></i>';
    if(availStatus==='ONLINE'){ content+='<i class="fa fa-circle fa-fw agentState-green"></i>';
    } else { content+='<i class="fa fa-circle fa-fw agentState-red"></i>'; }
    content+='&nbsp;&nbsp;<b>'+name+'</b>';

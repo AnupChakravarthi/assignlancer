@@ -1,3 +1,18 @@
+<script type="text/javascript">
+function tabMenu_updatelivesupportAccount(id){
+ var arry_Id = ["updatelivesupportAccount-tabMenu-generalInfo","updatelivesupportAccount-tabMenu-updatePwd"];
+ var arry_Id_content = ["updatelivesupportAccount-div-generalInfo","updatelivesupportAccount-div-updatePwd"];
+ for(var index=0;index<arry_Id.length;index++){
+  if(arry_Id[index]===id){
+    if(!$('#'+arry_Id[index]).hasClass('active')){ $('#'+arry_Id[index]).addClass('active'); }
+	if($('#'+arry_Id_content[index]).hasClass('hide-block')){ $('#'+arry_Id_content[index]).removeClass('hide-block'); }
+  } else {
+    if($('#'+arry_Id[index]).hasClass('active')){ $('#'+arry_Id[index]).removeClass('active'); }
+	if(!$('#'+arry_Id_content[index]).hasClass('hide-block')){ $('#'+arry_Id_content[index]).addClass('hide-block'); }
+  }
+ }
+}
+</script>
 <div id="liveSupportAccount-updateForm-div" class="panel panel-default hide-block">
   <div class="panel-heading">
 	<i class="fa fa-users"></i>&nbsp;&nbsp;&nbsp;<b>Update Live Support Accounts</b>
@@ -9,6 +24,23 @@
 		<div id="liveSupportAccount-update-warnings" class="col-md-12"></div>
 	  </div>
 	  <div class="row mtop15p">
+	   <div class="col-md-12">
+	   
+		<ul class="nav nav-tabs">
+	      <li id="updatelivesupportAccount-tabMenu-generalInfo" 
+		    onclick="javascript:tabMenu_updatelivesupportAccount(this.id);">
+			 <a href="#"><b>General Information</b></a>
+		  </li>
+		  <li id="updatelivesupportAccount-tabMenu-updatePwd" onclick="javascript:tabMenu_updatelivesupportAccount(this.id);">
+		     <a href="#"><b>Update Password</b></a>
+		  </li>
+		</ul>
+		
+		<div id="updatelivesupportAccount-div-generalInfo" class="list-group hide-block">
+		<div class="list-group-item">
+		
+		<div class="container-fluid">
+		<div class="row">
 		<div class="col-md-6">
 		
 		  <div class="form-group">
@@ -25,18 +57,6 @@
 		  <div class="form-group">
 			<label>Email</label>
 			<input id="liveSupportAccount-update-email" type="text" class="form-control" placeholder="Enter your Email"/>
-		  </div>
-							
-		  <div class="form-group">
-			<label>Account Password</label>
-			<input id="liveSupportAccount-update-accountPwd" type="password" class="form-control" 
-			placeholder="Enter your Account Password"/>
-		  </div>
-							
-		  <div class="form-group">
-			 <label>Confirm Account Password</label>
-			 <input id="liveSupportAccount-update-confirmAccountPwd" type="password" class="form-control" 
-			 placeholder="Enter your Confirm Password"/>
 		  </div>
 							
 		</div>
@@ -99,9 +119,10 @@
 		  </div>
 							
 		</div>
-	  </div>
-	  <div class="row">
-		 <div class="col-xs-12">
+	    </div>
+		
+		<div class="row">
+		 <div class="col-md-12">
 			<div align="center" class="form-group">
 			   <div class="btn-group">
 				  <button class="btn btn-success"><b>Update Live Support Account</b></button>
@@ -109,7 +130,55 @@
 			   </div>
 			</div>
 		  </div>
+	    </div>
+		
+		
+		</div>
+		
+		</div>
+		</div>
+	   
+	    <div id="updatelivesupportAccount-div-updatePwd" class="list-group hide-block">
+		  <div class="list-group-item">
+		  
+		    <div class="container-fluid">
+		     <div class="row">
+		      <div class="col-md-6">   
+			    
+				<div class="form-group">
+			      <label>Account Password</label>
+			      <input id="liveSupportAccount-update-accountPwd" type="password" class="form-control" 
+			       placeholder="Enter your Account Password"/>
+		        </div>
+							
+		        <div class="form-group">
+			      <label>Confirm Account Password</label>
+			      <input id="liveSupportAccount-update-confirmAccountPwd" type="password" class="form-control" 
+			       placeholder="Enter your Confirm Password"/>
+		        </div>
+		  
+			  </div>
+			 </div>
+			 
+			 <div class="row">
+		      <div class="col-xs-12">
+			    <div align="center" class="form-group">
+			     <div class="btn-group">
+				  <button class="btn btn-success"><b>Update Live Support Account</b></button>
+				  <button class="btn btn-danger"><b>Reset</b></button>
+			     </div>
+			    </div>
+		      </div>
+	         </div>
+			 
+			</div>
+			
+		  </div>
+		</div>
+		
+	   </div>
 	  </div>
+	  
 	</div>
 	<!-- live Support Account - create form ::: End -->
   </div>
