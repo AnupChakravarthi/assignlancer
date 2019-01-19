@@ -4,6 +4,21 @@
 .pad0 { padding:0px; }
 .mbot0 { margin-bottom:0px; }
 .list-group>.list-group-item { border-radius:0px; }
+.curpoint { cursor:pointer; }
+.divRightMargin { border-right:1px solid #ccc; }
+.divLeftMargin { border-left:1px solid #ccc; }
+.mtop15p { margin-top:15px; }
+.mbot15p { margin-bottom:15px; }
+.agentState-green { color: #02af09; }
+.agentState-red { color: #e40e07; }
+.font-grey { color:#777; }
+.hide-block { display:none; }
+.livesupportlist-item:hover { background-color:#fff4d4;cursor:pointer; }
+.livesupportAccountslistview { max-height:450px;overflow-y:scroll; }
+.livesupportAccountslistview::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+background-color: #F5F5F5; }         
+.livesupportAccountslistview::-webkit-scrollbar { width: 4px;background-color: #F5F5F5; }         
+.livesupportAccountslistview::-webkit-scrollbar-thumb { background-color: #e7e7e7; }
 </style>
 <script type="text/javascript">
 function js_ajax(method,url,data,fn_output){
@@ -283,7 +298,9 @@ if(chatFormDivisions.length<=3){
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> <b>Dashboard</b></a>
+                            <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/dashboard">
+							  <i class="fa fa-dashboard fa-fw"></i> <b>Dashboard</b>
+							</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> <b>Live Support</b><span class="fa arrow"></span></a>
@@ -294,14 +311,55 @@ if(chatFormDivisions.length<=3){
 									</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Morris.js Charts</a>
+                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/livesupport-timings">
+									  <b>Shift Timings</b>
+									</a>
                                 </li>
+								<li>
+                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/livesupport-chat">
+									  <b>Customers Chat</b>
+									</a>
+                                </li>
+								<li>
+                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/livesupport-work-reports">
+									  <b>Work Reports</b>
+									</a>
+                                </li>
+								
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+						
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="tables.html">
+							   <i class="fa fa-table fa-fw"></i> <b>Customers</b><span class="fa arrow"></span></a>
+							   <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/customer-manageAccounts">
+									  <b>Manage Accounts</b>
+									</a>
+                                </li>
+								</ul>
+							</a>
                         </li>
+						<li>
+                            <a href="tables.html">
+							   <i class="fa fa-table fa-fw"></i> <b>Business Overview</b><span class="fa arrow"></span></a>
+							   <ul class="nav nav-second-level">
+                                <li>
+								  <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/view-statistics">
+									<i class="fa fa-bar-chart-o fa-fw"></i> <b>View Statistics</b>
+								  </a>
+								</li>
+								<li>
+								  <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/view-ourearnings">
+									<i class="fa fa-bar-chart-o fa-fw"></i> <b>Our Earnings</b>
+								  </a>
+								</li>
+							   </ul>
+							</a>
+                        </li>
+						
                         <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
                         </li>

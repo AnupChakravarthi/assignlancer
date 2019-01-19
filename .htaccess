@@ -15,18 +15,33 @@ RewriteRule app/contactUs contactus.php [NC,L]
 
 RewriteRule validate/([^/]+)$ backend/php/dac/controller.authentication.php?action=UPDATE_EMAIL_VALIDATED&account_Id=$1 [NC,L]
 
+################################################ ADMINISTRATOR ##############################################
 RewriteRule app/admin/dashboard backend/users_admin/index.php [NC,L]
+######## LiveSupport #########
 RewriteRule app/admin/livesupport-accounts backend/users_admin/livesupport-manageAccounts.php [NC,L]
+RewriteRule app/admin/livesupport-timings backend/users_admin/livesupport-timings.php [NC,L]
+RewriteRule app/admin/livesupport-chat backend/users_admin/livesupport-chat.php [NC,L]
+RewriteRule app/admin/livesupport-work-reports backend/users_admin/livesupport-work-reports.php [NC,L]
+######## Customers #########
+RewriteRule app/admin/customer-manageAccounts backend/users_admin/customer-manageAccounts.php [NC,L]
+######## Business Overview ########
+RewriteRule app/admin/view-statistics backend/users_admin/view-statistics.php [NC,L]
+RewriteRule app/admin/view-ourearnings backend/users_admin/view-ourearnings.php [NC,L]
+##############################################################3##############################################
+
+################################################ CUSTOMER ##############################################
 RewriteRule app/students/dashboard backend/users_students/index.php [NC,L]
 RewriteRule app/students/createNewOrder backend/users_students/createNewOrder.php [NC,L]
 RewriteRule app/students/profile backend/users_students/user_profile.php [NC,L]
+##############################################################3##############################################
 
-
+################################################ LIVE SUPPORT ##############################################
 RewriteRule app/livesupport/dashboard backend/users_livesupport/index.php [NC,L]
 RewriteRule app/livesupport/mo_assignments backend/users_livesupport/manageOrders_assignments.php [NC,L]
 RewriteRule app/livesupport/mo_payments backend/users_livesupport/manageOrders_payments.php [NC,L]
 RewriteRule app/livesupport/profile backend/users_livesupport/user_profile.php [NC,L]
 RewriteRule app/liveSupport/chats backend/users_livesupport/chat_customers.php [NC,L]
+##############################################################3##############################################
 
 RewriteRule ([^/]+)/styles/([^/]+)$ styles/$2 [NC,L]
 RewriteRule ([^/]+)/styles/([^/]+)/([^/]+)$ styles/$2/$3 [NC,L]

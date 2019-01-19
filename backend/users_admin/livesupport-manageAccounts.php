@@ -27,19 +27,6 @@ include_once '../../templates/api_js.php';
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-<style>
-.mtop15p { margin-top:15px; }
-.agentState-green { color: #02af09; }
-.agentState-red { color: #e40e07; }
-.font-grey { color:#777; }
-.hide-block { display:none; }
-.livesupportlist-item:hover { background-color:#fff4d4;cursor:pointer; }
-.livesupportAccountslistview { max-height:450px;overflow-y:scroll; }
-.livesupportAccountslistview::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-background-color: #F5F5F5; }         
-.livesupportAccountslistview::-webkit-scrollbar { width: 4px;background-color: #F5F5F5; }         
-.livesupportAccountslistview::-webkit-scrollbar-thumb { background-color: #e7e7e7; }
-</style>
 </head>
 <body>
 
