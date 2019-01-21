@@ -550,7 +550,6 @@ best and I would like to give all my assignment to him/her next time.
 </div>
 </div>
 </div>
-
 <?php include_once 'templates/api_init_bottom.php'; ?>
 
 </body>

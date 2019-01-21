@@ -11,6 +11,7 @@ RewriteRule login default.php?param=login [NC,L]
 RewriteRule app/aboutUs aboutus.php [NC,L]
 RewriteRule app/services services.php [NC,L]
 RewriteRule app/howItWorks howItWorks.php [NC,L]
+RewriteRule app/worktypes work-types.php [NC,L]
 RewriteRule app/contactUs contactus.php [NC,L]
 
 RewriteRule validate/([^/]+)$ backend/php/dac/controller.authentication.php?action=UPDATE_EMAIL_VALIDATED&account_Id=$1 [NC,L]
@@ -24,6 +25,8 @@ RewriteRule app/admin/livesupport-chat backend/users_admin/livesupport-chat.php 
 RewriteRule app/admin/livesupport-work-reports backend/users_admin/livesupport-work-reports.php [NC,L]
 ######## Customers #########
 RewriteRule app/admin/customer-manageAccounts backend/users_admin/customer-manageAccounts.php [NC,L]
+RewriteRule app/admin/customer-manageOrders backend/users_admin/customer-manageOrders.php [NC,L]
+RewriteRule app/admin/customer-worksheet backend/users_admin/customer-worksheet.php [NC,L]
 ######## Business Overview ########
 RewriteRule app/admin/view-statistics backend/users_admin/view-statistics.php [NC,L]
 RewriteRule app/admin/view-ourearnings backend/users_admin/view-ourearnings.php [NC,L]

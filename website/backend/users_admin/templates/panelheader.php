@@ -334,11 +334,21 @@ if(chatFormDivisions.length<=3){
                             <a href="tables.html">
 							   <i class="fa fa-table fa-fw"></i> <b>Customers</b><span class="fa arrow"></span></a>
 							   <ul class="nav nav-second-level">
-                                <li>
+                                 <li>
                                     <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/customer-manageAccounts">
 									  <b>Manage Accounts</b>
 									</a>
-                                </li>
+                                 </li>
+								 <li>
+                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/customer-manageOrders">
+									  <b>Manage Orders</b>
+									</a>
+                                 </li>
+								 <li>
+                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/customer-worksheet">
+									  <b>Work Sheet</b>
+									</a>
+                                 </li>
 								</ul>
 							</a>
                         </li>

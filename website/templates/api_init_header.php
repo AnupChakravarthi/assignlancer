@@ -12,6 +12,7 @@
 <script type="text/javascript">
 function selectAppInitHeader(id){
  var arry_Id=["appInitHeader-home","appInitHeader-aboutUs","appInitHeader-services","appInitHeader-howItWorks",
+ "appInitHeader-worktypes",
 "appInitHeader-pricequote","appInitHeader-auth","appInitHeader-contactUs","appInitHeader-livesupport-dashboard",
 "appInitHeader-customer-dashboard","appInitHeader-customer-logout","appInitHeader-admin-dashboard",
 "appInitHeader-admin-myprofile","appInitHeader-admin-livesupportManage","appInitHeader-admin-payManage",
@@ -357,7 +358,7 @@ var pwd = document.getElementById("signin_customer_pwd").value;
 		<li id="appInitHeader-home"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>"><b>Home</b></a></li>
 		<li id="appInitHeader-aboutUs"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/aboutUs"><span><b>About Us</b></span></a></li>
 		<li id="appInitHeader-services" class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Services
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Services</b>
         <span class="caret"></span></a>
         <ul class="dropdown-menu" style="z-index:1100;">
            <li><a href="#">Management Assignments</a></li>
@@ -373,6 +374,7 @@ var pwd = document.getElementById("signin_customer_pwd").value;
         </ul>
       </li>
 		<li id="appInitHeader-howItWorks"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/howItWorks"><span><b>How it Works?</b></span></a></li>
+		<li id="appInitHeader-worktypes"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/worktypes"><span><b>Types of Works</b></span></a></li>
 		<li id="appInitHeader-pricequote" data-toggle="modal" data-target="#priceQuotationModal"><a href="#" onclick="javascript:selectAppInitHeader('appInitHeader-pricequote');"><span><b>Price Quotation</b></span></a></li>
 		<li id="appInitHeader-auth" data-toggle="modal" data-target="#customerLoginModal"><a href="#"><span><b>Login</b></span></a></li>
 		<li id="appInitHeader-auth" data-toggle="modal" data-target="#customerRegisterModal"><a href="#"><span><b>Register</b></span></a></li>

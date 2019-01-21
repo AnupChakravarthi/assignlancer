@@ -3,7 +3,7 @@ $_SESSION["PROJECT_MODE"]='DEBUG'; // DEBUG / PROD
 $_SESSION["USR_LANG"]='english';
 if($_SESSION["PROJECT_MODE"]=='DEBUG'){
 $_SESSION["PROJECT_VERSION_NUMBER"]='1.0';
-$_SESSION["PROJECT_URL"]="http://".$_SERVER["HTTP_HOST"]."/assignlancer/";
+$_SESSION["PROJECT_URL"]="http://".$_SERVER["HTTP_HOST"]."/assignlancer/website/";
 } else {
 $_SESSION["PROJECT_VERSION_NUMBER"]='1.0';
 // $_SESSION["PROJECT_URL"]="http://.com/".$_SESSION["PROJECT_VERSION_NUMBER"]."/";
