@@ -1,7 +1,7 @@
 <?php 
 session_start();
-include_once '../../templates/api_params.php';
-include_once '../../templates/api_js.php';
+include_once '../../templates/api/api_params.php';
+include_once '../../templates/api/api_js.php';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -29,16 +29,52 @@ include_once '../../templates/api_js.php';
     <![endif]-->
 </head>
 <body>
+<!-- Modal ::: Start -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h5 class="modal-title"><b>Create Live Support Account</b></h5>
+      </div>
+      <div class="modal-body">
+	   <!-- live Support Account - create ::: Start -->
+	   <?php include_once 'templates/livesupport-createAccountForm.php'; ?>
+       <!-- live Support Account - create ::: End -->
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Modal ::: End -->
     <div id="wrapper">
 
         <?php include_once 'templates/panelheader.php'; ?>
         <div id="page-wrapper">
             <div class="row">
-                <div class="col-lg-12">
-                    <h4 class="page-header"><b>Live Support - Manage Accounts</b></h4>
-                </div>
+              <div class="col-lg-12">
+                 <h4 class="page-header"><b>Live Support - Manage Accounts</b></h4>
+              </div>
             </div>
+			<div class="row mtop15p mbot15p">
+			 <div class="col-lg-12">
+			   <button class="btn btn-default pull-right" data-toggle="modal" data-target="#myModal">
+			      <b>(+) Create Live Support Account</b>
+			   </button>
+			 </div>
+			</div>
+			<div class="row mtop15p mbot15p">
+			 <div class="col-lg-12"><hr/></div>
+			</div>
+			<div class="row">
+			  <div class="col-lg-12">
+				 <table id="liveSupportAccountsTbl" width="100%" class="table table-striped table-bordered table-hover">
+                   
+				</table>
+			  </div>
+			</div>
 			<div class="row">
               <div align="right" class="col-lg-12">
                 <button id="liveSupportAccount-createBtn" class="btn btn-primary hide-block" 
@@ -68,9 +104,6 @@ include_once '../../templates/api_js.php';
 			  <!-- -->
 			  <!-- -->
 			    <div class="col-lg-8">
-				  <!-- live Support Account - create ::: Start -->
-				  <?php include_once 'templates/livesupport-createAccountForm.php'; ?>
-                  <!-- live Support Account - create ::: End -->
 				  <!-- live Support Account - update ::: Start -->
 				  <?php include_once 'templates/livesupport-updateAccountForm.php'; ?>
 				  <!-- live Support Account - update ::: End -->
@@ -92,8 +125,12 @@ include_once '../../templates/api_js.php';
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/metisMenu/metisMenu.min.js"></script>
-
-	<script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/dist/load-data-on-scroll.js"></script>
+    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/dist/load-data-on-scroll.js"></script>
+	
+	<!-- DataTables JavaScript -->
+    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/vendor/datatables-responsive/dataTables.responsive.js"></script>
 	
     <script type="text/javascript" src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/jquery-ui.js"></script>
     <script type="text/javascript" src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/jquery.ui.chatbox.js"></script>
@@ -104,90 +141,19 @@ include_once '../../templates/api_js.php';
     <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/dist/sb-admin-2.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-  getListOfLiveSupportAccountsList()
-  display_createLiveSupportAccountsForm();
-});
-/* Display Logic ::: Start */
-function display_createLiveSupportAccountsForm(){
-  if(!$('#liveSupportAccount-createBtn').hasClass('hide-block')){ 
-     $('#liveSupportAccount-createBtn').addClass('hide-block'); 
-  }
-  if($('#liveSupportAccount-createForm-div').hasClass('hide-block')){ 
-     $('#liveSupportAccount-createForm-div').removeClass('hide-block'); 
-  }
-  if(!$('#liveSupportAccount-updateForm-div').hasClass('hide-block')){ 
-     $('#liveSupportAccount-updateForm-div').addClass('hide-block'); 
-  }
-}
-function display_updateLiveSupportAccountsForm(){
- if($('#liveSupportAccount-createBtn').hasClass('hide-block')){ 
-     $('#liveSupportAccount-createBtn').removeClass('hide-block'); 
-  }
-  if(!$('#liveSupportAccount-createForm-div').hasClass('hide-block')){ 
-     $('#liveSupportAccount-createForm-div').addClass('hide-block'); 
-  }
-  if($('#liveSupportAccount-updateForm-div').hasClass('hide-block')){ 
-     $('#liveSupportAccount-updateForm-div').removeClass('hide-block'); 
-  }
-  tabMenu_updatelivesupportAccount('updatelivesupportAccount-tabMenu-generalInfo');
-}
-function getListOfLiveSupportAccountsList(){
- // view-livesupportaccounts-list0
- js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.livesupport.php',
- { action:'GET_COUNT_LIVESUPPORTACCOUNTS' },function(total_data){
-   scroll_loadInitializer('view-livesupportaccounts-list',10,getListOfLiveSupportAccountsListData,total_data);
- });
+  load_livesupport_createForm();
+  load_livesupport_viewAccounts();
  
+  
+});
+function load_livesupport_viewAccounts(){
+js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.livesupport.authentication.php',
+{ action:'LIVESUPPORT_VIEWALLACCOUNTS', adminTimezone:ADMINISTRATOR_TIMEZONE },function(response){
+ console.log(response);
+ document.getElementById("liveSupportAccountsTbl").innerHTML=response;
+ $('#liveSupportAccountsTbl').DataTable({ responsive: true });
+});
 }
-function getListOfLiveSupportAccountsListData(div_view, appendContent,limit_start,limit_end){
- js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.livesupport.php',
- { action:'GET_DATA_LIVESUPPORTACCOUNTS', limit_start:limit_start, limit_end:limit_end },function(response){
-  console.log(response);
-  response = JSON.parse(response);
-  var content='';
-  for(var index=0;index<response.length;index++){
-   var account_Id = response[index].account_Id;
-   var accountType = response[index].accountType;
-   var availStatus = response[index].availStatus;
-   var name = response[index].name;
-   var email = response[index].email;
-   var country = response[index].country;
-   var shift = response[index].shift;
-   var time_Id = response[index].time_Id;
-   var startTime = response[index].startTime;
-   var endTime = response[index].endTime;
-   var timezone = response[index].timezone;
-   content+='<div class="list-group-item livesupportlist-item" ';
-   content+='onclick="javascript:view_livesupportUpdateForm(\''+account_Id+'\',\''+accountType+'\',';
-   content+='\''+name+'\',\''+email+'\',\''+country+'\',\''+shift+'\',\''+startTime+'\',\''+endTime;
-   content+='\',\''+timezone+'\',\''+time_Id+'\');">';
-   content+='<h5>';
-   content+='<i class="fa fa-times-circle fa-fw pull-right"></i>';
-   if(availStatus==='ONLINE'){ content+='<i class="fa fa-circle fa-fw agentState-green"></i>';
-   } else { content+='<i class="fa fa-circle fa-fw agentState-red"></i>'; }
-   content+='&nbsp;&nbsp;<b>'+name+'</b>';
-   content+='</h5>';
-   content+='<div class="font-grey"><i><b>'+shift+'</b> ('+timezone+')';
-   content+=' - '+startTime+' to '+endTime+'</i></div>';
-   content+='</div>';
-  }				  
-  content+=appendContent;
-  document.getElementById(div_view).innerHTML=content;
- });
-}
-function view_livesupportUpdateForm(account_Id,accountType,name,email,country,shift,startTime,endTime,timezone,time_Id){
- display_updateLiveSupportAccountsForm();
- document.getElementById("liveSupportAccount-update-accountType").value = accountType;
- document.getElementById("liveSupportAccount-update-name").value = name;
- document.getElementById("liveSupportAccount-update-email").value = email;
- document.getElementById("liveSupportAccount-update-accountPwd").value = '';
- document.getElementById("liveSupportAccount-update-confirmAccountPwd").value = '';
- document.getElementById("liveSupportAccount-update-country").value = country;
- document.getElementById("liveSupportAccount-update-timezone").value = timezone;
- document.getElementById("liveSupportAccount-update-shiftTimings").value = time_Id;
- document.getElementById("liveSupportAccount-update-24X7Support").innerHTMl ='';
-}
-/* Display Logic ::: End */
 </script>
 </body>
 

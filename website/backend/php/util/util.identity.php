@@ -5,14 +5,29 @@
  
  class GenerateIdentity {
    /* accounts ::: account_Id (15) */
-   function get_account_Id(){
-    $id='U';
-    for($index=0;$index<14;$index++){
+   function get_AdminAccount_Id(){
+    $id='AA';
+    for($index=0;$index<13;$index++){
       $id.=rand(0,9);
 	}
 	return $id;
    }
-   
+   /* accounts ::: account_Id (15) */
+   function get_CustomerAccount_Id(){
+    $id='CA';
+    for($index=0;$index<13;$index++){
+      $id.=rand(0,9);
+	}
+	return $id;
+   }
+   /* accounts ::: account_Id (15) */
+   function get_LSAgentAccount_Id(){
+    $id='LA';
+    for($index=0;$index<13;$index++){
+      $id.=rand(0,9);
+	}
+	return $id;
+   }
    /* orders ::: order_Id (15) */
    function get_order_Id(){
     $id='UO';

@@ -1,7 +1,17 @@
 <style>
+.agentState-green { color:#02af09; }
+.agentState-red { color:#e40e07; }
+table th,td { font-size:12px;text-align:center; }
+table { overflow-x:scroll; }
+.dataTables_filter,.dataTables_paginate { float:right!important; }
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover { background-color:#eee; }
 .navbar-brand-span { font-family:logoTitle;font-size:32px;color:#000; }
 @font-face { font-family:logoTitle;src:url('fonts/LitchisIsland.ttf'); }
+hr { margin-bottom:5px;margin-top:5px; }
 .pad0 { padding:0px; }
+.pad3 { padding:3px; }
+.pad5 { padding:5px; }
+.pad10 { padding:10px; }
 .mbot0 { margin-bottom:0px; }
 .list-group>.list-group-item { border-radius:0px; }
 .curpoint { cursor:pointer; }
@@ -11,19 +21,47 @@
 .mbot15p { margin-bottom:15px; }
 .agentState-green { color: #02af09; }
 .agentState-red { color: #e40e07; }
+.font-red { color:red; }
 .font-grey { color:#777; }
 .hide-block { display:none; }
 .livesupportlist-item:hover { background-color:#fff4d4;cursor:pointer; }
-.livesupportAccountslistview { max-height:450px;overflow-y:scroll; }
-.livesupportAccountslistview::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-background-color: #F5F5F5; }         
-.livesupportAccountslistview::-webkit-scrollbar { width: 4px;background-color: #F5F5F5; }         
-.livesupportAccountslistview::-webkit-scrollbar-thumb { background-color: #e7e7e7; }
+.scrollview { max-height:450px;overflow-y:scroll; }
+.scrollview::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);background-color: #F5F5F5; }         
+.scrollview::-webkit-scrollbar { width: 4px;background-color: #F5F5F5; }         
+.scrollview::-webkit-scrollbar-thumb { background-color: #000; }
 </style>
 <script type="text/javascript">
-function js_ajax(method,url,data,fn_output){
- $.ajax({type: method, url: url,data:data,success: function(response) { fn_output(response); } }); 
+/* Core Functionality ::: Start */
+function sel_optcountries(id,selval){ 
+ var countries=["India","Australia"]; 
+ var content='<option value="">Select your Country</option>';
+ for(var index=0;index<countries.length;index++){
+  content+='<option value="'+countries[index]+'">'+countries[index]+'</option>';
+ }
+ document.getElementById(id).innerHTML=content;
+ if(selval.length>0){ document.getElementById(id).value=selval; }
 }
+function sel_optcurrencies(id,selval){ 
+ var currency=["Indian Rupee","Australian Dollar"]; 
+ var content='<option value="">Select your Currency</option>';
+ for(var index=0;index<currency.length;index++){
+  content+='<option value="'+currency[index]+'">'+currency[index]+'</option>';
+ }
+ document.getElementById(id).innerHTML=content;
+ if(selval.length>0){ document.getElementById(id).value=selval; }
+}
+function sel_optTimezone(id,selval){ 
+ var timezone=["Asia/Kolkata","Australia/Adelaide","Australia/Brisbane","Australia/Broken_Hill","Australia/Currie",
+ "Australia/Darwin","Australia/Eucla","Australia/Hobart","Australia/Lindeman","Australia/Lord_Howe","Australia/Melbourne",
+ "Australia/Perth","Australia/Sydney"]; 
+ var content='<option value="">Select your Timezone</option>';
+ for(var index=0;index<timezone.length;index++){
+  content+='<option value="'+timezone[index]+'">'+timezone[index]+'</option>';
+ }
+ document.getElementById(id).innerHTML=content;
+ if(selval.length>0){ document.getElementById(id).value=selval; }
+}		
+/* Core Functionality ::: End */
 /* COLLECTIONS */
 var CHATOFFSET=0;
 var chatFormDivisions=[];
@@ -269,7 +307,7 @@ if(chatFormDivisions.length<=3){
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/admin/userprofile"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
@@ -340,6 +378,16 @@ if(chatFormDivisions.length<=3){
 									</a>
                                  </li>
 								 <li>
+                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/customer-createNewOrder">
+									  <b>Create New Orders</b>
+									</a>
+                                 </li>
+								 <li>
+                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/customer-updateOrders">
+									  <b>Update Orders</b>
+									</a>
+                                 </li>
+								 <li>
                                     <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/customer-manageOrders">
 									  <b>Manage Orders</b>
 									</a>
@@ -369,77 +417,12 @@ if(chatFormDivisions.length<=3){
 							   </ul>
 							</a>
                         </li>
-						
-                        <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+					    <li>
+                            <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/test">
+							  <i class="fa fa-dashboard fa-fw"></i> <b>Test</b>
+							</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="panels-wells.html">Panels and Wells</a>
-                                </li>
-                                <li>
-                                    <a href="buttons.html">Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="notifications.html">Notifications</a>
-                                </li>
-                                <li>
-                                    <a href="typography.html">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="icons.html"> Icons</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grid</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="login.html">Login Page</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                    </ul>
+					 </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>

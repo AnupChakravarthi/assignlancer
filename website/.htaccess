@@ -18,6 +18,9 @@ RewriteRule validate/([^/]+)$ backend/php/dac/controller.authentication.php?acti
 
 ################################################ ADMINISTRATOR ##############################################
 RewriteRule app/admin/dashboard backend/users_admin/index.php [NC,L]
+######## Administrator #######
+RewriteRule app/admin/userprofile backend/users_admin/admin-userprofile.php [NC,L]
+
 ######## LiveSupport #########
 RewriteRule app/admin/livesupport-accounts backend/users_admin/livesupport-manageAccounts.php [NC,L]
 RewriteRule app/admin/livesupport-timings backend/users_admin/livesupport-timings.php [NC,L]
@@ -26,6 +29,8 @@ RewriteRule app/admin/livesupport-work-reports backend/users_admin/livesupport-w
 ######## Customers #########
 RewriteRule app/admin/customer-manageAccounts backend/users_admin/customer-manageAccounts.php [NC,L]
 RewriteRule app/admin/customer-manageOrders backend/users_admin/customer-manageOrders.php [NC,L]
+RewriteRule app/admin/customer-createNewOrder backend/users_admin/customer-createNewOrder.php [NC,L]
+RewriteRule app/admin/customer-updateOrders backend/users_admin/customer-updateOrders.php [NC,L]
 RewriteRule app/admin/customer-worksheet backend/users_admin/customer-worksheet.php [NC,L]
 ######## Business Overview ########
 RewriteRule app/admin/view-statistics backend/users_admin/view-statistics.php [NC,L]

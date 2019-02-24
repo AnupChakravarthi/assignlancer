@@ -33,8 +33,8 @@ function selectAppInitHeader(id){
  }
 }
 
-var chatData=JSON.parse(getCookie("LiveSupportChat"));
 function chatBoxInitilaizer(){
+  var chatData=JSON.parse(getCookie("LiveSupportChat"));
   var box = null;
   if(box) { box.chatbox("option", "boxManager").toggleBox(); }
   else {

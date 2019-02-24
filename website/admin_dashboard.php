@@ -1,7 +1,7 @@
 <?php 
 session_start();
-include_once 'templates/api_params.php';
-include_once 'templates/api_js.php';
+include_once 'templates/api/api_params.php';
+include_once 'templates/api/api_js.php';
  ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -44,7 +44,7 @@ accountType:'CUSTOMER_LIVESUPPORT',availStatus:'',name:'',email:'',acc_pwd:'' },
 </head>
 <body>
 <div id="chat_div"></div>
-<?php include_once 'templates/api_init_header.php'; ?>
+<?php include_once 'templates/api/api_init_header.php'; ?>
 <div class="container-fluid mtop15p">
  <div class="row">
 <script type="text/javascript">

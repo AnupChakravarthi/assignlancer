@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if(isset($_SESSION["ACCOUNT_TYPE"]) && $_SESSION["ACCOUNT_TYPE"]=='CUSTOMER_LIVESUPPORT'){
+// if(isset($_SESSION["ACCOUNT_TYPE"]) && $_SESSION["ACCOUNT_TYPE"]=='CUSTOMER_LIVESUPPORT'){
 include_once '../../templates/api_params.php';
 include_once '../../templates/api_js.php';
  ?>
@@ -139,4 +139,4 @@ $(document).ready(function(){
 </body>
 
 </html>
-<?php } else { header("Location:".$_SESSION["PROJECT_URL"]); } ?>
+<?php// } else { header("Location:".$_SESSION["PROJECT_URL"]); } ?>

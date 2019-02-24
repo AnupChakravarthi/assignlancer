@@ -1,7 +1,7 @@
 <?php 
 session_start();
-include_once 'templates/api_params.php';
-include_once 'templates/api_js.php';
+include_once 'templates/api/api_params.php';
+include_once 'templates/api/api_js.php';
 if(!isset($_SESSION["ACCOUNT_TYPE"])){
  ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
@@ -9,6 +9,7 @@ if(!isset($_SESSION["ACCOUNT_TYPE"])){
 <head>
   <title>Assignlancer</title>
   <meta charset="utf-8">
+  <link rel="icon" href="<?php echo $_SESSION["PROJECT_URL"]; ?>images/favicon.ico" type="image/gif" sizes="16x16">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/jquery.min.js"></script>
   <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>js/bootstrap.min.js"></script>
@@ -67,7 +68,7 @@ $(document).ready(function(){
  selectAppInitHeader('appInitHeader-home');
  $("#sliderCarousel").carousel({interval: 4000});
   homeSlider();
-  if(getCookie("LiveSupportChat")===''){
+  if(getCookie("LiveSupportChat").length==0){
    var chatData=[{"title":"","msg":"Welcome to HereWeGet.com."},
 				 {"title":"","msg":"Greetings for the Day...!!!"},
 				 {"title":"AssignmentHelp","msg":"Hi, Do you need assignment help?"}];
@@ -83,7 +84,7 @@ a.a-black,a.a-black:hover { color:#000; }
 </head>
 <body>
 <div id="chat_div"></div>
-<?php include_once 'templates/api_init_header.php'; ?>
+<?php include_once 'templates/api/api_init_header.php'; ?>
 
  <!-- Modal ::: Start -->
  <!-- Modal -->
@@ -550,7 +551,7 @@ best and I would like to give all my assignment to him/her next time.
 </div>
 </div>
 </div>
-<?php include_once 'templates/api_init_bottom.php'; ?>
+<?php include_once 'templates/api/api_init_bottom.php'; ?>
 
 </body>
 </html>

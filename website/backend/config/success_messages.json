@@ -3,5 +3,6 @@
   "S002": { "english": "Your Account is registered, Please check your Email Address to validate Account." },
   "S003": { "english": "Your Account Password updated Successfully." },
   "S004": { "english": "Your Account Profile updated Successfully." },
-  "S005": { "english": "Your Order is created Successfully." }
+  "S005": { "english": "Your Order is created Successfully." },
+  "S006": { "english": "LiveSupport Agent Account created Successfully." }
 }

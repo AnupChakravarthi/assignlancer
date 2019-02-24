@@ -1,4 +1,8 @@
-<?php include_once 'templates/api_params.php'; ?>
+<?php 
+session_start();
+include_once 'templates/api/api_params.php';
+include_once 'templates/api/api_js.php';
+ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -27,7 +31,7 @@ h1,h2,h3,h4,h5 { font-weight: 300;font-family: Roboto,sans-serif;color: #34343c;
 </head>
 <body>
 <div id="chat_div"></div>
-<?php include_once 'templates/api_init_header.php'; ?>
+<?php include_once 'templates/api/api_init_header.php'; ?>
 <div class="container-fluid"  style="background-color:#2196f3;">
 
 <div class="row">

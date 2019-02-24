@@ -1,7 +1,7 @@
 <?php 
 session_start();
-include_once '../../templates/api_params.php';
-include_once '../../templates/api_js.php';
+include_once '../../templates/api/api_params.php';
+include_once '../../templates/api/api_js.php';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -43,43 +43,27 @@ include_once '../../templates/api_js.php';
 		 <div class="form-group">
 		   <label>Select Timezone</label>
 		   <div class="input-group">
-		    <select class="form-control">
+		    <select id="livesupport_selectTimezone" class="form-control">
 		     <option value="">Select Timezone</option>
-			
-			
+			 <option value="Asia/Kolkata">Asia/Kolkata</option>
+			 <option value="Australia/Adelaide">Australia/Adelaide</option>
+			 <option value="Australia/Brisbane">Australia/Brisbane</option>
+			 <option value="Australia/Broken_Hill">Australia/Broken_Hill</option>
+			 <option value="Australia/Currie">Australia/Currie</option>
+			 <option value="Australia/Darwin">Australia/Darwin</option>
+			 <option value="Australia/Eucla">Australia/Eucla</option>
+			 <option value="Australia/Hobart">Australia/Hobart</option>
+			 <option value="Australia/Lindeman">Australia/Lindeman</option>
+			 <option value="Australia/Lord_Howe">Australia/Lord_Howe</option>
+			 <option value="Australia/Melbourne">Australia/Melbourne</option>
+			 <option value="Australia/Perth">Australia/Perth</option>
+			 <option value="Australia/Sydney">Australia/Sydney</option>
 		    </select>
-			<span class="input-group-addon curpoint"><b>View Timings</b></span>
+			<span class="input-group-addon curpoint" onclick="javascript:viewLSTimings();"><b>View Timings</b></span>
 		   </div>
 		 </div>
 		 <div class="form-group">
-		  <div class="table-responsive">          
-		   <table class="table" style="border:1px solid #ccc;font-size:12px;">
-			<thead style="background-color:#eee;font-size:13px;">
-			  <tr>
-			    <td align="center"><b>Timezone</b></td>
-				<td align="center"><b>Shift</b></td>
-				<td align="center"><b>Timings</b></td>
-			 </tr>
-            </thead>
-            <tbody>
-              <tr>
-				<td align="center">Asia/Kolkatta</td>
-				<td align="center">Early Morning</td>
-				<td align="center">01:00 AM - 09:00 AM</td>
-			  </tr>
-			  <tr>
-				<td align="center">Asia/Kolkatta</td>
-				<td align="center">Morning</td>
-				<td align="center">09:00 AM - 05:00 PM</td>
-			  </tr>
-			  <tr>
-				<td align="center">Asia/Kolkatta</td>
-				<td align="center">Evening</td>
-				<td align="center">05:00 PM - 01:00 AM</td>
-			  </tr>
-			</tbody>
-		   </table>
-		  </div>	
+		  <div id="tbl_viewListOfTimings" class="table-responsive"></div>	
 		 </div>
 		</div>
 		<div class="col-md-6">
@@ -157,9 +141,42 @@ include_once '../../templates/api_js.php';
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/dist/sb-admin-2.js"></script>
 <script type="text/javascript">
+function viewLSTimings(){
+ var timezone = document.getElementById("livesupport_selectTimezone").value;
+ js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.livesupport.timings.php',
+ { action:'GETAGENT_TIMINGS_BYTIMEZONE',req_timezone:timezone },function(response){
+   console.log(response); 
+   response = JSON.parse(response);
+    var content='<table class="table" style="border:1px solid #ccc;font-size:12px;">';
+		content+='<thead style="background-color:#eee;font-size:13px;">';
+		content+='<tr>';
+		content+='<td align="center"><b>Timezone</b></td>';
+		content+='<td align="center"><b>Shift</b></td>';
+		content+='<td align="center"><b>Timings</b></td>';
+		content+='</tr>';
+        content+='</thead>';
+        content+='<tbody>';
+   for(var index=0;index<response.length;index++){
+     var time_Id = response[index].time_Id;
+	 var shift = response[index].shift;
+	 var startTime = response[index].startTime;
+	 var endTime = response[index].endTime;
+	 var timezone = response[index].timezone;
+	 content+='<tr>';
+	 content+='<td align="center">'+timezone+'</td>';
+	 content+='<td align="center">'+shift+'</td>';
+	 content+='<td align="center">'+startTime+' - '+endTime+'</td>';
+	 content+='</tr>';
+   }
+	content+='</tbody>';
+	content+='</table>';
+	document.getElementById("tbl_viewListOfTimings").innerHTML=content;
+ });
+}
 $(document).ready(function(){
   
 });
+
 </script>
 </body>
 
