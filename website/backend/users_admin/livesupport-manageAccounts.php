@@ -30,7 +30,28 @@ include_once '../../templates/api/api_js.php';
 </head>
 <body>
 <!-- Modal ::: Start -->
-<div id="myModal" class="modal fade" role="dialog">
+<div id="updateLiveSupportAccountModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h5 class="modal-title"><b>Update Live Support Account</b></h5>
+      </div>
+      <div class="modal-body">
+	   <!-- live Support Account - create ::: Start -->
+	   <?php include_once 'templates/livesupport-updateAccountForm.php'; ?>
+       <!-- live Support Account - create ::: End -->
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Modal ::: End -->
+
+<!-- Modal ::: Start -->
+<div id="createLiveSupportAccountModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -60,7 +81,7 @@ include_once '../../templates/api/api_js.php';
             </div>
 			<div class="row mtop15p mbot15p">
 			 <div class="col-lg-12">
-			   <button class="btn btn-default pull-right" data-toggle="modal" data-target="#myModal">
+			   <button class="btn btn-default pull-right" data-toggle="modal" data-target="#createLiveSupportAccountModal">
 			      <b>(+) Create Live Support Account</b>
 			   </button>
 			 </div>
@@ -105,7 +126,7 @@ include_once '../../templates/api/api_js.php';
 			  <!-- -->
 			    <div class="col-lg-8">
 				  <!-- live Support Account - update ::: Start -->
-				  <?php include_once 'templates/livesupport-updateAccountForm.php'; ?>
+				  
 				  <!-- live Support Account - update ::: End -->
                 </div>
 			  <!-- -->
@@ -142,17 +163,33 @@ include_once '../../templates/api/api_js.php';
 <script type="text/javascript">
 $(document).ready(function(){
   load_livesupport_createForm();
+  load_livesupport_updateForm();
   load_livesupport_viewAccounts();
- 
-  
 });
 function load_livesupport_viewAccounts(){
 js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.livesupport.authentication.php',
 { action:'LIVESUPPORT_VIEWALLACCOUNTS', adminTimezone:ADMINISTRATOR_TIMEZONE },function(response){
- console.log(response);
  document.getElementById("liveSupportAccountsTbl").innerHTML=response;
- $('#liveSupportAccountsTbl').DataTable({ responsive: true });
+ load_dataTable_liveSupportAccounts();
 });
+}
+function load_dataTable_liveSupportAccounts(){
+var table = $('#liveSupportAccountsTbl').DataTable({ responsive: true });
+ $('#liveSupportAccountsTbl tbody').on('click', 'tr', function () {
+  var rowData = table.row(this).data();
+  var account_Id=rowData[1];
+  var name=rowData[2];
+  var country=rowData[3];
+  var agentTimezone=rowData[4];
+  var shift=rowData[5];
+  var time_Id=rowData[6];
+  $('#updateLiveSupportAccountModal').modal();
+  tabMenu_updatelivesupportAccount('updatelivesupportAccount-tabMenu-generalInfo');
+  document.getElementById("liveSupportAccount-update-name").value=name;
+  document.getElementById("liveSupportAccount-update-country").value=country;
+  document.getElementById("liveSupportAccount-update-timezone").value=agentTimezone;
+  selopt_shiftTimingsByUsrTz('liveSupportAccount-update-shiftTimings',agentTimezone,time_Id);
+ });
 }
 </script>
 </body>

@@ -61,6 +61,23 @@ function sel_optTimezone(id,selval){
  document.getElementById(id).innerHTML=content;
  if(selval.length>0){ document.getElementById(id).value=selval; }
 }		
+function selopt_shiftTimingsByUsrTz(id,timezone,selval){
+ js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.livesupport.timings.php',
+ { action:'GETAGENT_TIMINGS_BYTIMEZONE', req_timezone:timezone }, function(response){
+  console.log(response);
+  response=JSON.parse(response);
+  var content='<option value="">Select ShiftTimings</option>';
+  for(var index=0;index<response.length;index++){
+    var time_Id = response[index].time_Id;
+	var shift = response[index].shift;
+	var startTime = response[index].startTime;
+	var endTime = response[index].endTime;
+	content+='<option value="'+time_Id+'">'+shift+' ('+startTime+'-'+endTime+')</option>';
+  }
+  document.getElementById(id).innerHTML=content;
+  if(selval.length>0){ document.getElementById(id).value=selval; }
+ });
+}
 /* Core Functionality ::: End */
 /* COLLECTIONS */
 var CHATOFFSET=0;

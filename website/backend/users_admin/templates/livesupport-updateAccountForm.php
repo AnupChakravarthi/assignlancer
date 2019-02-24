@@ -1,4 +1,9 @@
 <script type="text/javascript">
+function load_livesupport_updateForm(){
+ document.getElementById("liveSupportAccount-create-warnings").innerHTML='';
+ sel_optcountries('liveSupportAccount-update-country','');
+ sel_optTimezone('liveSupportAccount-update-timezone','');
+}
 function tabMenu_updatelivesupportAccount(id){
  var arry_Id = ["updatelivesupportAccount-tabMenu-generalInfo","updatelivesupportAccount-tabMenu-updatePwd"];
  var arry_Id_content = ["updatelivesupportAccount-div-generalInfo","updatelivesupportAccount-div-updatePwd"];
@@ -11,13 +16,8 @@ function tabMenu_updatelivesupportAccount(id){
 	if(!$('#'+arry_Id_content[index]).hasClass('hide-block')){ $('#'+arry_Id_content[index]).addClass('hide-block'); }
   }
  }
-}
+} 
 </script>
-<div id="liveSupportAccount-updateForm-div" class="panel panel-default hide-block">
-  <div class="panel-heading">
-	<i class="fa fa-users"></i>&nbsp;&nbsp;&nbsp;<b>Update Live Support Accounts</b>
-  </div>
-  <div class="panel-body">
 	<!-- live Support Account - create form ::: Start -->
 	<div class="container-fluid">
 	  <div class="row">
@@ -41,7 +41,7 @@ function tabMenu_updatelivesupportAccount(id){
 		
 		<div class="container-fluid">
 		<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-12">
 		
 		  <div class="form-group">
 			<label>Account Type</label>
@@ -51,20 +51,12 @@ function tabMenu_updatelivesupportAccount(id){
 
 		  <div class="form-group">
 			<label>Name</label>
-			<input id="liveSupportAccount-update-name" type="text" class="form-control" placeholder="Enter your Name"/>
+			<input id="liveSupportAccount-update-name" type="text" class="form-control" placeholder="Enter your Name" disabled/>
 		  </div>
-							
-		  <div class="form-group">
-			<label>Email</label>
-			<input id="liveSupportAccount-update-email" type="text" class="form-control" placeholder="Enter your Email"/>
-		  </div>
-							
-		</div>
-		<div class="col-md-6">
-						    
+		 
 		  <div class="form-group">
 			<label>Country</label>
-			<select id="liveSupportAccount-update-country" class="form-control">
+			<select id="liveSupportAccount-update-country" class="form-control" disabled>
 				<option value="">Select your Country</option>
 				<option value="India">India</option>
 				<option value="Australia">Australia</option>
@@ -74,7 +66,7 @@ function tabMenu_updatelivesupportAccount(id){
 		  <div class="form-group">
 			<label>Timezone</label>
 			<select id="liveSupportAccount-update-timezone" class="form-control" 
-				onchange="javascript:view_liveSupportAccount_shiftTimings();">
+				onchange="javascript:view_liveSupportAccount_shiftTimings();" disabled>
 				<option value="">Select your Timezone</option>
 				<option value="Asia/Kolkata">Asia/Kolkata</option>
 				<option value="Australia/ACT">Australia/ACT</option>
@@ -106,18 +98,14 @@ function tabMenu_updatelivesupportAccount(id){
 		  <div class="form-group">
 			<label>Shift Timings</label>
 			<select id="liveSupportAccount-update-shiftTimings" class="form-control" 
-				onchange="javascript:view_liveSupportAccount_shiftTimings();">
+				onchange="javascript:view_liveSupportAccount_shiftTimings();" disabled>
 				<option value="">Select Shift Timings</option>
 				<option value="1">Early Morning</option>
 				<option value="2">Morning</option>
 				<option value="3">Evening</option>
 			</select>
 		  </div>
-							
-		  <div align="right" class="form-group">
-			<div id="liveSupportAccount-update-24X7Support"></div>
-		  </div>
-							
+					
 		</div>
 	    </div>
 		
@@ -181,5 +169,4 @@ function tabMenu_updatelivesupportAccount(id){
 	  
 	</div>
 	<!-- live Support Account - create form ::: End -->
-  </div>
-</div>
+  

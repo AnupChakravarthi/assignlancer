@@ -10,7 +10,7 @@ function reset_livesupportAccount(){
  document.getElementById("liveSupportAccount-create-confirmAccountPwd").value='';
  document.getElementById("liveSupportAccount-create-country").value='';
  document.getElementById("liveSupportAccount-create-timezone").value='';
- document.getElementById("liveSupportAccount-create-shiftTimings").value='';
+ document.getElementById("div-createAccount-viewShiftTimings").innerHTML='';
 }
 function create_livesupportAccount(){
  var name=document.getElementById("liveSupportAccount-create-name").value;
@@ -42,6 +42,19 @@ function create_livesupportAccount(){
  } else { div_display_warning('liveSupportAccount-create-warnings','W003'); } // pwd 
  } else { div_display_warning('liveSupportAccount-create-warnings','W001'); } // name 
 }
+function view_liveSupportAccount_shiftTimings(){
+ if($('#div-createAccount-viewShiftTimings').hasClass('hide-block')){
+  $('#div-createAccount-viewShiftTimings').removeClass('hide-block');
+ }
+ var content='<label>Agent Shift Timings in Agents Timezone</label>';
+	 content+='<select id="liveSupportAccount-create-shiftTimings" class="form-control" ';
+	 content+='onchange="javascript:view_liveSupportAccount_shiftTimings();">';
+	 content+='<option value="">Select ShiftTimings</option>';
+	 content+='</select>';
+ document.getElementById("div-createAccount-viewShiftTimings").innerHTML=content;	
+ var timezone=document.getElementById("liveSupportAccount-create-timezone").value; 
+ selopt_shiftTimingsByUsrTz('liveSupportAccount-create-shiftTimings',timezone,'');
+}
 </script>
 	<!-- live Support Account - create form ::: Start -->
 	<div class="container-fluid">
@@ -49,7 +62,7 @@ function create_livesupportAccount(){
 		<div id="liveSupportAccount-create-warnings" class="col-md-12"></div>
 	  </div>
 	  <div class="row mtop15p">
-		<div class="col-md-6">
+		<div class="col-md-12">
 						    
 		  <div class="form-group">
 			<label>Name</label>
@@ -67,37 +80,23 @@ function create_livesupportAccount(){
 			 <input id="liveSupportAccount-create-confirmAccountPwd" type="password" class="form-control" 
 			 placeholder="Enter Agent Confirm Password"/>
 		  </div>
-							
-		</div>
-		<div class="col-md-6">
-						    
+													    
 		  <div class="form-group">
 			<label>Country</label>
 			<select id="liveSupportAccount-create-country" class="form-control"></select>
 		  </div>
 							
 		  <div class="form-group">
-			<label>Timezone</label>
+			<label>Agent Works in Timezone</label>
 			<select id="liveSupportAccount-create-timezone" class="form-control" 
 				onchange="javascript:view_liveSupportAccount_shiftTimings();">
 			</select>
 		  </div>
-							
-		  <div class="form-group">
-			<label>Shift Timings</label>
-			<select id="liveSupportAccount-create-shiftTimings" class="form-control" 
-				onchange="javascript:view_liveSupportAccount_shiftTimings();">
-				<option value="">Select Shift Timings</option>
-				<option value="1">Early Morning</option>
-				<option value="2">Morning</option>
-				<option value="3">Evening</option>
-			</select>
+		
+		  <div id="div-createAccount-viewShiftTimings" class="form-group hide-block">
+			
 		  </div>
-							
-		  <div align="right" class="form-group">
-			<div id="liveSupportAccount-create-24X7Support"></div>
-		  </div>
-							
+						
 		</div>
 	  </div>
 	  <div class="row">

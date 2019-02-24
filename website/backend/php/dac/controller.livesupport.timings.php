@@ -6,6 +6,7 @@ require_once '../util/util.core.php';
 
 if(isset($_GET["action"])){
  if($_GET["action"]=='GETAGENT_TIMINGS_BYTIMEZONE'){
+   $req_timezone = $_GET["req_timezone"];
    $utilityCore = new UtilityCore();
    $liveSupportTimings = new LiveSupportTimings();
    $query = $liveSupportTimings->query_viewAll_agentsTimings();
@@ -23,7 +24,7 @@ if(isset($_GET["action"])){
 	 $def_startTime = $dejsonData[$index]->{'startTime'};
 	 $def_endTime = $dejsonData[$index]->{'endTime'};
 	 
-	 $req_timezone = $_GET["req_timezone"];
+	 
 	 $req_startTime = $utilityCore->convertTimeFromTimezone($def_timezone,$def_startTime,$req_timezone);
 	 $req_endTime = $utilityCore->convertTimeFromTimezone($def_timezone,$def_endTime,$req_timezone);
 	 

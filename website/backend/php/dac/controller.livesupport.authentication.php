@@ -31,11 +31,13 @@ if(isset($_GET["action"])){
    if(count($jsonData)>0){
 	$content='<thead>';
 	$content.='<tr>';
+	$content.='<th>#</th>';
 	$content.='<th>Account Id</th>';
 	$content.='<th>Name</th>';
 	$content.='<th>Country</th>';
 	$content.='<th>Agent Timezone</th>';
 	$content.='<th>Shift</th>';
+	$content.='<th class="hide-block">time_Id</th>';
 	$content.='<th>Shift Timings in your Timezone ('.$adminTimezone.')</th>';
 	$content.='</tr>';
 	$content.='</thead>';
@@ -50,17 +52,20 @@ if(isset($_GET["action"])){
 	  $usr_tz= $jsonData[$index]->{'usr_tz'};
 	  $shift = $jsonData[$index]->{'shift'};
 	  $timezone = $jsonData[$index]->{'timezone'};
+	  $time_Id = $jsonData[$index]->{'time_Id'};
 	  $startTime = $utilityCore->convertTimeFromTimezone($timezone,$jsonData[$index]->{'startTime'},$usr_tz);
 	  $endTime = $utilityCore->convertTimeFromTimezone($timezone,$jsonData[$index]->{'endTime'},$usr_tz);
 	  if($availStatus=='OFFLINE'){
-	   $content.='<td><i class="fa fa-circle agentState-red"></i>&nbsp;'.$account_Id.'</td>';
+	   $content.='<td style="width:40px;"><i class="fa fa-circle agentState-red"></i></td>';
 	  } else {
-	   $content.='<td><i class="fa fa-circle agentState-green"></i>&nbsp;'.$account_Id.'</td>';
+	   $content.='<td style="width:40px;"><i class="fa fa-circle agentState-green"></i></td>';
 	  }
+	  $content.='<td>'.$account_Id.'</td>';
 	  $content.='<td>'.$name.'</td>';
 	  $content.='<td>'.$country.'</td>';
 	  $content.='<td>'.$usr_tz.'</td>';
 	  $content.='<td>'.$shift.'</td>';
+	  $content.='<td class="hide-block">'.$time_Id.'</td>';
 	  $content.='<td>'.$startTime.'-'.$endTime.'</td>';
 	  $content.='</tr>'; 
 	}
