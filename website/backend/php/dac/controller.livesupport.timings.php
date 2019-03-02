@@ -23,7 +23,7 @@ if(isset($_GET["action"])){
 	 $def_timezone = $dejsonData[$index]->{'timezone'};
 	 $def_startTime = $dejsonData[$index]->{'startTime'};
 	 $def_endTime = $dejsonData[$index]->{'endTime'};
-	 
+	 $agents = $dejsonData[$index]->{'agents'};
 	 
 	 $req_startTime = $utilityCore->convertTimeFromTimezone($def_timezone,$def_startTime,$req_timezone);
 	 $req_endTime = $utilityCore->convertTimeFromTimezone($def_timezone,$def_endTime,$req_timezone);
@@ -33,6 +33,7 @@ if(isset($_GET["action"])){
 	 $content.='"shift":"'.$shift.'",';
 	 $content.='"startTime":"'.$req_startTime.'",';
 	 $content.='"endTime":"'.$req_endTime.'",';
+	 $content.='"agents":"'.$agents.'",';
 	 $content.='"timezone":"'.$req_timezone.'"';
 	 $content.='},';
     }

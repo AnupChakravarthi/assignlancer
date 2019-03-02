@@ -39,83 +39,24 @@ include_once '../../templates/api/api_js.php';
         </div>
       </div>
 	  <div class="row">
-	    <div class="col-md-6 divRightMargin">
+	    <div class="col-md-5">
 		 <div class="form-group">
 		   <label>Select Timezone</label>
 		   <div class="input-group">
 		    <select id="livesupport_selectTimezone" class="form-control">
 		     <option value="">Select Timezone</option>
-			 <option value="Asia/Kolkata">Asia/Kolkata</option>
-			 <option value="Australia/Adelaide">Australia/Adelaide</option>
-			 <option value="Australia/Brisbane">Australia/Brisbane</option>
-			 <option value="Australia/Broken_Hill">Australia/Broken_Hill</option>
-			 <option value="Australia/Currie">Australia/Currie</option>
-			 <option value="Australia/Darwin">Australia/Darwin</option>
-			 <option value="Australia/Eucla">Australia/Eucla</option>
-			 <option value="Australia/Hobart">Australia/Hobart</option>
-			 <option value="Australia/Lindeman">Australia/Lindeman</option>
-			 <option value="Australia/Lord_Howe">Australia/Lord_Howe</option>
-			 <option value="Australia/Melbourne">Australia/Melbourne</option>
-			 <option value="Australia/Perth">Australia/Perth</option>
-			 <option value="Australia/Sydney">Australia/Sydney</option>
 		    </select>
 			<span class="input-group-addon curpoint" onclick="javascript:viewLSTimings();"><b>View Timings</b></span>
 		   </div>
 		 </div>
-		 <div class="form-group">
-		  <div id="tbl_viewListOfTimings" class="table-responsive"></div>	
-		 </div>
+		 
 		</div>
-		<div class="col-md-6">
-		 <!-- -->
-
-		     <div class="list-group mbot0" style="border-bottom:1px solid #ccc;">
-			   <div class="list-group-item pad0" style="background-color:#eee;">
-			     <div class="container-fluid">
-				   <div class="row">
-				     <div class="col-xs-6">
-					   <div align="center"><h5><b>Live Support Accounts</b></h5><span>(Asia/Kolkatta)</span></div>
-					 </div>
-					 <div align="center" class="col-xs-6 divLeftMargin">
-					   <h2><b>8</b></h2>
-					 </div>
-				   </div>
-				 </div>
-			   </div>
-			   <div class="livesupportAccountslistview">
-		       <div class="list-group-item">
-			      <h5><i class="fa fa-circle fa-fw agentState-green"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
-			      <div align="right" class="font-grey"><i><b>Early Morning</b> (Asia/Kolkata) - 01:00 AM to 09:00 AM</i></div>
-			   </div>
-			   <div class="list-group-item">
-			      <h5><i class="fa fa-circle fa-fw agentState-green"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
-			      <div align="right" class="font-grey"><i><b>Early Morning</b> (Asia/Kolkata) - 01:00 AM to 09:00 AM</i></div>
-			   </div>
-			   <div class="list-group-item">
-			      <h5><i class="fa fa-circle fa-fw agentState-green"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
-			      <div align="right" class="font-grey"><i><b>Early Morning</b> (Asia/Kolkata) - 01:00 AM to 09:00 AM</i></div>
-			   </div>
-			   <div class="list-group-item">
-			      <h5><i class="fa fa-circle fa-fw agentState-green"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
-			      <div align="right" class="font-grey"><i><b>Early Morning</b> (Asia/Kolkata) - 01:00 AM to 09:00 AM</i></div>
-			   </div>
-			   <div class="list-group-item">
-			      <h5><i class="fa fa-circle fa-fw agentState-green"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
-			      <div align="right" class="font-grey"><i><b>Early Morning</b> (Asia/Kolkata) - 01:00 AM to 09:00 AM</i></div>
-			   </div>
-			   <div class="list-group-item">
-			      <h5><i class="fa fa-circle fa-fw agentState-green"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
-			      <div align="right" class="font-grey"><i><b>Early Morning</b> (Asia/Kolkata) - 01:00 AM to 09:00 AM</i></div>
-			   </div>
-			   <div class="list-group-item">
-			      <h5><i class="fa fa-circle fa-fw agentState-green"></i>&nbsp;&nbsp;<b>Nellutla L N Rao</b></h5>
-			      <div align="right" class="font-grey"><i><b>Early Morning</b> (Asia/Kolkata) - 01:00 AM to 09:00 AM</i></div>
-			   </div>
-			   </div>
-			 </div>
-		   <!--/div-->
-
-		 </div>
+		<div class="col-md-12">
+		  <div class="form-group">
+		    <div id="tbl_viewListOfTimings" class="table-responsive"></div>	
+		  </div>
+		</div>
+		
 		</div>
 		
 	  </div>
@@ -152,6 +93,7 @@ function viewLSTimings(){
 		content+='<tr>';
 		content+='<td align="center"><b>Timezone</b></td>';
 		content+='<td align="center"><b>Shift</b></td>';
+		content+='<td align="center"><b>LiveSupport Agents</b></td>';
 		content+='<td align="center"><b>Timings</b></td>';
 		content+='</tr>';
         content+='</thead>';
@@ -162,9 +104,11 @@ function viewLSTimings(){
 	 var startTime = response[index].startTime;
 	 var endTime = response[index].endTime;
 	 var timezone = response[index].timezone;
+	 var agents = response[index].agents;
 	 content+='<tr>';
 	 content+='<td align="center">'+timezone+'</td>';
 	 content+='<td align="center">'+shift+'</td>';
+	 content+='<td align="center">'+agents+'</td>';
 	 content+='<td align="center">'+startTime+' - '+endTime+'</td>';
 	 content+='</tr>';
    }
@@ -173,8 +117,9 @@ function viewLSTimings(){
 	document.getElementById("tbl_viewListOfTimings").innerHTML=content;
  });
 }
+
 $(document).ready(function(){
-  
+  sel_optTimezone('livesupport_selectTimezone','');
 });
 
 </script>

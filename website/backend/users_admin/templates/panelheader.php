@@ -31,54 +31,7 @@ hr { margin-bottom:5px;margin-top:5px; }
 .scrollview::-webkit-scrollbar-thumb { background-color: #000; }
 </style>
 <script type="text/javascript">
-/* Core Functionality ::: Start */
-function sel_optcountries(id,selval){ 
- var countries=["India","Australia"]; 
- var content='<option value="">Select your Country</option>';
- for(var index=0;index<countries.length;index++){
-  content+='<option value="'+countries[index]+'">'+countries[index]+'</option>';
- }
- document.getElementById(id).innerHTML=content;
- if(selval.length>0){ document.getElementById(id).value=selval; }
-}
-function sel_optcurrencies(id,selval){ 
- var currency=["Indian Rupee","Australian Dollar"]; 
- var content='<option value="">Select your Currency</option>';
- for(var index=0;index<currency.length;index++){
-  content+='<option value="'+currency[index]+'">'+currency[index]+'</option>';
- }
- document.getElementById(id).innerHTML=content;
- if(selval.length>0){ document.getElementById(id).value=selval; }
-}
-function sel_optTimezone(id,selval){ 
- var timezone=["Asia/Kolkata","Australia/Adelaide","Australia/Brisbane","Australia/Broken_Hill","Australia/Currie",
- "Australia/Darwin","Australia/Eucla","Australia/Hobart","Australia/Lindeman","Australia/Lord_Howe","Australia/Melbourne",
- "Australia/Perth","Australia/Sydney"]; 
- var content='<option value="">Select your Timezone</option>';
- for(var index=0;index<timezone.length;index++){
-  content+='<option value="'+timezone[index]+'">'+timezone[index]+'</option>';
- }
- document.getElementById(id).innerHTML=content;
- if(selval.length>0){ document.getElementById(id).value=selval; }
-}		
-function selopt_shiftTimingsByUsrTz(id,timezone,selval){
- js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.livesupport.timings.php',
- { action:'GETAGENT_TIMINGS_BYTIMEZONE', req_timezone:timezone }, function(response){
-  console.log(response);
-  response=JSON.parse(response);
-  var content='<option value="">Select ShiftTimings</option>';
-  for(var index=0;index<response.length;index++){
-    var time_Id = response[index].time_Id;
-	var shift = response[index].shift;
-	var startTime = response[index].startTime;
-	var endTime = response[index].endTime;
-	content+='<option value="'+time_Id+'">'+shift+' ('+startTime+'-'+endTime+')</option>';
-  }
-  document.getElementById(id).innerHTML=content;
-  if(selval.length>0){ document.getElementById(id).value=selval; }
- });
-}
-/* Core Functionality ::: End */
+
 /* COLLECTIONS */
 var CHATOFFSET=0;
 var chatFormDivisions=[];

@@ -73,6 +73,32 @@ if(isset($_GET["action"])){
 	echo $content;
    }
  }
+ else if($_GET["action"]=='LIVESUPPORT_DELETEACCOUNT'){
+  $account_Id = $_GET["account_Id"];
+  $liveSupportAuthentication = new LiveSupportAuthentication();
+  $database = new Database();
+  $query = $liveSupportAuthentication->query_delete_liveSupportAccount($account_Id);
+  echo $database->addupdateData($query);
+ } 
+ else if($_GET["action"]=='LIVESUPPORT_UPDATEACCOUNTGENERALINFO'){
+   $account_Id=$_GET["account_Id"];
+   $name=''; if(isset($_GET["name"])){ $name=$_GET["name"]; }
+   $country=''; if(isset($_GET["country"])){ $country=$_GET["country"]; }
+   $usr_tz=''; if(isset($_GET["usr_tz"])){ $usr_tz=$_GET["usr_tz"]; }
+   $time_Id=''; if(isset($_GET["time_Id"])){ $time_Id=$_GET["time_Id"]; }
+   $liveSupportAuthentication = new LiveSupportAuthentication();
+   $database = new Database();
+   $query = $liveSupportAuthentication->query_update_liveSupportAccount($account_Id,$name,$country,$usr_tz,$time_Id);
+   echo $database->addupdateData($query);
+ }
+ else if($_GET["action"]=='LIVESUPPORT_UPDATEACCOUNTPASSWORD'){
+   $account_Id=$_GET["account_Id"];
+   $acc_pwd=md5($_GET["acc_pwd"]);
+   $liveSupportAuthentication = new LiveSupportAuthentication();
+   $database = new Database();
+   $query = $liveSupportAuthentication->query_updatePwd_liveSupportAccount($account_Id,$acc_pwd);
+   echo $database->addupdateData($query);
+ }
  else { echo 'INVALID_ACTION'; }
 } else { echo 'NO_ACTION'; }
 ?>

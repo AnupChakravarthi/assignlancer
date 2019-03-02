@@ -90,10 +90,8 @@ include_once '../../templates/api/api_js.php';
 			 <div class="col-lg-12"><hr/></div>
 			</div>
 			<div class="row">
-			  <div class="col-lg-12">
-				 <table id="liveSupportAccountsTbl" width="100%" class="table table-striped table-bordered table-hover">
-                   
-				</table>
+			  <div id="liveSupportAccountsTblDiv" class="col-lg-12">
+				 
 			  </div>
 			</div>
 			<div class="row">
@@ -104,34 +102,7 @@ include_once '../../templates/api/api_js.php';
 				</button>  
               </div>
             </div>
-			<div class="row mtop15p">
-			   <!-- -->
-                <div class="col-lg-4">
-                  <div class="panel panel-default">
-					<div class="panel-heading">
-					  <i class="fa fa-users"></i>&nbsp;&nbsp;&nbsp;<b>Live Support Accounts</b>
-					</div>
-					
-					<div class="panel-body livesupportAccountslistview pad0">
-					 <div id="view-livesupportaccounts-list0" class="list-group mbot0">
-					 
-					  <div align="center" class="list-group-item livesupportlist-item">
-					    <div class="font-grey"><i> Loading... </i></div>
-					  </div>
-					 </div>
-					</div>
-				  </div>
-                </div>
-			  <!-- -->
-			  <!-- -->
-			    <div class="col-lg-8">
-				  <!-- live Support Account - update ::: Start -->
-				  
-				  <!-- live Support Account - update ::: End -->
-                </div>
-			  <!-- -->
-            </div>
-			
+		
 		</div>
         <!-- /#page-wrapper -->
 
@@ -167,30 +138,42 @@ $(document).ready(function(){
   load_livesupport_viewAccounts();
 });
 function load_livesupport_viewAccounts(){
+var content='<table id="liveSupportAccountsTbl" width="100%" class="table table-striped table-bordered table-hover">';
+    content+='</table>';
+document.getElementById("liveSupportAccountsTblDiv").innerHTML=content;
 js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.livesupport.authentication.php',
 { action:'LIVESUPPORT_VIEWALLACCOUNTS', adminTimezone:ADMINISTRATOR_TIMEZONE },function(response){
  document.getElementById("liveSupportAccountsTbl").innerHTML=response;
  load_dataTable_liveSupportAccounts();
 });
 }
+var UPDATEDATA_LIVESUPPORTACCOUNTFORM_ACCOUNTID;
+var UPDATEDATA_LIVESUPPORTACCOUNTFORM_NAME;
+var UPDATEDATA_LIVESUPPORTACCOUNTFORM_COUNTRY;
+var UPDATEDATA_LIVESUPPORTACCOUNTFORM_AGENTTIMEZONE;
+var UPDATEDATA_LIVESUPPORTACCOUNTFORM_SHIFT;
+var UPDATEDATA_LIVESUPPORTACCOUNTFORM_TIMEID;
 function load_dataTable_liveSupportAccounts(){
 var table = $('#liveSupportAccountsTbl').DataTable({ responsive: true });
  $('#liveSupportAccountsTbl tbody').on('click', 'tr', function () {
   var rowData = table.row(this).data();
-  var account_Id=rowData[1];
-  var name=rowData[2];
-  var country=rowData[3];
-  var agentTimezone=rowData[4];
-  var shift=rowData[5];
-  var time_Id=rowData[6];
+  UPDATEDATA_LIVESUPPORTACCOUNTFORM_ACCOUNTID=rowData[1];
+  UPDATEDATA_LIVESUPPORTACCOUNTFORM_NAME=rowData[2];
+  UPDATEDATA_LIVESUPPORTACCOUNTFORM_COUNTRY=rowData[3];
+  UPDATEDATA_LIVESUPPORTACCOUNTFORM_AGENTTIMEZONE=rowData[4];
+  UPDATEDATA_LIVESUPPORTACCOUNTFORM_SHIFT=rowData[5];
+  UPDATEDATA_LIVESUPPORTACCOUNTFORM_TIMEID=rowData[6];
   $('#updateLiveSupportAccountModal').modal();
   tabMenu_updatelivesupportAccount('updatelivesupportAccount-tabMenu-generalInfo');
-  document.getElementById("liveSupportAccount-update-name").value=name;
-  document.getElementById("liveSupportAccount-update-country").value=country;
-  document.getElementById("liveSupportAccount-update-timezone").value=agentTimezone;
-  selopt_shiftTimingsByUsrTz('liveSupportAccount-update-shiftTimings',agentTimezone,time_Id);
+  document.getElementById("liveSupportAccount-update-name").value=UPDATEDATA_LIVESUPPORTACCOUNTFORM_NAME;
+  document.getElementById("liveSupportAccount-update-country").value=UPDATEDATA_LIVESUPPORTACCOUNTFORM_COUNTRY;
+  document.getElementById("liveSupportAccount-update-timezone").value=UPDATEDATA_LIVESUPPORTACCOUNTFORM_AGENTTIMEZONE;
+  selopt_shiftTimingsByUsrTz('liveSupportAccount-update-shiftTimings',
+			UPDATEDATA_LIVESUPPORTACCOUNTFORM_AGENTTIMEZONE,UPDATEDATA_LIVESUPPORTACCOUNTFORM_TIMEID);
+  view_btn_editDeleteReset();
  });
 }
+
 </script>
 </body>
 

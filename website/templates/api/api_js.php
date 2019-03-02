@@ -13,6 +13,54 @@ body { overflow-x:hidden; }
 .preview-absolute { position:absolute;top:25%;left:35%;z-index:10; }
 </style>
 <script type="text/javascript">
+/* Core Functionality ::: Start */
+function sel_optcountries(id,selval){ 
+ var countries=["India","Australia"]; 
+ var content='<option value="">Select your Country</option>';
+ for(var index=0;index<countries.length;index++){
+  content+='<option value="'+countries[index]+'">'+countries[index]+'</option>';
+ }
+ document.getElementById(id).innerHTML=content;
+ if(selval.length>0){ document.getElementById(id).value=selval; }
+}
+function sel_optcurrencies(id,selval){ 
+ var currency=["Indian Rupee","Australian Dollar"]; 
+ var content='<option value="">Select your Currency</option>';
+ for(var index=0;index<currency.length;index++){
+  content+='<option value="'+currency[index]+'">'+currency[index]+'</option>';
+ }
+ document.getElementById(id).innerHTML=content;
+ if(selval.length>0){ document.getElementById(id).value=selval; }
+}
+function sel_optTimezone(id,selval){ 
+ var timezone=["Asia/Kolkata","Australia/Adelaide","Australia/Brisbane","Australia/Broken_Hill","Australia/Currie",
+ "Australia/Darwin","Australia/Eucla","Australia/Hobart","Australia/Lindeman","Australia/Lord_Howe","Australia/Melbourne",
+ "Australia/Perth","Australia/Sydney"]; 
+ var content='<option value="">Select your Timezone</option>';
+ for(var index=0;index<timezone.length;index++){
+  content+='<option value="'+timezone[index]+'">'+timezone[index]+'</option>';
+ }
+ document.getElementById(id).innerHTML=content;
+ if(selval.length>0){ document.getElementById(id).value=selval; }
+}		
+function selopt_shiftTimingsByUsrTz(id,timezone,selval){
+ js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.livesupport.timings.php',
+ { action:'GETAGENT_TIMINGS_BYTIMEZONE', req_timezone:timezone }, function(response){
+  console.log(response);
+  response=JSON.parse(response);
+  var content='<option value="">Select ShiftTimings</option>';
+  for(var index=0;index<response.length;index++){
+    var time_Id = response[index].time_Id;
+	var shift = response[index].shift;
+	var startTime = response[index].startTime;
+	var endTime = response[index].endTime;
+	content+='<option value="'+time_Id+'">'+shift+' ('+startTime+'-'+endTime+')</option>';
+  }
+  document.getElementById(id).innerHTML=content;
+  if(selval.length>0){ document.getElementById(id).value=selval; }
+ });
+}
+/* Core Functionality ::: End */
 function blinkAdiv(div_Id){
  var display = true;
  setInterval(function(){ 
@@ -195,7 +243,7 @@ function div_display_warning(div_Id,warning_Id){
 js_ajax("GET",PROJECT_URL+'backend/config/warning_messages.json',{},function(response){
 var content='<div class="alert alert-warning alert-dismissible" style="margin-bottom:0px;">';
     content+='<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
-    content+=response[warning_Id][USR_LANG];
+    content+='<strong>Warning!</strong> '+response[warning_Id][USR_LANG];
     content+='</div>';
  document.getElementById(div_Id).innerHTML=content;
 });
@@ -226,7 +274,7 @@ js_ajax("GET",PROJECT_URL+'backend/config/success_messages.json',{},function(res
 console.log(response);
 var content='<div class="alert alert-success alert-dismissible" style="margin-bottom:0px;">';
     content+='<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
-    content+=response[success_Id][USR_LANG];
+    content+='<strong>Success!</strong> '+response[success_Id][USR_LANG];
     content+='</div>';
  document.getElementById(div_Id).innerHTML=content;
 });

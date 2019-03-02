@@ -2071,3 +2071,184 @@ Sunday 24th February 2019 01:48:29 PM [INFO] ::: [app.database.php]  Database co
 Sunday 24th February 2019 01:55:13 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Sunday 24th February 2019 01:55:16 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Sunday 24th February 2019 01:55:24 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 01:58:02 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 01:58:04 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 02:54:31 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 02:54:35 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 03:28:01 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 03:28:13 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 03:28:30 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:03:50 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:03:52 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:06:54 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:23:40 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:24:24 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:26:51 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:27:23 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:29:12 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:29:18 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:37:02 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:37:05 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:39:08 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:49:06 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:49:09 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:49:41 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:49:43 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:50:12 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:50:15 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:56:52 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:56:54 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 08:57:05 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 09:03:47 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 09:03:49 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 09:04:08 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 09:04:10 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 09:05:25 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 09:05:27 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 09:58:06 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 09:58:08 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 09:58:42 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 09:58:44 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 09:59:29 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 09:59:33 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:02:26 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:02:29 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:02:34 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:02:34 PM [INFO] ::: [app.database.php]  Query(Status-Success) : DELETE FROM ls_accounts WHERE account_Id='LA1946233065237'; 
+Sunday 24th February 2019 10:03:29 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:03:44 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:03:49 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:04:06 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:04:11 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:04:14 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:04:17 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:04:21 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:06:17 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:06:19 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:06:39 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:06:44 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:06:44 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO ls_accounts(account_Id, availStatus, name, acc_pwd, createdOn, country, usr_tz, time_Id) VALUES ('LA7762231125549','OFFLINE','qwert','e10adc3949ba59abbe56e057f20f883e','2019-02-24','India','Asia/Kolkata','1'); 
+Sunday 24th February 2019 10:07:10 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:07:15 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:07:18 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:07:18 PM [INFO] ::: [app.database.php]  Query(Status-Success) : DELETE FROM ls_accounts WHERE account_Id='LA7762231125549'; 
+Sunday 24th February 2019 10:07:19 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:09:23 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:09:39 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:09:47 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:09:47 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO ls_accounts(account_Id, availStatus, name, acc_pwd, createdOn, country, usr_tz, time_Id) VALUES ('LA7528472350648','OFFLINE','qwrr','e10adc3949ba59abbe56e057f20f883e','2019-02-24','Australia','Asia/Kolkata','3'); 
+Sunday 24th February 2019 10:09:48 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:09:54 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:09:57 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:09:57 PM [INFO] ::: [app.database.php]  Query(Status-Success) : DELETE FROM ls_accounts WHERE account_Id='LA7528472350648'; 
+Sunday 24th February 2019 10:09:58 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Sunday 24th February 2019 10:16:04 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:07:18 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:07:21 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:07:26 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:07:26 AM [INFO] ::: [app.database.php]  Query(Status-Error) : UPDATE ls_accounts SETname='Anup',country='India',usr_tz='Asia/Kolkata',time_Id='2'WHERE account_Id='LA3332089269853'; 
+Monday 25th February 2019 12:08:03 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:08:06 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:08:12 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:08:12 AM [INFO] ::: [app.database.php]  Query(Status-Error) : UPDATE ls_accounts SETname='Anup',country='India',usr_tz='Asia/Kolkata',time_Id='2'WHERE account_Id='LA3332089269853'; 
+Monday 25th February 2019 12:08:56 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:08:59 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:10:17 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:10:19 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:10:24 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:10:24 AM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE ls_accounts SET name='Anup', country='India', usr_tz='Asia/Kolkata', time_Id='2'WHERE account_Id='LA3332089269853'; 
+Monday 25th February 2019 12:10:32 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:12:09 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:12:13 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:12:13 AM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE ls_accounts SET name='Anup', country='India', usr_tz='Asia/Kolkata', time_Id='3'WHERE account_Id='LA3332089269853'; 
+Monday 25th February 2019 12:12:25 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:12:28 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:12:32 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:12:33 AM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE ls_accounts SET name='Anup', country='India', usr_tz='Asia/Kolkata', time_Id='1'WHERE account_Id='LA3332089269853'; 
+Monday 25th February 2019 12:12:34 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Monday 25th February 2019 12:27:24 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:42:32 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:42:43 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:03:59 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:04:09 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 10:30:58 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 10:43:24 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 11:51:52 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 01:20:30 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:31:19 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:31:22 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:38:40 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:40:00 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:40:03 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:42:57 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:43:02 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:43:06 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:43:06 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE ls_accounts SET acc_pwd='d41d8cd98f00b204e9800998ecf8427e' WHERE account_Id='U50201658015351'; 
+Saturday 2nd March 2019 07:46:09 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:46:09 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE ls_accounts SET acc_pwd='e10adc3949ba59abbe56e057f20f883e' WHERE account_Id='U50201658015351'; 
+Saturday 2nd March 2019 07:47:54 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:58:03 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:58:07 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:58:50 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:58:50 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE ls_accounts SET acc_pwd='dc9de003dc89b296e677052bdc0513e4' WHERE account_Id='U50201658015351'; 
+Saturday 2nd March 2019 07:59:29 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:59:31 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:59:44 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 07:59:44 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE ls_accounts SET acc_pwd='e10adc3949ba59abbe56e057f20f883e' WHERE account_Id='U50201658015351'; 
+Saturday 2nd March 2019 08:01:31 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:01:34 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:01:45 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:01:45 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE ls_accounts SET acc_pwd='e10adc3949ba59abbe56e057f20f883e' WHERE account_Id='U50201658015351'; 
+Saturday 2nd March 2019 08:10:02 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:10:05 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:10:13 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:10:13 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE ls_accounts SET acc_pwd='827ccb0eea8a706c4c34a16891f84e7b' WHERE account_Id='U50201658015351'; 
+Saturday 2nd March 2019 08:11:56 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:11:58 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:12:04 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:12:04 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE ls_accounts SET acc_pwd='827ccb0eea8a706c4c34a16891f84e7b' WHERE account_Id='U50201658015351'; 
+Saturday 2nd March 2019 08:14:35 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:14:38 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:14:45 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:14:45 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE ls_accounts SET acc_pwd='827ccb0eea8a706c4c34a16891f84e7b' WHERE account_Id='U50201658015351'; 
+Saturday 2nd March 2019 08:16:59 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:17:22 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:17:40 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:17:40 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE ls_accounts SET name='Anup', country='India', usr_tz='Asia/Kolkata', time_Id='1'WHERE account_Id='LA3332089269853'; 
+Saturday 2nd March 2019 08:17:41 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:20:19 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:23:14 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:23:17 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:23:18 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:23:19 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:24:15 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:25:00 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:26:46 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:33:52 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:34:43 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:36:30 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:37:24 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:37:34 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:37:50 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:37:57 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:37:57 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO ls_accounts(account_Id, availStatus, name, acc_pwd, createdOn, country, usr_tz, time_Id) VALUES ('LA8645280048295','OFFLINE','Santhosh','e10adc3949ba59abbe56e057f20f883e','2019-03-02','India','Australia/Adelaide','2'); 
+Saturday 2nd March 2019 08:37:58 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:38:07 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:38:12 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:38:21 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:38:26 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:38:54 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:39:03 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 08:39:15 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 09:08:55 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 09:09:19 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 09:36:35 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 09:36:41 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 09:36:49 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 09:38:22 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 09:38:56 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 09:49:55 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 09:50:25 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 09:50:39 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 09:50:52 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 2nd March 2019 09:51:58 PM [INFO] ::: [app.database.php]  Database connected Successfully 

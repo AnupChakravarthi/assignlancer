@@ -17,6 +17,91 @@ function tabMenu_updatelivesupportAccount(id){
   }
  }
 } 
+function enable_updateLiveSupport_generalInfo(){
+ document.getElementById("liveSupportAccount-update-name").disabled=false;
+ document.getElementById("liveSupportAccount-update-country").disabled=false;
+ document.getElementById("liveSupportAccount-update-timezone").disabled=false;
+ document.getElementById("liveSupportAccount-update-shiftTimings").disabled=false;
+}
+function disable_updateLiveSupport_generalInfo(){
+ document.getElementById("liveSupportAccount-update-name").disabled=true;
+ document.getElementById("liveSupportAccount-update-country").disabled=true;
+ document.getElementById("liveSupportAccount-update-timezone").disabled=true;
+ document.getElementById("liveSupportAccount-update-shiftTimings").disabled=true;
+}
+function edit_updateLiveSupportForm(){
+ enable_updateLiveSupport_generalInfo();
+ view_btn_saveDeleteReset();
+}
+function save_updateLiveSupportForm(){
+ var name =document.getElementById("liveSupportAccount-update-name").value;
+ var country =document.getElementById("liveSupportAccount-update-country").value;
+ var timezone =document.getElementById("liveSupportAccount-update-timezone").value;
+ var shiftTimings =document.getElementById("liveSupportAccount-update-shiftTimings").value;
+ disable_updateLiveSupport_generalInfo();
+ view_btn_editDeleteReset();
+ /* Update Request */
+ js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.livesupport.authentication.php',
+ { action:'LIVESUPPORT_UPDATEACCOUNTGENERALINFO', account_Id:UPDATEDATA_LIVESUPPORTACCOUNTFORM_ACCOUNTID, 
+   name:name,  country:country,  usr_tz:timezone,  time_Id:shiftTimings },
+ function(response){ 
+   console.log(response);
+   div_display_success('liveSupportAccount-update-warnings','S008');
+   load_livesupport_viewAccounts();
+ });
+}
+function deleteRequest_updateLiveSupportForm(){
+ /* Delete Request */
+ var content='<div class="alert alert-warning alert-dismissible">';
+     content+='<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
+     content+='<strong>Warning!</strong> Are you sure to delete this LiveSupport Account?&nbsp;&nbsp;'; 
+	 content+='<div class="btn-group">';
+	 content+='<button class="btn btn-success" onclick="javascript:delete_updateLiveSupportForm();"><b>Yes</b></button>';
+	 content+='<button class="btn btn-danger" onclick="javascript:empty_divwarning_updateLiveSupportForm();">';
+	 content+='<b>No</b></button>';
+	 content+='</div>';
+     content+='</div>';
+ document.getElementById("liveSupportAccount-update-warnings").innerHTML=content;
+}
+function delete_updateLiveSupportForm(){
+ /* Delete code */
+ $('#updateLiveSupportAccountModal').modal('hide');
+ js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.livesupport.authentication.php',{ action:'LIVESUPPORT_DELETEACCOUNT',
+ account_Id: UPDATEDATA_LIVESUPPORTACCOUNTFORM_ACCOUNTID },function(response){
+  console.log('Deleted');
+  alert_display_success('S007','#');
+  load_livesupport_viewAccounts();
+ });
+}
+function empty_divwarning_updateLiveSupportForm(){
+ document.getElementById("liveSupportAccount-update-warnings").innerHTML='';
+}
+function reset_updateLiveSupportForm(){
+ document.getElementById("liveSupportAccount-update-name").value=UPDATEDATA_LIVESUPPORTACCOUNTFORM_NAME;
+ document.getElementById("liveSupportAccount-update-country").value=UPDATEDATA_LIVESUPPORTACCOUNTFORM_COUNTRY;
+ document.getElementById("liveSupportAccount-update-timezone").value=UPDATEDATA_LIVESUPPORTACCOUNTFORM_AGENTTIMEZONE;
+ document.getElementById("liveSupportAccount-update-shiftTimings").value=UPDATEDATA_LIVESUPPORTACCOUNTFORM_TIMEID;
+}
+function view_btn_editDeleteReset(){
+ if($('#liveSupportAccount-update-editBtn').hasClass('hide-block')){ 
+   $('#liveSupportAccount-update-editBtn').removeClass('hide-block'); }
+ if(!$('#liveSupportAccount-update-saveBtn').hasClass('hide-block')){ 
+   $('#liveSupportAccount-update-saveBtn').addClass('hide-block'); }
+ if($('#liveSupportAccount-update-deleteBtn').hasClass('hide-block')){ 
+   $('#liveSupportAccount-update-deleteBtn').removeClass('hide-block'); }
+ if($('#liveSupportAccount-update-resetBtn').hasClass('hide-block')){ 
+   $('#liveSupportAccount-update-resetBtn').removeClass('hide-block'); }
+}
+function view_btn_saveDeleteReset(){
+ if(!$('#liveSupportAccount-update-editBtn').hasClass('hide-block')){ 
+   $('#liveSupportAccount-update-editBtn').addClass('hide-block'); }
+ if($('#liveSupportAccount-update-saveBtn').hasClass('hide-block')){ 
+   $('#liveSupportAccount-update-saveBtn').removeClass('hide-block'); }
+ if($('#liveSupportAccount-update-deleteBtn').hasClass('hide-block')){ 
+   $('#liveSupportAccount-update-deleteBtn').removeClass('hide-block'); }
+ if($('#liveSupportAccount-update-resetBtn').hasClass('hide-block')){ 
+   $('#liveSupportAccount-update-resetBtn').removeClass('hide-block'); }
+}
 </script>
 	<!-- live Support Account - create form ::: Start -->
 	<div class="container-fluid">
@@ -44,12 +129,6 @@ function tabMenu_updatelivesupportAccount(id){
 		<div class="col-md-12">
 		
 		  <div class="form-group">
-			<label>Account Type</label>
-			<input id="liveSupportAccount-update-accountType" type="text" class="form-control" value="CUSTOMER_LIVESUPPORT"
-				placeholder="Enter your Account Type" disabled/>
-		  </div>
-
-		  <div class="form-group">
 			<label>Name</label>
 			<input id="liveSupportAccount-update-name" type="text" class="form-control" placeholder="Enter your Name" disabled/>
 		  </div>
@@ -58,8 +137,6 @@ function tabMenu_updatelivesupportAccount(id){
 			<label>Country</label>
 			<select id="liveSupportAccount-update-country" class="form-control" disabled>
 				<option value="">Select your Country</option>
-				<option value="India">India</option>
-				<option value="Australia">Australia</option>
 			</select>
 		  </div>
 							
@@ -68,41 +145,13 @@ function tabMenu_updatelivesupportAccount(id){
 			<select id="liveSupportAccount-update-timezone" class="form-control" 
 				onchange="javascript:view_liveSupportAccount_shiftTimings();" disabled>
 				<option value="">Select your Timezone</option>
-				<option value="Asia/Kolkata">Asia/Kolkata</option>
-				<option value="Australia/ACT">Australia/ACT</option>
-				<option value="Australia/Adelaide">Australia/Adelaide</option>
-				<option value="Australia/Brisbane">Australia/Brisbane</option>
-				<option value="Australia/Broken_Hill">Australia/Broken_Hill</option>
-				<option value="Australia/Canberra">Australia/Canberra</option>
-				<option value="Australia/Currie">Australia/Currie</option>
-				<option value="Australia/Darwin">Australia/Darwin</option>
-				<option value="Australia/Eucla">Australia/Eucla</option>
-				<option value="Australia/Hobart">Australia/Hobart</option>
-				<option value="Australia/LHI">Australia/LHI</option>
-				<option value="Australia/Lindeman">Australia/Lindeman</option>
-				<option value="Australia/Lord_Howe">Australia/Lord_Howe</option>
-				<option value="Australia/Melbourne">Australia/Melbourne</option>
-				<option value="Australia/North">Australia/North</option>
-				<option value="Australia/NSW">Australia/NSW</option>
-				<option value="Australia/Perth">Australia/Perth</option>
-				<option value="Australia/Queensland">Australia/Queensland</option>
-				<option value="Australia/South">Australia/South</option>
-				<option value="Australia/Sydney">Australia/Sydney</option>
-				<option value="Australia/Tasmania">Australia/Tasmania</option>
-				<option value="Australia/Victoria">Australia/Victoria</option>
-				<option value="Australia/West">Australia/West</option>
-				<option value="Australia/Yancowinna">Australia/Yancowinna</option>
 			</select>
 		  </div>
 							
 		  <div class="form-group">
 			<label>Shift Timings</label>
-			<select id="liveSupportAccount-update-shiftTimings" class="form-control" 
-				onchange="javascript:view_liveSupportAccount_shiftTimings();" disabled>
-				<option value="">Select Shift Timings</option>
-				<option value="1">Early Morning</option>
-				<option value="2">Morning</option>
-				<option value="3">Evening</option>
+			<select id="liveSupportAccount-update-shiftTimings" class="form-control" disabled>
+				<option value="">Select ShiftTimings</option>
 			</select>
 		  </div>
 					
@@ -113,8 +162,14 @@ function tabMenu_updatelivesupportAccount(id){
 		 <div class="col-md-12">
 			<div align="center" class="form-group">
 			   <div class="btn-group">
-				  <button class="btn btn-success"><b>Update Live Support Account</b></button>
-				  <button class="btn btn-danger"><b>Reset</b></button>
+				  <button id="liveSupportAccount-update-editBtn" class="btn btn-success hide-block" 
+				  onclick="javascript:edit_updateLiveSupportForm();"><b>Edit</b></button>
+				  <button id="liveSupportAccount-update-saveBtn" class="btn btn-success hide-block"
+				  onclick="javascript:save_updateLiveSupportForm();"><b>Save</b></button>
+				  <button id="liveSupportAccount-update-deleteBtn" class="btn btn-primary hide-block"
+				  onclick="javascript:deleteRequest_updateLiveSupportForm();"><b>Delete</b></button>
+				  <button id="liveSupportAccount-update-resetBtn" class="btn btn-danger hide-block"
+				  onclick="javascript:reset_updateLiveSupportForm();"><b>Reset</b></button>
 			   </div>
 			</div>
 		  </div>
@@ -131,9 +186,8 @@ function tabMenu_updatelivesupportAccount(id){
 		  
 		    <div class="container-fluid">
 		     <div class="row">
-		      <div class="col-md-6">   
-			    
-				<div class="form-group">
+		      <div class="col-md-12">   
+			    <div class="form-group">
 			      <label>Account Password</label>
 			      <input id="liveSupportAccount-update-accountPwd" type="password" class="form-control" 
 			       placeholder="Enter your Account Password"/>
@@ -147,13 +201,36 @@ function tabMenu_updatelivesupportAccount(id){
 		  
 			  </div>
 			 </div>
-			 
+<script type="text/javascript">
+function updateLiveSupportAccount_updatePwd(){
+ var accountPwd = document.getElementById("liveSupportAccount-update-accountPwd").value;
+ var confirmAccountPwd = document.getElementById("liveSupportAccount-update-confirmAccountPwd").value;
+ if(accountPwd.length>0){
+ if(confirmAccountPwd.length>0){
+ if(accountPwd===confirmAccountPwd){
+  $('#updateLiveSupportAccountModal').modal('hide');
+  updateLiveSupportAccount_reset();
+ js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.livesupport.authentication.php',
+  { action:'LIVESUPPORT_UPDATEACCOUNTPASSWORD', account_Id:ADMINISTRATOR_ACCOUNT_ID , acc_pwd:accountPwd },
+  function(response){
+    console.log(response);
+	alert_display_success('S009','#');
+  });
+ } else { div_display_warning('liveSupportAccount-update-warnings','W013'); }
+ } else { div_display_warning('liveSupportAccount-update-warnings','W012'); }
+ } else { div_display_warning('liveSupportAccount-update-warnings','W011'); }
+}
+function updateLiveSupportAccount_reset(){
+ document.getElementById("liveSupportAccount-update-accountPwd").value='';
+ document.getElementById("liveSupportAccount-update-confirmAccountPwd").value='';
+}
+</script>
 			 <div class="row">
 		      <div class="col-xs-12">
 			    <div align="center" class="form-group">
 			     <div class="btn-group">
-				  <button class="btn btn-success"><b>Update Live Support Account</b></button>
-				  <button class="btn btn-danger"><b>Reset</b></button>
+				  <button class="btn btn-success" onclick="javascript:updateLiveSupportAccount_updatePwd();"><b>Update Live Support Account</b></button>
+				  <button class="btn btn-danger" onclick="javascript:updateLiveSupportAccount_reset();"><b>Reset</b></button>
 			     </div>
 			    </div>
 		      </div>

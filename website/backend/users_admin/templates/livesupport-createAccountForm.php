@@ -30,8 +30,10 @@ function create_livesupportAccount(){
    { action:'LIVESUPPORT_AUTHENTICATION', name:name, acc_pwd:pwd, country:country, usr_tz:timezone, time_Id:shiftTimings },
 	function(response){ console.log(response); 
 	 if(response.trim()==='Success'){
-	  div_display_success('liveSupportAccount-create-warnings','S006');
+	  $('#createLiveSupportAccountModal').modal('hide');
 	  reset_livesupportAccount();
+	  alert_display_success('S006','#');
+	  load_livesupport_viewAccounts();
 	 }
 	});
   } else { div_display_warning('liveSupportAccount-create-warnings','W013'); } // pwd =#= confirmPwd
@@ -47,8 +49,7 @@ function view_liveSupportAccount_shiftTimings(){
   $('#div-createAccount-viewShiftTimings').removeClass('hide-block');
  }
  var content='<label>Agent Shift Timings in Agents Timezone</label>';
-	 content+='<select id="liveSupportAccount-create-shiftTimings" class="form-control" ';
-	 content+='onchange="javascript:view_liveSupportAccount_shiftTimings();">';
+	 content+='<select id="liveSupportAccount-create-shiftTimings" class="form-control">';
 	 content+='<option value="">Select ShiftTimings</option>';
 	 content+='</select>';
  document.getElementById("div-createAccount-viewShiftTimings").innerHTML=content;	
