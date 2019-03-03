@@ -16,5 +16,7 @@
   "W015": { "english":"Please Select Timezone." },
   "W016": { "english":"Please Select Shift Timings." },
   "W017": { "english":"Please Select Currency." },
-  "W018": { "english":"Please Select Country." }
+  "W018": { "english":"Please Select Country." },
+  "W019": { "english":"Please Select Gender." },
+  "W020": { "english":"Invalid Email Verification Code from Customer." }
 }

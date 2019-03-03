@@ -61,6 +61,13 @@ function selopt_shiftTimingsByUsrTz(id,timezone,selval){
  });
 }
 /* Core Functionality ::: End */
+function validate_emailAddress(email) {  
+ var status = 'VALID'; 
+ var atposition=email.indexOf("@");  
+ var dotposition=email.lastIndexOf(".");  
+ if(atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){ status = 'INVALID'; }
+ return status;
+}  
 function blinkAdiv(div_Id){
  var display = true;
  setInterval(function(){ 
@@ -135,6 +142,13 @@ function sentenceCase(str) {
  return response;
 }
 /* Highlight Letter on Search */
+function htmlElementVisiblility(id,status){
+ if(status==='show'){
+   if($('#'+id).hasClass('hide-block')){ $('#'+id).removeClass('hide-block'); }
+ } else {
+   if(!$('#'+id).hasClass('hide-block')){ $('#'+id).addClass('hide-block'); }
+ }
+}
 function getCurentTimestamp(){
  var dateObj = new Date();
  var date = dateObj.getDate().toString();

@@ -7,5 +7,6 @@
   "S006": { "english": "LiveSupport Agent Account created Successfully." },
   "S007": { "english": "LiveSupport Agent Account deleted Successfully." },
   "S008": { "english": "LiveSupport Agent Account Information updated Successfully." },
-  "S009": { "english": "LiveSupport Agent Account Password updated Successfully." }
+  "S009": { "english": "LiveSupport Agent Account Password updated Successfully." },
+  "S010": { "english": "Customer Account created Successfully." }
 }
