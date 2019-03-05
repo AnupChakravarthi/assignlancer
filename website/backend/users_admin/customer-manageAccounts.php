@@ -75,8 +75,8 @@ include_once '../../templates/api/api_js.php';
 <script type="text/javascript">
 $(document).ready(function(){
 tab_customerUpdateAccountForm("custupdateAccount-tab-details");
-view_div_createAccountForm('div-form-createNewAccount');
-
+view_div_createAccountForm();
+view_div_updateAccountForm();
 });
 </script>
 </body>

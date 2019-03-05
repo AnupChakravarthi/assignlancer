@@ -81,15 +81,6 @@ function blinkAdiv(div_Id){
    }
  }, 5);
 }
-function validateEmailAddress(email) {
-  var status = 'Valid';
-  var atpos = email.indexOf("@");
-  var dotpos = email.lastIndexOf(".");
-  if (atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length) {
-    status='Invalid';
-  }
-  return status;
-}
 function sendOTPCode_toUserPhoneNumber(sentOTPtoPhoneNumber){
  var otpcode='12345';
  if(PROJECT_MODE!=='DEBUG'){ 
@@ -261,6 +252,25 @@ var content='<div class="alert alert-warning alert-dismissible" style="margin-bo
     content+='</div>';
  document.getElementById(div_Id).innerHTML=content;
 });
+}
+function alert_display_warningByContent(data){
+var content='<div class="modal-dialog">';
+	content+='<div class="modal-content">';
+    content+='<div class="modal-body" style="padding:0px;">';
+    content+='<div class="alert alert-warning alert-dismissible" style="margin-bottom:0px;">';
+    content+='<a href="#" class="close" data-dismiss="modal" aria-label="close">&times;</a>';
+    content+=data;
+    content+='</div>';
+    content+='</div>';
+    content+='</div>';
+    content+='</div>';
+var modalDivision = document.createElement("div"); 
+    modalDivision.setAttribute("id", "alertWarningModal");
+	modalDivision.setAttribute("class", "modal fade");
+	modalDivision.setAttribute("role", "dialog");
+ document.body.appendChild(modalDivision);  
+ document.getElementById("alertWarningModal").innerHTML=content;
+ $('#alertWarningModal').modal();
 }
 function alert_display_warning(warning_Id){
 js_ajax("GET",PROJECT_URL+'backend/config/warning_messages.json',{},function(response){

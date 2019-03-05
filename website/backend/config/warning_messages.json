@@ -18,5 +18,8 @@
   "W017": { "english":"Please Select Currency." },
   "W018": { "english":"Please Select Country." },
   "W019": { "english":"Please Select Gender." },
-  "W020": { "english":"Invalid Email Verification Code from Customer." }
+  "W020": { "english":"Invalid Email Verification Code from Customer." },
+  "W021": { "english":"Missing Email Id / Customer Id." },
+  "W022": { "english":"Customer Account not exists." },
+  "W023": { "english":"Email Id already registered by other Customer." }
 }

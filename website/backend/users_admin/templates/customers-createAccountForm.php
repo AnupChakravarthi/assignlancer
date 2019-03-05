@@ -1,12 +1,7 @@
 <script type="text/javascript">
 var EMAIL_VERIFYCODE=(Math.floor(Math.random() * (99999 - 10000))+10000).toString();
 
-function view_div_createAccountForm(id){
- var arry_Id=["div-form-createNewAccount","div-form-verificationcode"];
- for(var index=0;index<arry_Id.length;index++){
-  if(id===arry_Id[index]){ htmlElementVisiblility(arry_Id[index],'show'); } 
-  else { htmlElementVisiblility(arry_Id[index],'hide'); }
- }
+function view_div_createAccountForm(){
  sel_optcountries('customer-createAccountForm-country','');
  sel_optcurrencies('customer-createAccountForm-currency','');
  sel_optTimezone('customer-createAccountForm-timezone','');

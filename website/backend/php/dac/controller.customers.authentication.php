@@ -31,6 +31,38 @@ if(isset($_GET["action"])){
 				$acc_pwd, $country, $tz, $currency);
   echo $database->addupdateData($query);
  }
+ else if($_GET["action"]=='CUSTOMER_GETACCOUNTINFOBYEMAILORID'){
+  $emailOrId = $_GET["emailOrCustomerId"];
+  $customersAuthentication = new CustomersAuthentication();
+  $database = new Database();
+  $query = $customersAuthentication->query_data_getAccountByEmailOrId($emailOrId);
+  echo $database->getJSONData($query);
+ }
+ else if($_GET["action"]=='CUSTOMER_VALIDEMAILONUPDATE'){
+  $account_Id = $_GET["account_Id"];
+  $email_Id = $_GET["email_Id"];
+  $customersAuthentication = new CustomersAuthentication();
+  $database = new Database();
+  $query = $customersAuthentication->query_check_validateEmailOnUpdate($account_Id,$email_Id);
+  $count=json_decode($database->getJSONData($query))[0]->{'count(*)'};
+  if(intval($count)>0){ echo 'EMAIL_ALREADY_EXISTS'; } 
+  else { echo 'EMAIL_NOT_EXISTS'; } 
+ }
+ else if($_GET["action"]=='CUSTOMER_EMAILADDRESSUPDATE'){
+  $account_Id = $_GET["account_Id"];
+  $email_Id = $_GET["email_Id"];
+  $customersAuthentication = new CustomersAuthentication();
+  $database = new Database();
+  $query = $customersAuthentication->query_update_updateEmailAddressOnCustomerAccount($account_Id,$email_Id);
+  echo $database->addupdateData($query);
+ }
+ else if($_GET["action"]=='CUSTOMER_DELETEACCOUNT'){
+  $account_Id = $_GET["account_Id"]; 
+  $customersAuthentication = new CustomersAuthentication();
+  $database = new Database();
+  $query = $customersAuthentication->query_delete_customerAccount($account_Id);
+  echo $database->addupdateData($query);
+ }
  else { echo 'INVALID_ACTION'; }
 } else { echo 'NO_ACTION'; }
 
