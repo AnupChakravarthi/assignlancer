@@ -140,15 +140,24 @@ include_once '../../templates/api/api_js.php';
 				  <hr/><div class="pad3" style="background-color:#eee;"><h5><b>&nbsp;&nbsp;ADD SUPPORTING FILES</b></h5></div><hr/>
 				</div>
 			</div>
+			<div id="customer-createNewOrder-form-addSupportingFilesList" class="row mtop15p mbot15p">
+			  
+			  
+			  
+			</div>
 			<div class="row mtop15p mbot15p">
                 <div class="col-lg-12">
 				  <!-- Add Supporting Files : Start -->
 				  <div class="col-lg-12">
 				   <div class="form-group">
 					<button class="btn btn-default pull-right" onclick="javascript:createNewOrder_addDoc();">
-						<b>Add Supporting Files (+) <span class="font-red">*</span></b>
+						<b>Add Supporting Files - {Only Zip Files} <span class="font-red">*</span></b>
 					</button>
-				   <input id="createNewOrder_fileBtn" type="file" style="visibility:hidden;"/>
+					<form name="fileuploadForm" id="fileuploadForm" action="#" method="POST" enctype="multipart/form-data">
+				     <input id="createNewOrder_uploadFile" name="uploadFile" type="file" style="visibility:hidden;" 
+					 onchange="javascript:customer_createNewOrder_getOrderForm_fileUpload();" 
+					 accept=".zip"/>
+					</form>
 				  </div>
 				 </div>
 				 <!-- Add Supporting Files : End -->
@@ -431,11 +440,12 @@ function createNewOrder_typeOfWork(){
  // 
 }
 function createNewOrder_addDoc(){
- document.getElementById("createNewOrder_fileBtn").click();
+ document.getElementById("createNewOrder_uploadFile").click();
 }
 $(document).ready(function(){
 
 });
+var ACCOUNT_ID;
 function customer_createNewOrder_getOrderForm(){
  var emailOrCustomerId = document.getElementById("customer-createNewOrder-emailOrCustomerId").value;
  if(emailOrCustomerId.length>0){
@@ -450,7 +460,7 @@ function customer_createNewOrder_getOrderForm(){
 function customer_createNewOrder_getOrderForm_loadCustomerInfo(response){
  htmlElementVisiblility('customer-createNewOrder-form','show');
  response=JSON.parse(response);
- var account_Id = response[0].account_Id;
+ ACCOUNT_ID = response[0].account_Id;
  var name = response[0].name;
  var gender = response[0].gender;
  var email_Id = response[0].email_Id;
@@ -470,7 +480,7 @@ function customer_createNewOrder_getOrderForm_loadCustomerInfo(response){
 	 content+='<label>Account Id</label>';
 	 content+='<div class="list-group">';
 	 content+='<div class="list-group-item" style="border-radius:4px;">';
-	 content+='<span class="font-grey">'+account_Id+'</span>';
+	 content+='<span class="font-grey">'+ACCOUNT_ID+'</span>';
 	 content+='</div>';
 	 content+='</div>';
 	 content+='</div>';
@@ -545,6 +555,42 @@ function customer_createNewOrder_getOrderForm_loadCustomerInfo(response){
 	 content+='</div>';
 	 content+='</div>';
   document.getElementById("customer-createNewOrder-form-customerInfo").innerHTML=content;		
+}
+function customer_createNewOrder_getOrderForm_fileUpload(){
+  var form = $('#fileuploadForm')[0];
+  var formData = new FormData(form);
+      formData.append("account_Id",ACCOUNT_ID);
+  $.ajax({type: "POST", enctype: 'multipart/form-data', url:PROJECT_URL+"backend/php/dac/controller.app.files.uploader.php",
+  data: formData, processData: false, contentType: false, cache: false, timeout: 600000, success: function (response) {  
+  console.log("SUCCESS : "+response);customer_createNewOrder_listOfSupportingFiles(); }, 
+  error: function (e) { console.log("ERROR : "+e); } });
+}
+
+function customer_createNewOrder_listOfSupportingFiles(){
+var order_Id='CA2011140089861';
+js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.customers.orders.php',
+{ action:'GET_SUPPORTINGFILES_ON_ORDER', order_Id:order_Id, path:'temp' }, function(response){
+ console.log(response);
+ response=response.split('|');
+ var content='';
+ for(var index=0;index<response.length;index++){
+   if(response[index].trim().length>0){
+   content+='<div align="center" class="col-lg-2">';
+   content+='<div><i class="fa fa-5x fa-file-archive-o" aria-hidden="true"></i></div>';
+   content+='<div class="mtop15p">'+response[index]+'</div>';
+   content+='<div class="mtop15p"><button class="btn btn-default" ';
+   content+='onclick="javascript:customer_createNewOrder_deleteSupportFiles(\''+order_Id+'\',\''+response[index]+'\');">';
+   content+='Remove&nbsp;<i class="fa fa-close"></i></button></div>';
+   content+='</div>';
+   }
+ }
+ document.getElementById("customer-createNewOrder-form-addSupportingFilesList").innerHTML=content;
+});			 
+}
+function customer_createNewOrder_deleteSupportFiles(order_Id,fileName){
+js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.customers.orders.php',
+ { action:'DELETE_SUPPORTINGFILES_ON_ORDER', order_Id:'CA2011140089861', fileName:fileName, path:'temp' },
+ function(response){ console.log(response);customer_createNewOrder_listOfSupportingFiles(); });
 }
 </script>
 </body>
