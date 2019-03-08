@@ -63,6 +63,27 @@ if(isset($_GET["action"])){
   $query = $customersAuthentication->query_delete_customerAccount($account_Id);
   echo $database->addupdateData($query);
  }
+ else if($_GET["action"]=='CUSTOMER_ACCOUNTUPDATEGENERALINFO'){
+   $account_Id=''; if(isset($_GET["account_Id"])){ $account_Id = $_GET["account_Id"]; }
+   $name = ''; if(isset($_GET["name"])){ $name = $_GET["name"]; }
+   $gender = ''; if(isset($_GET["gender"])){  $gender = $_GET["gender"]; }
+   $country = ''; if(isset($_GET["country"])){  $country = $_GET["country"]; }
+   $tz = ''; if(isset($_GET["tz"])){ $tz = $_GET["tz"]; }
+   $currency = ''; if(isset($_GET["currency"])){ $currency = $_GET["currency"]; }
+   $customersAuthentication = new CustomersAuthentication();
+   $database = new Database();
+   $query = $customersAuthentication->query_update_customerAccountGeneralInfo($account_Id,$name,$gender,
+											$country,$tz,$currency);
+   echo $database->addupdateData($query);
+ }
+ else if($_GET["action"]=='CUSTOMER_ACCOUNTUPDATEACCOUNTPASSWORD'){
+   $account_Id=''; if(isset($_GET["account_Id"])){ $account_Id = $_GET["account_Id"]; }
+   $acc_pwd=''; if(isset($_GET["acc_pwd"])){ $acc_pwd = md5($_GET["acc_pwd"]); }
+   $customersAuthentication = new CustomersAuthentication();
+   $database = new Database();
+   $query = $customersAuthentication->query_update_customerAccountPassword($account_Id,$acc_pwd);
+   echo $database->addupdateData($query);
+ }
  else { echo 'INVALID_ACTION'; }
 } else { echo 'NO_ACTION'; }
 

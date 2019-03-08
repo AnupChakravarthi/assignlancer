@@ -29,5 +29,20 @@ class CustomersAuthentication {
   $sql="DELETE FROM custom_accounts WHERE account_Id='".$account_Id."';";
   return $sql;
  }
+ function query_update_customerAccountGeneralInfo($account_Id,$name,$gender,$country,$tz,$currency){
+  $sql="UPDATE custom_accounts SET";
+  $sql.=" name='".$name."',";
+  $sql.=" gender='".$gender."',";
+  $sql.=" country='".$country."',";
+  $sql.=" tz='".$tz."',";
+  $sql.="currency='".$currency."',";
+  $sql=chop($sql,',');
+  $sql.=" WHERE account_Id='".$account_Id."';";
+  return $sql;
+ }
+ function query_update_customerAccountPassword($account_Id,$acc_pwd){
+  $sql="UPDATE custom_accounts SET acc_pwd='".$acc_pwd."' WHERE account_Id='".$account_Id."';";
+  return $sql;
+ }
 }
 ?>

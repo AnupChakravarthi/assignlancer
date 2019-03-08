@@ -2381,3 +2381,29 @@ Tuesday 5th March 2019 10:44:44 PM [INFO] ::: [app.database.php]  Query(Status-S
 Tuesday 5th March 2019 10:44:57 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Tuesday 5th March 2019 10:45:03 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Tuesday 5th March 2019 10:45:03 PM [INFO] ::: [app.database.php]  Query(Status-Success) : DELETE FROM custom_accounts WHERE account_Id='CA8836691859005'; 
+Friday 8th March 2019 07:53:10 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 07:53:12 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 07:53:21 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 07:53:24 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 07:53:26 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:02:12 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:02:40 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:04:19 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:04:35 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:04:43 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:04:52 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:05:25 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:26:34 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:26:58 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:26:58 AM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE custom_accounts SET name='Geetha', gender='FEMALE', country='Australia', tz='Australia/Adelaide',currency='Australian Dollar' WHERE account_Id=''; 
+Friday 8th March 2019 08:28:38 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:28:54 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:28:54 AM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE custom_accounts SET name='Geetha', gender='FEMALE', country='Australia', tz='Australia/Currie',currency='Australian Dollar' WHERE account_Id='CA2011140089861'; 
+Friday 8th March 2019 08:29:32 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:29:32 AM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE custom_accounts SET name='Kishore Nellutla', gender='MALE', country='India', tz='Asia/Kolkata',currency='Indian Rupee' WHERE account_Id='CA2011140089861'; 
+Friday 8th March 2019 08:43:52 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:44:05 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:44:46 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:47:31 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:47:52 AM [INFO] ::: [app.database.php]  Database connected Successfully 
+Friday 8th March 2019 08:47:52 AM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE custom_accounts SET acc_pwd='827ccb0eea8a706c4c34a16891f84e7b' WHERE account_Id='CA2011140089861'; 

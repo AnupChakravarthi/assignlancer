@@ -112,18 +112,19 @@ function updateAccountForm_getAccountDetails_save(){
  UPDATEACCOUNTFORM_TIMEZONE = document.getElementById("custupdateAccount-form-deftimezone").value; 
  UPDATEACCOUNTFORM_CURRENCY = document.getElementById("custupdateAccount-form-defcurrency").value;
  if(UPDATEACCOUNTFORM_NAME.length>0){
- if(UPDATEACCOUNTFORM_EMAIL.length>0 && validate_emailAddress(UPDATEACCOUNTFORM_EMAIL)){
  if(UPDATEACCOUNTFORM_GENDER.length>0){
  if(UPDATEACCOUNTFORM_COUNTRY.length>0){
  if(UPDATEACCOUNTFORM_TIMEZONE.length>0){
  if(UPDATEACCOUNTFORM_CURRENCY.length>0){
-
- } else { div_display_warning(div_Id,'W017'); } // W017: Missing Currency
- } else { div_display_warning(div_Id,'W015'); } // W015: Missing Timezone
- } else { div_display_warning(div_Id,'W018'); } // W018: Missing Country
- } else { div_display_warning(div_Id,'W019'); } // W019: Missing Gender
- } else { div_display_warning(div_Id,'W002'); } // W002: Missing Email
- } else { div_display_warning(div_Id,'W001'); } // W001: Missing Name
+   js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.customers.authentication.php',
+    { action:'CUSTOMER_ACCOUNTUPDATEGENERALINFO', account_Id:UPDATEACCOUNTFORM_ACCOUNTID, name:UPDATEACCOUNTFORM_NAME, 
+	  gender:UPDATEACCOUNTFORM_GENDER, country:UPDATEACCOUNTFORM_COUNTRY, tz:UPDATEACCOUNTFORM_TIMEZONE, 
+	  currency:UPDATEACCOUNTFORM_CURRENCY }, function(response){ console.log(response); });
+ } else { div_display_warning('custupdateAccount-content-details-warnings','W017'); } // W017: Missing Currency
+ } else { div_display_warning('custupdateAccount-content-details-warnings','W015'); } // W015: Missing Timezone
+ } else { div_display_warning('custupdateAccount-content-details-warnings','W018'); } // W018: Missing Country
+ } else { div_display_warning('custupdateAccount-content-details-warnings','W019'); } // W019: Missing Gender
+ } else { div_display_warning('custupdateAccount-content-details-warnings','W001'); } // W001: Missing Name
 }
 function updateAccountForm_getAccountDetails_reset(){
   document.getElementById("custupdateAccount-form-accountId").innerHTML = UPDATEACCOUNTFORM_ACCOUNTID;
@@ -184,6 +185,29 @@ function view_updateAccountForm_updateEmailVerifyCode(){
  } else { div_display_warning('custupdateAccount-content-updateEmail-warnings','W020'); }
 }
 /* Tab#2: UpdateAccountForm (UpdateEmail) ::: End */
+/* Tab#3: UpdateAccountForm (UpdatePassword) ::: Start */
+function view_updateAccountForm_updateAccountPassword(){
+ var pwd = document.getElementById("custupdateAccount-form-accpwd").value;
+ var confirmpwd = document.getElementById("custupdateAccount-form-confirmpwd").value;
+ if(pwd.length>0){
+ if(confirmpwd.length>0){
+ if(pwd===confirmpwd){
+   js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.customers.authentication.php',
+   { action:'CUSTOMER_ACCOUNTUPDATEACCOUNTPASSWORD', account_Id:UPDATEACCOUNTFORM_ACCOUNTID, acc_pwd: pwd },
+   function(response){ console.log(response); 
+     div_display_success('custupdateAccount-content-updatePwd-warnings','S003');
+	 view_updateAccountForm_resetAccountPassword();
+   });
+ } else { div_display_warning('custupdateAccount-content-updatePwd-warnings','W005'); } // W005: Password and Confirm Password not matched
+ } else { div_display_warning('custupdateAccount-content-updatePwd-warnings','W004'); } // W004: Missing Confirm Password
+ } else { div_display_warning('custupdateAccount-content-updatePwd-warnings','W003'); } // W003: Missing Password
+}
+function view_updateAccountForm_resetAccountPassword(){
+ document.getElementById("custupdateAccount-form-accpwd").value='';
+ document.getElementById("custupdateAccount-form-confirmpwd").value='';
+}
+	//   
+/* Tab#3: UpdateAccountForm (UpdatePassword) ::: End */
 </script>
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -250,7 +274,13 @@ function view_updateAccountForm_updateEmailVerifyCode(){
 		    <div class="list-group-item">
 			    <!-- Details Form : Start -->
 		        <div class="container-fluid">
-				  
+				  <div class="row">
+					<div class="col-lg-12">
+					  <!-- -->
+					  <div id="custupdateAccount-content-details-warnings" class="form-group"></div>
+					  <!-- -->
+					</div>
+				  </div>
 				  <div class="row">
 					<div class="col-lg-12">
 					  <!-- Name -->
@@ -329,9 +359,7 @@ function view_updateAccountForm_updateEmailVerifyCode(){
 		    </div>
 		  </div>
 		  <!-- Details Tab Content : End -->
-<script type="text/javascript">
 
-</script>
 		  <div id="custupdateAccount-content-updateEmail" class="list-group hide-block">
 		    <div class="list-group-item">
 			    <div class="container-fluid">
@@ -387,21 +415,25 @@ function view_updateAccountForm_updateEmailVerifyCode(){
 		    <div class="list-group-item">
 			    <!-- Update Password Form : Start -->
 		        <div class="container-fluid">
-				  
+				   <div class="row">
+				     <div class="col-lg-12">
+					   <div id="custupdateAccount-content-updatePwd-warnings" class="form-group"></div>
+					 </div>
+				   </div>
 				   <div class="row">
 					  <!-- Password -->
 					  <div class="col-lg-6">
 						<div class="form-group">
 						  <label>Password</label>
-			 			  <input type="password" class="form-control" placeholder="Enter Password"/>
+			 			  <input id="custupdateAccount-form-accpwd" type="password" class="form-control" placeholder="Enter Password"/>
 					    </div>
 					  </div>
-						
+					
 					  <!-- Confirm Password -->
 					  <div class="col-lg-6">
 					    <div class="form-group">
 						  <label>Confirm Password</label>
-						  <input type="password" class="form-control" placeholder="Enter Confirm Password"/>
+						  <input id="custupdateAccount-form-confirmpwd" type="password" class="form-control" placeholder="Enter Confirm Password"/>
 					    </div>
 					  </div>
 				   </div>
@@ -409,8 +441,8 @@ function view_updateAccountForm_updateEmailVerifyCode(){
 				   <div class="row">
 				      <div align="center" class="col-lg-12">
 					    <div class="btn-group">
-						  <button class="btn btn-success"><b>Update Account Password</b></button>
-						  <button class="btn btn-danger"><b>Reset</b></button>
+						  <button class="btn btn-success" onclick="javascript:view_updateAccountForm_updateAccountPassword();"><b>Update Account Password</b></button>
+						  <button class="btn btn-danger" onclick="javascript:view_updateAccountForm_resetAccountPassword();"><b>Reset</b></button>
 					    </div>
 					  </div>
 				   </div>
