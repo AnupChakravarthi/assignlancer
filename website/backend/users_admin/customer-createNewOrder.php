@@ -42,107 +42,20 @@ include_once '../../templates/api/api_js.php';
                 </div>
             </div>	
 			<div class="row">
-                <div class="col-lg-6">
+			   <div class="col-lg-6">
+			     <div id="customer-createNewOrder-emailOrCustomerId-warnings" class="form-group"></div>
+			   </div>
+			</div>	
+			<div class="row">  
+               <div class="col-lg-6">
 				  <div class="input-group">
-				    <input type="text" class="form-control" placeholder="Enter Customer Email Address"/>
-					<span class="input-group-addon curpoint"><b>Get Order Form</b></span>
+				    <input type="text" id="customer-createNewOrder-emailOrCustomerId" class="form-control" placeholder="Enter Customer Email Address/ Customer Id"/>
+					<span class="input-group-addon curpoint" onclick="javascript:customer_createNewOrder_getOrderForm();"><b>Get Order Form</b></span>
 				  </div>
-				</div>
+			   </div>
 			</div>
-			<div class="row mtop15p">
-                <div class="col-lg-12">
-				  <hr/><div class="pad3" style="background-color:#eee;"><h5><b>&nbsp;&nbsp;CUSTOMER INFORMATION</b></h5></div><hr/>
-				</div>
-			</div>
-			<div class="row mtop15p">
-			  <div class="col-lg-12">
-			     <!-- -->
-			     <div class="col-lg-4">
-				  <div class="form-group">
-				   <label>Account Id</label>
-				   <div class="list-group">
-				     <div class="list-group-item" style="border-radius:4px;">
-				        <span class="font-grey">123456</span>
-				     </div>
-				   </div>
-				  </div>
-				 </div>
-				 <!-- -->
-				 <!-- -->
-				 <div class="col-lg-4">
-				 <div class="form-group">
-				   <label>Name</label>
-				   <div class="list-group">
-				     <div class="list-group-item" style="border-radius:4px;">
-				        <span class="font-grey">Nellutla L N Rao</span>
-				     </div>
-				   </div>
-				 </div>
-				 </div>
-				 <!-- -->
-				 <!-- -->
-				 <div class="col-lg-4">
-				 <div class="form-group">
-				   <label>Gender</label>
-				   <div class="list-group">
-				     <div class="list-group-item" style="border-radius:4px;">
-				        <span class="font-grey">Male</span>
-				     </div>
-				   </div>
-				 </div>
-				 </div>
-				 <!-- -->
-				 <!-- -->
-			     <div class="col-lg-4">
-				  <div class="form-group">
-				   <label>Email</label>
-				   <div class="list-group">
-				     <div class="list-group-item" style="border-radius:4px;">
-				        <span class="font-grey">nellutlalnrao@gmail.com</span>
-				     </div>
-				   </div>
-				  </div>
-				 </div>
-				 <!-- -->
-				 <!-- -->
-				 <div class="col-lg-4">
-				 <div class="form-group">
-				   <label>Country</label>
-				   <div class="list-group">
-				     <div class="list-group-item" style="border-radius:4px;">
-				        <span class="font-grey">India</span>
-				     </div>
-				   </div>
-				 </div>
-				 </div>
-				 <!-- -->
-				 <!-- -->
-				 <div class="col-lg-4">
-				 <div class="form-group">
-				   <label>Timezone</label>
-				   <div class="list-group">
-				     <div class="list-group-item" style="border-radius:4px;">
-				        <span class="font-grey">Asia/Kolkatta</span>
-				     </div>
-				   </div>
-				 </div>
-				 </div>
-				 <!-- -->
-			     <!-- -->
-			     <div class="col-lg-4">
-				  <div class="form-group">
-				   <label>Currency</label>
-				   <div class="list-group">
-				     <div class="list-group-item" style="border-radius:4px;">
-				        <span class="font-grey">Rupee</span>
-				     </div>
-				   </div>
-				  </div>
-				 </div>
-				 <!-- -->
-				
-			  </div>
-			</div>
+			<div id="customer-createNewOrder-form" class="hide-block">
+			  <div id="customer-createNewOrder-form-customerInfo"></div>
 			<div class="row mtop15p">
                 <div class="col-lg-12">
 				  <hr/><div class="pad3" style="background-color:#eee;"><h5><b>&nbsp;&nbsp;ORDER INFORMATION</b></h5></div><hr/>
@@ -457,6 +370,7 @@ include_once '../../templates/api/api_js.php';
 				</div>	
 			  </div> 
 			</div>
+			
 			<div class="row">
 			 <div class="col-lg-12"><hr/></div>
 			</div>
@@ -472,6 +386,7 @@ include_once '../../templates/api/api_js.php';
 				  <!-- -->
 				</div>
 			</div>
+		  </div>
 		</div>
         <!-- /#page-wrapper -->
 
@@ -521,6 +436,116 @@ function createNewOrder_addDoc(){
 $(document).ready(function(){
 
 });
+function customer_createNewOrder_getOrderForm(){
+ var emailOrCustomerId = document.getElementById("customer-createNewOrder-emailOrCustomerId").value;
+ if(emailOrCustomerId.length>0){
+   js_ajax('GET', PROJECT_URL+'backend/php/dac/controller.customers.authentication.php',
+   { action:'CUSTOMER_GETACCOUNTINFOBYEMAILORID', emailOrCustomerId:emailOrCustomerId },
+   function(response){ 
+    console.log(response); 
+    customer_createNewOrder_getOrderForm_loadCustomerInfo(response);
+   });
+ } else { div_display_warning('customer-createNewOrder-emailOrCustomerId-warnings','W021'); } // W021: Missing Email Id or Customer Id
+}
+function customer_createNewOrder_getOrderForm_loadCustomerInfo(response){
+ htmlElementVisiblility('customer-createNewOrder-form','show');
+ response=JSON.parse(response);
+ var account_Id = response[0].account_Id;
+ var name = response[0].name;
+ var gender = response[0].gender;
+ var email_Id = response[0].email_Id;
+ var country = response[0].country;
+ var tz = response[0].tz;
+ var currency = response[0].currency;
+ var content='<div class="row mtop15p">';
+     content+='<div class="col-lg-12">';
+	 content+='<hr/><div class="pad3" style="background-color:#eee;">';
+	 content+='<h5><b>&nbsp;&nbsp;CUSTOMER INFORMATION</b></h5></div><hr/>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='<div class="row mtop15p">';
+	 content+='<div class="col-lg-12">';
+	 content+='<div class="col-lg-4">';
+	 content+='<div class="form-group">';
+	 content+='<label>Account Id</label>';
+	 content+='<div class="list-group">';
+	 content+='<div class="list-group-item" style="border-radius:4px;">';
+	 content+='<span class="font-grey">'+account_Id+'</span>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='</div>';
+	 
+	 content+='<div class="col-lg-4">';
+	 content+='<div class="form-group">';
+	 content+='<label>Name</label>';
+	 content+='<div class="list-group">';
+	 content+='<div class="list-group-item" style="border-radius:4px;">';
+	 content+='<span class="font-grey">'+name+'</span>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='</div>';
+     content+='</div>';
+	 
+	 content+='<div class="col-lg-4">';
+	 content+='<div class="form-group">';
+	 content+='<label>Gender</label>';
+	 content+='<div class="list-group">';
+	 content+='<div class="list-group-item" style="border-radius:4px;">';
+	 content+='<span class="font-grey">'+gender+'</span>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='</div>';
+	 
+	 content+='<div class="col-lg-4">';
+	 content+='<div class="form-group">';
+	 content+='<label>Email</label>';
+	 content+='<div class="list-group">';
+	 content+='<div class="list-group-item" style="border-radius:4px;">';
+	 content+='<span class="font-grey">'+email_Id+'</span>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='</div>';
+
+	 content+='<div class="col-lg-4">';
+	 content+='<div class="form-group">';
+	 content+='<label>Country</label>';
+	 content+='<div class="list-group">';
+	 content+='<div class="list-group-item" style="border-radius:4px;">';
+	 content+='<span class="font-grey">'+country+'</span>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='</div>';
+	
+	 content+='<div class="col-lg-4">';
+	 content+='<div class="form-group">';
+	 content+='<label>Timezone</label>';
+	 content+='<div class="list-group">';
+	 content+='<div class="list-group-item" style="border-radius:4px;">';
+	 content+='<span class="font-grey">'+tz+'</span>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='</div>';
+	
+	 content+='<div class="col-lg-4">';
+	 content+='<div class="form-group">';
+	 content+='<label>Currency</label>';
+	 content+='<div class="list-group">';
+	 content+='<div class="list-group-item" style="border-radius:4px;">';
+	 content+='<span class="font-grey">'+currency+'</span>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='</div>';
+	 
+	 content+='</div>';
+	 content+='</div>';
+  document.getElementById("customer-createNewOrder-form-customerInfo").innerHTML=content;		
+}
 </script>
 </body>
 
