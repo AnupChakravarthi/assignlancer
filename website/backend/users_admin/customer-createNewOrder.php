@@ -175,7 +175,7 @@ include_once '../../templates/api/api_js.php';
 				   <!-- -->
 				     <div class="form-group">
 					   <label>Add Milestones</label>
-					   <select class="form-control">
+					   <select id="customer-createNewOrder-addMilestones" class="form-control" onchange="javascript:customer_createNewOrder_milestonesNumberOption();">
 					     <option value="">Select your Choice</option>
 						 <option value="YES">Yes</option>
 						 <option value="NO">No</option>
@@ -184,200 +184,28 @@ include_once '../../templates/api/api_js.php';
 				   <!-- -->
 				</div>
 				
-				<div class="col-lg-3">
+				<div id="customer-createNewOrder-milestonesNumberOption" class="col-lg-5 hide-block">
 				   <!-- -->
 				     <div class="form-group">
 					   <label>Number of Milestones</label>
-					   <select class="form-control">
-					     <option value="">Select Number</option>
-						 <option value="1">1</option>
-						 <option value="2">2</option>
-						 <option value="3">3</option>
-						 <option value="4">4</option>
-						 <option value="5">5</option>
-					   </select>
+					   <div class="input-group">
+					     <select id="customer-createNewOrder-milestoneNumber" class="form-control">
+					       <option value="">Select Number</option>
+						   <option value="1">1</option>
+						   <option value="2">2</option>
+						   <option value="3">3</option>
+						   <option value="4">4</option>
+						   <option value="5">5</option>
+					     </select>
+						 <span class="input-group-addon" onclick="javascript:customer_createNewOrder_setMilestones();"><b>Set Milestones</b></span>
+					   </div>
 					 </div>
 				   <!-- -->
 				</div>
 			  </div>
 			</div>
-			<div class="row">
-			  <div class="col-lg-12">
-				<div class="col-lg-4">
-				   <div class="list-group">
-					  <div class="list-group-item">
-					    <!-- -->
-						<div class="container-fluid">
-						  <div class="row">
-						    <div align="center" class="col-lg-12">
-							  <h5><b>MILESTONE#1</b></h5><hr/>
-							</div>
-						  </div>
-						  <div class="row">
-						    <!-- -->
-						    <div class="form-group">
-							  <label>Target Date</label>
-							  <input type="date" class="form-control"/>
-							</div>
-							<!-- -->
-							<!-- -->
-							<div class="form-group">
-							  <label>Target Task</label>
-							  <textarea class="form-control" placeholder="Enyer your Target Task"></textarea>
-							</div>
-							<!-- -->
-						  </div>
-						</div>
-						<!-- -->
-				      </div>  
-				   </div>  
-				</div>	
-			    <div class="col-lg-4">
-				   <div class="list-group">
-					  <div class="list-group-item">
-					    <!-- -->
-						<div class="container-fluid">
-						  <div class="row">
-						    <div align="center" class="col-lg-12">
-							  <h5><b>MILESTONE#2</b></h5><hr/>
-							</div>
-						  </div>
-						  <div class="row">
-						    <!-- -->
-						    <div class="form-group">
-							  <label>Target Date</label>
-							  <input type="date" class="form-control"/>
-							</div>
-							<!-- -->
-							<!-- -->
-							<div class="form-group">
-							  <label>Target Task</label>
-							  <textarea class="form-control" placeholder="Enyer your Target Task"></textarea>
-							</div>
-							<!-- -->
-						  </div>
-						</div>
-						<!-- -->
-				      </div>  
-				   </div>  
-				</div>	
-			    <div class="col-lg-4">
-				   <div class="list-group">
-					  <div class="list-group-item">
-					    <!-- -->
-						<div class="container-fluid">
-						  <div class="row">
-						    <div align="center" class="col-lg-12">
-							  <h5><b>MILESTONE#3</b></h5><hr/>
-							</div>
-						  </div>
-						  <div class="row">
-						    <!-- -->
-						    <div class="form-group">
-							  <label>Target Date</label>
-							  <input type="date" class="form-control"/>
-							</div>
-							<!-- -->
-							<!-- -->
-							<div class="form-group">
-							  <label>Target Task</label>
-							  <textarea class="form-control" placeholder="Enyer your Target Task"></textarea>
-							</div>
-							<!-- -->
-						  </div>
-						</div>
-						<!-- -->
-				      </div>  
-				   </div>  
-				</div>	
-			    <div class="col-lg-4">
-				   <div class="list-group">
-					  <div class="list-group-item">
-					    <!-- -->
-						<div class="container-fluid">
-						  <div class="row">
-						    <div align="center" class="col-lg-12">
-							  <h5><b>MILESTONE#4</b></h5><hr/>
-							</div>
-						  </div>
-						  <div class="row">
-						    <!-- -->
-						    <div class="form-group">
-							  <label>Target Date</label>
-							  <input type="date" class="form-control"/>
-							</div>
-							<!-- -->
-							<!-- -->
-							<div class="form-group">
-							  <label>Target Task</label>
-							  <textarea class="form-control" placeholder="Enyer your Target Task"></textarea>
-							</div>
-							<!-- -->
-						  </div>
-						</div>
-						<!-- -->
-				      </div>  
-				   </div>  
-				</div>	
-			    <div class="col-lg-4">
-				   <div class="list-group">
-					  <div class="list-group-item">
-					    <!-- -->
-						<div class="container-fluid">
-						  <div class="row">
-						    <div align="center" class="col-lg-12">
-							  <h5><b>MILESTONE#5</b></h5><hr/>
-							</div>
-						  </div>
-						  <div class="row">
-						    <!-- -->
-						    <div class="form-group">
-							  <label>Target Date</label>
-							  <input type="date" class="form-control"/>
-							</div>
-							<!-- -->
-							<!-- -->
-							<div class="form-group">
-							  <label>Target Task</label>
-							  <textarea class="form-control" placeholder="Enyer your Target Task"></textarea>
-							</div>
-							<!-- -->
-						  </div>
-						</div>
-						<!-- -->
-				      </div>  
-				   </div>  
-				</div>	
-			    <div class="col-lg-4">
-				   <div class="list-group">
-					  <div class="list-group-item">
-					    <!-- -->
-						<div class="container-fluid">
-						  <div class="row">
-						    <div align="center" class="col-lg-12">
-							  <h5><b>MILESTONE#6</b></h5><hr/>
-							</div>
-						  </div>
-						  <div class="row">
-						    <!-- -->
-						    <div class="form-group">
-							  <label>Target Date</label>
-							  <input type="date" class="form-control"/>
-							</div>
-							<!-- -->
-							<!-- -->
-							<div class="form-group">
-							  <label>Target Task</label>
-							  <textarea class="form-control" placeholder="Enyer your Target Task"></textarea>
-							</div>
-							<!-- -->
-						  </div>
-						</div>
-						<!-- -->
-				      </div>  
-				   </div>  
-				</div>	
-			  </div> 
+			<div id="customer-createNewOrder-milestoneList" class="row">
+			
 			</div>
 			
 			<div class="row">
@@ -388,8 +216,8 @@ include_once '../../templates/api/api_js.php';
 				  <!-- -->
 				  <div align="center" class="col-lg-12">
 				   <div class="btn-group mtop15p mbot15p">
-				     <button class="btn btn-success"><b>Create New Order</b></button>
-					 <button class="btn btn-danger"><b>Reset</b></button>
+				     <button class="btn btn-success" onclick="javascript:customer_createNewOrder_form();"><b>Create New Order</b></button>
+					 <button class="btn btn-danger" onclick="javascript:customer_createNewOrder_reset();"><b>Reset</b></button>
 				   </div>
 				  </div>
 				  <!-- -->
@@ -424,20 +252,23 @@ include_once '../../templates/api/api_js.php';
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/dist/sb-admin-2.js"></script>
 <script type="text/javascript">
+var TEMP_DIR_NAME='<?php echo 'temp_'.session_id(); ?>';
 function createNewOrder_typeOfWork(){
  var typeOfWork = document.getElementById("createNewOrder-typeOfWork").value;
  if(typeOfWork==='DOCUMENT'){
     document.getElementById("createNewOrder-div-wordcount").style.display='block';
 	document.getElementById("createNewOrder-div-pleaseSpecify").style.display='none';
+	document.getElementById("createNewOrder-pleaseSpecify").value='';
  } else if(typeOfWork==='OTHER'){
     document.getElementById("createNewOrder-div-wordcount").style.display='none';
 	document.getElementById("createNewOrder-div-pleaseSpecify").style.display='block';
+	document.getElementById("createNewOrder-wordcount").value='';
  } else {
     document.getElementById("createNewOrder-div-wordcount").style.display='none';
 	document.getElementById("createNewOrder-div-pleaseSpecify").style.display='none';
- }
- // 
- // 
+	document.getElementById("createNewOrder-pleaseSpecify").value='';
+	document.getElementById("createNewOrder-wordcount").value='';
+ } 
 }
 function createNewOrder_addDoc(){
  document.getElementById("createNewOrder_uploadFile").click();
@@ -445,7 +276,7 @@ function createNewOrder_addDoc(){
 $(document).ready(function(){
 
 });
-var ACCOUNT_ID;
+/* CREATE NEW ORDER - Email Id / Customer Id Check */
 function customer_createNewOrder_getOrderForm(){
  var emailOrCustomerId = document.getElementById("customer-createNewOrder-emailOrCustomerId").value;
  if(emailOrCustomerId.length>0){
@@ -457,10 +288,11 @@ function customer_createNewOrder_getOrderForm(){
    });
  } else { div_display_warning('customer-createNewOrder-emailOrCustomerId-warnings','W021'); } // W021: Missing Email Id or Customer Id
 }
+/* CREATE NEW ORDER - loads Customer Information */
 function customer_createNewOrder_getOrderForm_loadCustomerInfo(response){
  htmlElementVisiblility('customer-createNewOrder-form','show');
  response=JSON.parse(response);
- ACCOUNT_ID = response[0].account_Id;
+ var account_Id = response[0].account_Id;
  var name = response[0].name;
  var gender = response[0].gender;
  var email_Id = response[0].email_Id;
@@ -480,7 +312,7 @@ function customer_createNewOrder_getOrderForm_loadCustomerInfo(response){
 	 content+='<label>Account Id</label>';
 	 content+='<div class="list-group">';
 	 content+='<div class="list-group-item" style="border-radius:4px;">';
-	 content+='<span class="font-grey">'+ACCOUNT_ID+'</span>';
+	 content+='<span class="font-grey">'+account_Id+'</span>';
 	 content+='</div>';
 	 content+='</div>';
 	 content+='</div>';
@@ -556,20 +388,19 @@ function customer_createNewOrder_getOrderForm_loadCustomerInfo(response){
 	 content+='</div>';
   document.getElementById("customer-createNewOrder-form-customerInfo").innerHTML=content;		
 }
+/* CREATE NEW ORDER - Supporting File Uploads */
 function customer_createNewOrder_getOrderForm_fileUpload(){
   var form = $('#fileuploadForm')[0];
   var formData = new FormData(form);
-      formData.append("account_Id",ACCOUNT_ID);
+      formData.append("dirName",TEMP_DIR_NAME);
   $.ajax({type: "POST", enctype: 'multipart/form-data', url:PROJECT_URL+"backend/php/dac/controller.app.files.uploader.php",
   data: formData, processData: false, contentType: false, cache: false, timeout: 600000, success: function (response) {  
   console.log("SUCCESS : "+response);customer_createNewOrder_listOfSupportingFiles(); }, 
   error: function (e) { console.log("ERROR : "+e); } });
 }
-
 function customer_createNewOrder_listOfSupportingFiles(){
-var order_Id='CA2011140089861';
 js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.customers.orders.php',
-{ action:'GET_SUPPORTINGFILES_ON_ORDER', order_Id:order_Id, path:'temp' }, function(response){
+{ action:'GET_SUPPORTINGFILES_ON_ORDER', dirName:TEMP_DIR_NAME, path:'temp' }, function(response){
  console.log(response);
  response=response.split('|');
  var content='';
@@ -579,7 +410,7 @@ js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.customers.orders.php',
    content+='<div><i class="fa fa-5x fa-file-archive-o" aria-hidden="true"></i></div>';
    content+='<div class="mtop15p">'+response[index]+'</div>';
    content+='<div class="mtop15p"><button class="btn btn-default" ';
-   content+='onclick="javascript:customer_createNewOrder_deleteSupportFiles(\''+order_Id+'\',\''+response[index]+'\');">';
+   content+='onclick="javascript:customer_createNewOrder_deleteSupportFiles(\''+response[index]+'\');">';
    content+='Remove&nbsp;<i class="fa fa-close"></i></button></div>';
    content+='</div>';
    }
@@ -587,10 +418,90 @@ js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.customers.orders.php',
  document.getElementById("customer-createNewOrder-form-addSupportingFilesList").innerHTML=content;
 });			 
 }
-function customer_createNewOrder_deleteSupportFiles(order_Id,fileName){
+function customer_createNewOrder_deleteSupportFiles(fileName){
 js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.customers.orders.php',
- { action:'DELETE_SUPPORTINGFILES_ON_ORDER', order_Id:'CA2011140089861', fileName:fileName, path:'temp' },
+ { action:'DELETE_SUPPORTINGFILES_ON_ORDER', dirName:TEMP_DIR_NAME, fileName:fileName, path:'temp' },
  function(response){ console.log(response);customer_createNewOrder_listOfSupportingFiles(); });
+}
+/* CREATE NEW ORDER - Milestones */
+function customer_createNewOrder_milestonesNumberOption(){
+ var addMilestones = document.getElementById("customer-createNewOrder-addMilestones").value;
+ if(addMilestones==='YES') { htmlElementVisiblility('customer-createNewOrder-milestonesNumberOption','show'); }
+ else { htmlElementVisiblility('customer-createNewOrder-milestonesNumberOption','hide'); }
+} 
+function customer_createNewOrder_setMilestones(){
+ var milestoneNumber = document.getElementById("customer-createNewOrder-milestoneNumber").value;
+ var content='<div class="col-lg-12">';
+ for(var index=1;index<=milestoneNumber;index++){
+	 content+='<div class="col-lg-4">';
+	 content+='<div class="list-group">';
+	 content+='<div class="list-group-item">';
+	 content+='<div class="container-fluid">';
+	 content+='<div class="row">';
+	 content+='<div align="center" class="col-lg-12">';
+	 content+='<h5><b>MILESTONE#'+index+'</b></h5><hr/>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='<div class="row">';
+	 content+='<div class="form-group">';
+	 content+='<label>Target Date</label>';
+	 content+='<input id="customer-createNewOrder-milestoneDate-'+index+'" type="date" class="form-control"/>';
+	 content+='</div>';
+	 content+='<div class="form-group">';
+	 content+='<label>Target Task</label>';
+	 content+='<textarea id="customer-createNewOrder-milestoneTargetTask-'+index+'" class="form-control" placeholder="Enter your Target Task"></textarea>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='</div>';
+	 content+='</div>'; 
+	 content+='</div>';
+   } 
+	 content+='</div>';
+ document.getElementById("customer-createNewOrder-milestoneList").innerHTML=content;		
+}
+function customer_createNewOrder_form(){
+ var topic = document.getElementById("createNewOrder-topic").value;
+ var topic_desc = document.getElementById("createNewOrder-topicDesc").value;
+ var exp_time = document.getElementById("createNewOrder-expdate").value+' '+document.getElementById("createNewOrder-exptime").value;
+ var workType = document.getElementById("createNewOrder-typeOfWork").value;
+ var wordCount = document.getElementById("createNewOrder-wordcount").value;
+ var others = document.getElementById("createNewOrder-pleaseSpecify").value;
+ var milestoneNumber = document.getElementById("customer-createNewOrder-milestoneNumber").value;
+ var milestones=[];
+ for(var index=1;index<=milestoneNumber;index++){
+  var milestoneDate = document.getElementById("customer-createNewOrder-milestoneDate-"+index).value;
+  var milestoneTarget = document.getElementById("customer-createNewOrder-milestoneTargetTask-"+index).value;
+  milestones[index-1]={"date":milestoneDate, "target": milestoneTarget }; 
+ }
+ console.log("milestones: "+milestones);
+ show_toggleMLHLoader('body');
+ js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.customers.orders.php', 
+ { action: 'CREATE_CUSTOMER_ORDERS', topic:topic, topic_desc:topic_desc, exp_time:exp_time, workType:workType, 
+   wordCount:wordCount, others:others, from_folder:TEMP_DIR_NAME, milestones:milestones },
+ function(response){ console.log(response); 
+   customer_createNewOrder_refresh();
+   hide_toggleMLHLoader('body');
+   alert_display_success('S013','#');
+ });
+}
+function customer_createNewOrder_reset(){
+ document.getElementById("createNewOrder-expdate").value='';
+ document.getElementById("createNewOrder-exptime").value='';
+ document.getElementById("createNewOrder-topic").value='';
+ document.getElementById("createNewOrder-topicDesc").value='';
+ document.getElementById("createNewOrder-typeOfWork").value='';
+ document.getElementById("createNewOrder-wordcount").value='';
+ document.getElementById("createNewOrder-pleaseSpecify").value='';
+ document.getElementById("customer-createNewOrder-form-addSupportingFilesList").innerHTML='';
+ document.getElementById("customer-createNewOrder-milestoneNumber").value='';
+ htmlElementVisiblility('customer-createNewOrder-milestonesNumberOption','hide');
+ document.getElementById("customer-createNewOrder-milestoneList").innerHTML='';
+}
+function customer_createNewOrder_refresh(){
+ document.getElementById("customer-createNewOrder-emailOrCustomerId").value='';
+ htmlElementVisiblility('customer-createNewOrder-form','hide');
+ customer_createNewOrder_reset();
 }
 </script>
 </body>

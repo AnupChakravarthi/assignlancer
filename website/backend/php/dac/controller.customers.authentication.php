@@ -15,10 +15,10 @@ if(isset($_GET["action"])){
   else { echo 'EMAIL_NOT_EXISTS'; }
  }
  else if($_GET["action"]=='CUSTOMER_ADDNEWACCOUNT'){
-  $generateIdentity = new GenerateIdentity();
+  $identity = new Identity();
   $customersAuthentication = new CustomersAuthentication();
   $database = new Database();
-  $account_Id = $generateIdentity->get_CustomerAccount_Id();
+  $account_Id = $identity->get_CustomerAccount_Id();
   $availStatus = 'OFFLINE';
   $name = $_GET["name"]; 
   $gender = $_GET["gender"];

@@ -1,6 +1,7 @@
 <?php 
 ini_set('display_errors', TRUE);
 ?>
+<div><img id="al-loader" src="<?php echo $_SESSION["PROJECT_URL"]; ?>images/load.gif"/></div>
 <style>
 @font-face { font-family: telugu;src: url('fonts/telugu_style01.ttf'); }
 .lang_telugu { font-family: telugu;font-size:18px; }
@@ -11,8 +12,40 @@ body { overflow-x:hidden; }
 .hlLetterString { background-color:yellow;color:#000;}
 .preview-relative { position:relative;border:6px solid #cf3427; }
 .preview-absolute { position:absolute;top:25%;left:35%;z-index:10; }
+@media screen and (min-width: 1280px) { 
+ #al-loader { position:fixed;width:100px;height:100px;display:none;z-index:2000; }
+ #al-loader { margin-left:42%;margin-top:12%; }
+}
+@media (min-width: 1025px) and (max-width: 1280px) { 
+ #al-loader { position:fixed;width:100px;height:100px;display:none;z-index:2000; }
+ #al-loader { margin-left:42%;margin-top:12%; }
+}
+@media (min-width: 768px) and (max-width: 1024px) { 
+ #al-loader { position:fixed;width:100px;height:100px;display:none;z-index:2000; }
+ #al-loader { margin-left:42%;margin-top:20%; }
+}
+@media (min-width: 481px) and (max-width: 767px) { 
+ #al-loader { position:fixed;width:100px;height:100px;display:none;z-index:2000; }
+ #al-loader { margin-left:38%;margin-top:25%; }
+}
+@media (min-width: 325px) and (max-width: 480px) {
+ #al-loader { position:fixed;width:150px;height:150px;display:none;z-index:2000; }
+ #al-loader {  margin-left:25%;margin-top:30%; }
+}
+@media (min-width: 290px) and (max-width: 324px) {
+ #al-loader { position:fixed;width:100px;height:100px;display:none;z-index:2000; }
+ #al-loader { margin-left:24%;margin-top:30%; }
+}
 </style>
 <script type="text/javascript">
+function show_toggleMLHLoader(element){
+  document.getElementById("al-loader").style.display='block';
+  $(element).css("opacity","0.6");
+}
+function hide_toggleMLHLoader(element){
+  document.getElementById("al-loader").style.display='none';
+  $(element).css("opacity","1");
+}
 /* Core Functionality ::: Start */
 function sel_optcountries(id,selval){ 
  var countries=["India","Australia"]; 

@@ -6,10 +6,10 @@ require_once '../util/util.identity.php';
 require_once '../util/util.core.php';
 if(isset($_GET["action"])){
  if($_GET["action"]=='LIVESUPPORT_AUTHENTICATION'){
-   $generateIdentity = new GenerateIdentity();
+   $identity = new Identity();
    $liveSupportAuthentication = new LiveSupportAuthentication();
    $database = new Database();
-   $account_Id = $generateIdentity->get_LSAgentAccount_Id();
+   $account_Id = $identity->get_LSAgentAccount_Id();
    $availStatus = 'OFFLINE';
    $name = $_GET["name"];
    $acc_pwd = md5($_GET["acc_pwd"]);
