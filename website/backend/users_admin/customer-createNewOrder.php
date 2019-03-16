@@ -151,7 +151,7 @@ include_once '../../templates/api/api_js.php';
 				  <div class="col-lg-12">
 				   <div class="form-group">
 					<button class="btn btn-default pull-right" onclick="javascript:createNewOrder_addDoc();">
-						<b>Add Supporting Files - {Only Zip Files} <span class="font-red">*</span></b>
+						<b>Add Supporting Files - {Only Zip Files}</b>
 					</button>
 					<form name="fileuploadForm" id="fileuploadForm" action="#" method="POST" enctype="multipart/form-data">
 				     <input id="createNewOrder_uploadFile" name="uploadFile" type="file" style="visibility:hidden;" 
@@ -252,7 +252,8 @@ include_once '../../templates/api/api_js.php';
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo $_SESSION["PROJECT_URL"]; ?>backend/dist/sb-admin-2.js"></script>
 <script type="text/javascript">
-var TEMP_DIR_NAME='<?php echo 'temp_'.session_id(); ?>';
+var TEMP_DIR_NAME='<?php echo 'temp_'.session_id(); ?>'+'_'+Math.floor(Math.random() * 10) + 1; 
+// temp_<session_id>_<randomNumber>_<customer_id>
 function createNewOrder_typeOfWork(){
  var typeOfWork = document.getElementById("createNewOrder-typeOfWork").value;
  if(typeOfWork==='DOCUMENT'){
@@ -293,6 +294,7 @@ function customer_createNewOrder_getOrderForm_loadCustomerInfo(response){
  htmlElementVisiblility('customer-createNewOrder-form','show');
  response=JSON.parse(response);
  var account_Id = response[0].account_Id;
+ TEMP_DIR_NAME=TEMP_DIR_NAME+'_'+account_Id;
  var name = response[0].name;
  var gender = response[0].gender;
  var email_Id = response[0].email_Id;
@@ -494,9 +496,14 @@ function customer_createNewOrder_reset(){
  document.getElementById("createNewOrder-wordcount").value='';
  document.getElementById("createNewOrder-pleaseSpecify").value='';
  document.getElementById("customer-createNewOrder-form-addSupportingFilesList").innerHTML='';
+ document.getElementById("customer-createNewOrder-addMilestones").value='';
  document.getElementById("customer-createNewOrder-milestoneNumber").value='';
  htmlElementVisiblility('customer-createNewOrder-milestonesNumberOption','hide');
  document.getElementById("customer-createNewOrder-milestoneList").innerHTML='';
+ /* Delete Supporting Files */
+ js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.customers.orders.php', 
+ { action:'RESET_CUSTOMERORDER', path:'temp', dirName:TEMP_DIR_NAME }, 
+ function(response){ console.log(response); }); 
 }
 function customer_createNewOrder_refresh(){
  document.getElementById("customer-createNewOrder-emailOrCustomerId").value='';

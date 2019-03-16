@@ -23,6 +23,13 @@ if(isset($_GET["action"])){
    $fileManagement = new FileManagement();
    $fileManagement->deleteAFile($fileInAFolder);
  }
+ else if($_GET["action"]=='RESET_CUSTOMERORDER'){
+   $dirName = $_GET["dirName"]; 
+   $path = $_GET["path"];
+   $fileInAFolder = '../../../uploads/'.$path.'/'.$dirName;
+   $fileManagement = new FileManagement();
+   $fileManagement->rrmdir($fileInAFolder);
+ }
  else if($_GET["action"]=='CREATE_CUSTOMER_ORDERS'){
   /* Create New Order Params ::: Start */
   $identity = new Identity();

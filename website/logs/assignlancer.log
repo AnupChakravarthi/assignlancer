@@ -2486,3 +2486,13 @@ Saturday 9th March 2019 07:59:22 PM [INFO] ::: [app.database.php]  Database conn
 Saturday 9th March 2019 07:59:51 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Saturday 9th March 2019 07:59:52 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Saturday 9th March 2019 07:59:52 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders(order_Id, topic, topic_desc, exp_time, workType, wordCount, others) VALUES ('CO4085350163631','Topic','Topacndcn','2222-02-22 00:23','WEB_DESIGN','',''); 
+Saturday 16th March 2019 01:37:30 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 01:37:40 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 01:38:01 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 01:38:19 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 03:16:51 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 03:59:36 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:02:07 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:04:20 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:06:35 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:07:20 PM [INFO] ::: [app.database.php]  Database connected Successfully 
