@@ -84,6 +84,10 @@ if(isset($_GET["action"])){
    $query = $customersAuthentication->query_update_customerAccountPassword($account_Id,$acc_pwd);
    echo $database->addupdateData($query);
  }
+ else if($_GET["action"]=='CUSTOMER_GETACCOUNTINFOBYORDERID'){
+  $order_Id = $_GET["order_Id"];
+  
+ }
  else { echo 'INVALID_ACTION'; }
 } else { echo 'NO_ACTION'; }
 

@@ -37,6 +37,7 @@ if(isset($_GET["action"])){
   $database = new Database();
   
   $order_Id=$identity->get_CustomerAccountOrder_Id();
+  $customer_Id = $_GET["customer_Id"];
   $topic=$_GET["topic"]; 
   $topic_desc=$_GET["topic_desc"];
   $exp_time=$_GET["exp_time"];
@@ -45,7 +46,7 @@ if(isset($_GET["action"])){
   $others=$_GET["others"];
   
   
-  $query01 = $customerOrders->query_data_createNewOrder($order_Id, $topic, $topic_desc, $exp_time, 
+  $query01 = $customerOrders->query_data_createNewOrder($order_Id, $customer_Id, $topic, $topic_desc, $exp_time, 
 								$workType, $wordCount, $others);
   echo $database->addupdateData($query01);
   if(isset($_GET["milestones"])){

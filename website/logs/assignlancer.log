@@ -2508,3 +2508,63 @@ Saturday 16th March 2019 04:20:45 PM [INFO] ::: [app.database.php]  Database con
 Saturday 16th March 2019 04:20:53 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Saturday 16th March 2019 04:22:46 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Saturday 16th March 2019 04:23:53 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:45:42 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:45:48 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:46:38 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:46:39 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:46:39 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders(order_Id, account_Id, topic, topic_desc, exp_time, workType, wordCount, others) VALUES ('CO9593358094976','CA2011140089861','ABCDERVE','ASCDC ervever ereverver errverver ververe erverv','2019-03-08 02:03','DOCUMENT','23224',''); 
+Saturday 16th March 2019 04:46:40 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:46:41 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:46:41 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders_miles(milestone_Id, order_Id, targetDate, targetTask) VALUES ('COM806962685217', 'CO9593358094976', '', ''); 
+Saturday 16th March 2019 04:46:42 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:46:43 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:46:43 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders_miles(milestone_Id, order_Id, targetDate, targetTask) VALUES ('COM639653303228', 'CO9593358094976', '', ''); 
+Saturday 16th March 2019 04:46:44 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:46:45 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:46:45 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders_miles(milestone_Id, order_Id, targetDate, targetTask) VALUES ('COM690545414880', 'CO9593358094976', '', ''); 
+Saturday 16th March 2019 04:46:46 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:46:47 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:46:47 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders_miles(milestone_Id, order_Id, targetDate, targetTask) VALUES ('COM691277738330', 'CO9593358094976', '', ''); 
+Saturday 16th March 2019 04:46:48 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:46:49 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:46:49 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders_miles(milestone_Id, order_Id, targetDate, targetTask) VALUES ('COM452064420820', 'CO9593358094976', '', ''); 
+Saturday 16th March 2019 04:50:55 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:52:46 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:52:47 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:52:47 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders(order_Id, account_Id, topic, topic_desc, exp_time, workType, wordCount, others) VALUES ('CO7954445916153','CA2011140089861','QWWWERRE','VBBC WECWEJHC dwverv','2019-03-09 00:00','DOCUMENT','3344',''); 
+Saturday 16th March 2019 04:52:48 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:52:49 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:52:49 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders_miles(milestone_Id, order_Id, targetDate, targetTask) VALUES ('COM167320366592', 'CO7954445916153', '2019-03-08', 'ewecewc'); 
+Saturday 16th March 2019 04:52:50 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:52:51 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:52:51 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders_miles(milestone_Id, order_Id, targetDate, targetTask) VALUES ('COM514869352968', 'CO7954445916153', '2019-03-14', 'rwvre'); 
+Saturday 16th March 2019 04:54:31 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:56:05 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:57:02 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:57:03 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:57:03 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders(order_Id, account_Id, topic, topic_desc, exp_time, workType, wordCount, others) VALUES ('CO4260899184530','CA2011140089861','drererer','drerev verver','2019-03-14 00:08','WEB_DESIGN','',''); 
+Saturday 16th March 2019 04:57:04 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:57:05 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:57:05 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders_miles(milestone_Id, order_Id, targetDate, targetTask) VALUES ('COM462601711436', 'CO4260899184530', '2019-03-22', 'qwdwcer'); 
+Saturday 16th March 2019 04:57:06 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:57:07 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:57:07 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders_miles(milestone_Id, order_Id, targetDate, targetTask) VALUES ('COM839692146985', 'CO4260899184530', '2019-03-23', 'erverer'); 
+Saturday 16th March 2019 04:57:08 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:57:09 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 04:57:10 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders_miles(milestone_Id, order_Id, targetDate, targetTask) VALUES ('COM574906037708', 'CO4260899184530', '2019-03-24', 'erverer'); 
+Saturday 16th March 2019 04:57:43 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 05:17:24 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 05:19:12 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 05:22:28 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 05:22:29 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 05:22:29 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders(order_Id, account_Id, topic, topic_desc, exp_time, workType, wordCount, others) VALUES ('CO6010835949922','CA2011140089861','Topic 1','Topic Desc # 1','2019-03-21 00:00','WEB_DESIGN','',''); 
+Saturday 16th March 2019 05:22:30 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 05:22:31 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 05:22:31 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders_miles(milestone_Id, order_Id, targetDate, targetTask) VALUES ('COM007598626065', 'CO6010835949922', '2019-03-08', 'qwdwe'); 
+Saturday 16th March 2019 05:22:32 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 05:22:33 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 05:22:33 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders_miles(milestone_Id, order_Id, targetDate, targetTask) VALUES ('COM669583337108', 'CO6010835949922', '2019-03-09', 'wdwed'); 
+Saturday 16th March 2019 05:22:34 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 05:22:35 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 16th March 2019 05:22:35 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO custom_orders_miles(milestone_Id, order_Id, targetDate, targetTask) VALUES ('COM466520401719', 'CO6010835949922', '2019-03-10', 'wedwe'); 
+Saturday 16th March 2019 05:22:58 PM [INFO] ::: [app.database.php]  Database connected Successfully 

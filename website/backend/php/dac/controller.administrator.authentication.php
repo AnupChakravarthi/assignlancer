@@ -79,5 +79,6 @@ if(isset($_GET["action"])){
 	  echo $content;
    }
  }
+ 
  else { echo 'INVALID_ACTION'; }
 } else { echo 'NO_ACTION'; }

@@ -141,29 +141,10 @@ include_once '../../templates/api/api_js.php';
 				  <hr/><div class="pad3" style="background-color:#eee;"><h5><b>&nbsp;&nbsp;ADD SUPPORTING FILES</b></h5></div><hr/>
 				</div>
 			</div>
-			<div id="customer-createNewOrder-form-addSupportingFilesList" class="row mtop15p mbot15p">
-			  
-			  
-			  
-			</div>
+			<div id="customer-createNewOrder-form-addSupportingFilesList" class="row mtop15p mbot15p"></div>
+
 			<div class="row mtop15p mbot15p">
-                <div class="col-lg-12">
-				  <!-- Add Supporting Files : Start -->
-				  <div class="col-lg-12">
-				   <div class="form-group">
-					<button class="btn btn-default pull-right" onclick="javascript:createNewOrder_addDoc();">
-						<b>Add Supporting Files - {Only Zip Files}</b>
-					</button>
-					<form name="fileuploadForm" id="fileuploadForm" action="#" method="POST" enctype="multipart/form-data">
-				     <input id="createNewOrder_uploadFile" name="uploadFile" type="file" style="visibility:hidden;" 
-					 onchange="javascript:customer_createNewOrder_getOrderForm_fileUpload();" 
-					 accept=".zip"/>
-					</form>
-				  </div>
-				 </div>
-				 <!-- Add Supporting Files : End -->
-				 
-				</div>
+                <div id="customer-createNewOrder-form-suppFiles-fileUploadForm" class="col-lg-12"></div>
 			</div>
 			<div class="row">
                 <div class="col-lg-12">
@@ -255,6 +236,7 @@ include_once '../../templates/api/api_js.php';
 <script type="text/javascript">
 var TEMP_DIR_NAME='<?php echo 'temp_'.session_id(); ?>'+'_'+Math.floor(Math.random() * 10) + 1; 
 // temp_<session_id>_<randomNumber>_<customer_id>
+var ACCOUNT_ID=''; 
 function createNewOrder_typeOfWork(){
  var typeOfWork = document.getElementById("createNewOrder-typeOfWork").value;
  if(typeOfWork==='DOCUMENT'){
@@ -278,6 +260,21 @@ function createNewOrder_addDoc(){
 $(document).ready(function(){
 
 });
+function customer_createNewOrder_form_suppFiles_fileUploadForm(){
+ var content='<div class="col-lg-12">';
+	 content+='<div class="form-group">';
+	 content+='<button class="btn btn-default pull-right" onclick="javascript:createNewOrder_addDoc();">';
+	 content+='<b>Add Supporting Files - {Only Zip Files}</b>';
+	 content+='</button>';
+	 content+='<form name="fileuploadForm" id="fileuploadForm" action="#" method="POST" enctype="multipart/form-data">';
+	 content+='<input id="createNewOrder_uploadFile" name="uploadFile" type="file" style="visibility:hidden;" ';
+	 content+='onchange="javascript:customer_createNewOrder_getOrderForm_fileUpload();" ';
+	 content+='accept=".zip"/>';
+	 content+='</form>';
+     content+='</div>';
+	 content+='</div>';
+ document.getElementById("customer-createNewOrder-form-suppFiles-fileUploadForm").innerHTML=content; 
+}
 /* CREATE NEW ORDER - Email Id / Customer Id Check */
 function customer_createNewOrder_getOrderForm(){
  var emailOrCustomerId = document.getElementById("customer-createNewOrder-emailOrCustomerId").value;
@@ -302,8 +299,8 @@ function customer_createNewOrder_getOrderForm_loadCustomerInfo(response){
  response=JSON.parse(response);
  if(response.length>0){
  document.getElementById("customer-createNewOrder-emailOrCustomerId").disabled=true;
- var account_Id = response[0].account_Id;
- TEMP_DIR_NAME=TEMP_DIR_NAME+'_'+account_Id;
+ ACCOUNT_ID = response[0].account_Id;
+ TEMP_DIR_NAME=TEMP_DIR_NAME+'_'+ACCOUNT_ID;
  var name = response[0].name;
  var gender = response[0].gender;
  var email_Id = response[0].email_Id;
@@ -323,7 +320,7 @@ function customer_createNewOrder_getOrderForm_loadCustomerInfo(response){
 	 content+='<label>Account Id</label>';
 	 content+='<div class="list-group">';
 	 content+='<div class="list-group-item" style="border-radius:4px;">';
-	 content+='<span class="font-grey">'+account_Id+'</span>';
+	 content+='<span class="font-grey">'+ACCOUNT_ID+'</span>';
 	 content+='</div>';
 	 content+='</div>';
 	 content+='</div>';
@@ -399,10 +396,10 @@ function customer_createNewOrder_getOrderForm_loadCustomerInfo(response){
 	 content+='</div>';
    document.getElementById("customer-createNewOrder-form-customerInfo").innerHTML=content;	
    htmlElementVisiblility('customer-createNewOrder-emailOrCustomerId-warnings','hide'); 
+   customer_createNewOrder_form_suppFiles_fileUploadForm();
   } else { 
-    document.getElementById("customer-createNewOrder-emailOrCustomerId").disabled=false;
-    div_display_warning('customer-createNewOrder-emailOrCustomerId-warnings','W024'); 
-	htmlElementVisiblility('customer-createNewOrder-form','hide'); 
+   div_display_warning('customer-createNewOrder-emailOrCustomerId-warnings','W024'); 
+   customer_createNewOrder_refresh();
   }
 }
 /* CREATE NEW ORDER - Supporting File Uploads */
@@ -494,9 +491,9 @@ function customer_createNewOrder_form(){
  console.log("milestones: "+milestones);
  show_toggleMLHLoader('body');
  js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.customers.orders.php', 
- { action: 'CREATE_CUSTOMER_ORDERS', topic:topic, topic_desc:topic_desc, exp_time:exp_time, workType:workType, 
-   wordCount:wordCount, others:others, from_folder:TEMP_DIR_NAME, milestones:milestones },
- function(response){ console.log(response); 
+ { action: 'CREATE_CUSTOMER_ORDERS', customer_Id:ACCOUNT_ID, topic:topic, topic_desc:topic_desc, 
+   exp_time:exp_time, workType:workType, wordCount:wordCount, others:others, from_folder:TEMP_DIR_NAME, 
+   milestones:milestones }, function(response){ console.log(response); 
    customer_createNewOrder_refresh();
    hide_toggleMLHLoader('body');
    alert_display_success('S013','#');
@@ -521,9 +518,11 @@ function customer_createNewOrder_reset(){
  function(response){ console.log(response); }); 
 }
 function customer_createNewOrder_refresh(){
- document.getElementById("customer-createNewOrder-emailOrCustomerId").value='';
- htmlElementVisiblility('customer-createNewOrder-form','hide');
  customer_createNewOrder_reset();
+ document.getElementById("customer-createNewOrder-emailOrCustomerId").value='';
+ document.getElementById("customer-createNewOrder-emailOrCustomerId").disabled=false;
+ htmlElementVisiblility('customer-createNewOrder-emailOrCustomerId-warnings','hide'); 
+ htmlElementVisiblility('customer-createNewOrder-form','hide');
 }
 </script>
 </body>

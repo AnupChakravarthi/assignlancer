@@ -43,13 +43,13 @@ include_once '../../templates/api/api_js.php';
             </div>	
 			<div class="row">
                 <div class="col-lg-6">
-				   <div id="customer-updateOrder-emailOrCustomerId-warnings" class="form-group"></div>
+				   <div id="customer-updateOrder-orderId-warnings" class="form-group"></div>
 				</div>
 			</div>
 			<div class="row">
                 <div class="col-lg-6">
 				  <div class="input-group">
-				    <input type="text" id="customer-updateOrder-emailOrCustomerId" class="form-control" placeholder="Enter Order Id"/>
+				    <input type="text" id="customer-updateOrder-orderId" class="form-control" placeholder="Enter Order Id"/>
 					<span class="input-group-addon curpoint" onclick="javascript:customer_updateOrder_getOrderForm();"><b>Get Order Form</b></span>
 				  </div>
 				</div>
@@ -57,15 +57,15 @@ include_once '../../templates/api/api_js.php';
 <script type="text/javascript">
 /* CREATE NEW ORDER - Email Id / Customer Id Check */
 function customer_updateOrder_getOrderForm(){
- var emailOrCustomerId = document.getElementById("customer-updateOrder-emailOrCustomerId").value;
+ var orderId = document.getElementById("customer-updateOrder-orderId").value;
  if(emailOrCustomerId.length>0){
    js_ajax('GET', PROJECT_URL+'backend/php/dac/controller.customers.authentication.php',
-   { action:'CUSTOMER_GETACCOUNTINFOBYEMAILORID', emailOrCustomerId:emailOrCustomerId },
+   { action:'CUSTOMER_GETACCOUNTINFOBYORDERID', orderId:orderId },
    function(response){ 
     console.log(response); 
     customer_updateOrder_getOrderForm_loadCustomerInfo(response);
    });
- } else { div_display_warning('customer-updateOrder-emailOrCustomerId-warnings','W021'); } // W021: Missing Email Id or Customer Id
+ } else { div_display_warning('customer-updateOrder-orderId-warnings','W021'); } // W021: Missing Email Id or Customer Id
 }
 /* CREATE NEW ORDER - loads Customer Information */
 function customer_updateOrder_getOrderForm_loadCustomerInfo(response){

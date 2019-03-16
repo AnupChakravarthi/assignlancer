@@ -1,8 +1,9 @@
 <?php
  class CustomerOrders {
-  function query_data_createNewOrder($order_Id, $topic, $topic_desc, $exp_time, $workType, $wordCount, $others){
-   $sql="INSERT INTO custom_orders(order_Id, topic, topic_desc, exp_time, workType, wordCount, others) ";
-   $sql.="VALUES ('".$order_Id."','".$topic."','".$topic_desc."','".$exp_time."','".$workType."','";
+  function query_data_createNewOrder($order_Id, $account_Id, $topic, $topic_desc, $exp_time, $workType, 
+			 $wordCount, $others){
+   $sql="INSERT INTO custom_orders(order_Id, account_Id, topic, topic_desc, exp_time, workType, wordCount, others) ";
+   $sql.="VALUES ('".$order_Id."','".$account_Id."','".$topic."','".$topic_desc."','".$exp_time."','".$workType."','";
    $sql.=$wordCount."','".$others."');";
    return $sql;
   }
