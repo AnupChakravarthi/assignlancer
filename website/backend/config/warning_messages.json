@@ -21,5 +21,6 @@
   "W020": { "english":"Invalid Email Verification Code from Customer." },
   "W021": { "english":"Missing Email Id / Customer Id." },
   "W022": { "english":"Customer Account not exists." },
-  "W023": { "english":"Email Id already registered by other Customer." }
+  "W023": { "english":"Email Id already registered by other Customer." },
+  "W024": { "english":"Email Id / Customer Id not Exist." }
 }

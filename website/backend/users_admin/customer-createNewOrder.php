@@ -51,6 +51,7 @@ include_once '../../templates/api/api_js.php';
 				  <div class="input-group">
 				    <input type="text" id="customer-createNewOrder-emailOrCustomerId" class="form-control" placeholder="Enter Customer Email Address/ Customer Id"/>
 					<span class="input-group-addon curpoint" onclick="javascript:customer_createNewOrder_getOrderForm();"><b>Get Order Form</b></span>
+					<span class="input-group-addon curpoint" onclick="javascript:customer_createNewOrder_getOrderForm_reset();"><b>Reset</b></span>
 				  </div>
 			   </div>
 			</div>
@@ -285,14 +286,22 @@ function customer_createNewOrder_getOrderForm(){
    { action:'CUSTOMER_GETACCOUNTINFOBYEMAILORID', emailOrCustomerId:emailOrCustomerId },
    function(response){ 
     console.log(response); 
-    customer_createNewOrder_getOrderForm_loadCustomerInfo(response);
+	customer_createNewOrder_getOrderForm_loadCustomerInfo(response);
    });
  } else { div_display_warning('customer-createNewOrder-emailOrCustomerId-warnings','W021'); } // W021: Missing Email Id or Customer Id
+}
+function customer_createNewOrder_getOrderForm_reset(){
+ document.getElementById("customer-createNewOrder-emailOrCustomerId").value='';
+ document.getElementById("customer-createNewOrder-emailOrCustomerId").disabled=false;
+ htmlElementVisiblility('customer-createNewOrder-emailOrCustomerId-warnings','hide'); 
+ htmlElementVisiblility('customer-createNewOrder-form','hide'); 
 }
 /* CREATE NEW ORDER - loads Customer Information */
 function customer_createNewOrder_getOrderForm_loadCustomerInfo(response){
  htmlElementVisiblility('customer-createNewOrder-form','show');
  response=JSON.parse(response);
+ if(response.length>0){
+ document.getElementById("customer-createNewOrder-emailOrCustomerId").disabled=true;
  var account_Id = response[0].account_Id;
  TEMP_DIR_NAME=TEMP_DIR_NAME+'_'+account_Id;
  var name = response[0].name;
@@ -388,7 +397,13 @@ function customer_createNewOrder_getOrderForm_loadCustomerInfo(response){
 	 
 	 content+='</div>';
 	 content+='</div>';
-  document.getElementById("customer-createNewOrder-form-customerInfo").innerHTML=content;		
+   document.getElementById("customer-createNewOrder-form-customerInfo").innerHTML=content;	
+   htmlElementVisiblility('customer-createNewOrder-emailOrCustomerId-warnings','hide'); 
+  } else { 
+    document.getElementById("customer-createNewOrder-emailOrCustomerId").disabled=false;
+    div_display_warning('customer-createNewOrder-emailOrCustomerId-warnings','W024'); 
+	htmlElementVisiblility('customer-createNewOrder-form','hide'); 
+  }
 }
 /* CREATE NEW ORDER - Supporting File Uploads */
 function customer_createNewOrder_getOrderForm_fileUpload(){
