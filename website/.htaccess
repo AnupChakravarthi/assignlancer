@@ -26,6 +26,7 @@ RewriteRule app/admin/livesupport-accounts backend/users_admin/livesupport-manag
 RewriteRule app/admin/livesupport-timings backend/users_admin/livesupport-timings.php [NC,L]
 RewriteRule app/admin/livesupport-chat backend/users_admin/livesupport-chat.php [NC,L]
 RewriteRule app/admin/livesupport-work-reports backend/users_admin/livesupport-work-reports.php [NC,L]
+
 ######## Customers #########
 RewriteRule app/admin/customer-manageAccounts backend/users_admin/customer-manageAccounts.php [NC,L]
 RewriteRule app/admin/customer-manageOrders backend/users_admin/customer-manageOrders.php [NC,L]

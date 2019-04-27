@@ -1,7 +1,7 @@
 <?php 
 ini_set('display_errors', TRUE);
 ?>
-<div><img id="al-loader" src="<?php echo $_SESSION["PROJECT_URL"]; ?>images/load.gif"/></div>
+<div><img id="al-loader" src="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>images/load.gif"/></div>
 <style>
 @font-face { font-family: telugu;src: url('fonts/telugu_style01.ttf'); }
 .lang_telugu { font-family: telugu;font-size:18px; }

@@ -2621,3 +2621,21 @@ Saturday 23rd March 2019 05:50:37 PM [INFO] ::: [app.database.php]  Database con
 Saturday 23rd March 2019 05:50:38 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Saturday 23rd March 2019 05:51:03 PM [INFO] ::: [app.database.php]  Database connected Successfully 
 Saturday 23rd March 2019 05:51:04 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 27th April 2019 06:48:31 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 27th April 2019 06:49:24 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 27th April 2019 06:49:28 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 27th April 2019 06:58:05 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 27th April 2019 07:05:00 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 27th April 2019 07:05:08 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 27th April 2019 07:05:08 PM [INFO] ::: [app.database.php]  Query(Status-Success) : UPDATE ls_accounts SET name='AnupKittu', country='India', usr_tz='Asia/Kolkata', time_Id='1'WHERE account_Id='LA3332089269853'; 
+Saturday 27th April 2019 07:05:09 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 27th April 2019 07:08:19 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 27th April 2019 07:08:29 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 27th April 2019 07:08:30 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 27th April 2019 07:08:31 PM [INFO] ::: [app.database.php]  Query(Status-Success) : INSERT INTO ls_accounts(account_Id, availStatus, name, acc_pwd, createdOn, country, usr_tz, time_Id) VALUES ('LA6313207031270','OFFLINE','Qwert','553501692703f81e92ba2df8ddeee012','2019-04-27','India','Asia/Kolkata','1'); 
+Saturday 27th April 2019 07:08:32 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 27th April 2019 07:08:39 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 27th April 2019 07:08:42 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 27th April 2019 07:08:42 PM [INFO] ::: [app.database.php]  Query(Status-Success) : DELETE FROM ls_accounts WHERE account_Id='LA6313207031270'; 
+Saturday 27th April 2019 07:08:43 PM [INFO] ::: [app.database.php]  Database connected Successfully 
+Saturday 27th April 2019 07:10:23 PM [INFO] ::: [app.database.php]  Database connected Successfully 

@@ -277,7 +277,7 @@ if(chatFormDivisions.length<=3){
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/admin/userprofile"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>app/admin/userprofile"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
@@ -306,7 +306,7 @@ if(chatFormDivisions.length<=3){
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/dashboard">
+                            <a href="<?php echo $_SESSION["HWG_PROJECT_URL"];?>app/admin/dashboard">
 							  <i class="fa fa-dashboard fa-fw"></i> <b>Dashboard</b>
 							</a>
                         </li>
@@ -314,22 +314,22 @@ if(chatFormDivisions.length<=3){
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> <b>Live Support</b><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/livesupport-accounts">
+                                    <a href="<?php echo $_SESSION["HWG_PROJECT_URL"];?>app/admin/livesupport-accounts">
 									  <b>Manage Accounts</b>
 									</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/livesupport-timings">
+                                    <a href="<?php echo $_SESSION["HWG_PROJECT_URL"];?>app/admin/livesupport-timings">
 									  <b>Shift Timings</b>
 									</a>
                                 </li>
 								<li>
-                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/livesupport-chat">
+                                    <a href="<?php echo $_SESSION["HWG_PROJECT_URL"];?>app/admin/livesupport-chat">
 									  <b>Customers Chat</b>
 									</a>
                                 </li>
 								<li>
-                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/livesupport-work-reports">
+                                    <a href="<?php echo $_SESSION["HWG_PROJECT_URL"];?>app/admin/livesupport-work-reports">
 									  <b>Work Reports</b>
 									</a>
                                 </li>
@@ -343,27 +343,27 @@ if(chatFormDivisions.length<=3){
 							   <i class="fa fa-table fa-fw"></i> <b>Customers</b><span class="fa arrow"></span></a>
 							   <ul class="nav nav-second-level">
                                  <li>
-                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/customer-manageAccounts">
+                                    <a href="<?php echo $_SESSION["HWG_PROJECT_URL"];?>app/admin/customer-manageAccounts">
 									  <b>Manage Accounts</b>
 									</a>
                                  </li>
 								 <li>
-                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/customer-createNewOrder">
+                                    <a href="<?php echo $_SESSION["HWG_PROJECT_URL"];?>app/admin/customer-createNewOrder">
 									  <b>Create New Orders</b>
 									</a>
                                  </li>
 								 <li>
-                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/customer-updateOrders">
+                                    <a href="<?php echo $_SESSION["HWG_PROJECT_URL"];?>app/admin/customer-updateOrders">
 									  <b>Update Orders</b>
 									</a>
                                  </li>
 								 <li>
-                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/customer-manageOrders">
+                                    <a href="<?php echo $_SESSION["HWG_PROJECT_URL"];?>app/admin/customer-manageOrders">
 									  <b>Manage Orders</b>
 									</a>
                                  </li>
 								 <li>
-                                    <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/customer-worksheet">
+                                    <a href="<?php echo $_SESSION["HWG_PROJECT_URL"];?>app/admin/customer-worksheet">
 									  <b>Work Sheet</b>
 									</a>
                                  </li>
@@ -375,12 +375,12 @@ if(chatFormDivisions.length<=3){
 							   <i class="fa fa-table fa-fw"></i> <b>Business Overview</b><span class="fa arrow"></span></a>
 							   <ul class="nav nav-second-level">
                                 <li>
-								  <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/view-statistics">
+								  <a href="<?php echo $_SESSION["HWG_PROJECT_URL"];?>app/admin/view-statistics">
 									<i class="fa fa-bar-chart-o fa-fw"></i> <b>View Statistics</b>
 								  </a>
 								</li>
 								<li>
-								  <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/view-ourearnings">
+								  <a href="<?php echo $_SESSION["HWG_PROJECT_URL"];?>app/admin/view-ourearnings">
 									<i class="fa fa-bar-chart-o fa-fw"></i> <b>Our Earnings</b>
 								  </a>
 								</li>
@@ -388,7 +388,7 @@ if(chatFormDivisions.length<=3){
 							</a>
                         </li>
 					    <li>
-                            <a href="<?php echo $_SESSION["PROJECT_URL"];?>app/admin/test">
+                            <a href="<?php echo $_SESSION["HWG_PROJECT_URL"];?>app/admin/test">
 							  <i class="fa fa-dashboard fa-fw"></i> <b>Test</b>
 							</a>
                         </li>

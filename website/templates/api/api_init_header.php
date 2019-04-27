@@ -355,8 +355,8 @@ var pwd = document.getElementById("signin_customer_pwd").value;
 	<div class="collapse navbar-collapse" id="myNavbar">
 	  <ul id="al-menu" class="nav navbar-nav">
 	   <!--?php if(!isset($_SESSION["ACCOUNT_TYPE"])){?-->
-		<li id="appInitHeader-home"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>"><b>Home</b></a></li>
-		<li id="appInitHeader-aboutUs"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/aboutUs"><span><b>About Us</b></span></a></li>
+		<li id="appInitHeader-home"><a href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>"><b>Home</b></a></li>
+		<li id="appInitHeader-aboutUs"><a href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>app/aboutUs"><span><b>About Us</b></span></a></li>
 		<li id="appInitHeader-services" class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Services</b>
         <span class="caret"></span></a>
@@ -373,28 +373,28 @@ var pwd = document.getElementById("signin_customer_pwd").value;
 	       <li><a href="#">Dissertation and Essay Help</a></li>
         </ul>
       </li>
-		<li id="appInitHeader-howItWorks"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/howItWorks"><span><b>How it Works?</b></span></a></li>
-		<li id="appInitHeader-worktypes"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/worktypes"><span><b>Types of Works</b></span></a></li>
+		<li id="appInitHeader-howItWorks"><a href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>app/howItWorks"><span><b>How it Works?</b></span></a></li>
+		<li id="appInitHeader-worktypes"><a href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>app/worktypes"><span><b>Types of Works</b></span></a></li>
 		<li id="appInitHeader-pricequote" data-toggle="modal" data-target="#priceQuotationModal"><a href="#" onclick="javascript:selectAppInitHeader('appInitHeader-pricequote');"><span><b>Price Quotation</b></span></a></li>
 		<li id="appInitHeader-auth" data-toggle="modal" data-target="#customerLoginModal"><a href="#"><span><b>Login</b></span></a></li>
 		<li id="appInitHeader-auth" data-toggle="modal" data-target="#customerRegisterModal"><a href="#"><span><b>Register</b></span></a></li>
-		<li id="appInitHeader-contactUs"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/contactUs"><span><b>Contact Us</b></span></a></li>
+		<li id="appInitHeader-contactUs"><a href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>app/contactUs"><span><b>Contact Us</b></span></a></li>
        <!--?php } else if($_SESSION["ACCOUNT_TYPE"]=='CUSTOMER_LIVESUPPORT'){ ?-->
 	   <!--
-	    <li id="appInitHeader-livesupport-dashboard"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/livesupport/dashboard"><span><b>My Dashboard</b></span></a></li>
+	    <li id="appInitHeader-livesupport-dashboard"><a href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>app/livesupport/dashboard"><span><b>My Dashboard</b></span></a></li>
 		<li id="appInitHeader-livesupport-logout" onclick="javascript:logout();"><a href="#"><span><b>logout</b></span></a></li>
 	   -->
 	  <!--?php } else if($_SESSION["ACCOUNT_TYPE"]=='CUSTOMERS'){ ?-->
 	   <!--
-		<li id="appInitHeader-customer-dashboard"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/customer/dashboard"><span><b>My Dashboard</b></span></a></li>
+		<li id="appInitHeader-customer-dashboard"><a href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>app/customer/dashboard"><span><b>My Dashboard</b></span></a></li>
 	    <li id="appInitHeader-customer-logout" onclick="javascript:logout();"><a href="#"><span><b>logout</b></span></a></li>
 	   -->
 	   <!--?php } else if($_SESSION["ACCOUNT_TYPE"]=='ADMINISTRATOR'){ ?-->
 	   <!--
-	    <li id="appInitHeader-admin-dashboard"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/admin/dashboard"><span><b>My Dashboard</b></span></a></li>
-	    <li id="appInitHeader-admin-myprofile"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/administrator/dashboard"><span><b>My Profile</b></span></a></li>
-		<li id="appInitHeader-admin-livesupportManage"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/administrator/dashboard"><span><b>Live Support Management</b></span></a></li>
-		<li id="appInitHeader-admin-payManage"><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/administrator/dashboard"><span><b>Revenue Management</b></span></a></li>
+	    <li id="appInitHeader-admin-dashboard"><a href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>app/admin/dashboard"><span><b>My Dashboard</b></span></a></li>
+	    <li id="appInitHeader-admin-myprofile"><a href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>app/administrator/dashboard"><span><b>My Profile</b></span></a></li>
+		<li id="appInitHeader-admin-livesupportManage"><a href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>app/administrator/dashboard"><span><b>Live Support Management</b></span></a></li>
+		<li id="appInitHeader-admin-payManage"><a href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>app/administrator/dashboard"><span><b>Revenue Management</b></span></a></li>
 		<li id="appInitHeader-admin-logout" onclick="javascript:logout();"><a href="#"><span><b>logout</b></span></a></li>
 		-->
 	  <!--?php } ?-->
