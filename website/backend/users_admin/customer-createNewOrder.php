@@ -296,6 +296,7 @@ function customer_createNewOrder_getOrderForm_reset(){
 /* CREATE NEW ORDER - loads Customer Information */
 function customer_createNewOrder_getOrderForm_loadCustomerInfo(response){
  htmlElementVisiblility('customer-createNewOrder-form','show');
+ console.log(response);
  response=JSON.parse(response);
  if(response.length>0){
  document.getElementById("customer-createNewOrder-emailOrCustomerId").disabled=true;
@@ -398,14 +399,16 @@ function customer_createNewOrder_getOrderForm_loadCustomerInfo(response){
    htmlElementVisiblility('customer-createNewOrder-emailOrCustomerId-warnings','hide'); 
    customer_createNewOrder_form_suppFiles_fileUploadForm();
   } else { 
-   div_display_warning('customer-createNewOrder-emailOrCustomerId-warnings','W024'); 
-   customer_createNewOrder_refresh();
+    customer_createNewOrder_refresh();
+	htmlElementVisiblility('customer-createNewOrder-emailOrCustomerId-warnings','show'); 
+    div_display_warning('customer-createNewOrder-emailOrCustomerId-warnings','W024'); 
   }
 }
 /* CREATE NEW ORDER - Supporting File Uploads */
 function customer_createNewOrder_getOrderForm_fileUpload(){
   var form = $('#fileuploadForm')[0];
   var formData = new FormData(form);
+      formData.append("path","temp");
       formData.append("dirName",TEMP_DIR_NAME);
   $.ajax({type: "POST", enctype: 'multipart/form-data', url:PROJECT_URL+"backend/php/dac/controller.app.files.uploader.php",
   data: formData, processData: false, contentType: false, cache: false, timeout: 600000, success: function (response) {  

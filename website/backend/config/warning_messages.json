@@ -22,5 +22,7 @@
   "W021": { "english":"Missing Email Id / Customer Id." },
   "W022": { "english":"Customer Account not exists." },
   "W023": { "english":"Email Id already registered by other Customer." },
-  "W024": { "english":"Email Id / Customer Id not Exist." }
+  "W024": { "english":"Email Id / Customer Id not Exist." },
+  "W025": { "english":"Order Id not Exist." },
+  "W026": { "english":"Missing Order Id." }
 }

@@ -1,6 +1,7 @@
 <?php
 session_start();
-$target_dir = "../../../uploads/temp/";
+$path=$_POST["path"];
+$target_dir = "../../../uploads/".$path."/";
 $dirName=$_POST["dirName"];
 if(!is_dir($target_dir.$dirName)){ mkdir($target_dir.$dirName); }
 $target_file = $target_dir .$dirName.'/'. basename($_FILES["uploadFile"]["name"]);

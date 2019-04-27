@@ -44,9 +44,6 @@ class CustomersAuthentication {
   $sql="UPDATE custom_accounts SET acc_pwd='".$acc_pwd."' WHERE account_Id='".$account_Id."';";
   return $sql;
  }
- function query_data_getAccountInfoByOrderId($order_Id){
-  $sql="SELECT * FROM custom_accounts";
-  return $sql;
- }
+ 
 }
 ?>

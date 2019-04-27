@@ -12,6 +12,8 @@ if(isset($_GET["action"])){
   $dirName = $_GET["dirName"];
   $path = $_GET["path"]; // path - temp/data
   $UPLOAD_PATH = '../../../uploads/'.$path.'/'.$dirName; 
+  /* If not exists, create the Upload Path Folder */
+  if(!is_dir($UPLOAD_PATH)) { mkdir($UPLOAD_PATH, 0777, true); }
   $fileManagement = new FileManagement();
   echo $fileManagement->get_listOfFiles($UPLOAD_PATH);
  }
@@ -73,6 +75,18 @@ if(isset($_GET["action"])){
   $fileManagement->rcopy($UPLOAD_PATH.$TEMP_FOLDER.$from_folder, $UPLOAD_PATH.$DATA_FOLDER.$to_folder);
   /* File move from Temporary Folder to Permanent Folder ::: End */
 
+ }
+ else if($_GET["action"]=='GETORDERINFO_BY_ORDERID'){
+  $order_Id = $_GET["order_Id"];
+  $customerOrders = new CustomerOrders();
+  $database = new Database();
+  $query01 = $customerOrders->query_data_getAccountInfoByOrderId($order_Id);
+  $query02 = $customerOrders->query_data_getOrderMilestones($order_Id);
+  $content='{';
+  $content.='"orders":'.$database->getJSONData($query01).',';
+  $content.='"milestones":'.$database->getJSONData($query02);
+  $content.='}';
+  echo $content;
  }
  else { echo 'INVALID_ACTION'; }
 } else { echo 'NO_ACTION'; }
