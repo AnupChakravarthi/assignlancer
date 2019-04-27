@@ -1,3 +1,13 @@
+<script type="text/javascript">
+$(document).ready(function(){
+ js_ajax("GET",PROJECT_URL+'backend/php/dac/controller.livesupport.chat.php',
+ { action: 'ADDUSER_TO_QUEUE', queueStatus:'ONLINE', IPAddress:CLIENT_IPADDRESS, SessionId:SESSION_ID, toAgent:'', 
+   queueOn:QUEUE_ADDEDON, agentPicked:'0000-00-00 00:00:00', chatFinished:'0000-00-00 00:00:00', 
+   order_Id:'', account_Id:'', finished:'N' }, function(response){
+    console.log(response);
+ });
+});
+</script>
 <style>
 .navbar { margin-bottom:0px; }
 // .navbar-nav>li>a:hover,.navbar-nav>li>a:focus { background-color:#fff; }
@@ -50,13 +60,7 @@ function chatBoxInitilaizer(){
 		//  });
 }
 </script>
-<script type="text/javascript">
-$(document).ready(function(){
- js_ajax("GET",PROJECT_URL+'backend/php/dac/controller.livechat.php',{ action: 'ADD_USER_QUEUE' }, function(response){
-    console.log(response);
- });
-});
-</script>
+
 <style>
 // .navbar-nav>li>a:hover { background-color:#000; }
 //.navbar-nav>li>a:active,.navbar-nav>li>a:focus { background-color:#fff;color:#000; }

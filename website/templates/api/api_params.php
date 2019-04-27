@@ -14,7 +14,7 @@ var PROJECT_URL = '<?php if(isset($_SESSION["HWG_PROJECT_URL"])) { echo $_SESSIO
 var USR_LANG = '<?php if(isset($_SESSION["HWG_USR_LANG"])) { echo $_SESSION["HWG_USR_LANG"]; } ?>';
 var SESSION_ID = '<?php echo session_id(); ?>';
 var CLIENT_IPADDRESS = '<?php echo $_SERVER['REMOTE_ADDR']; ?>'; 
-var QUEUE_ADDEDON = '<?php if(isset($_SESSION["HWG_CUSTOMER_ADDTOQUEUE"])) { echo $_SESSION["HWG_CUSTOMER_ADDTOQUEUE"]; } ?>';
+var QUEUE_ADDEDON = '<?php echo date('Y-m-d H:i:s'); ?>';
 /* ALL ACCOUNTS */
 var ACCOUNT_TYPE = '<?php if(isset($_SESSION["HWG_ACCOUNT_TYPE"])) { echo $_SESSION["HWG_ACCOUNT_TYPE"]; } ?>';
 console.log("ACCOUNT_TYPE: "+ACCOUNT_TYPE); // CUSTOMER_LIVESUPPORT / CUSTOMERS / Administrator
