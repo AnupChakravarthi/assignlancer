@@ -11,5 +11,6 @@
   "S010": { "english": "Customer Account created Successfully." },
   "S011": { "english": "Customer Email Address updated Successfully." },
   "S012": { "english": "Customer Account deleted Successfully." },
-  "S013": { "english": "Created Customer Order Successfully." }
+  "S013": { "english": "Created Customer Order Successfully." },
+  "S014": { "english": "You updated Agent Timings Successfully." }
 }

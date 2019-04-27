@@ -187,8 +187,7 @@ var pwd = document.getElementById("signin_customer_pwd").value;
 		  
 		} else { div_display_warning('signin_customer_warnings','W003'); }
 	  }
-	});
-  
+	}); 
  } else { div_display_warning('signin_customer_warnings','W002'); }
 }
 </script>

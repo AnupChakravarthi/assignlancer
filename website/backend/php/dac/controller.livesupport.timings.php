@@ -41,7 +41,33 @@ if(isset($_GET["action"])){
 	$content.=']';
 	echo $content;
    } else { echo '[]'; }
- } else { echo 'MISSING_ACTION'; }
+ } 
+ else if($_GET["action"]=='SETAGENT_TIMINGS_BYTIMEZONE'){
+  $req_timezone = 'Asia/Kolkata';
+  $def_timezone = $_GET["def_timezone"];
+  $def_earlyMrng_startTime = $_GET["def_earlyMrng_startTime"];
+  $def_earlyMrng_endTime = $_GET["def_earlyMrng_endTime"]; 
+  $def_mrng_startTime = $_GET["def_mrng_startTime"];
+  $def_mrng_endTime = $_GET["def_mrng_endTime"];
+  $def_evng_startTime = $_GET["def_evng_startTime"];
+  $def_evng_endTime = $_GET["def_evng_endTime"];
+  
+  $utilityCore = new UtilityCore();
+  $earlyMrng_startTime = $utilityCore->convertTimeFromTimezone($def_timezone,$def_earlyMrng_startTime,$req_timezone);
+  $earlyMrng_endTime = $utilityCore->convertTimeFromTimezone($def_timezone,$def_earlyMrng_endTime,$req_timezone);
+  $mrng_startTime = $utilityCore->convertTimeFromTimezone($def_timezone,$def_mrng_startTime,$req_timezone);
+  $mrng_endTime = $utilityCore->convertTimeFromTimezone($def_timezone,$def_mrng_endTime,$req_timezone);
+  $evng_startTime = $utilityCore->convertTimeFromTimezone($def_timezone,$def_evng_startTime,$req_timezone);
+  $evng_endTime = $utilityCore->convertTimeFromTimezone($def_timezone,$def_evng_endTime,$req_timezone);
+  
+  $liveSupportTimings = new LiveSupportTimings();
+  $query = $liveSupportTimings->query_update_agentTimings($earlyMrng_startTime,$earlyMrng_endTime, 
+  $mrng_startTime,$mrng_endTime,$evng_startTime,$evng_endTime);
+  
+  $database = new Database();
+  echo $database->addupdateData($query);
+}
+ else { echo 'MISSING_ACTION'; }
 }
 else { echo 'NO_ACTION'; }
 ?>

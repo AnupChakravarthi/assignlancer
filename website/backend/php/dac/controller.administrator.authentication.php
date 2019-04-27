@@ -14,14 +14,14 @@ if(isset($_GET["action"])){
    $database = new Database();
    $jsonData=json_decode($database->getJSONData($query));
    if(count($jsonData)>0){
-     $_SESSION["ADMINISTRATOR_ACCOUNT_ID"]=$jsonData[0]->{'account_Id'};
-	 $_SESSION["ACCOUNT_TYPE"]='Administrator';
-	 $_SESSION["ADMINISTRATOR_NAME"]=$jsonData[0]->{'name'};
-	 $_SESSION["ADMINISTRATOR_EMAIL"]=$jsonData[0]->{'email_Id'};
-	 $_SESSION["ADMINISTRATOR_CREATEDON"]=$jsonData[0]->{'createdOn'};
-	 $_SESSION["ADMINISTRATOR_COUNTRY"]=$jsonData[0]->{'country'};
-	 $_SESSION["ADMINISTRATOR_CURRENCY"]=$jsonData[0]->{'currency'};
-	 $_SESSION["ADMINISTRATOR_TIMEZONE"]=$jsonData[0]->{'timezone'};
+     $_SESSION["HWG_ADMINISTRATOR_ACCOUNTID"]=$jsonData[0]->{'account_Id'};
+	 $_SESSION["HWG_ACCOUNT_TYPE"]='Administrator';
+	 $_SESSION["HWG_ADMINISTRATOR_NAME"]=$jsonData[0]->{'name'};
+	 $_SESSION["HWG_ADMINISTRATOR_EMAIL"]=$jsonData[0]->{'email_Id'};
+	 $_SESSION["HWG_ADMINISTRATOR_CREATEDON"]=$jsonData[0]->{'createdOn'};
+	 $_SESSION["HWG_ADMINISTRATOR_COUNTRY"]=$jsonData[0]->{'country'};
+	 $_SESSION["HWG_ADMINISTRATOR_CURRENCY"]=$jsonData[0]->{'currency'};
+	 $_SESSION["HWG_ADMINISTRATOR_TIMEZONE"]=$jsonData[0]->{'timezone'};
    } else { echo 'ADMINISTRATOR_UNAUTHENTICATED'; }
  }
  else if($_GET["action"]=='ADMINISTRATOR_UPDATEPROFILE'){
