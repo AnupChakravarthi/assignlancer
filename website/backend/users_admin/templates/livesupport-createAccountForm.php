@@ -27,7 +27,7 @@ function create_livesupportAccount(){
  if(shiftTimings.length>0){
   if(pwd===confirmPwd){
    js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.livesupport.authentication.php',
-   { action:'LIVESUPPORT_AUTHENTICATION', name:name, acc_pwd:pwd, country:country, usr_tz:timezone, time_Id:shiftTimings },
+   { action:'LIVESUPPORT_CREATEACCOUNT', name:name, acc_pwd:pwd, country:country, usr_tz:timezone, time_Id:shiftTimings },
 	function(response){ console.log(response); 
 	 if(response.trim()==='Success'){
 	  $('#createLiveSupportAccountModal').modal('hide');

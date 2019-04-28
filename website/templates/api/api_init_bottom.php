@@ -20,21 +20,21 @@ var email = document.getElementById("signin_administrator_email").value;
  } else { div_display_warning('signin_administrator_warnings','W002'); } 
 }
 function signIn_livesupport(){
- var email = document.getElementById("signin_livesupport_email").value;
+ var username = document.getElementById("signin_livesupport_username").value;
  var pwd = document.getElementById("signin_livesupport_pwd").value;
- if(email.length>0){
+ if(username.length>0){
  if(pwd.length>0){
   js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.livesupport.authentication.php',
-  { action:'LIVESUPPORT_AUTHENTICATION', email:email, acc_pwd:pwd },function(response){
+  { action:'LIVESUPPORT_LOGIN', userName:username, acc_pwd:pwd },function(response){
     console.log(response);
-	if(response==='CUSTOMER_UNAUTHENTICATED'){
-	   div_display_warning('signin_livesupport_warnings','W008');
+	if(response==='CUSTOMER_AUTHENTICATED'){
+	   window.location.href=PROJECT_URL+'app/livesupport/dashboard';
 	} else {
-       window.location.href=PROJECT_URL+'app/livesupport/dashboard';
+       div_display_warning('signin_livesupport_warnings','W027');
 	}
   });
  } else { div_display_warning('signin_livesupport_warnings','W003'); }
- } else { div_display_warning('signin_livesupport_warnings','W002'); } 
+ } else { div_display_warning('signin_livesupport_warnings','W028'); } 
 }
 </script>
 <!-- liveSupportLoginModal ::: Start -->
@@ -51,8 +51,8 @@ function signIn_livesupport(){
 		  
 		</div>
         <div class="form-group">
-		  <label>Email</label>
-		  <input id="signin_livesupport_email" type="text" class="form-control" placeholder="Enter your Email Address">
+		  <label>Username</label>
+		  <input id="signin_livesupport_username" type="text" class="form-control" placeholder="Enter your Username">
 		</div>
 		<div class="form-group">
 		  <label>Password</label>

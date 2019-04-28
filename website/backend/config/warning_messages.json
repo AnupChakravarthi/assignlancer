@@ -24,5 +24,7 @@
   "W023": { "english":"Email Id already registered by other Customer." },
   "W024": { "english":"Email Id / Customer Id not Exist." },
   "W025": { "english":"Order Id not Exist." },
-  "W026": { "english":"Missing Order Id." }
+  "W026": { "english":"Missing Order Id." },
+  "W027": { "english":"Please Enter valid credentials for Live Support Agent Login." },
+  "W028": { "english":"Username is not Valid." }
 }

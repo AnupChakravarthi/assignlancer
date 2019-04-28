@@ -1,5 +1,13 @@
 <?php
 class LiveSupportAuthentication {
+ function query_validate_liveSupportAccount($userName, $acc_pwd){
+  $sql="SELECT ls_accounts.account_Id, ls_accounts.availStatus, ls_accounts.name, ";
+  $sql.="ls_accounts.createdOn, ls_accounts.country, ls_accounts.usr_tz, ";
+  $sql.="ls_timings.shift, ls_timings.startTime, ls_timings.endTime, ls_timings.timezone ";
+  $sql.="FROM ls_accounts, ls_timings WHERE name='".$userName."' AND acc_pwd='".$acc_pwd."' AND ";
+  $sql.=" ls_accounts.time_Id = ls_timings.time_Id; ";
+  return $sql;
+ }
  function query_add_newLiveSupportAccount($account_Id, $availStatus, $name, $acc_pwd, $country, $usr_tz, $time_Id){
   $sql="INSERT INTO ls_accounts(account_Id, availStatus, name, acc_pwd, createdOn, country, usr_tz, time_Id) ";
   $sql.="VALUES ('".$account_Id."','".$availStatus."','".$name."','".$acc_pwd."','".date('Y-m-d')."','";

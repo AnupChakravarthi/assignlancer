@@ -2,7 +2,7 @@
 class AdministratorAuthentication {
  function query_validate_administratorAccount($email_Id, $acc_pwd){
   $sql="SELECT * FROM admin_accounts WHERE email_Id='".$email_Id."' AND acc_pwd='".$acc_pwd."';";
-  return $sql;
+  return $sql; 
  }
  function query_updateInfo_administratorAccount($account_Id,$accountName,$email,$country,$currency,$timezone){
   $sql="UPDATE admin_accounts SET";

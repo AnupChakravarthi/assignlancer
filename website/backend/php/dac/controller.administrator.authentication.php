@@ -15,7 +15,7 @@ if(isset($_GET["action"])){
    $jsonData=json_decode($database->getJSONData($query));
    if(count($jsonData)>0){
      $_SESSION["HWG_ADMINISTRATOR_ACCOUNTID"]=$jsonData[0]->{'account_Id'};
-	 $_SESSION["HWG_ACCOUNT_TYPE"]='Administrator';
+	 $_SESSION["HWG_ACCOUNT_TYPE"]='ADMINISTRATOR';
 	 $_SESSION["HWG_ADMINISTRATOR_NAME"]=$jsonData[0]->{'name'};
 	 $_SESSION["HWG_ADMINISTRATOR_EMAIL"]=$jsonData[0]->{'email_Id'};
 	 $_SESSION["HWG_ADMINISTRATOR_CREATEDON"]=$jsonData[0]->{'createdOn'};

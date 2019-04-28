@@ -1,11 +1,47 @@
 <?php
+session_start();
 require_once '../api/app.initiator.php';
 require_once '../api/app.database.php';
 require_once '../dal/data.livesupport.authentication.php';
 require_once '../util/util.identity.php';
 require_once '../util/util.core.php';
 if(isset($_GET["action"])){
- if($_GET["action"]=='LIVESUPPORT_AUTHENTICATION'){
+ if($_GET["action"]=='LIVESUPPORT_LOGIN'){
+   $userName = $_GET["userName"];
+   $acc_pwd = md5($_GET["acc_pwd"]);
+   $liveSupportAuthentication = new LiveSupportAuthentication();
+   $query = $liveSupportAuthentication->query_validate_liveSupportAccount($userName, $acc_pwd);
+   $database = new Database();
+   $utilityCore = new UtilityCore();
+   $jsonData = json_decode($database->getJSONData($query));
+   if(count($jsonData)>0){
+    $account_Id = $jsonData[0]->{'account_Id'};
+	$availStatus = $jsonData[0]->{'availStatus'};
+	$name = $jsonData[0]->{'name'};
+	$createdOn = $jsonData[0]->{'createdOn'};
+	$country = $jsonData[0]->{'country'};
+	$shift = $jsonData[0]->{'shift'};
+	$def_startTime = $jsonData[0]->{'startTime'};
+	$def_endTime = $jsonData[0]->{'endTime'};
+	$def_timezone = $jsonData[0]->{'timezone'};
+	$req_usr_tz = $jsonData[0]->{'usr_tz'};
+	$req_startTime = $utilityCore->convertTimeFromTimezone($def_timezone,$def_startTime,$req_usr_tz);
+	$req_endTime = $utilityCore->convertTimeFromTimezone($def_timezone,$def_endTime,$req_usr_tz);
+	/* Set in Session */
+	$_SESSION["HWG_ACCOUNT_TYPE"] = 'CUSTOMER_LIVESUPPORT';
+	$_SESSION["HWG_LIVESUPPORT_ACCOUNTID"] = $account_Id;
+	$_SESSION["HWG_LIVESUPPORT_AVAILSTATUS"] = $availStatus;
+	$_SESSION["HWG_LIVESUPPORT_NAME"] = $name;
+	$_SESSION["HWG_LIVESUPPORT_CREATEDON"] = $createdOn;
+	$_SESSION["HWG_LIVESUPPORT_COUNTRY"] = $country;
+	$_SESSION["HWG_LIVESUPPORT_SHIFT"] = $shift;
+	$_SESSION["HWG_LIVESUPPORT_USRTIMEZONE"] = $req_usr_tz;
+	$_SESSION["HWG_LIVESUPPORT_STARTTIME"] = $req_startTime;
+	$_SESSION["HWG_LIVESUPPORT_ENDTIME"] = $req_endTime;
+	echo "CUSTOMER_AUTHENTICATED";
+   } 
+ }
+ else if($_GET["action"]=='LIVESUPPORT_CREATEACCOUNT'){
    $identity = new Identity();
    $liveSupportAuthentication = new LiveSupportAuthentication();
    $database = new Database();

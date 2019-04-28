@@ -114,10 +114,10 @@ function set_agentStatus_unAvailable(beep){
 
 <div>
 <audio id="livesupport_agent_stateOnline">
-  <source src="<?php echo $_SESSION["PROJECT_URL"]?>audio/online.mp3" type="audio/mpeg">
+  <source src="<?php echo $_SESSION["HWG_PROJECT_URL"]?>audio/online.mp3" type="audio/mpeg">
 </audio>
 <audio id="livesupport_agent_stateOffline">
-  <source src="<?php echo $_SESSION["PROJECT_URL"]?>audio/offline.mp3" type="audio/mpeg">
+  <source src="<?php echo $_SESSION["HWG_PROJECT_URL"]?>audio/offline.mp3" type="audio/mpeg">
 </audio>
 </div>
 
@@ -341,7 +341,7 @@ function set_agentStatus_unAvailable(beep){
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li>
-						   <a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/livesupport/profile">
+						   <a href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>app/livesupport/profile">
 						   <i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
@@ -371,17 +371,17 @@ function set_agentStatus_unAvailable(beep){
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="<?php echo $_SESSION["PROJECT_URL"]?>app/liveSupport/dashboard"><i class="fa fa-dashboard fa-fw"></i> <b>Dashboard</b></a>
+                            <a href="<?php echo $_SESSION["HWG_PROJECT_URL"]?>app/liveSupport/dashboard"><i class="fa fa-dashboard fa-fw"></i> <b>Dashboard</b></a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> <b>Manage Orders</b><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-								  <a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/liveSupport/mo_assignments">
+								  <a href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>app/liveSupport/mo_assignments">
 								    <b>Assignments Overview</b>
 								  </a>
 								</li>
-                                <li><a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/liveSupport/mo_payments">
+                                <li><a href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>app/liveSupport/mo_payments">
 								      <i class="fa fa-search" aria-hidden="true"></i> <b>Order Search</b>
 								    </a>
 								</li>
@@ -390,7 +390,7 @@ function set_agentStatus_unAvailable(beep){
                             <!-- /.nav-second-level -->
                         </li>
 						<li id="app-menu-livechat" class="hide-block">
-						   <a href="<?php echo $_SESSION["PROJECT_URL"]; ?>app/liveSupport/chats">
+						   <a href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>app/liveSupport/chats">
 						     <i class="fa fa-envelope" aria-hidden="true"></i> <b>Live Chat</b>
 						   </a>
 						</li>
