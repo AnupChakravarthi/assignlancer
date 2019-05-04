@@ -62,73 +62,33 @@ td { font-size:12px; }
    <!-- Custom Theme JavaScript -->
     <script src="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>backend/dist/sb-admin-2.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
- display_editProfile();
-});
-function display_editProfile(){
- if(!$('#myProfileForm_saveProfile').hasClass('hide-block')){ $('#myProfileForm_saveProfile').addClass('hide-block'); }
- if($('#myProfileForm_editProfile').hasClass('hide-block')){ $('#myProfileForm_editProfile').removeClass('hide-block'); }
- if($('#myProfileForm_reset').hasClass('hide-block')){ $('#myProfileForm_reset').removeClass('hide-block'); }
- /* Enable */
- document.getElementById("myProfileForm_accountId").value=HWG_LIVESUPPORT_ACCOUNTID;
- document.getElementById("myProfileForm_accountType").value=HWG_ACCOUNT_TYPE;
- document.getElementById("myProfileForm_accountName").value=HWG_LIVESUPPORT_NAME;
- document.getElementById("myProfileForm_country").value=HWG_LIVESUPPORT_COUNTRY;
- var content='<b>Your Profile was created on <br/>'+get_stdDateTimeFormat01(HWG_LIVESUPPORT_CREATEDON)+'</b>';
- document.getElementById("myProfileForm_createdOn").innerHTML=content;
- document.getElementById("myProfileForm_accountId").disabled=true;
- document.getElementById("myProfileForm_accountType").disabled=true;
- document.getElementById("myProfileForm_accountName").disabled=true;
- document.getElementById("myProfileForm_country").disabled=true;
+function myProfileForm_resetPasswordForm(){
+ document.getElementById("myProfileForm_updatePassword_oldPassword").value = '';
+ document.getElementById("myProfileForm_updatePassword_newPassword").value = '';
+ document.getElementById("myProfileForm_updatePassword_confirmNewPassword").value = '';
 }
-function store_editProfile(){
- display_editProfile();
- var accountId = document.getElementById("myProfileForm_accountId").value;
- var accountType = document.getElementById("myProfileForm_accountType").value;
- var accountName = document.getElementById("myProfileForm_accountName").value;
- var country = document.getElementById("myProfileForm_country").value;
- 
- console.log("accountId: "+accountId);
- console.log("accountType: "+accountType);
- console.log("accountName: "+accountName);
- console.log("accountEmail: "+accountEmail);
- console.log("country: "+country);
- 
- if(accountName.length>0){
-   if(accountEmail.length>0){
-   /* Validate */
-     js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.php',
-      { action:'CHECK_EMAILDUPLICATE_OTHERACCOUNTS', email:accountEmail, account_Id:accountId },
-      function(response){ console.log(response);
-        if(response==='NONDUPLICATE'){
-	      if(country.length>0){
-		     document.getElementById("myProfileForm_warning").innerHTML='';
-		     js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.php',
-			 { action:'UPDATE_ACCOUNT_PROFILE', account_Id:accountId, name:accountName, email:accountEmail,
-			 country:country },
-			 function(response){ 
-			    console.log(response);
-				div_display_success('myProfileForm_warning','S004');
-			 });
-          } else { div_display_warning('myProfileForm_warning','W009'); }
-	    } else {
-	 
-	    }
-   });
-   } else { div_display_warning('myProfileForm_warning','W002'); }
- } else { div_display_warning('myProfileForm_warning','W001'); }
- 
- 
- 
-}
-function display_saveProfile(){
- if($('#myProfileForm_saveProfile').hasClass('hide-block')){ $('#myProfileForm_saveProfile').removeClass('hide-block'); }
- if(!$('#myProfileForm_editProfile').hasClass('hide-block')){ $('#myProfileForm_editProfile').addClass('hide-block'); }
- if($('#myProfileForm_reset').hasClass('hide-block')){ $('#myProfileForm_reset').removeClass('hide-block'); } 
- /* Disable */
- document.getElementById("myProfileForm_accountName").disabled=false;
- document.getElementById("myProfileForm_accountEmail").disabled=false;
- document.getElementById("myProfileForm_country").disabled=false;
+function myProfileForm_updatePassword(){
+ var oldPassword = document.getElementById("myProfileForm_updatePassword_oldPassword").value;
+ var newPassword =  document.getElementById("myProfileForm_updatePassword_newPassword").value;
+ var confirmNewPassword = document.getElementById("myProfileForm_updatePassword_confirmNewPassword").value;
+ if(oldPassword.length>0){
+   if(newPassword.length>0){
+     if(confirmNewPassword.length>0){
+	   if(newPassword===confirmNewPassword){
+         js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.php',
+		 { action:'UPDATE_ACCOUNT_PASSWORD', account_Id:ACCOUNT_ID, oldPassword:oldPassword, newPassword:newPassword },
+		 function(response){
+		    console.log(response);
+			if(response==='INVALID_PASSWORD'){
+			  div_display_warning('myProfileForm_updatePassword_warning','W014');
+			} else {
+			  div_display_success('myProfileForm_updatePassword_warning','S003');
+			}
+		 });
+	   } else { div_display_warning('myProfileForm_updatePassword_warning','W013'); } 
+     } else { div_display_warning('myProfileForm_updatePassword_warning','W012'); } 
+   } else { div_display_warning('myProfileForm_updatePassword_warning','W011');  } 
+ } else { div_display_warning('myProfileForm_updatePassword_warning','W010');  }
 }
 </script>
 <div id="wrapper">
@@ -146,16 +106,22 @@ function display_saveProfile(){
 	    <!-- Account Id ::: Start -->
 	    <div class="form-group">
 	      <label>Account Id <span class="red">*</span></label>
-		  <input type="text" id="myProfileForm_accountId" class="form-control" placeholder="Enter your Account Id" 
-		   value="<?php if(isset($_SESSION["HWG_LIVESUPPORT_ACCOUNTID"])) { echo $_SESSION["HWG_LIVESUPPORT_ACCOUNTID"]; } ?>" disabled/>
+		  <div class="list-group">
+		    <div class="list-group-item" style="border-radius:5px;">
+		       <?php if(isset($_SESSION["HWG_LIVESUPPORT_ACCOUNTID"])) { echo $_SESSION["HWG_LIVESUPPORT_ACCOUNTID"]; } ?>
+		    </div>
+		  </div>
 	    </div>
 
 		<!-- Account Id ::: End -->
 		<!-- Account Type ::: Start -->
 	    <div class="form-group">
 	      <label>Account Type <span class="red">*</span></label>
-		  <input type="text" id="myProfileForm_accountType" class="form-control" placeholder="Enter your Account Type" 
-		   value="<?php if(isset($_SESSION["HWG_ACCOUNT_TYPE"])) { echo $_SESSION["HWG_ACCOUNT_TYPE"]; } ?>" disabled/>
+		  <div class="list-group">
+		    <div class="list-group-item" style="border-radius:5px;">
+		       <?php if(isset($_SESSION["HWG_ACCOUNT_TYPE"])) { echo $_SESSION["HWG_ACCOUNT_TYPE"]; } ?>
+		    </div>
+		  </div>
 	    </div>
 		<!-- Account Type ::: End -->
 		<!-- Account Created ::: Start -->
@@ -164,19 +130,22 @@ function display_saveProfile(){
 		<!-- Account Name ::: Start -->
 	    <div class="form-group">
 	      <label>Account Name <span class="red">*</span></label>
-		  <input type="text" id="myProfileForm_accountName" class="form-control" placeholder="Enter your Account Name" 
-		   value="<?php if(isset($_SESSION["HWG_LIVESUPPORT_NAME"])) {  echo $_SESSION["HWG_LIVESUPPORT_NAME"]; } ?>" disabled/>
+		  <div class="list-group">
+		    <div class="list-group-item" style="border-radius:5px;">
+			  <?php if(isset($_SESSION["HWG_LIVESUPPORT_NAME"])) {  echo $_SESSION["HWG_LIVESUPPORT_NAME"]; } ?>
+		    </div>
+		  </div>
 	    </div>
 		<!-- Account Name ::: End -->
 		
 		<!-- Country ::: Start -->
 	    <div class="form-group">
 	      <label>Country <span class="red">*</span></label>
-		  <select id="myProfileForm_country" class="form-control">
-		    <option value="">Select your Country</option>
-			<option value="India">India</option>
-			<option value="Australia">Australia</option>
-		  </select>
+		  <div class="list-group">
+		    <div class="list-group-item" style="border-radius:5px;">
+			   <?php if(isset($_SESSION["HWG_LIVESUPPORT_COUNTRY"])) {  echo $_SESSION["HWG_LIVESUPPORT_COUNTRY"]; } ?>
+		    </div>
+		  </div>
 	    </div>
 		<!-- Country ::: End -->
 		<div align="center" class="form-group">
@@ -229,45 +198,22 @@ function display_saveProfile(){
 		</div>
 		<div class="form-group">
 		  <label>Timezone</label>
-		  <select class="form-control">
-		    <option value="">Select your Timezone</option>
-			<option value="Asia/Kolkata">Asia/Kolkata</option>
-			<option value="Australia/ACT">Australia/ACT</option>
-			<option value="Australia/Adelaide">Australia/Adelaide</option>
-			<option value="Australia/Brisbane">Australia/Brisbane</option>
-			<option value="Australia/Broken_Hill">Australia/Broken_Hill</option>
-			<option value="Australia/Canberra">Australia/Canberra</option>
-			<option value="Australia/Currie">Australia/Currie</option>
-			<option value="Australia/Darwin">Australia/Darwin</option>
-			<option value="Australia/Eucla">Australia/Eucla</option>
-			<option value="Australia/Hobart">Australia/Hobart</option>
-			<option value="Australia/LHI">Australia/LHI</option>
-			<option value="Australia/Lindeman">Australia/Lindeman</option>
-			<option value="Australia/Lord_Howe">Australia/Lord_Howe</option>
-			<option value="Australia/Melbourne">Australia/Melbourne</option>
-			<option value="Australia/North">Australia/North</option>
-			<option value="Australia/NSW">Australia/NSW</option>
-			<option value="Australia/Perth">Australia/Perth</option>
-			<option value="Australia/Queensland">Australia/Queensland</option>
-			<option value="Australia/South">Australia/South</option>
-			<option value="Australia/Sydney">Australia/Sydney</option>
-			<option value="Australia/Tasmania">Australia/Tasmania</option>
-			<option value="Australia/Victoria">Australia/Victoria</option>
-			<option value="Australia/West">Australia/West</option>
-			<option value="Australia/Yancowinna">Australia/Yancowinna</option>
-		  </select>
-		  				
-				
-				
-				
-		
+		  <div class="list-group">
+		    <div class="list-group-item" style="border-radius:5px;">
+			  <?php if(isset($_SESSION["HWG_LIVESUPPORT_USRTIMEZONE"])){ echo $_SESSION["HWG_LIVESUPPORT_USRTIMEZONE"]; } ?>
+			</div>
+		  </div>
 		</div>
 <style>
 .font-grey { color:#777; }
 </style>
 		<div align="right" class="form-group">
 		  <label>Your 24 X 7 Live Support Available at</label>
-		  <div class="font-grey"><b><i>Early Morning:</i> 01:00 AM to 09:00 AM</b></div>
+		  <div class="font-grey">
+		    <b><i><?php if(isset($_SESSION["HWG_LIVESUPPORT_SHIFT"])){ echo $_SESSION["HWG_LIVESUPPORT_SHIFT"]; } ?>:</i> 
+			<?php if(isset($_SESSION["HWG_LIVESUPPORT_STARTTIME"])){ echo $_SESSION["HWG_LIVESUPPORT_STARTTIME"]; } ?> to 
+			<?php if(isset($_SESSION["HWG_LIVESUPPORT_ENDTIME"])){ echo $_SESSION["HWG_LIVESUPPORT_ENDTIME"]; } ?></b>
+		  </div>
 		</div>
 	    <!-- Timings ::: Start -->
 		
@@ -276,36 +222,6 @@ function display_saveProfile(){
 	</div>
  </div>
 </div>
-<script type="text/javascript">
-function myProfileForm_resetPasswordForm(){
- document.getElementById("myProfileForm_updatePassword_oldPassword").value = '';
- document.getElementById("myProfileForm_updatePassword_newPassword").value = '';
- document.getElementById("myProfileForm_updatePassword_confirmNewPassword").value = '';
-}
-function myProfileForm_updatePassword(){
- var oldPassword = document.getElementById("myProfileForm_updatePassword_oldPassword").value;
- var newPassword =  document.getElementById("myProfileForm_updatePassword_newPassword").value;
- var confirmNewPassword = document.getElementById("myProfileForm_updatePassword_confirmNewPassword").value;
- if(oldPassword.length>0){
-   if(newPassword.length>0){
-     if(confirmNewPassword.length>0){
-	   if(newPassword===confirmNewPassword){
-         js_ajax('GET',PROJECT_URL+'backend/php/dac/controller.authentication.php',
-		 { action:'UPDATE_ACCOUNT_PASSWORD', account_Id:ACCOUNT_ID, oldPassword:oldPassword, newPassword:newPassword },
-		 function(response){
-		    console.log(response);
-			if(response==='INVALID_PASSWORD'){
-			  div_display_warning('myProfileForm_updatePassword_warning','W014');
-			} else {
-			  div_display_success('myProfileForm_updatePassword_warning','S003');
-			}
-		 });
-	   } else { div_display_warning('myProfileForm_updatePassword_warning','W013'); } 
-     } else { div_display_warning('myProfileForm_updatePassword_warning','W012'); } 
-   } else { div_display_warning('myProfileForm_updatePassword_warning','W011');  } 
- } else { div_display_warning('myProfileForm_updatePassword_warning','W010');  }
-}
-</script>
 </body>
 </html>
 <?php // } else { header("Location:".$_SESSION["HWG_PROJECT_URL"]); } ?>

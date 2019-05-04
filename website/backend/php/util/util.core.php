@@ -6,5 +6,4 @@ class UtilityCore {
   return $date->format('h:i A');
  }
 }
-
 ?>
