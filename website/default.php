@@ -16,6 +16,7 @@ if(!isset($_SESSION["HWG_ACCOUNT_ID"])){
   <script type="text/javascript" src="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>js/jquery-ui.js"></script>
   <script type="text/javascript" src="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>js/jquery.ui.chatbox.js"></script>
   <script type="text/javascript" src="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>js/cookies.js"></script>
+  <script type="text/javascript" src="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>js/app.ui.chatpopup.js"></script>
   <link type="text/css" href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>styles/jquery.ui.chatbox.css" rel="stylesheet" />
   <link rel="stylesheet" href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>styles/jquery-ui.css">
   <link rel="stylesheet" href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>styles/core-skeleton.css">
@@ -68,13 +69,7 @@ $(document).ready(function(){
  selectAppInitHeader('appInitHeader-home');
  $("#sliderCarousel").carousel({interval: 4000});
   homeSlider();
-  if(getCookie("LiveSupportChat").length==0){
-   var chatData=[{"title":"","msg":"Welcome to HereWeGet.com."},
-				 {"title":"","msg":"Greetings for the Day...!!!"},
-				 {"title":"AssignmentHelp","msg":"Hi, Do you need assignment help?"}];
-   setCookie("LiveSupportChat", JSON.stringify(chatData), 1);
-  }
-  chatBoxInitilaizer();
+  load_chatpopup('chat_div'); // loads from app.ui.chatpopup.js
 });
 </script>
 <style>

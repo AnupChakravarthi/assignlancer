@@ -42,8 +42,29 @@ include_once '../../templates/api/api_js.php';
 	  
 	    <div class="col-lg-6 mbot15p">
 		  <div class="input-group">
-		    <input type="text" class="form-control" placeholder="Choose a Live Support Account"/>
+		    <input type="text" class="form-control" placeholder="Find Chat By Customer Name"/>
 			<span class="input-group-addon"><b><i class="fa fa-search"></i> Chat History</b></span>
+		  </div>
+		</div>
+		
+		<div class="col-lg-6 mbot15p">
+		  <div class="list-group">
+		    <div class="list-group-item">
+			<!-- -->
+			  <div class="container-fluid">
+			    <div class="row">
+				  <div class="col-lg-8">
+				    <b>UnRegistered / Unlogged Customers in Queue: <span>32</span></b>
+				  </div>
+				  <div class="col-lg-4">
+				    <button class="btn btn-success btn-xs pull-right" 
+					onclick="javascript:liveSupportChat_display_viewCustomersInQueue();">
+					<b>View Customers</b></button>
+				  </div><!-- col-lg-6 -->
+				</div><!-- row -->
+			  </div><!-- container-fluid -->
+			<!-- --> 
+		    </div>
 		  </div>
 		</div>
 		
@@ -228,6 +249,11 @@ include_once '../../templates/api/api_js.php';
 $(document).ready(function(){
   
 });
+
+function liveSupportChat_display_viewCustomersInQueue(){
+/* Displays List of Customers in Queue and Updates data */
+
+}
 </script>
 </body>
 

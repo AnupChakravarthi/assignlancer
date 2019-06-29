@@ -1,11 +1,6 @@
 <script type="text/javascript">
 $(document).ready(function(){
- js_ajax("GET",PROJECT_URL+'backend/php/dac/controller.livesupport.chat.php',
- { action: 'ADDUSER_TO_QUEUE', queueStatus:'ONLINE', IPAddress:CLIENT_IPADDRESS, SessionId:SESSION_ID, toAgent:'', 
-   queueOn:QUEUE_ADDEDON, agentPicked:'0000-00-00 00:00:00', chatFinished:'0000-00-00 00:00:00', 
-   order_Id:'', account_Id:'', finished:'N' }, function(response){
-    console.log(response);
- });
+ 
 });
 </script>
 <style>
@@ -43,22 +38,7 @@ function selectAppInitHeader(id){
  }
 }
 
-function chatBoxInitilaizer(){
-  var chatData=JSON.parse(getCookie("LiveSupportChat"));
-  var box = null;
-  if(box) { box.chatbox("option", "boxManager").toggleBox(); }
-  else {
-    box = $("#chat_div").chatbox({id:"You", user:{key : "value"},
-            title : '<i class="fa fa-comments" aria-hidden="true"></i> Live Chat Support',
-            messageSent : function(id, user, msg) {
-                $("#chat_div").chatbox("option", "boxManager").addMsg(id, msg);
-            }});
-  }
-  for(var index=0;index<chatData.length;index++){
-       $("#chat_div").chatbox("option", "boxManager").addMsg(chatData[index].title, chatData[index].msg);
-    }
-		//  });
-}
+
 </script>
 
 <style>

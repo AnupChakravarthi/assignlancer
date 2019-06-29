@@ -4,17 +4,27 @@ $_SESSION["HWG_USR_LANG"]='english';
 if($_SESSION["HWG_PROJECT_MODE"]=='DEBUG'){
 $_SESSION["HWG_PROJECT_VERSIONNUMBER"]='1.0';
 $_SESSION["HWG_PROJECT_URL"]="http://".$_SERVER["HTTP_HOST"]."/assignlancer/website/";
+$_SESSION["HWG_PROJECT_PATH"]=$_SERVER["DOCUMENT_ROOT"]."assignlancer/website/";
 } else {
 $_SESSION["HWG_PROJECT_VERSIONNUMBER"]='1.0';
 // $_SESSION["PROJECT_URL"]="http://.com/".$_SESSION["PROJECT_VERSION_NUMBER"]."/";
 }
 ?>
+<!-- This File contains Variables that stores data from PHP to Javascript Variables -->
 <script type="text/javascript">
+const PROJECT_COOKIES_VARIABLES = {
+ CHAT_CUSTOMER_DEFAULTPOPUPCONTENT : 'CHAT_CUSTOMER_DEFAULTPOPUPCONTENT',
+ CHAT_CUSTOMER_QUEUEJOINEDON : 'CHAT_CUSTOMER_QUEUEJOINEDON',
+ CHAT_LIVESUPPORT_QUEUELASTVIEWED : 'CHAT_LIVESUPPORT_QUEUELASTVIEWED'
+};
 var PROJECT_URL = '<?php if(isset($_SESSION["HWG_PROJECT_URL"])) { echo $_SESSION["HWG_PROJECT_URL"]; } ?>';
+var PROJECT_PATH = '<?php if(isset($_SESSION["HWG_PROJECT_PATH"])) { echo $_SESSION["HWG_PROJECT_PATH"]; } ?>';
 var USR_LANG = '<?php if(isset($_SESSION["HWG_USR_LANG"])) { echo $_SESSION["HWG_USR_LANG"]; } ?>';
 var SESSION_ID = '<?php echo session_id(); ?>';
 var CLIENT_IPADDRESS = '<?php echo $_SERVER['REMOTE_ADDR']; ?>'; 
 var QUEUE_ADDEDON = '<?php echo date('Y-m-d H:i:s'); ?>';
+console.log("PROJECT_PATH: "+PROJECT_PATH);
+
 /* ALL ACCOUNTS */
 var HWG_ACCOUNT_TYPE = '<?php if(isset($_SESSION["HWG_ACCOUNT_TYPE"])) { echo $_SESSION["HWG_ACCOUNT_TYPE"]; } ?>';
 console.log("HWG_ACCOUNT_TYPE: "+HWG_ACCOUNT_TYPE); // CUSTOMER_LIVESUPPORT / CUSTOMERS / ADMINISTRATOR

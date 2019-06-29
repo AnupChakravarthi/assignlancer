@@ -34,6 +34,11 @@ class LiveSupportChat {
 	$sql.="WHERE queue_Id='';";
 	return $sql;
   }
-
+  
+  function query_view_customersInQueue(){
+    $sql="SELECT * FROM queue;";
+	return $sql;
+  }
+  
 }
 ?>
