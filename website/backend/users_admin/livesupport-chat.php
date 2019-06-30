@@ -47,26 +47,7 @@ include_once '../../templates/api/api_js.php';
 		  </div>
 		</div>
 		
-		<div class="col-lg-6 mbot15p">
-		  <div class="list-group">
-		    <div class="list-group-item">
-			<!-- -->
-			  <div class="container-fluid">
-			    <div class="row">
-				  <div class="col-lg-8">
-				    <b>UnRegistered / Unlogged Customers in Queue: <span>32</span></b>
-				  </div>
-				  <div class="col-lg-4">
-				    <button class="btn btn-success btn-xs pull-right" 
-					onclick="javascript:liveSupportChat_display_viewCustomersInQueue();">
-					<b>View Customers</b></button>
-				  </div><!-- col-lg-6 -->
-				</div><!-- row -->
-			  </div><!-- container-fluid -->
-			<!-- --> 
-		    </div>
-		  </div>
-		</div>
+		<div class="col-lg-6 mbot15p"></div>
 		
 	  </div>
 	  <div class="row">

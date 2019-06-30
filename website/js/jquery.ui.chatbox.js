@@ -60,11 +60,11 @@ var HTML_CODE='<div>';
 
                     var msgElement = document.createElement(
                         systemMessage ? "i" : "span");
-                    $(msgElement).text(msg);
+                    $(msgElement).html(msg);
                     e.appendChild(msgElement);
                     $(e).addClass("ui-chatbox-msg");
-                    $(e).css("maxWidth", $(box).width());
-                    $(e).fadeIn();
+                    $(e).css("width", $(box).width());
+                    $(e).fadeIn(0);
                     self._scrollToBottom();
 
                     if (!self.elem.uiChatboxTitlebar.hasClass("ui-state-focus")
@@ -76,10 +76,10 @@ var HTML_CODE='<div>';
                 highlightBox: function() {
                     var self = this;
                     self.elem.uiChatboxTitlebar.effect("highlight", {}, 300);
-                    self.elem.uiChatbox.effect("bounce", {times: 3}, 300, function() {
+                  /*  self.elem.uiChatbox.effect("bounce", {times: 3}, 300, function() {
                         self.highlightLock = false;
                         self._scrollToBottom();
-                    });
+                    }); */
                 },
                 toggleBox: function() {
                     this.elem.uiChatbox.toggle();
@@ -199,7 +199,6 @@ var HTML_CODE='<div>';
                             self.options.messageSent(self.options.id, self.options.user, msg);
                         }
                         $(this).val(' ');
-						console.log("Test: "+$(this).val(' '));
                         return false;
                     }
                 })

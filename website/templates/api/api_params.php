@@ -12,17 +12,17 @@ $_SESSION["HWG_PROJECT_VERSIONNUMBER"]='1.0';
 ?>
 <!-- This File contains Variables that stores data from PHP to Javascript Variables -->
 <script type="text/javascript">
-const PROJECT_COOKIES_VARIABLES = {
+const PROJECT_SESSIONSTORAGE_VARIABLES = {
  CHAT_CUSTOMER_DEFAULTPOPUPCONTENT : 'CHAT_CUSTOMER_DEFAULTPOPUPCONTENT',
- CHAT_CUSTOMER_QUEUEJOINEDON : 'CHAT_CUSTOMER_QUEUEJOINEDON',
+ CHAT_CUSTOMER_QUEUESTATUS : 'CHAT_CUSTOMER_QUEUESTATUS',
  CHAT_LIVESUPPORT_QUEUELASTVIEWED : 'CHAT_LIVESUPPORT_QUEUELASTVIEWED'
 };
 var PROJECT_URL = '<?php if(isset($_SESSION["HWG_PROJECT_URL"])) { echo $_SESSION["HWG_PROJECT_URL"]; } ?>';
 var PROJECT_PATH = '<?php if(isset($_SESSION["HWG_PROJECT_PATH"])) { echo $_SESSION["HWG_PROJECT_PATH"]; } ?>';
 var USR_LANG = '<?php if(isset($_SESSION["HWG_USR_LANG"])) { echo $_SESSION["HWG_USR_LANG"]; } ?>';
-var SESSION_ID = '<?php echo session_id(); ?>';
 var CLIENT_IPADDRESS = '<?php echo $_SERVER['REMOTE_ADDR']; ?>'; 
-var QUEUE_ADDEDON = '<?php echo date('Y-m-d H:i:s'); ?>';
+var SESSION_ID = '<?php echo session_id(); ?>';
+
 console.log("PROJECT_PATH: "+PROJECT_PATH);
 
 /* ALL ACCOUNTS */
@@ -70,11 +70,13 @@ var ACCOUNT_EMAIL = '<?php if(isset($_SESSION["HWG_ACCOUNT_EMAIL"])) { echo $_SE
 var ACCOUNT_CREATED = '<?php if(isset($_SESSION["HWG_ACCOUNT_CREATED"])) { echo $_SESSION["HWG_ACCOUNT_CREATED"]; } ?>';
 var ACCOUNT_COUNTRY = '<?php if(isset($_SESSION["HWG_ACCOUNT_COUNTRY"])) { echo $_SESSION["HWG_ACCOUNT_COUNTRY"]; } ?>';
 var ACCOUNT_PASSWORD = '<?php if(isset($_SESSION["HWG_ACCOUNT_PASSWORD"])) { echo $_SESSION["HWG_ACCOUNT_PASSWORD"]; } ?>';
+var ACCOUNT_QUEUEID = '<?php if(isset($_SESSION["HWG_ACCOUNT_QUEUEID"])) { echo $_SESSION["HWG_ACCOUNT_QUEUEID"]; } ?>';
+var ACCOUNT_HELPID = '<?php if(isset($_SESSION["HWG_ACCOUNT_HELPID"])) { echo $_SESSION["HWG_ACCOUNT_HELPID"]; } ?>';
 console.log("PROJECT_URL: "+PROJECT_URL);
 console.log("USR_LANG: "+USR_LANG);
 console.log("SESSION_ID: "+SESSION_ID);
 console.log("CLIENT_IPADDRESS: "+CLIENT_IPADDRESS);
-console.log("QUEUE_ADDEDON: "+QUEUE_ADDEDON);
+// console.log("QUEUE_ADDEDON: "+QUEUE_ADDEDON);
 
 
 console.log("ACCOUNT_ID: "+ACCOUNT_ID);
@@ -83,4 +85,6 @@ console.log("ACCOUNT_NAME: "+ACCOUNT_NAME);
 console.log("ACCOUNT_EMAIL: "+ACCOUNT_EMAIL);
 console.log("ACCOUNT_CREATED: "+ACCOUNT_CREATED);
 console.log("ACCOUNT_COUNTRY: "+ACCOUNT_COUNTRY);
+console.log("ACCOUNT_QUEUEID: "+ACCOUNT_QUEUEID);
+console.log("ACCOUNT_HELPID: "+ACCOUNT_HELPID);
 </script>

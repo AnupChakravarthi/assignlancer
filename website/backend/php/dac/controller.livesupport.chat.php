@@ -1,5 +1,6 @@
 <?php
 session_start();
+header('Content-Type: application/json');
 require_once '../api/app.initiator.php';
 require_once '../api/app.database.php';
 require_once '../dal/data.livesupport.chat.php';
@@ -10,35 +11,61 @@ $FILE_DATAUPDATEINFO = $_SESSION["HWG_PROJECT_PATH"].'backend/config/data-update
 
 if(isset($_GET["action"])){
  if($_GET["action"]=='ADDUSER_TO_QUEUE'){
- 
-   $idObj= new Identity();
+    /* ===============================
+	 * SERVICE DESCRIPTION: 
+	 * ===============================
+	 *  a) Gets List of LiveSupportAgents who are in ON-READY State. 
+	 *  b) Picks a Random Agent from LiveSupportAgents and Maps to New UnRegistered / Unlogged Customer
+	 *  c) Adds Data to Queue Tbl in Database
+	 *  d) Set User Queue_Id and LiveSupportAgent_Id in the Session
+	 * =================================
+	 * SERVICE ACCESSED BY:
+	 * =================================
+	 *  a) app.ui.chatpopup.js
+	 */
+   
+   $identity = new Identity();
    $liveSupportChat = new LiveSupportChat();
    $database = new Database();
    $jsonServiceManager = new JSONServiceManager();
-   
-   $queue_Id = $idObj->get_queue_Id(); // Dynamic Number
-   $queueStatus = $_GET["queueStatus"];
-   $IPAddress = $_GET["IPAddress"];
-   $SessionId = $_GET["SessionId"];
-   $toAgent = $_GET["toAgent"];
-   $queueOn = $_GET["queueOn"];
-   $agentPicked = $_GET["agentPicked"];
-   $chatFinished = $_GET["chatFinished"];
-   $order_Id = $_GET["order_Id"];
-   $account_Id = $_GET["account_Id"];
-   $finished = $_GET["finished"];
-   
-   $query = $liveSupportChat->query_add_messageToQueue($queue_Id, $queueStatus, $IPAddress, $SessionId, $toAgent, 
-     $queueOn, $agentPicked, $chatFinished, $order_Id, $account_Id, $finished);
-	 
-   echo $database->addupdateData($query);
-   
-   /* Update Tbl(queue) Updated Information in data-update-info.json  */
-   $jsonServiceData = $jsonServiceManager->readJSONData($FILE_DATAUPDATEINFO);
-   $jsonServiceData = json_decode($jsonServiceData);
-   $jsonServiceData->{"dbServerLastUpdates"}->{"databaseName"}->{"Tbls"}->{"queue"}=date('Y-m-d H:i:s');
-   $jsonServiceData = json_encode($jsonServiceData);
-   $jsonServiceManager->updateJSONData($FILE_DATAUPDATEINFO,$jsonServiceData);  
+
+       $listOfAgentsQuery = $liveSupportChat->query_view_listOfAgentsOnline();
+	   $listOfAgentsData = json_decode($database->getJSONData($listOfAgentsQuery));
+	   $numberOfAgents = count($listOfAgentsData);
+	   $content='{';
+	   $content.='"agentsAvailable":"'.$numberOfAgents.'",';
+	   if($numberOfAgents>0){
+	     $toAgent = $listOfAgentsData[rand(0,($numberOfAgents-1))]->{'account_Id'};
+		 $queue_Id = $identity->get_queue_Id(); // Dynamic Number
+		 $queueStatus = 'ONLINE';
+		 $IPAddress = $_GET["IPAddress"];
+         $SessionId = $_GET["SessionId"];
+		 $order_Id = '';
+		 $account_Id = $_GET["account_Id"];
+		 $queueOn = date('Y-m-d H:i:s');
+		 $customerReview='';
+		 $agentFeedBack='';
+		 
+		 $addToQueueQuery = $liveSupportChat->query_add_messageToQueue($queue_Id, $queueStatus, $IPAddress, $SessionId, 
+		    $order_Id, $account_Id, $queueOn, $customerReview, $agentFeedBack);
+		 $addToQueueResponse = $database->addupdateData($addToQueueQuery);
+		 
+		 $content.='"addToQueueResponse":"'.$addToQueueResponse.'",';
+		 $content.='"queue_Id":"'.$queue_Id.'",';
+		 $content.='"toAgent":"'.$toAgent.'"';
+		 
+		 $_SESSION["HWG_ACCOUNT_QUEUEID"]=$queue_Id;
+		 $_SESSION["HWG_ACCOUNT_HELPID"]=$toAgent;
+		 
+		 /* Update Tbl(queue) Updated Information in data-update-info.json  */
+          $jsonServiceData = $jsonServiceManager->readJSONData($FILE_DATAUPDATEINFO);
+          $jsonServiceData = json_decode($jsonServiceData);
+          $jsonServiceData->{"dbServerLastUpdates"}->{"databaseName"}->{"Tbls"}->{"queue"}=date('Y-m-d H:i:s');
+          $jsonServiceData = json_encode($jsonServiceData);
+          $jsonServiceManager->updateJSONData($FILE_DATAUPDATEINFO,$jsonServiceData);  
+	   } 
+	   $content.='}';
+       echo $content;
  }
  else if($_GET["action"]=='FETCHQUEUELIST'){
   $queueLastViewed = $_GET["queueLastViewed"];
@@ -65,6 +92,27 @@ if(isset($_GET["action"])){
   } else {
      echo 'NO_LATEST_UPDATE';
   }
+ }
+ else if($_GET["action"]=='SETSUPPORTCHAT'){
+   $identity = new Identity();
+   $liveSupportChat = new LiveSupportChat();
+   $database = new Database();
+   
+   $chat_Id = $identity->get_chat_Id();
+   $queue_Id = $_GET["queue_Id"];
+   $title =  $_GET["title"];
+   $msg = $_GET["msg"];
+   $toAgent = $_GET["toAgent"];
+   
+   $liveSupportChatQuery = $liveSupportChat->query_add_supportchat($chat_Id,$queue_Id, $title, $msg, $toAgent);
+   echo '{"liveSupportChatQuery":"'.$database->addupdateData($liveSupportChatQuery).'"}';
+ }
+ else if($_GET["action"]=='GETSUPPORTCHAT'){
+   $queue_Id = $_GET["queue_Id"];
+   $liveSupportChat = new LiveSupportChat();
+   $database = new Database();
+   $liveSupportChatQuery = $liveSupportChat->query_view_supportchat($queue_Id);
+   echo $database->getJSONData($liveSupportChatQuery);
  }
  else { echo 'MISSING_ACTION'; }
 }
