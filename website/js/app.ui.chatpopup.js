@@ -34,6 +34,35 @@ function load_chatpopup(){
  chatBoxInitilaizer();
 }
 
+function connectToLiveChat(){
+ // $("div#chatInitialForm").removeAttr('style','width:300px;');
+ var elem = $("div#chatInitialForm").parent().html('');
+ 
+// ui-widget 
+ var chatDivision = document.createElement("div");
+      chatDivision.setAttribute("id","appCore-ui-chatDivision1");
+  document.body.appendChild(chatDivision);
+  var box = null;
+  if(box) { box.chatbox("option", "boxManager").toggleBox(); }
+  else { box = $("#appCore-ui-chatDivision1").chatbox({
+         title : '<i class="fa fa-comments" aria-hidden="true"></i> Live Chat Support'});
+    
+    box = $("#appCore-ui-chatDivision1").chatbox({id:"You", user:{key : "value"},
+          title : '<i class="fa fa-comments" aria-hidden="true"></i> Live Chat Support',
+          messageSent : function(id, user, msg) {
+            $("#appCore-ui-chatDivision1").chatbox("option", "boxManager").addMsg(id, msg);
+		  //  chatData.push({"title":id,"msg":msg});
+			customerLSChat_formSubmit_storeChat(id, msg);
+          }}); 
+
+  for(var index=0;index<chatInitialContent.length;index++){
+   $("#appCore-ui-chatDivision1").chatbox("option", "boxManager")
+    .addMsg(chatInitialContent[index].title, decodeURI(chatInitialContent[index].msg));
+  } 
+ customerLSChat_display_chatUpdate();
+}
+}
+
 function chatBoxInitilaizer(chat_div){
 /* FUNCTION DESCRIPTION: 
  */
@@ -45,22 +74,61 @@ function chatBoxInitilaizer(chat_div){
   /* Step-2 : Adding UnRegistered / UnLogged Customers to Queue */
   customerChat_formSubmit_addUnRegUnLogToQueue();
   
-  var chatData=JSON.parse(window.sessionStorage.getItem(chatPopupContent));
+  
+ // var chatData=JSON.parse(window.sessionStorage.getItem(chatPopupContent));
   var box = null;
   if(box) { box.chatbox("option", "boxManager").toggleBox(); }
-  else {  box = $("#appCore-ui-chatDivision").chatbox({id:"You", user:{key : "value"},
-          title : '<i class="fa fa-comments" aria-hidden="true"></i> Live Chat Support',
-          messageSent : function(id, user, msg) {
-            $("#appCore-ui-chatDivision").chatbox("option", "boxManager").addMsg(id, msg);
-		    chatData.push({"title":id,"msg":msg});
-			customerLSChat_formSubmit_storeChat(id, msg);
-          }});
+  else { box = $("#appCore-ui-chatDivision").chatbox({
+         title : '<i class="fa fa-comments" aria-hidden="true"></i> Live Chat Support'});
   }
-  for(var index=0;index<chatInitialContent.length;index++){
-   $("#appCore-ui-chatDivision").chatbox("option", "boxManager")
-    .addMsg(chatInitialContent[index].title, decodeURI(chatInitialContent[index].msg));
-  } 
- customerLSChat_display_chatUpdate();
+
+  $("div.ui-widget-content.ui-chatbox-content").attr('id','chatInitialForm');
+  $("div#chatInitialForm").attr('style','width:300px;');
+  var content='<div class="container-fluid">';
+  
+      content+='<div class="row">';
+	  content+='<div class="col-xs-12">';
+	  content+='<div class="form-group">';
+	  content+='<i>Fill your following details and submit to connect with our ';
+	  content+='Online Customer Representative for your Online Support.</i>';
+	  content+='</div>'; // form-group
+	  content+='</div>'; // col-xs-12
+	  content+='</div>'; // row
+	  
+      content+='<div class="row">';
+	  content+='<div class="col-xs-12">';
+	  content+='<div class="form-group">';
+	  content+='<label>Name</label>';
+	  content+='<input type="text" class="form-control" placeholder="Enter your Name"/>';
+	  content+='</div>'; // form-group
+	  content+='</div>'; // col-xs-12
+	  content+='</div>'; // row
+	  
+	  content+='<div class="row">';
+	  content+='<div class="col-xs-12">';
+	  content+='<div class="form-group">';
+	  content+='<label>Country</label>';
+	  content+='<select class="form-control">';
+	  content+='<option value="">Select your Country</option>';
+	  content+='<option value="India">India</option>';
+	  content+='<option value="Australia">Australia</option>';
+	  content+='</select>';
+	  content+='</div>'; // form-group
+	  content+='</div>'; // col-xs-12
+	  content+='</div>'; // row
+	  
+	  content+='<div class="row">';
+	  content+='<div class="col-xs-12">';
+	  content+='<div class="form-group">';
+	  content+='<button class="btn btn-yellow form-control" onclick="connectToLiveChat();">';
+	  content+='<b>Connect to Live Chat</b></button>';
+	  content+='</div>'; // form-group
+	  content+='</div>'; // col-xs-12
+	  content+='</div>'; // row
+	  
+	  content+='</div>'; // container-fluid
+  document.getElementById("chatInitialForm").innerHTML=content;
+ 
 }
 
 function customerChat_formSubmit_addUnRegUnLogToQueue(){
@@ -90,18 +158,25 @@ function customerLSChat_display_chatUpdate(){
  setInterval(function(){
  js_ajax("GET",liveSupportChatURL,{ action:'GETSUPPORTCHAT', queue_Id:ACCOUNT_QUEUEID }, 
   function(response){
-	document.getElementById('appCore-ui-chatDivision').innerHTML='';
+	document.getElementById('appCore-ui-chatDivision1').innerHTML='';
 	
 	for(var index=0;index<chatInitialContent.length;index++){
-     $("#appCore-ui-chatDivision").chatbox("option", "boxManager")
+     $("#appCore-ui-chatDivision1").chatbox("option", "boxManager")
 	   .addMsg(chatInitialContent[index].title, decodeURI(chatInitialContent[index].msg));
     }
 	 
 	for(var index=0;index<response.length;index++){
-	   $("#appCore-ui-chatDivision").chatbox("option", "boxManager")
+	   $("#appCore-ui-chatDivision1").chatbox("option", "boxManager")
 	   .addMsg(response[index].title, decodeURI(response[index].msg));
 	}
   });
  },3000);
+}
+
+function liveSupportChat_display_chatData(agent_Id){
+ js_ajax("GET",liveSupportChatURL,{ action:'LIVESUPPORTAGENT_CHATHISTORY', account_Id:agent_Id }, 
+  function(response){
+    console.log("liveSupportChat_display_chatData: "+JSON.stringify(response));
+  });
 }
 

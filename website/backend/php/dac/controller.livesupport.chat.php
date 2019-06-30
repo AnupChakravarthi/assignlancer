@@ -114,6 +114,13 @@ if(isset($_GET["action"])){
    $liveSupportChatQuery = $liveSupportChat->query_view_supportchat($queue_Id);
    echo $database->getJSONData($liveSupportChatQuery);
  }
+ else if($_GET["action"]=='LIVESUPPORTAGENT_CHATHISTORY'){
+   $account_Id = $_GET["account_Id"];
+   $liveSupportChat = new LiveSupportChat();
+   $database = new Database();
+   $liveSupportChatQuery = $liveSupportChat->query_view_livesupportchathistory($account_Id);
+   echo $database->getJSONData($liveSupportChatQuery);
+ }
  else { echo 'MISSING_ACTION'; }
 }
 else { echo 'NO_ACTION'; }

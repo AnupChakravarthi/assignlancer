@@ -19,9 +19,9 @@ if(!isset($_SESSION["HWG_ACCOUNT_ID"])){
   <script type="text/javascript" src="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>js/app.ui.chatpopup.js"></script>
   <link type="text/css" href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>styles/jquery.ui.chatbox.css" rel="stylesheet" />
   <link rel="stylesheet" href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>styles/jquery-ui.css">
-  <link rel="stylesheet" href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>styles/core-skeleton.css">
   <link rel="stylesheet" href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>styles/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>styles/font-awesome.min.css">
+  <link rel="stylesheet" href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>styles/core-skeleton.css">
 <script type="text/javascript">
 var param = '<?php if(isset($_GET["param"])){ echo $_GET["param"]; } ?>';
 var HOMESLIDERID=1;

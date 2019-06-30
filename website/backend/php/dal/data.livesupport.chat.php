@@ -68,6 +68,22 @@ class LiveSupportChat {
    return $sql;
   }
   
+  function query_view_livesupportchathistory($account_Id){
+  /* =======================================
+   * QUERY DESCRIPTION:
+   * =======================================
+   * This is a Query to  store the Messages of Chat
+   * =====================================
+   *  QUERY ACCESSED BY:
+   * =====================================
+   *  a) controller.livesupport.chat.php
+   *      => Service - LIVESUPPORTAGENT_CHATHISTORY
+   */
+    $sql="SELECT * FROM supportchat WHERE queue_Id=(SELECT queue_Id FROM supportchat WHERE toAgent='".$account_Id."');";
+	return $sql;
+  }
+  
+  
   function query_view_supportchat($queue_Id){
    $sql="SELECT * FROM `supportchat` WHERE queue_Id='".$queue_Id."'  ORDER BY msg_on ASC;";
    return $sql;

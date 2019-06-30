@@ -1,3 +1,5 @@
+.btn-yellow { color: #101010;background-color: #ffeb3b;border-color: #ffeb3b; }
+
 body { padding-right: 0 !important }
 .panelborder0 { border:0px solid #fff;-webkit-box-shadow:0 0px 0px #fff;box-shadow:0 0px 0px #fff; }
 .box-shadow {  box-shadow:1px 2px 15px 5px #808080; }
