@@ -38,6 +38,8 @@ if(isset($_GET["action"])){
 	     $toAgent = $listOfAgentsData[rand(0,($numberOfAgents-1))]->{'account_Id'};
 		 $queue_Id = $identity->get_queue_Id(); // Dynamic Number
 		 $queueStatus = 'ONLINE';
+		 $chatName = $_GET["chatName"]; 
+		 $country = $_GET["country"];
 		 $IPAddress = $_GET["IPAddress"];
          $SessionId = $_GET["SessionId"];
 		 $order_Id = '';
@@ -46,8 +48,8 @@ if(isset($_GET["action"])){
 		 $customerReview='';
 		 $agentFeedBack='';
 		 
-		 $addToQueueQuery = $liveSupportChat->query_add_messageToQueue($queue_Id, $queueStatus, $IPAddress, $SessionId, 
-		    $order_Id, $account_Id, $queueOn, $customerReview, $agentFeedBack);
+		 $addToQueueQuery = $liveSupportChat->query_add_messageToQueue($queue_Id, $queueStatus, $chatName, $country, 
+		    $IPAddress, $SessionId, $order_Id, $account_Id, $queueOn, $customerReview, $agentFeedBack);
 		 $addToQueueResponse = $database->addupdateData($addToQueueQuery);
 		 
 		 $content.='"addToQueueResponse":"'.$addToQueueResponse.'",';
@@ -114,12 +116,12 @@ if(isset($_GET["action"])){
    $liveSupportChatQuery = $liveSupportChat->query_view_supportchat($queue_Id);
    echo $database->getJSONData($liveSupportChatQuery);
  }
- else if($_GET["action"]=='LIVESUPPORTAGENT_CHATHISTORY'){
+ else if($_GET["action"]=='LIVESUPPORTAGENT_CUSTOMERSLIST'){
    $account_Id = $_GET["account_Id"];
    $liveSupportChat = new LiveSupportChat();
    $database = new Database();
-   $liveSupportChatQuery = $liveSupportChat->query_view_livesupportchathistory($account_Id);
-   echo $database->getJSONData($liveSupportChatQuery);
+   $customerListQuery = $liveSupportChat->query_view_listOfChatCustomers($account_Id);
+   echo $database->getJSONData($customerListQuery);
  }
  else { echo 'MISSING_ACTION'; }
 }

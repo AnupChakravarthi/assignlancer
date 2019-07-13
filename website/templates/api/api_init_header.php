@@ -326,7 +326,7 @@ var pwd = document.getElementById("signin_customer_pwd").value;
 	  </div>
       <a class="navbar-brand" href="#">
 	    <span class="a-white navbar-brand-span">
-	      <span style="color:#000;"><span style="color:#f77d0e;">A</span>ssignlancer</span>
+	      <span style="color:#000;"><span style="color:#f77d0e;">H</span>ereWeGet.com</span>
 	    </span>
 	    <!--- span class="a-white navbar-brand-span">
 	      <span style="color:#f77d0e;">h</span>ere 

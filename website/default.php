@@ -69,7 +69,7 @@ $(document).ready(function(){
  selectAppInitHeader('appInitHeader-home');
  $("#sliderCarousel").carousel({interval: 4000});
   homeSlider();
-  load_chatpopup('chat_div'); // loads from app.ui.chatpopup.js
+  load_chatpopup(); // loads from app.ui.chatpopup.js
 });
 </script>
 <style>

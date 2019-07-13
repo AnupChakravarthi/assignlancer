@@ -50,7 +50,7 @@ include_once '../../templates/api/api_js.php';
 		<div class="col-lg-6 mbot15p"></div>
 		
 	  </div>
-	  <div class="row">
+	  <div id="liveSupport-display-chatbox" class="row">
 	    	<div class="messaging">
       <div class="inbox_msg">
         <div class="inbox_people">
@@ -203,6 +203,14 @@ include_once '../../templates/api/api_js.php';
       
 		<!-- Messaging ::: End -->
       </div>
+	  
+	  
+	  <!--- -->
+	  
+	  
+	  <!-- -->
+	  
+	  
    
 	  </div>
 	</div>
@@ -222,13 +230,14 @@ include_once '../../templates/api/api_js.php';
     <script type="text/javascript" src="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>js/jquery-ui.js"></script>
     <script type="text/javascript" src="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>js/jquery.ui.chatbox.js"></script>
     <script type="text/javascript" src="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>js/cookies.js"></script>
+	<script type="text/javascript" src="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>js/app.ui.chatpopup.js"></script>
     <link type="text/css" href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>styles/jquery.ui.chatbox.css" rel="stylesheet" />
     <link rel="stylesheet" href="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>styles/jquery-ui.css">
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>backend/dist/sb-admin-2.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-  
+  liveSupportChat_display_customersList('liveSupport-display-chatbox','ALL',ADMINISTRATOR_ACCOUNT_ID);
 });
 
 function liveSupportChat_display_viewCustomersInQueue(){

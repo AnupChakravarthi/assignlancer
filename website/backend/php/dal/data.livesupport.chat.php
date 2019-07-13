@@ -31,7 +31,7 @@ class LiveSupportChat {
    return $sql;
   }
   
-  function query_add_messageToQueue($queue_Id, $queueStatus, $IPAddress, $SessionId, 
+  function query_add_messageToQueue($queue_Id, $queueStatus, $chatName, $country, $IPAddress, $SessionId, 
 		    $order_Id, $account_Id, $queueOn, $customerReview, $agentFeedBack){
   /* =======================================
    * QUERY DESCRIPTION:
@@ -43,9 +43,10 @@ class LiveSupportChat {
    *  a) controller.livesupport.chat.php
    *      => Service - ADDUSER_TO_QUEUE
    */
-   $sql="INSERT INTO queue(queue_Id, queueStatus, IPAddress, SessionId, order_Id, account_Id, queueOn, customerReview, ";
-   $sql.="agentFeedBack) SELECT * FROM (";
-   $sql.="SELECT '".$queue_Id."' As queue_Id, '".$queueStatus."' As queueStatus, '".$IPAddress."' As IPAddress, ";
+   $sql="INSERT INTO queue(queue_Id, queueStatus, chatName, country, IPAddress, SessionId, order_Id, ";
+   $sql.="account_Id, queueOn, customerReview, agentFeedBack) SELECT * FROM (";
+   $sql.="SELECT '".$queue_Id."' As queue_Id, '".$queueStatus."' As queueStatus, '";
+   $sql.=$chatName."' As chatName, '".$country."' As country, ', ".$IPAddress."' As IPAddress, ";
    $sql.="'".$SessionId."' As SessionId, '".$order_Id."' As order_Id, '".$account_Id."' As account_Id, ";
    $sql.=" '".$queueOn."' As queueOn, '".$customerReview."' As customerReview, '".$agentFeedBack."' As agentFeedBack) As tbl ";
    $sql.=" WHERE (SELECT count(*) FROM queue WHERE SessionId='".$SessionId."' AND IPAddress='".$IPAddress."')=0;";
@@ -68,21 +69,27 @@ class LiveSupportChat {
    return $sql;
   }
   
-  function query_view_livesupportchathistory($account_Id){
-  /* =======================================
+  function query_view_listOfChatCustomers($account_Id){
+  /* ========================================
    * QUERY DESCRIPTION:
-   * =======================================
-   * This is a Query to  store the Messages of Chat
-   * =====================================
-   *  QUERY ACCESSED BY:
-   * =====================================
-   *  a) controller.livesupport.chat.php
-   *      => Service - LIVESUPPORTAGENT_CHATHISTORY
+   * ========================================
+   * This Query is used to display Chat Customers
+   * The Query is built from supportchat and queue tables.
+   * It picks the lastMsg Data from supportchat table and appends to queue_Id
    */
-    $sql="SELECT * FROM supportchat WHERE queue_Id=(SELECT queue_Id FROM supportchat WHERE toAgent='".$account_Id."');";
-	return $sql;
+   $sql="";
+   if($account_Id=='ALL'){
+     $sql.="SELECT DISTINCT queue.SessionId, queue.chatName, queue.country, queue.queue_Id, ";
+	 $sql.="(SELECT CONCAT(supportchat.msg,'|',supportchat.msg_On) FROM supportchat ";
+	 $sql.="WHERE supportchat.queue_Id = queue.queue_Id ORDER BY supportchat.msg_On DESC LIMIT 1) As msg FROM queue ";
+   } else {
+     $sql.="SELECT DISTINCT queue.SessionId, queue.chatName, queue.country, queue.queue_Id,";
+	 $sql.="(SELECT CONCAT(supportchat.msg,'|',supportchat.msg_On) FROM supportchat ";
+	 $sql.="WHERE supportchat.queue_Id = queue.queue_Id AND toAgent='".$account_Id."' ORDER BY ";
+	 $sql.="supportchat.msg_On DESC LIMIT 1) As msg FROM queue";
+   }
+   return $sql;
   }
-  
   
   function query_view_supportchat($queue_Id){
    $sql="SELECT * FROM `supportchat` WHERE queue_Id='".$queue_Id."'  ORDER BY msg_on ASC;";
