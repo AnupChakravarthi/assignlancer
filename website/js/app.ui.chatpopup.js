@@ -208,34 +208,65 @@ function customerLSChat_display_chatUpdate(){
  },3000);
 }
 
+var LIVESUPPORTCHAT_INITIAL_LOADING = true;
+var LIVESUPPORTCHAT_CURRENT_QUEUEID; // This will updated on viewing customer chat LiveSupportAgent
+var LIVESUPPORTCHAT_CURRENT_SESSION_ID;
+var LIVESUPPORTCHAT_INTERVAL_CUSTOMERLIST;
+var LIVESUPPORTCHAT_INTERVAL_CUSTOMERCHAT;
+function liveSupportChat_display_lsChatBox(div_Id, agent_Id, account_Id){
+/* ===============================
+ * Function Description:
+ * ===============================
+ * This will load the Messaging and Customer Divisions Initially
+ */
+ var content='<div class="messaging">';
+     content+='<div class="inbox_msg">';
+     content+='<div class="inbox_people">';
+     content+='<div class="headind_srch">';
+     content+='<div class="recent_heading"><h4>Recent</h4></div>';
+     content+='<div>'; // headind_srch
+     content+='<div class="input-group">';
+     content+='<input type="text" class="form-control"  placeholder="Search"/>';
+     content+='<span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>';
+     content+='</div>'; // input-group
+     content+='</div>';// inbox_people
+     content+='</div>'; // inbox_msg
+     content+='<div id="liveSupportChat-display-customersList" class="inbox_chat">';
+	 content+='<div align="center">loading...</div>';// Loads the Customers List
+     content+='</div>'; // inbox_chat
+     content+='</div>';
+     content+='<div class="mesgs">';
+     content+='<div id="liveSupportChat-display-customerChat" class="msg_history">';
+     content+='<div align="center">loading...</div>';// Loads the LiveSupport Agent and Customer Chat Conversation
+     content+='</div>';
+     content+='<div class="type_msg">';
+     content+='<div class="input_msg_write">';
+     content+='<input id="liveSupportChat-chat-toCustomer" type="text" class="write_msg" placeholder="Type a message"/>';
+     content+='<button class="msg_send_btn" type="button" ';
+     content+='onclick="javascript:liveSupportChat_formSubmit_storeChat(\''+account_Id+'\');">';
+     content+='<i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>';
+     content+='</div>';
+     content+='</div>';
+     content+='</div>';
+     content+='</div>';
+     content+='</div>';
+  document.getElementById(div_Id).innerHTML = content;
+  liveSupportChat_display_customersList('liveSupportChat-display-customersList', agent_Id, account_Id);
+}
 function liveSupportChat_display_customersList(div_Id, agent_Id, account_Id){
  js_ajax("GET",liveSupportChatURL,{ action:'LIVESUPPORTAGENT_CUSTOMERSLIST', account_Id:agent_Id }, 
   function(response){
-    var init_customerSessionId = "";
-	var init_queue_Id = "";
-    var content='<div class="messaging">';
-        content+='<div class="inbox_msg">';
-        content+='<div class="inbox_people">';
-        content+='<div class="headind_srch">';
-        content+='<div class="recent_heading"><h4>Recent</h4></div>';
-        content+='<div>';
-		content+='<div class="input-group">';
-        content+='<input type="text" class="form-control"  placeholder="Search"/>';
-        content+='<span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>';
-		content+='</div>';
-        content+='</div>';
-        content+='</div>';
-        content+='<div class="inbox_chat">';
-		
+    var content='';	
         for(var index=0;index<response.length;index++){
 		  var SessionId = response[index].SessionId;
 		  var queue_Id = response[index].queue_Id;
 		  var chatName = response[index].chatName;
 		  var message = response[index].msg.split("|")[0];
 		  var msgTime = response[index].msg.split("|")[1];
-		  if(index===0){
-		    init_customerSessionId = SessionId;
-	        init_queue_Id = queue_Id; 
+		  if(index===0 && LIVESUPPORTCHAT_INITIAL_LOADING){
+		    LIVESUPPORTCHAT_CURRENT_SESSION_ID = SessionId;
+	        LIVESUPPORTCHAT_CURRENT_QUEUEID = queue_Id; 
+			LIVESUPPORTCHAT_INITIAL_LOADING= false;
 		  }
 		  content+='<div id="'+SessionId+'" class="chat_list" ';
 		  content+='onclick="javascript:liveSupportChat_display_chatData(this.id,\''+queue_Id+'\');">';
@@ -249,31 +280,14 @@ function liveSupportChat_display_customersList(div_Id, agent_Id, account_Id){
           content+='</div>'; // chat_people
           content+='</div>'; // chat_list
 		}
-		
-        content+='</div>'; // inbox_chat
-        content+='</div>';
-        content+='<div class="mesgs">';
-        content+='<div id="liveSupportChat-display-customerChat" class="msg_history">';
-// 
-        content+='</div>';
-        content+='<div class="type_msg">';
-        content+='<div class="input_msg_write">';
-        content+='<input id="liveSupportChat-chat-toCustomer" type="text" class="write_msg" placeholder="Type a message"/>';
-        content+='<button class="msg_send_btn" type="button" ';
-		content+='onclick="javascript:liveSupportChat_formSubmit_storeChat(\''+account_Id+'\');">';
-		content+='<i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>';
-        content+='</div>';
-        content+='</div>';
-        content+='</div>';
-        content+='</div>';
-        content+='</div>';
-
-    document.getElementById(div_Id).innerHTML=content;  
-	liveSupportChat_display_chatData(init_customerSessionId, init_queue_Id);
-    console.log("liveSupportChat_display_chatData: "+JSON.stringify(response));
+    document.getElementById(div_Id).innerHTML=content; 
+	liveSupportChat_display_chatData(LIVESUPPORTCHAT_CURRENT_SESSION_ID, LIVESUPPORTCHAT_CURRENT_QUEUEID);
+	setTimeout(function(){
+       liveSupportChat_display_customersList('liveSupportChat-display-customersList', agent_Id, account_Id);
+    }, 8000);
   });
 }
-var LIVESUPPORTCHAT_CURRENT_QUEUEID; // This will updated on viewing customer chat LiveSupportAgent
+
 function liveSupportChat_formSubmit_storeChat(account_Id){
  var customerMessage = document.getElementById("liveSupportChat-chat-toCustomer").value;
  customerLSChat_bridge_storeChat(LIVESUPPORTCHAT_CURRENT_QUEUEID,'AssignmentHelp', customerMessage, account_Id);
@@ -281,10 +295,14 @@ function liveSupportChat_formSubmit_storeChat(account_Id){
 }
 
 function liveSupportChat_display_chatData(customerSessionId, queue_Id){
- LIVESUPPORTCHAT_CURRENT_QUEUEID=queue_Id;
+ LIVESUPPORTCHAT_CURRENT_QUEUEID = queue_Id;
+ LIVESUPPORTCHAT_CURRENT_SESSION_ID = customerSessionId;
  if($('.chat_list').hasClass('active_chat')){ $('.chat_list').removeClass('active_chat'); }
- if(!$('#'+customerSessionId).hasClass('active_chat')){ $('#'+customerSessionId).addClass('active_chat'); }
- js_ajax("GET",liveSupportChatURL,{ action:'GETSUPPORTCHAT', queue_Id:queue_Id }, 
+ if(!$('#'+LIVESUPPORTCHAT_CURRENT_SESSION_ID).hasClass('active_chat')){ 
+   $('#'+LIVESUPPORTCHAT_CURRENT_SESSION_ID).addClass('active_chat'); 
+ }
+ console.log(" LIVESUPPORTCHAT_CURRENT_QUEUEID: "+LIVESUPPORTCHAT_CURRENT_QUEUEID);
+  js_ajax("GET",liveSupportChatURL,{ action:'GETSUPPORTCHAT', queue_Id:queue_Id }, 
   function(response){
     var content='';
     for(var index=0;index<response.length;index++){
@@ -312,11 +330,8 @@ function liveSupportChat_display_chatData(customerSessionId, queue_Id){
         content+='<span class="time_date">'+get_stdDateTimeFormat01(msg_On)+'</span></div>';
         content+='</div>';
 	  }
-    }
-        
-        
+    } 
 	document.getElementById("liveSupportChat-display-customerChat").innerHTML=content;
-    console.log("liveSupportChat_display_chatData: "+JSON.stringify(response));
   });
 }
 

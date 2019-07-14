@@ -38,18 +38,6 @@ include_once '../../templates/api/api_js.php';
       <div class="row">
           <h4 class="page-header"><b>Live Support - Chat</b></h4>
       </div>
-	  <div class="row">
-	  
-	    <div class="col-lg-6 mbot15p">
-		  <div class="input-group">
-		    <input type="text" class="form-control" placeholder="Find Chat By Customer Name"/>
-			<span class="input-group-addon"><b><i class="fa fa-search"></i> Chat History</b></span>
-		  </div>
-		</div>
-		
-		<div class="col-lg-6 mbot15p"></div>
-		
-	  </div>
 	  <div id="liveSupport-display-chatbox" class="row">
 	    	<div class="messaging">
       <div class="inbox_msg">
@@ -237,7 +225,7 @@ include_once '../../templates/api/api_js.php';
     <script src="<?php echo $_SESSION["HWG_PROJECT_URL"]; ?>backend/dist/sb-admin-2.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-  liveSupportChat_display_customersList('liveSupport-display-chatbox','ALL',ADMINISTRATOR_ACCOUNT_ID);
+  liveSupportChat_display_lsChatBox('liveSupport-display-chatbox','ALL',ADMINISTRATOR_ACCOUNT_ID);
 });
 
 function liveSupportChat_display_viewCustomersInQueue(){
