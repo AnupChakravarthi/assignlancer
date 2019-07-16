@@ -61,7 +61,6 @@ RewriteRule ([^/]+)/js/([^/]+)$ js/$2 [NC,L]
 RewriteRule ([^/]+)/js/([^/]+)/([^/]+)$ js/$2/$3 [NC,L]
 RewriteRule ([^/]+)/js/([^/]+)/([^/]+)/([^/]+)$ js/$2/$3/$4 [NC,L]
 
-
 RewriteRule ([^/]+)/admin/([^/]+)$ admin/$2 [NC,L]
 RewriteRule ([^/]+)/admin/([^/]+)/([^/]+)$ admin/$2/$3 [NC,L]
 RewriteRule ([^/]+)/admin/([^/]+)/([^/]+)/([^/]+)$ admin/$2/$3/$4 [NC,L]
